@@ -24,8 +24,8 @@
 				  </div>
 				  
 				  <div class="nav-links">
-					<a class="active" style="color: #14284B;" href="index.php">Αρχική Σελίδα</a>
-					<a href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Εισαγωγή</a>
+					<a  href="index.php">Αρχική Σελίδα</a>
+					<a  href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Εισαγωγή</a>
 					<a href="#" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Εγγραφή Φοιτητή</a>
 					
 				  </div>
@@ -80,9 +80,10 @@
       <input type="text" placeholder="Επώνυμο" name="surname" required>
         
          <label for="email"><b>E-mail σχολής</b></label>
-      <input  type="text" placeholder="E-mail σχολής" id="email" name="email"  required >
-    
+      <input  type="text" placeholder="E-mail σχολής" id="email" name="email" onblur="validateEmail(this);"  required >
+      <span id='messageEmail'></span>
 
+        <br>
       <label for="usname"><b>Username</b></label>
       <input type="text" placeholder="Username" name="uname" required>
          
@@ -94,11 +95,11 @@
         
     
  <label for="p1"><b>Κωδικός</b></label>
-  <input name="password" id="password" type="password" onkeyup='check();' />
+  <input name="password" id="password" type="password" placeholder="Κωδικός" onkeyup='check();'required>
 
 
  <label for="p2"><b>Επιβεβαίωση Κωδικού</b></label>
-  <input type="password" name="confirm_password" id="confirm_password"  onkeyup='check();' /> 
+  <input type="password" name="confirm_password" id="confirm_password" placeholder="Επιβεβαίωση Κωδικού"  onkeyup='check();' required>
   <span id='message'></span>
 
        
@@ -113,7 +114,7 @@
   </form>
 </div>
     
-
+<script src="assets/js/emailcheck.js"></script>
 <script src="assets/js/passwordcheck.js"></script>
 <script src="assets/js/index.js"></script>
 
