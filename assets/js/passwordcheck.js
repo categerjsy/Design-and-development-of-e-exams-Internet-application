@@ -9,3 +9,4 @@ var check = function() {
     document.getElementById('message').innerHTML = 'Οι κωδικοί δεν είναι ίδιοι.';
   }
 }
+

@@ -4,10 +4,12 @@
 <html>
 <head>
     
+    
     <title>Σύστημα Εξέτασης</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="assets/css/style.css">
+     <link rel="stylesheet" href="assets/css/pass.css">
      <link rel='shortcut icon' type='image/x-icon' href='photos/uop_new_logo.png'/><meta name="description" content="UOP Logo"/>
     <div class="nav">
 				  <input type="checkbox" id="nav-check">
@@ -94,11 +96,13 @@
         <label for="telephone"><b>Αριθμός τηλεφώνου</b></label>
       <input type="text" placeholder="Αριθμός τηλεφώνου" name="telephone" required>
         
-    
+  <div name="frmCheckPassword" id="frmCheckPassword">  
  <label for="p1"><b>Κωδικός</b></label>
-  <input name="password" id="password" type="password" placeholder="Κωδικός" onkeyup='check();'  required>
-
-
+  <input name="password" id="password" type="password" placeholder="Κωδικός" class="demoInputBox" onKeyUp="checkPasswordStrength();" onkeyup='check();'  required>
+ <div id="password-strength-status"></div>
+        </div>
+        
+        
  <label for="p2"><b>Επιβεβαίωση Κωδικού</b></label>
   <input type="password" name="confirm_password" id="confirm_password" placeholder="Επιβεβαίωση Κωδικού"  onkeyup='check();' required>
   <span id='message'></span>
@@ -115,6 +119,10 @@
   </form>
 </div>
     
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+<script src="assets/js/PcheckLength.js"></script>
 <script src="assets/js/emailcheck.js"></script>
 <script src="assets/js/passwordcheck.js"></script>
 <script src="assets/js/index.js"></script>
