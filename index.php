@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    
     <title>Σύστημα Εξέτασης</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -59,7 +60,7 @@
 
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Έξοδος</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
+      <span class="psw"><a href="#">Forgot password?</a></span>
     </div>
   </form>
 </div>
@@ -95,7 +96,7 @@
         
     
  <label for="p1"><b>Κωδικός</b></label>
-  <input name="password" id="password" type="password" placeholder="Κωδικός" onkeyup='check();'required>
+  <input name="password" id="password" type="password" placeholder="Κωδικός" onkeyup='check();'  required>
 
 
  <label for="p2"><b>Επιβεβαίωση Κωδικού</b></label>
