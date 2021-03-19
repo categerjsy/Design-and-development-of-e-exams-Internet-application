@@ -1,11 +1,13 @@
  #frmCheckPassword {
                 border-top: #F0F0F0 2px ;
+               
             }
 
             .demoInputBox {
                 padding: 7px;
                 border: #F0F0F0 1px solid;
                 border-radius: 4px;
+            
             }
 
             #password-strength-status {
@@ -13,6 +15,7 @@
                 color: #FFFFFF;
                 border-radius: 4px;
                 margin-top: 5px;
+            
             }
 
             .medium-password {
