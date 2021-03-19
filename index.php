@@ -30,8 +30,8 @@
 				  <div class="nav-links">
 					<a  href="index.php">Αρχική Σελίδα</a>
 					<a  href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Εισαγωγή</a>
-					<a href="sign_up.php">Εγγραφή Φοιτητή</a>
-					
+					<a href="sign_upf.php">Εγγραφή Φοιτητή</a>
+					<a href="sign_upk.php">Εγγραφή Καθηγητή</a>
 				  </div>
 				</div>
      
@@ -123,10 +123,7 @@
 
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
-<script src="assets/js/PcheckLength.js"></script>
-<script src="assets/js/emailcheck.js"></script>
-<script src="assets/js/passwordcheck.js"></script>
+
 <script src="assets/js/index.js"></script>
 
 

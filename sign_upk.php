@@ -28,7 +28,8 @@
 				  <div class="nav-links">
 					<a  href="index.php">Αρχική Σελίδα</a>
 					<a  href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Εισαγωγή</a>
-					<a href="#">Εγγραφή Φοιτητή</a>
+					<a href="sign_upf.php">Εγγραφή Φοιτητή</a>
+                    <a href="#">Εγγραφή Καθηγητή</a>
 				  </div>
 				</div>
      
@@ -65,10 +66,7 @@
         <input type="text" placeholder="Username" name="uname" required>
         <br>  
         
-        <label for="am"><b>Αριθμός μητρώου</b></label> 
-        <input type="text" placeholder="Αριθμός μητρώου" name="ΑΜ" required>
-        <br> 
-        
+      
         <label for="telephone"><b>Αριθμός τηλεφώνου</b></label> 
         <input type="text" placeholder="Αριθμός τηλεφώνου" name="telephone" required>
         <br> 
