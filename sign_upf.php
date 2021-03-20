@@ -53,10 +53,12 @@
         <input type="text" placeholder="Όνομα" name="name" required>
         <br>
         
+		<br>
         <label for="surname"><b>Επώνυμο</b></label> 
         <input type="text" placeholder="Επώνυμο" name="surname" required>
         <br>
         
+		<br>
         <label for="email"><b>E-mail σχολής</b></label> 
         <input  type="text" placeholder="E-mail σχολής" id="email" name="email" onblur="validateEmail(this);"  required >
         <br> <span id='messageEmail'></span><br>
@@ -66,14 +68,17 @@
         <input type="text" placeholder="Username" name="uname" required>
         <br>  
         
+		<br>
         <label for="am"><b>Αριθμός μητρώου</b></label> 
         <input type="text" placeholder="Αριθμός μητρώου" name="ΑΜ" required>
         <br> 
         
+		<br>
         <label for="telephone"><b>Αριθμός τηλεφώνου</b></label> 
         <input type="text" placeholder="Αριθμός τηλεφώνου" name="telephone" required>
         <br> 
         
+		<br>
         <div name="frmCheckPassword" id="frmCheckPassword">  
         <label for="p1"><b>Κωδικός</b></label> 
         <input name="password" id="password" type="password" placeholder="Κωδικός" class="demoInputBox" onKeyUp="checkPasswordStrength();" onkeyup='check();'  required>
@@ -91,7 +96,7 @@
     </div>
 
     <div class="container">
-      <button type="button" class="cancelbtn">Έξοδος</button>
+      <a  href="index.php"><button type="button" class="cancelbtn">Έξοδος</button></a>
 
     </div>
   </form>

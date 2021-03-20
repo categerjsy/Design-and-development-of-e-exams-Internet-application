@@ -63,7 +63,7 @@
 
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Έξοδος</button>
-      <span onclick="document.getElementById('id01').style.display='none'" class="psw"><a href="#" onclick="document.getElementById('id03').style.display='block'" >Forgot password?</a></span>
+      <span onclick="document.getElementById('id01').style.display='none'" class="psw"><a href="#" onclick="document.getElementById('id02').style.display='block'">Forgot password?</a></span>
     </div>
   </form>
 </div>
@@ -71,11 +71,11 @@
 	
 
 
-<div id="id03" class="modal">
+<div id="id02" class="modal">
   
   <form class="modal-content animate" action="/action_page.php" method="post">
     <div class="imgcontainer">
-      <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="photos/img_avatar2.png" alt="Avatar" class="avatar">
     </div>
 
@@ -85,23 +85,24 @@
       <input  type="text" placeholder="E-mail σχολής" id="email" name="email" onblur="validateEmail(this);"  required >
       <span id='messageEmail'></span>
         
-      <button onclick="document.getElementById('id03').style.display='none'" type="submit"><a onclick="document.getElementById('id04').style.display='block'" >Αποστολή προσωρινού κωδικού</a></button>
+<button onsubmit="document.getElementById('id02').style.display='none'" type="submit">Αποστολή προσωρινού κωδικού</button>
+
+<!--<a onsubmit="document.getElementById('id03').style.display='block'" >   </a>-->
 	  
-	 
     </div>
 
     <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Έξοδος</button>
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Έξοδος</button>
     </div>
   </form>
 </div>
 
 
-<div id="id04" class="modal">
+<div id="id03" class="modal">
   
   <form class="modal-content animate" action="/action_page.php" method="post">
     <div class="imgcontainer">
-      <span onclick="document.getElementById('id04).style.display='none'" class="close" title="Close Modal">&times;</span>
+      <span onclick="document.getElementById('id03).style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="photos/img_avatar2.png" alt="Avatar" class="avatar">
     </div>
 
@@ -116,7 +117,7 @@
     </div>
 
     <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id04').style.display='none'" class="cancelbtn">Έξοδος</button>
+      <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Έξοδος</button>
     </div>
   </form>
 </div>
