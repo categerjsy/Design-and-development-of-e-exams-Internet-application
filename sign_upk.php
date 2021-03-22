@@ -44,7 +44,7 @@
   <form class="modal-content animate" action="/action_page.php" method="post">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="photos/img_avatar2.png" alt="Avatar" class="avatar">
+      <img src="photos/img_avatar2.png" alt="Avatar" class="avatar" width="60" height="40">
     </div>
 
     <div class="container">
@@ -111,14 +111,18 @@
         <br><span id='message'></span>
         <br>
         
+
+        
       <button type="submit">Εγγραφή</button>
      
     </div>
 
-    <div class="container">
-      <a href="index.php"><button type="button" class="cancelbtn">Έξοδος</button></a>
+    <div class="btn-group">
+      
+      <button type="button" class="cancelbtn"><a href="index.php">Έξοδος</a></button>
+      <button type="button" class="cleanbtn"><a href="#">Καθαρισμός</a></button>
+      </div>
 
-    </div>
   </form>
 
 
@@ -134,3 +138,4 @@
 
 </body>
 </html>
+

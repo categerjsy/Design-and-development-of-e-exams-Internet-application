@@ -47,7 +47,7 @@
   <form class="modal-content animate" action="/action_page.php" method="post">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="photos/img_avatar2.png" alt="Avatar" class="avatar">
+      <img src="photos/img_avatar2.png"   alt="Avatar" class="avatar">
     </div>
 
     <div class="container">
@@ -73,7 +73,7 @@
 
 <div id="id02" class="modal">
   
-  <form class="modal-content animate" action="/action_page.php" method="post">
+  <form class="modal-content animate"  method="post">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="photos/img_avatar2.png" alt="Avatar" class="avatar">
@@ -81,11 +81,11 @@
 
     <div class="container">
       
-      <label for="email"><b>E-mail σχολής</b></label>
-      <input  type="text" placeholder="E-mail σχολής" id="email" name="email" onblur="validateEmail(this);"  required >
+      <label for="email"><b>E-mail </b></label>
+      <input  type="text" placeholder="E-mail σχολής με το οποίο έχετε εγγραφεί" id="email" name="email" onblur="validateEmail(this);"  required >
       <span id='messageEmail'></span>
         
-<button onclick="document.getElementById('id02').style.display='none'" type="submit">Αποστολή προσωρινού κωδικού</button>
+        <button type="submit" onclick="document.getElementById('id03').style.display='block'">Αποστολή προσωρινού κωδικού </button>
 
 <!--<a onsubmit="document.getElementById('id03').style.display='block'" >   </a>-->
 	  
@@ -100,7 +100,7 @@
 
 <div id="id03" class="modal">
   
-  <form class="modal-content animate" action="/action_page.php" method="post">
+  <form class="modal-content animate" action="/index.php" method="post">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id03).style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="photos/img_avatar2.png" alt="Avatar" class="avatar">

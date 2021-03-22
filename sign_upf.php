@@ -1,7 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
+  <style>
+ a:link {
+  text-decoration: none;
+      color: white;
+}
+
+a:visited {
+  text-decoration:none;
+     color: white;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+.btn-group button {
+ margin: 20px 220px;
+  border: 1px solid; /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+</style>  
     
     <title>Εγγραφή Φοιτητή</title>
     <meta charset="utf-8" />
@@ -120,10 +159,12 @@
      
     </div>
 
-    <div class="container">
-      <a  href="index.php"><button type="button" class="cancelbtn">Έξοδος</button></a>
+    <div class="btn-group">
+      
+      <button type="button" class="cancelbtn"><a href="index.php">Έξοδος</a></button>
+      <button type="button" class="cleanbtn"><a href="#">Καθαρισμός</a></button>
+      </div>
 
-    </div>
   </form>
 
 

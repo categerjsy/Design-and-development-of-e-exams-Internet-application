@@ -6,9 +6,9 @@
             if ($('#password').val().length < 7) {
                 $('#password-strength-status').removeClass();
                 $('#password-strength-status').addClass('weak-password');
-                $('#password-strength-status').html("Αδύναμος κωδικός (πρέπει να έχουμε τουλάχιστον 7 χαρακτήρες).");
+                $('#password-strength-status').html("Αδύναμος κωδικός (πρέπει να έχουμε τουλάχιστον 5 λατινικούς χαρακτήρες, 1 αριθμό και 1 χαρακτήρα πληκτρολογίου).");
             } else {
-                if ($('#password').val().match(number) && $('#password').val().match(alphabets) && $('#password').val().match(special_characters)) {
+                if ($('#password').val().match(number) && $('#password').val().match(alphabets) &&$('#password').val().match(special_characters)) {
                     $('#password-strength-status').removeClass();
                     $('#password-strength-status').addClass('strong-password');
                     $('#password-strength-status').html("Ισχυρός κωδικός.");
