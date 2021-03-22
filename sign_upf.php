@@ -67,7 +67,7 @@ a:active {
 				  
 				  <div class="nav-links">
 					<a  href="index.php">Αρχική Σελίδα</a>
-					<a  href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Εισαγωγή</a>
+					<a  href="#">Εισαγωγή</a>
 					<a href="#">Εγγραφή Φοιτητή</a>
                     <a href="sign_upk.php">Εγγραφή Καθηγητή</a>
 				  </div>
@@ -77,29 +77,7 @@ a:active {
 </head>
 <body>
 
-<div id="id01" class="modal">
-  
-  <form class="modal-content animate" action="/action_page.php" method="post">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="photos/img_avatar2.png" alt="Avatar" class="avatar">
-    </div>
 
-    <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Εισάγετε Username" name="uname" required>
-
-      <label for="psw"><b>Κωδικός</b></label>
-      <input type="password" placeholder="Εισάγετε κωδικό" name="psw" required>
-        
-      <button type="submit">Εισαγωγή</button>
-     
-    </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Έξοδος</button>
-      <span onclick="document.getElementById('id01').style.display='none'" class="psw"><a href="#" onclick="document.getElementById('id02').style.display='block'">Ξεχάσατε τον κωδικό σας;</a></span>
-    </div>
   </form>
 </div>
 

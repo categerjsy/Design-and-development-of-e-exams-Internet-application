@@ -10,6 +10,10 @@ body {
 }
 * {box-sizing: border-box;}
 
+.container {
+      width: 70%;
+      padding-left: 160px;
+}
 /* Full-width input fields */
 input[type=text], input[type=password] {
   width: 100%;
@@ -26,7 +30,7 @@ button {
   background-color: #14284B;
   color: white;
   padding: 14px 20px;
-  margin: 8px 0;
+  margin: 28px 0;
   border: none;
   cursor: pointer;
   width: 100%;
@@ -41,7 +45,55 @@ button:hover {
   padding: 10px 18px;
   background-color: #f44336;
 }
+.cleanbtn{
+  width: auto;
+  padding: 10px 18px;
+  background-color:#14284B;
+}
 
+ a:link {
+  text-decoration: none;
+      color: #14284B;
+}
+
+a:visited {
+  text-decoration:none;
+     color: #14284B;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+.btn-group button {
+ margin: 20px 220px;
+  border: 1px solid; /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+.signup {
+  text-align: left;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
 /* Center the image and position the close button */
 .imgcontainer {
   text-align: center;
@@ -51,13 +103,9 @@ button:hover {
 }
 
 img.avatar {
-  width: 20%;
-  border-radius: 10%;
+  width: 40%;
 }
 
-.container {
-  padding: 16px;
-}
 
 span.psw {
   float: right;
@@ -71,8 +119,8 @@ span.psw {
   z-index: 1; /* Sit on top */
   left: 0;
   top: 0;
-  width: 50%; /* Full width */
-  height: 50%; /* Full height */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
@@ -84,7 +132,7 @@ span.psw {
   background-color: #fefefe;
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
-  width: 20%; /* Could be more or less, depending on screen size */
+  width: 80%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button (x) */

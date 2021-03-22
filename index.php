@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
+
     
     <title>Σύστημα Εξέτασης</title>
     <meta charset="utf-8" />
@@ -47,7 +47,6 @@
   <form class="modal-content animate" action="/action_page.php" method="post">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="photos/img_avatar2.png"   alt="Avatar" class="avatar">
     </div>
 
     <div class="container">
@@ -61,9 +60,9 @@
      
     </div>
 
-    <div class="container" style="background-color:#f1f1f1">
+    <div class="container" >
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Έξοδος</button>
-      <span onclick="document.getElementById('id01').style.display='none'" class="psw"><a href="#" onclick="document.getElementById('id02').style.display='block'">Ξεχάσατε τον κωδικό σας;</a></span>
+      <span onclick="document.getElementById('id01').style.display='none'" class="psw"><a href="#" onclick="document.getElementById('id02').style.display='block'" c>Ξεχάσατε τον κωδικό σας;</a></span>
     </div>
   </form>
 </div>
@@ -76,7 +75,6 @@
   <form class="modal-content animate"  method="post">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="photos/img_avatar2.png" alt="Avatar" class="avatar">
     </div>
 
     <div class="container">
@@ -91,7 +89,7 @@
 	  
     </div>
 
-    <div class="container" style="background-color:#f1f1f1">
+    <div class="container" >
       <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Έξοδος</button>
     </div>
   </form>
@@ -103,7 +101,6 @@
   <form class="modal-content animate" action="/index.php" method="post">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id03).style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="photos/img_avatar2.png" alt="Avatar" class="avatar">
     </div>
 
     <div class="container">
@@ -116,13 +113,13 @@
 	 
     </div>
 
-    <div class="container" style="background-color:#f1f1f1">
+    <div class="container" >
       <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Έξοδος</button>
     </div>
   </form>
 </div>
 
-
+   
 
 <script src="assets/js/emailcheck.js"></script>
 <script src="assets/js/index.js"></script>
