@@ -1,0 +1,47 @@
+
+@media screen and (min-width:600px){
+	.container{
+		max-width:100%;
+		margin:0 auto;
+		display:grid;
+		grid-template-columns:repeat(8,1fr);
+		grid-auto-rows:minmax(50px,auto);
+		grid-gap:10px;
+		grid-template-areas:
+					"h h h h h h h h"
+					"a a m m m m m m"
+					"a a m m m m m m"
+					"a a m m m m m m"
+					"a a m m m m m m"
+					"a a m m m m m m"
+					"a a m m m m m m"
+					"f f f f f f f f";
+					
+	}
+} 
+ 
+header{
+	grid-area:h;
+}
+aside{
+	grid-area:a;
+}
+main{
+	grid-area:m;
+}
+footer{
+	grid-area:f;
+}
+
+
+/*******************************************************************************************************/
+body {
+    font-family: sans-serif;
+    background-image: url("uop_new_logo.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #cccccc;
+    background-position: center; 
+
+}
+* {box-sizing: border-box;}

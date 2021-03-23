@@ -32,7 +32,7 @@
 					<a href="sign_upf.php">Εγγραφή Φοιτητή</a>
                     <a href="#">Εγγραφή Καθηγητή</a>
 				  </div>
-				</div>
+    </div>
      
     
 </head>

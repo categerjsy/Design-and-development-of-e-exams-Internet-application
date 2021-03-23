@@ -1,0 +1,21 @@
+
+nav {
+ /* white-space: nowrap;*/
+  width: 10%;
+  background-color:#14284B;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: white;
+  text-decoration: none;
+}
+nav ul li a.current {
+  background: black;
+}
+
