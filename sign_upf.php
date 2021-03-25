@@ -63,7 +63,7 @@
         
 		<br>
         <label for="email"><b>E-mail σχολής</b></label> 
-        <input  type="text" placeholder="E-mail σχολής" id="email" name="email" onblur="validateEmail(this);"  required >
+        <input  type="email" placeholder="E-mail σχολής" id="email" name="email" onblur="validateEmail(this);"  pattern="[a-zA-z0-9]*@uop.gr|[a-zA-z0-9]*@go.uop.gr" required >
         <br> <span id='messageEmail'></span><br>
         
  
@@ -78,7 +78,7 @@
         
 		<br>
         <label for="telephone"><b>Αριθμός τηλεφώνου</b></label> 
-        <input type="text" placeholder="Αριθμός τηλεφώνου" name="telephone" required>
+        <input type="tel" placeholder="Αριθμός τηλεφώνου" name="telephone" pattern="[0-9]{10}"  required>
         <br> 
         
 		<br>

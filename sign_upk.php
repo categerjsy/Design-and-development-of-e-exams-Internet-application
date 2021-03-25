@@ -1,3 +1,9 @@
+
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,7 +45,7 @@
 <body>
 
   
-  <form class="signup" action="/action_page.php" method="post">
+  <form class="signup" action="connectk.php" method="post">
     <div class="imgcontainer"> 
       <img src="photos/uop_new_logo.png" alt="Avatar" class="avatar">
     </div>
@@ -56,7 +62,7 @@
         
 		<br>
         <label for="email"><b>E-mail σχολής</b></label> 
-        <input  type="text" placeholder="E-mail σχολής" id="email" name="email" onblur="validateEmail(this);"  required >
+        <input  type="email" placeholder="E-mail σχολής" id="email" name="email" onblur="validateEmail(this);"  pattern="[a-zA-z0-9]*@uop.gr|[a-zA-z0-9]*@go.uop.gr" required >
         <br> <span id='messageEmail'></span>
 		<br>
         		
@@ -66,7 +72,7 @@
         
 		<br>
         <label for="telephone"><b>Αριθμός τηλεφώνου</b></label> 
-        <input type="text" placeholder="Αριθμός τηλεφώνου" name="telephone" required>
+        <input type="tel" placeholder="Αριθμός τηλεφώνου" name="telephone" pattern="[0-9]{10}" required>
         <br> 
         
 		<br>
@@ -96,7 +102,7 @@
 
   </form>
 
-
+<!--Do you have an account ?-->
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
