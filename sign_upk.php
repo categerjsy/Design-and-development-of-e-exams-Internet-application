@@ -91,7 +91,7 @@
     <div class="btn-group">
       
       <button type="button" class="cancelbtn"><a href="index.php">Έξοδος</a></button>
-      <button type="button" class="cleanbtn"><a href="#">Καθαρισμός</a></button>
+      <button type="reset" class="cleanbtn">Καθαρισμός</button>
       </div>
 
   </form>
