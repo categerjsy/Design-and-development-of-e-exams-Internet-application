@@ -44,17 +44,17 @@
 
 <div id="id01" class="modal">
   
-  <form class="modal-content animate" action="/action_page.php" method="post">
+  <form class="modal-content animate" action="check_user_passk.php" method="post">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
     </div>
 
     <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Εισάγετε Username" name="uname" required>
+      <label for="username"><b>Username</b></label>
+      <input type="text" placeholder="Εισάγετε Username" name="username" required>
 
       <label for="psw"><b>Κωδικός</b></label>
-      <input type="password" placeholder="Εισάγετε κωδικό" name="psw" required>
+      <input type="password" placeholder="Εισάγετε κωδικό" name="password" required>
         
       <button type="submit">Εισαγωγή</button>
      

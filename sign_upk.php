@@ -16,6 +16,34 @@ session_start();
      <link rel="stylesheet" href="assets/css/st.css">
      <link rel="stylesheet" href="assets/css/pass.css">
      <link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>
+	 <script>
+$(document).ready(function(){
+
+   $("#susername").keyup(function(){
+
+      var username = $(this).val().trim();
+
+      if(username != ''){
+
+         $.ajax({
+            url: 'ajaxfile.php',
+            type: 'post',
+            data: {username: username},
+            success: function(response){
+
+                $('#uname_response').html(response);
+
+             }
+         });
+      }else{
+         $("#uname_response").html("");
+      }
+
+    });
+
+ });
+</script>
+
     <div class="nav">
 				  <input type="checkbox" id="nav-check">
 				  <div class="nav-header">
@@ -45,7 +73,7 @@ session_start();
 <body>
 
   
-  <form class="signup" action="connectk.php" method="post">
+  <form class="signup"  method="post">
     <div class="imgcontainer"> 
       <img src="photos/uop_new_logo.png" alt="Avatar" class="avatar">
     </div>
@@ -66,9 +94,11 @@ session_start();
         <br> <span id='messageEmail'></span>
 		<br>
         		
-        <label for="usname"><b>Username</b></label> 
-        <input type="text" placeholder="Username" name="uname" required>
-        <br>  
+        <label for="username"><b>Username</b></label> 
+        <input type="text" placeholder="Username" id="username" name="username" required>
+        <br>   
+		<!-- Response -->
+  		 <div id="uname_response" ></div>
         
 		<br>
         <label for="telephone"><b>Αριθμός τηλεφώνου</b></label> 
