@@ -1,0 +1,81 @@
+
+<?php
+session_start();	
+
+?>
+	
+
+
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+	<style>body { background-image: url("photos/uop_new_logo.png"); }</style>
+	
+		<?php 
+        if (isset($_SESSION["id_student"])==NULL) {
+						
+            header("location: index.php");
+						
+        }
+        else{
+		  $username=$_SESSION["username"];
+		  echo "<title>$username</title>";
+        }
+		?>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/responsiveness.css">
+		<link rel="stylesheet" href="assets/css/nav.css">
+		<link rel="stylesheet" href="assets/css/assidenav.css">
+		<link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>		
+	
+	</head>
+	
+	
+	<body>
+		<header>
+			<div class="nav">
+				  <input type="checkbox" id="nav-check">
+				  <div class="nav-header">
+					<div class="nav-title">
+					 <a href="index.php"> <img src="photos/uop_logo4_navigation.gif" width="60" height="40"/> </a>
+					</div>
+	
+				  </div>
+				  <div class="nav-btn">
+					<label for="nav-check">
+					  <span></span>
+					  <span></span>
+					  <span></span>
+					</label>
+				  </div>
+				  
+				  <div class="nav-links">
+					<a  href="#"> <?php echo "$username"; ?></a>
+					<a href="logout.php">Aποσύνδεση</a>
+				  </div>
+			</div>
+		
+		</header>
+		<asside>
+		<!--<nav>
+		  <ul>
+		    <li><br><br><a href="create_lesson.php">Δημιουργία μαθήματος εξέτασης</a></li>
+			<br>
+		    <li><a href="#section-2">Εισαγωγή ερώτησης σε μάθημα</a></li>
+			<br>
+		  </ul>
+		</nav>-->
+		</asside>
+		<main>
+            
+           
+		
+                     
+		</main>
+		<footer>
+		</footer>
+		<script ></script>
+	</body>
+</html>

@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,20 +42,12 @@
     
 </head>
 <body>
-
-
-  </form>
-</div>
-
-
 	
-
   
-  <form class="signup" action="/action_page.php" method="post">
+  <form class="signup" action="connectf.php" method="post">
     <div class="imgcontainer"> 
       <img src="photos/uop_new_logo.png" alt="Avatar" class="avatar">
     </div>
-
     <div class="container">
         <label for="uname"><b>Όνομα</b></label>
         <input type="text" placeholder="Όνομα" name="name" required>
@@ -97,21 +94,16 @@
       <button type="submit">Εγγραφή</button>
      
     </div>
-
     <div class="btn-group">
       
       <button type="button" class="cancelbtn"><a href="index.php">Έξοδος</a></button>
       <button type="reset" class="cleanbtn">Καθαρισμός</button>
     </div>
-
   </form>
-
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
 <script src="assets/js/PcheckLength.js"></script>
 <script src="assets/js/emailcheck.js"></script>
 <script src="assets/js/passwordcheck.js"></script>
 <script src="assets/js/index.js"></script>
-
 </body>
 </html>
