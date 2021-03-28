@@ -33,7 +33,7 @@ if($username && $password){
             }
             $_SESSION["id_professor"] = $my_id_professor;
 			// Redirecting To Other Page
-			header("location:profile.php"); 
+			header("location:profilek.php"); 
 			
 		}else{
 			$error = "Username or Password is invalid";

@@ -1,7 +1,6 @@
 
 nav {
- /* white-space: nowrap;*/
-  width: 10%;
+  width: 25%;
   background-color:#14284B;
 }
 nav ul {
@@ -11,7 +10,7 @@ nav ul {
 }
 nav ul li a {
   display: block;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1rem;
   color: white;
   text-decoration: none;
 }
