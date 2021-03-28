@@ -26,7 +26,7 @@ if($username && $password){
             
 			echo "Session variables are set.";
             
-			$id_professor = mysqli_query($conn,"select id_professor from registered where password='$password' AND username='$username'");
+			$id_professor = mysqli_query($conn,"select id_professor from user_professor where password='$password' AND username='$username'");
 			 while ($row = mysqli_fetch_array($id_professor, MYSQLI_ASSOC)) {
                 printf ("ID: %s ", $row["id_professor"]);
                  $my_id_professor=$row["id_professor"];
