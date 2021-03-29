@@ -82,7 +82,7 @@ session_start();
 			      <option value="bkt">Βασικό Κατεύθυνσης Τηλεπικοινωνιών</option>
 				  <option value="ekp">Επιλογής Κατεύθυνσης  Πληροφορικής</option>
 			      <option value="ekt">Επιλογής Κατεύθυνσης  Τηλεπικοινωνιών</option>
-			      <option value="ekpt"> <option value="ekt">Επιλογής Κατεύθυνσης  Τηλεπικοινωνιών</option></option>
+			      <option value="ekpt">Επιλογής Κατεύθυνσης  Πληροφορικής και Τηλεπικοινωνιών</option>
 				</select>
 			  
 			    <input type="submit" value="Submit">

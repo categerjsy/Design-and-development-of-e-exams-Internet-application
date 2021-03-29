@@ -58,7 +58,7 @@ session_start();
 			</div>
 		
 		</header>
-		<asside>
+		<aside>
 		<nav>
 		  <ul>
 		    <li><br><br><a href="create_lesson.php">Δημιουργία μαθήματος εξέτασης</a></li>
@@ -67,7 +67,7 @@ session_start();
 			<br>
 		  </ul>
 		</nav>
-		</asside>
+		</aside>
 		<main>
             
            

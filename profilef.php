@@ -58,16 +58,13 @@ session_start();
 			</div>
 		
 		</header>
-		<asside>
-		<!--<nav>
+		<aside>
+		<nav>
 		  <ul>
-		    <li><br><br><a href="create_lesson.php">Δημιουργία μαθήματος εξέτασης</a></li>
-			<br>
-		    <li><a href="#section-2">Εισαγωγή ερώτησης σε μάθημα</a></li>
-			<br>
+		    <li><br><br><a href="#">Εγγραφή σε μάθημα</a></li>
 		  </ul>
-		</nav>-->
-		</asside>
+		</nav>
+		</aside>
 		<main>
             
            
