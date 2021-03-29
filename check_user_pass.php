@@ -5,7 +5,7 @@ include 'config.php';
 	
 	$username=$_POST['username'];
 	$password=$_POST['password'];
-	$user=$_POST['category'];
+	/*$user=$_POST['category'];*/
 	
 	if($username && $password){
 		echo "$username<br>";
@@ -14,15 +14,12 @@ include 'config.php';
 		
 		$username = stripslashes($username);
 		$password = stripslashes($password);
-		$user = stripslashes($user);
-		
-		if($user=='professor'){
-		
-			$query = mysqli_query($conn,"select * from user_professor where password='$password' AND username='$username'");
-		
-			$rows = mysqli_num_rows($query);
-		
-			if($rows == 1) {
+        $queryp = mysqli_query($conn,"select * from user_professor where password='$password' AND username='$username'");
+        $querys = mysqli_query($conn,"select * from user_student where password='$password' AND username='$username'");
+		$rowsp = mysqli_num_rows($queryp);
+        $rowss = mysqli_num_rows($querys);
+        
+        if($rowsp == 1) {
 		 
 				$_SESSION["username"] = $username;
             
@@ -37,20 +34,7 @@ include 'config.php';
 				// Redirecting To Other Page
 				header("location:profilek.php"); 
 				
-			}else{
-				$error = "Username or Password is invalid";
-				echo "$error";
-				// Redirecting To this Page
-				$location="/Ptuxiaki/index.php";
-				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
-			
-			}
-		}else if($user=='student'){
-			$query = mysqli_query($conn,"select * from user_student where password='$password' AND username='$username'");
-		
-			$rows = mysqli_num_rows($query);
-			
-			if($rows == 1) {
+			} else if($rowss == 1) {
 			 
 				$_SESSION["username"] = $username;
 				
@@ -70,15 +54,13 @@ include 'config.php';
 				echo "$error";
 				// Redirecting To this Page
 				$location="/Ptuxiaki/index.php";
-			header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
 			
 			}
-		}
-}
+      }
+        
+		
  
 echo "Please enter both username and password";
-// Redirecting To this Page
-//$location="/sxediash2/sign_in.php";
-//header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
-//mysqli_close($conn);
+
  ?>
