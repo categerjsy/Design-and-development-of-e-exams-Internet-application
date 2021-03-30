@@ -71,7 +71,7 @@ session_start();
 			<h3>Δημιουργία Μαθήματος</h3>
 			
 	
-			  <form action="/action_page.php">
+			  <form action="check_lesson.php" method="post">
 			    <label for="fname">Όνομα μαθήματος</label> <br>
 			    <input type="text" id="lessonname" name="lessonname" placeholder="Όνομα μαθήματος">
 				 <br> <br>
