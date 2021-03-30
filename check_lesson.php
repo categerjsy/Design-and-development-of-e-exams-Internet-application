@@ -8,6 +8,8 @@ include 'config.php';
 	$name=$_POST['lessonname'];
 	$category=$_POST['category'];
 	
+
+	
 		$sql = "INSERT INTO lesson (name, category)
 				VALUES ('$name','$category')";
         $qry = mysqli_query($conn, $sql);

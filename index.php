@@ -50,11 +50,7 @@
     </div>
 
     <div class="container">
-		<!--<label for="category">Εισαγωγή ως</label> <br>
-		<select id="category" name="category">
-			<option value="professor">Καθηγητής</option>
-			<option value="student">Φοιτητής</option>
-		</select>-->
+	
 		<br>
 			  
 		<br>	  

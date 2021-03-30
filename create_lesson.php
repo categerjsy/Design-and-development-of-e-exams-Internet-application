@@ -60,7 +60,9 @@ session_start();
 		  <ul>
 		    <li><br><br><a href="#">Δημιουργία μαθήματος εξέτασης</a></li>
 			<br>
-		    <li><a href="#section-2">Εισαγωγή ερώτησης σε μάθημα</a></li>
+		    <li><a href="create_question.php">Εισαγωγή ερώτησης σε μάθημα</a></li>
+			<br>
+            <li><a href="#section-3">Δημιουργία Διαγωνίσματος</a></li>
 			<br>
 		  </ul>
 		</nav>
@@ -85,7 +87,7 @@ session_start();
 			      <option value="ekpt">Επιλογής Κατεύθυνσης  Πληροφορικής και Τηλεπικοινωνιών</option>
 				</select>
 			  
-			    <input type="submit" value="Submit">
+			    <input type="submit" value="Δημιουργία Μαθήματος">
 			  </form>
 			</div>
            

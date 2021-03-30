@@ -65,6 +65,8 @@ session_start();
 			<br>
 		    <li><a href="#section-2">Εισαγωγή ερώτησης σε μάθημα</a></li>
 			<br>
+            <li><a href="#section-3">Δημιουργία εξέτασης<</a></li>
+			<br>
 		  </ul>
 		</nav>
 		</aside>
