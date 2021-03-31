@@ -33,6 +33,7 @@ session_start();
 	</head>
 	
 	
+		
 	<body>
 		<header>
 			<div class="nav">
@@ -52,24 +53,13 @@ session_start();
 				  </div>
 				  
 				  <div class="nav-links">
-					<a  href="#"> <?php echo "$username"; ?></a>
+					<a  href="profile.php"> <?php echo "$username"; ?></a>
+					<a href="create_lesson.php">Δημιουργία μαθήματος εξέτασης</a>
+					<a href="create_question.php">Εισαγωγή ερώτησης σε μάθημα</a>
+					<a href="#section-3">Δημιουργία εξέτασης</a>
 					<a href="logout.php">Aποσύνδεση</a>
 				  </div>
 			</div>
-		
-		</header>
-		<aside>
-		<nav>
-		  <ul>
-		    <li><br><br><a href="create_lesson.php">Δημιουργία μαθήματος εξέτασης</a></li>
-			<br>
-		    <li><a href="#section-2">Εισαγωγή ερώτησης σε μάθημα</a></li>
-			<br>
-            <li><a href="#section-3">Δημιουργία εξέτασης<</a></li>
-			<br>
-		  </ul>
-		</nav>
-		</aside>
 		<main>
             
            

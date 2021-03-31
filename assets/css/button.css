@@ -65,4 +65,26 @@ div[class*=box] {
   background-color: rgba(255,255,255,0);
 }
 
+/* unvisited link */
+a:link {
+  color: white;
+  text-decoration: none;
+}
 
+/* visited link */
+a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+/* selected link */
+a:active {
+  color: white;
+  text-decoration: none;
+}

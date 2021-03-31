@@ -27,6 +27,7 @@ session_start();
 		<link rel="stylesheet" href="assets/css/assidenav.css">
 	    <link rel="stylesheet" href="assets/css/lf.css">
 		<link rel="stylesheet" href="assets/css/button.css">
+		
 
 		<link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>		
 	</head>
@@ -51,33 +52,24 @@ session_start();
 				  </div>
 				  
 				  <div class="nav-links">
-					<a  href="profilek.php"> <?php echo "$username"; ?></a>
+					<a  href="profile.php"> <?php echo "$username"; ?></a>
+					<a href="create_lesson.php">Δημιουργία μαθήματος εξέτασης</a>
+					<a href="create_question.php">Εισαγωγή ερώτησης σε μάθημα</a>
+					<a href="#section-3">Δημιουργία εξέτασης</a>
 					<a href="logout.php">Aποσύνδεση</a>
 				  </div>
 			</div>
 		
 		</header>
-		<aside>
-		<nav>
-		  <ul>
-		    <li><br><br><a href="create_lesson.php">Δημιουργία μαθήματος εξέτασης</a></li>
-			<br>
-		    <li><a href="#">Εισαγωγή ερώτησης σε μάθημα</a></li>
-			<br>
-            <li><a href="#section-3">Δημιουργία εξέτασης</a></li>
-			<br>
-		  </ul>
-		</nav>
-		</aside>
 		
 		<main>
-            <div id="myform">
+         <div id="myform" >
     			<h3>Δημιουργία Ερώτησης</h3>
     			<h4>Παρακαλώ επιλέξετε μια κατηγορία ερώτηση</h4>
-    			 
+    			  <div class="w3-container">
     			  <div class="box-2">
                   <div class="btn btn-two">
-                    <span onclick="document.getElementById('id01').style.display='block'" >True-False</span>
+                    <span><a href="create_question_tf.php">True-False</a></span>
                   </div>
                 </div>
                 <br>
@@ -98,18 +90,13 @@ session_start();
                      <span>Ελευθέρου κειμένου</span>
                   </div>
                 </div>
+            </div>
+	    </div>
+      
 
-			</div>
-           
-		<div id="id01" class="modal">
-  
-  <form class="modal-content animate" action="check_user_pass.php" method="post">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-    </div>
+	  
 
-  
-                     
+
 		</main>
         
 		<footer>
