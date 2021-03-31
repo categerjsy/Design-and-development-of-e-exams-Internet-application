@@ -33,7 +33,6 @@ session_start();
 	</head>
 	
 	
-		
 	<body>
 		<header>
 			<div class="nav">
@@ -42,7 +41,6 @@ session_start();
 					<div class="nav-title">
 					 <a href="index.php"> <img src="photos/uop_logo4_navigation.gif" width="60" height="40"/> </a>
 					</div>
-	
 				  </div>
 				  <div class="nav-btn">
 					<label for="nav-check">
@@ -53,18 +51,22 @@ session_start();
 				  </div>
 				  
 				  <div class="nav-links">
-					<a  href="profile.php"> <?php echo "$username"; ?></a>
-					<a href="create_lesson.php">Δημιουργία μαθήματος εξέτασης</a>
-					<a href="create_question.php">Εισαγωγή ερώτησης σε μάθημα</a>
-					<a href="#section-3">Δημιουργία εξέτασης</a>
+					<a  href="#"> <?php echo "$username"; ?></a>
 					<a href="logout.php">Aποσύνδεση</a>
 				  </div>
 			</div>
-		<main>
-            
-           
 		
-                     
+		</header>
+		<aside>
+		<nav>
+		  <ul>
+		    <li><a href="create_lesson.php">Δημιουργία μαθήματος</a></li>
+			<li><a href="create_question.php">Εισαγωγή ερώτησης</a></li>
+			<li><a href="#section-3">Δημιουργία εξέτασης</a></li>
+		  </ul>
+		</nav>
+		</aside>
+		<main>                     
 		</main>
 		<footer>
 		</footer>

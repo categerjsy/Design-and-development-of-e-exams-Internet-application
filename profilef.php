@@ -41,7 +41,6 @@ session_start();
 					<div class="nav-title">
 					 <a href="index.php"> <img src="photos/uop_logo4_navigation.gif" width="60" height="40"/> </a>
 					</div>
-	
 				  </div>
 				  <div class="nav-btn">
 					<label for="nav-check">
@@ -61,7 +60,7 @@ session_start();
 		<aside>
 		<nav>
 		  <ul>
-		    <li><br><br><a href="#">Εγγραφή σε μάθημα</a></li>
+		    <li><a href="#">Εγγραφή σε μάθημα</a></li>
 		  </ul>
 		</nav>
 		</aside>

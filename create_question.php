@@ -53,17 +53,22 @@ session_start();
 				  
 				  <div class="nav-links">
 					<a  href="profile.php"> <?php echo "$username"; ?></a>
-					<a href="create_lesson.php">Δημιουργία μαθήματος εξέτασης</a>
-					<a href="create_question.php">Εισαγωγή ερώτησης σε μάθημα</a>
-					<a href="#section-3">Δημιουργία εξέτασης</a>
 					<a href="logout.php">Aποσύνδεση</a>
 				  </div>
 			</div>
 		
 		</header>
-		
+		<aside>
+		<nav>
+		  <ul>
+		    <li><a href="create_lesson.php">Δημιουργία μαθήματος</a></li>
+			<li><a href="#top">Εισαγωγή ερώτησης</a></li>
+			<li><a href="#section-3">Δημιουργία εξέτασης</a></li>
+		  </ul>
+		</nav>
+		</aside>
 		<main>
-         <div id="myform" >
+         <div id="myform" style="margin-left:25%;">
     			<h3>Δημιουργία Ερώτησης</h3>
     			<h4>Παρακαλώ επιλέξετε μια κατηγορία ερώτηση</h4>
     			  <div class="w3-container">
