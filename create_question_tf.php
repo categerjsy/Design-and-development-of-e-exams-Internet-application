@@ -27,6 +27,8 @@ include 'config.php';
 		<link rel="stylesheet" href="assets/css/responsiveness.css">
 		<link rel="stylesheet" href="assets/css/nav.css">
 		<link rel="stylesheet" href="assets/css/assidenav.css">
+
+ 
 		<link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>		
 		<link rel="stylesheet" href="assets/css/lf.css">
 	
@@ -98,14 +100,23 @@ include 'config.php';
 			      <option value="difficult">Δύσκολη</option>
 				</select>
                 <br> 
-				<label for="chapter">Chapter</label>
-				<input type="number" id="chapter" name="chapter" min="1" value="1" >
+               
+				<!--<label for="chapter">Chapter</label>
+				<input type="number" id="chapter" name="chapter" min="1" value="1" >-->
+                <div class="form-group">
+						<label class="control-label">Κεφάλαιο</label>
+						<input id="after" class="form-control" type="number" value="1" min="1"  />
+				</div>
+
 				<br> 
 				<label for="grade">Bαθμόλογηση</label> <br>
 			    <input type="text" id="grade" name="grade" placeholder="Bαθμόλογηση" pattern="[0-9]*.[0-9]*" >
 				<br> 
 				<label for="ngrade">Αρνητική βαθμόλογηση</label> <br>
 			    <input type="text" id="ngrade" name="ngrade" placeholder="Αρνητική βαθμόλογηση" pattern="[0-9]*.[0-9]*" >
+				<br> 
+                <label for="timetime">Παρακαλώ εισάγετε τον χρόνο απάντησης</label> <br>
+			    <input type="text" id="timetime" name="time" placeholder="Χρόνος Απάντησης" pattern="[0-9]{2}:[0-9]{2}" >
 				<br> 
 				<label for="answer">Σωστή Απάντηση</label> <br>
 			    <select id="answe" name="answer">
@@ -121,6 +132,23 @@ include 'config.php';
 		</main>
 		<footer>
 		</footer>
-		<script ></script>
+        <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js" ></script>
+       
+        <script src="assets\js\bootstrap-number-input.js" ></script>
+		<script>
+        // Remember set you events before call bootstrapSwitch or they will fire after bootstrapSwitch's events
+        $("[name='checkbox2']").change(function() {
+            if(!confirm('Do you wanna cancel me!')) {
+                this.checked = true;
+            }
+        });
+
+        $('#after').bootstrapNumber();
+        $('#colorful').bootstrapNumber({
+            upClass: 'success',
+            downClass: 'danger'
+        });
+        </script>
+
 	</body>
 </html>

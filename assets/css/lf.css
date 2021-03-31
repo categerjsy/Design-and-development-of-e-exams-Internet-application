@@ -28,3 +28,6 @@ input[type=submit]:hover {
 #myform {
    margin: 3px 100px;  
 }
+#after {
+  width: 55%;
+}
