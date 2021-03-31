@@ -75,7 +75,6 @@ include 'config.php';
 				   
 				   $s = mysqli_query($conn,"select * from create_lesson where id_professor='$idp'");
 				   while ($row = mysqli_fetch_array($s, MYSQLI_ASSOC)) {
-					 // printf ("ID: %s ", $row["id_lesson"]);
 					   $my_lesson=$row["id_lesson"];
 					   $findlesson=mysqli_query($conn,"select * from lesson where id_lesson='$my_lesson'");
 					   while ($row = mysqli_fetch_array($findlesson, MYSQLI_ASSOC)) {
@@ -84,10 +83,11 @@ include 'config.php';
 					   }
 				  }
 				  echo "</select>";	 
-			 	
+			 	   
 	
 				
 				?>
+                <br> 
 			    <label for="qtext">Κείμενο True-False ερώτησης</label> <br>
 			    <input type="text" id="qtext" name="qtext" placeholder="Κείμενο True-False ερώτησης">
 				<br> 
@@ -97,6 +97,7 @@ include 'config.php';
 			      <option value="medium">Μέτρια</option>
 			      <option value="difficult">Δύσκολη</option>
 				</select>
+                <br> 
 				<label for="chapter">Chapter</label>
 				<input type="number" id="chapter" name="chapter" min="1" value="1" >
 				<br> 
@@ -111,6 +112,7 @@ include 'config.php';
 			      <option value="T">True</option>
 			      <option value="F">False</option>
 				</select>
+                <br> 
 				<!--ΤΙΜΕ??????!-->
 			    <input type="submit" value="Εισαγωγή True-False ερώτησης">
 			  </form>

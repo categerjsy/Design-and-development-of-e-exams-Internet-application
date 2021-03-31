@@ -68,6 +68,7 @@ session_start();
 			    <label for="fname">Όνομα μαθήματος</label> <br>
 			    <input type="text" id="lessonname" name="lessonname" placeholder="Όνομα μαθήματος">
 				 <br> <br>
+		
 			    <label for="category">Κατηγορία Μαθήματος</label> <br>
 			   <select id="category" name="category">
 			      <option value="kormou">Κορμού</option>
@@ -75,9 +76,8 @@ session_start();
 			      <option value="bkt">Βασικό Κατεύθυνσης Τηλεπικοινωνιών</option>
 				  <option value="ekp">Επιλογής Κατεύθυνσης  Πληροφορικής</option>
 			      <option value="ekt">Επιλογής Κατεύθυνσης  Τηλεπικοινωνιών</option>
-			      <option value="ekpt">Επιλογής Κατεύθυνσης  Πληροφορικής και Τηλεπικοινωνιών</option>
+			      <option value="ekpt">Επιλογής Κατεύθυνσης  Τηλεπικοινωνιών-Πληροφορικής</option>
 				</select>
-			  
 			    <input type="submit" value="Δημιουργία Μαθήματος">
 			  </form>
 			</div>
