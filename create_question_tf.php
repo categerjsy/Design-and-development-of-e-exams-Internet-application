@@ -10,7 +10,6 @@ include 'config.php';
 
 <html>
 	<head>
-	
 		<?php 
         if (isset($_SESSION["id_professor"])==NULL) {
 						

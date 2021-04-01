@@ -1,0 +1,38 @@
+<div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">//gia na paei to keimeno dipla me keno	
+
+
+
+
+<style>
+body {
+  margin: 0;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 25%;
+  background-color: #14284B;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a.active {
+  background-color: #cccccc;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+
+</style>
