@@ -27,6 +27,7 @@ header{
 }
 aside{
 	grid-area:a;
+    
 }
 main{
 	grid-area:m;

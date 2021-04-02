@@ -28,7 +28,7 @@ include 'config.php';
 		<link rel="stylesheet" href="assets/css/assidenav.css">
 
  
-		<link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>		
+		<link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>
 		<link rel="stylesheet" href="assets/css/lf.css">
 	
 	</head>
@@ -69,7 +69,8 @@ include 'config.php';
 		</nav>
 		</aside>
 		<main>
-		<div id="myform" style="margin-left:25%;">
+		<!--<div id="myform" style="margin-left:25%;">-->
+        <div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">
 			<h3>Εκχώρηση True-False ερώτησης</h3>
 			
 	
@@ -104,9 +105,6 @@ include 'config.php';
 			      <option value="difficult">Δύσκολη</option>
 				</select>
                 <br> 
-               
-				<!--<label for="chapter">Chapter</label>
-				<input type="number" id="chapter" name="chapter" min="1" value="1" >-->
                 <div class="form-group">
 						<label class="control-label">Κεφάλαιο</label>
 						<input id="after" class="form-control" type="number" value="1" min="1"  />
@@ -137,22 +135,8 @@ include 'config.php';
 		<footer>
 		</footer>
         <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js" ></script>
-       
         <script src="assets\js\bootstrap-number-input.js" ></script>
-		<script>
-        // Remember set you events before call bootstrapSwitch or they will fire after bootstrapSwitch's events
-        $("[name='checkbox2']").change(function() {
-            if(!confirm('Do you wanna cancel me!')) {
-                this.checked = true;
-            }
-        });
-
-        $('#after').bootstrapNumber();
-        $('#colorful').bootstrapNumber({
-            upClass: 'success',
-            downClass: 'danger'
-        });
-        </script>
-
+        <script src="assets\js\bootstrapSwitch.js" ></script>
+		
 	</body>
 </html>
