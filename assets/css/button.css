@@ -1,90 +1,41 @@
-
-
-div[class*=box] {
-  height: 33.33%;
-  width: 50%; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
-.box-2 { background-color: #14284B; }
-
-.btn {
-  line-height: 50px;
-  height: 70px;
-  text-align: center;
-  width: 500px;
+button {
+  background-color: #14284B;
+  color: white;
+  padding: 14px 20px;
+  margin: 28px 0;
+  border: none;
   cursor: pointer;
+  width: 100%;
+}
+button:hover {
+  opacity: 0.8;
 }
 
-
-.btn-two {
-  color: #FFF;
-  transition: all 0.5s;
-  position: relative; 
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
 }
-.btn-two span {
-  z-index: 2; 
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 100%; 
-}
-.btn-two::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  transition: all 1.5s;
-  border: 1px solid rgba(255,255,255,0.2);
-  background-color: rgba(255,255,255,0.1);
-}
-.btn-two::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  transition: all 1.5s;
-  border: 1px solid rgba(255,255,255,0.2);
-  background-color: rgba(255,255,255,0.1);
-}
-.btn-two:hover::before {
- /* transform: rotate(-45deg);*/
-  background-color: rgba(255,255,255,0);
-}
-.btn-two:hover::after {
-  /*transform: rotate(45deg);*/
-  background-color: rgba(255,255,255,0);
+.cleanbtn{
+  width: auto;
+  padding: 10px 18px;
+  background-color:#14284B;
 }
 
-/* unvisited link */
 a:link {
-  color: white;
   text-decoration: none;
+      color: white;
 }
 
-/* visited link */
 a:visited {
-  color: white;
-  text-decoration: none;
-}
+  text-decoration:none;
+     color:  white;
 
-/* mouse over link */
 a:hover {
-  color: white;
   text-decoration: none;
 }
 
-/* selected link */
 a:active {
-  color: white;
   text-decoration: none;
 }

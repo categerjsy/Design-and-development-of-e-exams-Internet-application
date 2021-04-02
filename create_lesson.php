@@ -24,7 +24,6 @@ session_start();
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/responsiveness.css">
 		<link rel="stylesheet" href="assets/css/nav.css">
-		<link rel="stylesheet" href="assets/css/assidenav.css">
 		<link rel="stylesheet" href="assets/css/lf.css">
 		<link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>		
 	</head>
@@ -49,7 +48,7 @@ session_start();
 				  </div>
 				  
 				  <div class="nav-links">
-					<a  href="profile.php"> <?php echo "$username"; ?></a>
+					<a  href="profilek.php"> <?php echo "$username"; ?></a>
 					<a href="logout.php">Aποσύνδεση</a>
 				  </div>
 			</div>

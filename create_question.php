@@ -24,9 +24,9 @@ session_start();
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/responsiveness.css">
 		<link rel="stylesheet" href="assets/css/nav.css">
-		<link rel="stylesheet" href="assets/css/assidenav.css">
 	    <link rel="stylesheet" href="assets/css/lf.css">
 		<link rel="stylesheet" href="assets/css/button.css">
+
 		
 
 		<link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>		
@@ -52,7 +52,7 @@ session_start();
 				  </div>
 				  
 				  <div class="nav-links">
-					<a  href="profile.php"> <?php echo "$username"; ?></a>
+					<a  href="profilek.php"> <?php echo "$username"; ?></a>
 					<a href="logout.php">Aποσύνδεση</a>
 				  </div>
 			</div>
@@ -72,29 +72,13 @@ session_start();
     			<h3>Δημιουργία Ερώτησης</h3>
     			<h4>Παρακαλώ επιλέξετε μια κατηγορία ερώτηση</h4>
     			  <div class="w3-container">
-    			  <div class="box-2">
-                  <div class="btn btn-two">
-                    <span><a href="create_question_tf.php">True-False</a></span>
-                  </div>
-                </div>
-                <br>
-    	        <div class="box-2">
-                  <div class="btn btn-two">
-                 	 <span>Multiple Choice</span>
-                  </div>
-                </div>
-                <br>
-    		    <div class="box-2">
-                  <div class="btn btn-two">
-                 	  <span>Multiple Choice με πολλές σωστές απάντησεις</span>
-                  </div>
-                </div>
-                <br>
-    	        <div class="box-2">
-                  <div class="btn btn-two">
-                     <span>Ελευθέρου κειμένου</span>
-                  </div>
-                </div>
+    			  <button type="reset"><a href="create_question_tf.php">True-False</a></button>
+                	<br>
+    	        	<button type="reset">Multiple Choice</button>
+                	<br>
+    		    	<button type="reset">Multiple Choice με πολλές σωστές απάντησεις</button>
+               		<br>
+    	        	<button type="reset">Ελευθέρου κειμένου</button>
             </div>
 	    </div>
       
