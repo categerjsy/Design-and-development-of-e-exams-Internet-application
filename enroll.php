@@ -10,10 +10,9 @@ session_start();
 
 <html>
 	<head>
-	<style>body { background-image: url("photos/uop_new_logo.png"); }</style>
 	
 		<?php 
-        if (isset($_SESSION["id_professor"])==NULL) {
+        if (isset($_SESSION["id_student"])==NULL) {
 						
             header("location: index.php");
 						
@@ -52,7 +51,6 @@ session_start();
 				  
 				  <div class="nav-links">
 					<a  href="#"> <?php echo "$username"; ?></a>
-					<a href="change_password.php">Αλλαγή κωδικού</a>
 					<a href="logout.php">Aποσύνδεση</a>
 				  </div>
 			</div>
@@ -61,13 +59,26 @@ session_start();
 		<aside>
 		<nav>
 		  <ul>
-		    <li><a href="create_lesson.php">Δημιουργία μαθήματος</a></li>
-			<li><a href="create_question.php">Εισαγωγή ερώτησης</a></li>
-			<li><a href="#section-3">Δημιουργία εξέτασης</a></li>
+		    <li><a href="#">Εγγραφή σε μάθημα</a></li>
 		  </ul>
 		</nav>
 		</aside>
-		<main>                     
+		<main>
+                       
+		<div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">
+			<h3>Εγγραφή σε μάθημα</h3>
+			
+	
+			  <form action="" method="post">
+			  <label for="course">Παρακαλώ επιλέξτε μάθημα</label> <br>
+			 <!--php για τα μαθηματα απο τη βαση-->
+                
+			    <input type="submit" value="Εγγραφή">
+			  </form>
+			</div>
+                     
+		</main>
+                     
 		</main>
 		<footer>
 		</footer>

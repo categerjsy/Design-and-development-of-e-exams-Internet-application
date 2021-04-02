@@ -27,7 +27,7 @@ session_start();
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/responsiveness.css">
 		<link rel="stylesheet" href="assets/css/nav.css">
-		<link rel="stylesheet" href="assets/css/assidenav.css">
+		<link rel="stylesheet" href="assets/css/lf.css">
 		<link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>		
 	
 	</head>
@@ -52,6 +52,7 @@ session_start();
 				  
 				  <div class="nav-links">
 					<a  href="#"> <?php echo "$username"; ?></a>
+					<a href="change_password.php">Αλλαγή κωδικού</a>
 					<a href="logout.php">Aποσύνδεση</a>
 				  </div>
 			</div>
@@ -60,7 +61,7 @@ session_start();
 		<aside>
 		<nav>
 		  <ul>
-		    <li><a href="#">Εγγραφή σε μάθημα</a></li>
+		    <li><a href="enroll.php">Εγγραφή σε μάθημα</a></li>
 		  </ul>
 		</nav>
 		</aside>
