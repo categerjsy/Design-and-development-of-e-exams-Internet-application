@@ -70,9 +70,13 @@ session_start();
 	
 			  <form action="check_lesson.php" method="post">
 			    <label for="fname">Όνομα μαθήματος</label> <br>
-			    <input type="text" id="lessonname" name="lessonname" placeholder="Όνομα μαθήματος">
+			    <input type="text" id="lessonname" name="lessonname" placeholder="Όνομα μαθήματος" required>
 				 <br> <br>
-		
+				
+				  <label for="semester">Εξάμηνο μαθήματος</label>
+				  <input type="number" id="quantity" name="semester" min="1" max="10" required>
+				  <br> <br>
+				
 			    <label for="category">Κατηγορία Μαθήματος</label> <br>
 			   <select id="category" name="category">
 			      <option value="kormou">Κορμού</option>
