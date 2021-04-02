@@ -26,9 +26,7 @@ include 'config.php';
 		<link rel="stylesheet" href="assets/css/responsiveness.css">
 		<link rel="stylesheet" href="assets/css/nav.css">
 		<link rel="stylesheet" href="assets/css/assidenav.css">
-
- 
-		<link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>
+        <link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>
 		<link rel="stylesheet" href="assets/css/lf.css">
 	
 	</head>

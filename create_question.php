@@ -68,7 +68,7 @@ session_start();
 		</nav>
 		</aside>
 		<main>
-         <div id="myform" style="margin-left:25%;">
+           <div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">
     			<h3>Δημιουργία Ερώτησης</h3>
     			<h4>Παρακαλώ επιλέξετε μια κατηγορία ερώτηση</h4>
     			  <div class="w3-container">
@@ -86,7 +86,7 @@ session_start();
                 <br>
     		    <div class="box-2">
                   <div class="btn btn-two">
-                 	  <span>Multiple Choice με πάνω απο μια σωστή απάντηση</span>
+                 	  <span>Multiple Choice με πολλές σωστές απάντησεις</span>
                   </div>
                 </div>
                 <br>

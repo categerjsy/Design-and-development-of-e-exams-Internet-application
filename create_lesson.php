@@ -65,7 +65,7 @@ session_start();
 		</nav>
 		</aside>
 		<main>
-            <div id="myform" style="margin-left:25%;">
+            <div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">
 			<h3>Δημιουργία Μαθήματος</h3>
 			
 	
