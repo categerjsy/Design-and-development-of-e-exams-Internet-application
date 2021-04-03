@@ -52,12 +52,12 @@ button:hover {
 
  a:link {
   text-decoration: none;
-      color:#cccccc;
+      color: white;
 }
 
 a:visited {
   text-decoration:none;
-     color: #cccccc;
+     color:  white;
 }
 
 a:hover {

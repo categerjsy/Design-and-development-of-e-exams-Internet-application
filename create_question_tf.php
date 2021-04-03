@@ -27,8 +27,9 @@ include 'config.php';
 		<link rel="stylesheet" href="assets/css/nav.css">
 		<link rel="stylesheet" href="assets/css/assidenav.css">
 		<link rel="stylesheet" href="assets/css/lf.css">
+		<link rel="stylesheet" href="assets/css/button.css">
         <link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>
-		<link rel="stylesheet" href="assets/css/lf.css">
+	
 	
 	</head>
 	
@@ -104,12 +105,11 @@ include 'config.php';
 			      <option value="difficult">Δύσκολη</option>
 				</select>
                 <br> 
-                <div class="form-group">
-						<label class="control-label">Κεφάλαιο</label>
-						<input id="after" class="form-control" type="number" value="1" min="1"  />
-				</div>
-
+               
+				<label for="semester">Εξάμηνο μαθήματος</label>
+				  <input type="number" id="quantity" name="semester" min="1"  required>
 				<br> 
+				
 				<label for="grade">Bαθμόλογηση</label> <br>
 			    <input type="text" id="grade" name="grade" placeholder="Bαθμόλογηση" pattern="[0-9]*.[0-9]*" >
 				<br> 
@@ -127,6 +127,12 @@ include 'config.php';
                 <br> 
 				<!--ΤΙΜΕ??????!-->
 			    <input type="submit" value="Εισαγωγή True-False ερώτησης">
+				<button type="reset"><a href="create_question.php">Έξοδος</a></button>
+                <br>
+    	        <button type="reset" class="cleanbtn">Καθαρισμός</button>
+                <br>
+
+
 			  </form>
 			</div>
                      

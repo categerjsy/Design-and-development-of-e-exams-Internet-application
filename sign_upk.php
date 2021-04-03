@@ -94,7 +94,6 @@ session_start();
     </div>
 
     <div class="btn-group">
-      
       <button type="button" class="cancelbtn"><a href="index.php">Έξοδος</a></button>
       <button type="reset" class="cleanbtn">Καθαρισμός</button>
       </div>
