@@ -74,7 +74,7 @@ include 'config.php';
 			<h3>Εκχώρηση True-False ερώτησης</h3>
 			
 	
-			  <form action="" method="post">
+			  <form action="question_tf.php" method="post">
 			  <label for="course">Παρακαλώ επιλέξτε μάθημα</label> <br>
 			  <?php
 			   	$idp=$_SESSION["id_professor"];
@@ -96,7 +96,7 @@ include 'config.php';
 				?>
                 <br> 
 			    <label for="qtext">Κείμενο True-False ερώτησης</label> <br>
-			    <input type="text" id="qtext" name="qtext" placeholder="Κείμενο True-False ερώτησης">
+			    <input type="text" id="qtext" name="qtext" placeholder="Κείμενο True-False ερώτησης" required>
 				<br> 
 				<label for="difficulty_level">Κατηγορία Μαθήματος</label> <br>
 			    <select id="difficulty_level" name="difficulty_level">
@@ -105,22 +105,21 @@ include 'config.php';
 			      <option value="difficult">Δύσκολη</option>
 				</select>
                 <br> 
-               
-				<label for="semester">Εξάμηνο μαθήματος</label>
-				  <input type="number" id="quantity" name="semester" min="1"  required>
+				<label for="chapter">Κεφάλαιο</label>
+				<input type="number" id="chapter" name="chapter" min="1"  required>
 				<br> 
-				
 				<label for="grade">Bαθμόλογηση</label> <br>
-			    <input type="text" id="grade" name="grade" placeholder="Bαθμόλογηση" pattern="[0-9]*.[0-9]*" >
+			    <input type="text" id="grade" name="grade" placeholder="Bαθμόλογηση" pattern="[0-9]*.[0-9]*"required>
 				<br> 
 				<label for="ngrade">Αρνητική βαθμόλογηση</label> <br>
-			    <input type="text" id="ngrade" name="ngrade" placeholder="Αρνητική βαθμόλογηση" pattern="[0-9]*.[0-9]*" >
+			    <input type="text" id="ngrade" name="ngrade" placeholder="Αρνητική βαθμόλογηση" pattern="[0-9]*.[0-9]*" required>
 				<br> 
-                <label for="timetime">Παρακαλώ εισάγετε τον χρόνο απάντησης</label> <br>
-			    <input type="text" id="timetime" name="time" placeholder="Χρόνος Απάντησης" pattern="[0-9]{2}:[0-9]{2}" >
+                <label for="time">Παρακαλώ εισάγετε τον χρόνο απάντησης</label> <br>
+			    <input type="text" id="time" name="time" placeholder="Χρόνος Απάντησης"required>
 				<br> 
-				<label for="answer">Σωστή Απάντηση</label> <br>
-			    <select id="answe" name="answer">
+				<label for="answer">Σωστή Απάντηση</label> 
+                <br>  
+			    <select id="answer" name="answer">
 			      <option value="T">True</option>
 			      <option value="F">False</option>
 				</select>
