@@ -5,8 +5,18 @@ session_start();
 
 <!DOCTYPE html>
 <html>
-<head>
- 
+	<head>
+	<?php 
+        if (isset($_SESSION["id_professor"])==NULL){
+						
+            header("location: index.php");
+						
+        }
+        else{
+		  $username=$_SESSION["username"];
+		  echo "<title>$username</title>";
+        }
+		?>
     
     <title>Αλλαγή Κωδικού</title>
     <meta charset="utf-8" />
@@ -15,13 +25,17 @@ session_start();
      <link rel="stylesheet" href="assets/css/st.css">
      <link rel="stylesheet" href="assets/css/pass.css">
      <link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>
-    <div class="nav">
+         
+    
+</head>
+<body>
+	<header>
+			<div class="nav">
 				  <input type="checkbox" id="nav-check">
 				  <div class="nav-header">
 					<div class="nav-title">
 					 <a href="index.php"> <img src="photos/uop_logo4_navigation.gif" width="60" height="40"/> </a>
 					</div>
-	
 				  </div>
 				  <div class="nav-btn">
 					<label for="nav-check">
@@ -32,17 +46,12 @@ session_start();
 				  </div>
 				  
 				  <div class="nav-links">
-					<a  href="index.php">Αρχική Σελίδα</a>
-					<a  href="#">Εισαγωγή</a>
-					<a href="sign_upf">Εγγραφή Φοιτητή</a>
-                    <a href="sign_upk.php">Εγγραφή Καθηγητή</a>
+					<a  href="profilek.php"> <?php echo "$username"; ?></a>
+					<a href="logout.php">Έξοδος</a>
 				  </div>
-	</div>
-     
-    
-</head>
-<body>
-	
+			</div>
+		
+		</header>
   
   <form class="signup" action="connectf.php" method="post">
     <div class="imgcontainer"> 
@@ -60,11 +69,10 @@ session_start();
 		<label for="p1"><b>Νέος Κωδικός</b></label> 
         <input name="password" id="password" type="password" placeholder="Κωδικός" class="demoInputBox" onKeyUp="checkPasswordStrength();" onkeyup='check();'  required>
         <div id="password-strength-status"></div>
-        </div>
-     
         
-        <label for="p2"><b>Επιβεβαίωση Κωδικού</b></label>
-        <input type="password" name="confirm_password" id="confirm_password" placeholder="Επιβεβαίωση Κωδικού"  onkeyup='check();' required>
+             
+        <label for="p1"><b>Επιβεβαίωση Κωδικού</b></label>
+        <input type="password" name="confirm_password" id="confirm_password" placeholder="Επιβεβαίωση Κωδικού" class="demoInputBox"  onkeyup='check();' required>
         <br><span id='message'></span>
         <br>
         
@@ -73,8 +81,9 @@ session_start();
     </div>
     <div class="btn-group">
       
-      <button type="button" class="cancelbtn"><a href="index.php">Έξοδος</a></button>
+      <button type="button" class="cancelbtn"><a href="profilek.php">Έξοδος</a></button>
       <button type="reset" class="cleanbtn">Καθαρισμός</button>
+	  </div>
     </div>
   </form>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 

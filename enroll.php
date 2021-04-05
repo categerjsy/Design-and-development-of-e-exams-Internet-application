@@ -1,7 +1,7 @@
 
 <?php
 session_start();	
-
+include 'config.php';
 ?>
 	
 
@@ -50,7 +50,7 @@ session_start();
 				  </div>
 				  
 				  <div class="nav-links">
-					<a  href="#"> <?php echo "$username"; ?></a>
+					<a  href="profilef.php"> <?php echo "$username"; ?></a>
 					<a href="logout.php">Έξοδος</a>
 				  </div>
 			</div>
@@ -72,7 +72,25 @@ session_start();
 			  <form action="" method="post">
 			  <label for="course">Παρακαλώ επιλέξτε μάθημα</label> <br>
 			 <!--php για τα μαθηματα απο τη βαση-->
-                
+                  <?php
+					$ids=$_SESSION["id_student"];
+				   echo "<select id='course' name='course'>";
+				   
+				   $s = mysqli_query($conn,"select * from create_lesson");
+				   while ($row = mysqli_fetch_array($s, MYSQLI_ASSOC)) {
+					   $my_lesson=$row["id_lesson"];
+					   $findlesson=mysqli_query($conn,"select * from lesson where id_lesson='$my_lesson'");
+					   while ($row = mysqli_fetch_array($findlesson, MYSQLI_ASSOC)) {
+						$my_l=$row["name"];
+						$cat=$row["category"];
+						$sem=$row["semester"];
+						echo "<option value='$my_l'>$my_l, $cat, $sem εξάμηνο</option>";  
+					   }
+				  }
+				  echo "</select>";	 
+			 	   				
+				?>
+				<br>
 			    <input type="submit" value="Εγγραφή">
 			  </form>
 			</div>
