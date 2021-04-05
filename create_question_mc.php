@@ -71,10 +71,10 @@ include 'config.php';
 		<main>
 		<!--<div id="myform" style="margin-left:25%;">-->
         <div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">
-			<h3>Εκχώρηση True-False ερώτησης</h3>
+			<h3>Εκχώρηση Multiple Choice ερώτησης</h3>
 			
 	
-			  <form action="question_tf.php" method="post">
+			  <form action="" method="post">
 			  <label for="course">Παρακαλώ επιλέξτε μάθημα</label> <br>
 			  <?php
 			   	$idp=$_SESSION["id_professor"];
@@ -95,8 +95,8 @@ include 'config.php';
 				
 				?>
                 <br> 
-			    <label for="qtext">Κείμενο True-False ερώτησης</label> <br>
-			    <input type="text" id="qtext" name="qtext" placeholder="Κείμενο True-False ερώτησης" required>
+			    <label for="qtext">Κείμενο Multiple Choice ερώτησης</label> <br>
+			    <input type="text" id="qtext" name="qtext" placeholder="Κείμενο Multiple Choice ερώτησης" required>
 				<br> 
 				<label for="difficulty_level">Κατηγορία Μαθήματος</label> <br>
 			    <select id="difficulty_level" name="difficulty_level">
@@ -117,15 +117,10 @@ include 'config.php';
                 <label for="time">Παρακαλώ εισάγετε τον χρόνο απάντησης</label> <br>
 			    <input type="text" id="time" name="time" placeholder="Χρόνος Απάντησης"required>
 				<br> 
-				<label for="answer">Σωστή Απάντηση</label> 
-                <br>  
-			    <select id="answer" name="answer">
-			      <option value="T">True</option>
-			      <option value="F">False</option>
-				</select>
-                <br> 
+				
+			   <!--Σωστή απάντηση;;;--> 
 				<!--ΤΙΜΕ??????!-->
-			    <input type="submit" value="Εισαγωγή True-False ερώτησης">
+			    <input type="submit" value="Εισαγωγή Multiple Choice ερώτησης">
 				<button type="reset"><a href="create_question.php">Έξοδος</a></button>
                 <br>
     	        <button type="reset" class="cleanbtn">Καθαρισμός</button>

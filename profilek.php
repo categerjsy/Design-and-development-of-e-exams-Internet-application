@@ -53,7 +53,7 @@ session_start();
 				  <div class="nav-links">
 					<a  href="#"> <?php echo "$username"; ?></a>
 					<a href="change_password.php">Αλλαγή κωδικού</a>
-					<a href="logout.php">Aποσύνδεση</a>
+					<a href="logout.php">Έξοδος</a>
 				  </div>
 			</div>
 		
@@ -63,7 +63,7 @@ session_start();
 		  <ul>
 		    <li><a href="create_lesson.php">Δημιουργία μαθήματος</a></li>
 			<li><a href="create_question.php">Εισαγωγή ερώτησης</a></li>
-			<li><a href="#section-3">Δημιουργία εξέτασης</a></li>
+			<li><a href="create_exam.php">Δημιουργία εξέτασης</a></li>
 		  </ul>
 		</nav>
 		</aside>

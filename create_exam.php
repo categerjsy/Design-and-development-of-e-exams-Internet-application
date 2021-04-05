@@ -64,18 +64,18 @@ include 'config.php';
 		  <ul>
 		    <li><a href="create_lesson.php">Δημιουργία μαθήματος</a></li>
 			<li><a href="create_question.php">Εισαγωγή ερώτησης</a></li>
-			<li><a href="#section-3">Δημιουργία εξέτασης</a></li>
+			<li><a href="#top">Δημιουργία εξέτασης</a></li>
 		  </ul>
 		</nav>
 		</aside>
 		<main>
 		<!--<div id="myform" style="margin-left:25%;">-->
         <div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">
-			<h3>Εκχώρηση True-False ερώτησης</h3>
+			<h3>Δημιουργία Εξέτασης</h3>
 			
 	
-			  <form action="question_tf.php" method="post">
-			  <label for="course">Παρακαλώ επιλέξτε μάθημα</label> <br>
+			  <form action="" method="post">
+			  <label for="course">Παρακαλώ επιλέξτε μάθημα εξέτασης</label> <br>
 			  <?php
 			   	$idp=$_SESSION["id_professor"];
 				   echo "<select id='course' name='course'>";
@@ -95,37 +95,8 @@ include 'config.php';
 				
 				?>
                 <br> 
-			    <label for="qtext">Κείμενο True-False ερώτησης</label> <br>
-			    <input type="text" id="qtext" name="qtext" placeholder="Κείμενο True-False ερώτησης" required>
-				<br> 
-				<label for="difficulty_level">Κατηγορία Μαθήματος</label> <br>
-			    <select id="difficulty_level" name="difficulty_level">
-			      <option value="easy">Εύκολη</option>
-			      <option value="medium">Μέτρια</option>
-			      <option value="difficult">Δύσκολη</option>
-				</select>
-                <br> 
-				<label for="chapter">Κεφάλαιο</label>
-				<input type="number" id="chapter" name="chapter" min="1"  required>
-				<br> 
-				<label for="grade">Bαθμόλογηση</label> <br>
-			    <input type="text" id="grade" name="grade" placeholder="Bαθμόλογηση" pattern="[0-9]*.[0-9]*"required>
-				<br> 
-				<label for="ngrade">Αρνητική βαθμόλογηση</label> <br>
-			    <input type="text" id="ngrade" name="ngrade" placeholder="Αρνητική βαθμόλογηση" pattern="[0-9]*.[0-9]*" required>
-				<br> 
-                <label for="time">Παρακαλώ εισάγετε τον χρόνο απάντησης</label> <br>
-			    <input type="text" id="time" name="time" placeholder="Χρόνος Απάντησης"required>
-				<br> 
-				<label for="answer">Σωστή Απάντηση</label> 
-                <br>  
-			    <select id="answer" name="answer">
-			      <option value="T">True</option>
-			      <option value="F">False</option>
-				</select>
-                <br> 
-				<!--ΤΙΜΕ??????!-->
-			    <input type="submit" value="Εισαγωγή True-False ερώτησης">
+            
+			    <input type="submit" value="Δημιουργία Εξέτασης">
 				<button type="reset"><a href="create_question.php">Έξοδος</a></button>
                 <br>
     	        <button type="reset" class="cleanbtn">Καθαρισμός</button>

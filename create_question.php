@@ -53,7 +53,7 @@ session_start();
 				  
 				  <div class="nav-links">
 					<a  href="profilek.php"> <?php echo "$username"; ?></a>
-					<a href="logout.php">Aποσύνδεση</a>
+					<a href="logout.php">Έξοδος</a>
 				  </div>
 			</div>
 		
@@ -74,11 +74,11 @@ session_start();
     			  <div class="w3-container">
     			  <button type="reset"><a href="create_question_tf.php">True-False</a></button>
                 	<br>
-    	        	<button type="reset">Multiple Choice</button>
+    	        	<button type="reset"><a href="create_question_mc.php">Multiple Choice</a></button>
                 	<br>
     		    	<button type="reset">Multiple Choice με πολλές σωστές απάντησεις</button>
                		<br>
-    	        	<button type="reset">Ελευθέρου κειμένου</button>
+    	        	<button type="reset"><a href="create_question_ft.php">Ελευθέρου κειμένου</a></button>
             </div>
 	    </div>
       

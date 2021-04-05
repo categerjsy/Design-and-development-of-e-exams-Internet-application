@@ -9,7 +9,8 @@ include 'config.php';
 	$difficulty_level=$_POST['difficulty_level'];
 	$chapter=$_POST['chapter'];
     $time=$_POST['time'];
-    $tt=strtotime("00:10:11");
+    $tt=strtotime($time);///THEMAAAAAAAAAAAAAAAAAA
+	
 	$grade=$_POST['grade'];
     $ngrade=$_POST['ngrade'];
     $type="True-False";
