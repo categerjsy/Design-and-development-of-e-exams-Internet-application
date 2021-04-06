@@ -1,18 +1,73 @@
 <?php 
 include 'config.php';
+session_start();
 
+$username=$_SESSION["username"];
 $old=$_POST['old_password'];
 $new=$_POST['new_password'];
 $conf=$_POST['confirm_password'];
-//if(old==passwordfrombase)
-	if($new=$conf){
-			$sql = "UPDATE user_professor SET password = '$new';";//WHERE username='$username'
+
+		$queryp = mysqli_query($conn,"select * from user_professor where password='$old' AND username='$username'");
+        $querys = mysqli_query($conn,"select * from user_student where password='$old' AND username='$username'");
+		$rowsp = mysqli_num_rows($queryp);
+        $rowss = mysqli_num_rows($querys);
+  
+		
+		
+		if($rowsp == 1) {//prof
+			if(strlen($new)<6){
+				echo '<script type="text/javascript">'; 
+                echo 'alert("Password not long enough!");'; 
+                echo 'window.location.href = "profilek.php";';
+                echo '</script>';
+
+			}
+			if (!empty($_POST['old_password'])){
+				$sql = "UPDATE user_professor
+						SET password='$new'
+						WHERE username='$username';";
 			$qry = mysqli_query($conn, $sql);
-			
+
 			if($qry){
 				echo "New password in database!!!";
 				// Redirecting To Other Page
-				header("location:index.php"); 
+				header("location:profilek.php"); 
 			}
-	}
+
+			}
+			
+		} else if($rowss == 1) {//student
+			if(strlen($new)<7){
+				echo '<script type="text/javascript">'; 
+                echo 'alert("Password not long enough!");'; 
+                echo 'window.location.href = "profilef.php";';
+                echo '</script>';
+
+			}
+			if (!empty($_POST['old_password'])){
+				$sql = "UPDATE user_student
+						SET password='$new'
+						WHERE username='$username';";
+			$qrys = mysqli_query($conn, $sql);
+
+			if($qrys){
+				echo "New password in database!!!";
+				// Redirecting To Other Page
+				header("location:profilef.php"); 
+			}
+
+			}
+		
+		
+		}else{
+			$error = "Something got wrong";
+			echo "$error";
+			// Redirecting To this Page
+			$location="/Ptuxiaki/index.php";
+			header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+		
+		}
+ 
+	
+
 ?>
