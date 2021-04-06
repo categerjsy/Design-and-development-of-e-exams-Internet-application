@@ -18,6 +18,13 @@ $ru = mysqli_num_rows($query);
 $query = mysqli_query($conn,"select * from user_professor where email='$email'");
 $re = mysqli_num_rows($query);
 ////////////////////////////////////    
+if(strlen($pass)<6){
+				echo '<script type="text/javascript">'; 
+                echo 'alert("Password not long enough!");'; 
+                echo 'window.location.href = "sign_upk.php";';
+                echo '</script>';
+		
+}
     if($pass==$cpass) {
 		  if($ru==1){
 				echo '<script type="text/javascript">'; 

@@ -74,7 +74,7 @@ session_start();
 				 <br> <br>
 				
 				  <label for="semester">Εξάμηνο μαθήματος</label>
-				  <input type="number" id="quantity" name="semester" min="1" max="10" required>
+				  <input type="number" id="quantity" name="semester" min="1" max="8" required>
 				  <br> <br>
 				
 			    <label for="category">Κατηγορία Μαθήματος</label> <br>
