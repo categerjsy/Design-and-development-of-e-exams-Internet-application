@@ -53,31 +53,31 @@ session_start();
 		
 		</header>
   
-  <form class="signup" action="connectf.php" method="post">
+  <form class="change_password" action="connectk.php" method="post">
     <div class="imgcontainer"> 
       <img src="photos/uop_new_logo.png" alt="Avatar" class="avatar">
     </div>
 	
     <div class="container">
-        
+         
+		 <label for="psw"><b>Παλιός Κωδικός</b></label>
+		<input type="password" placeholder="Παλιός Κωδικός" name="old-password" required>
+		<br>		 
+        <br>
         <div name="frmCheckPassword" id="frmCheckPassword">  
-        <label for="p1"><b>Παλιός Κωδικός</b></label> 
-        <input name="password" id="password" type="password" placeholder="Κωδικός" class="demoInputBox" onKeyUp="checkPasswordStrength();" onkeyup='check();'  required>
+        <label for="p1"><b>Νέος Κωδικός</b></label> 
+        <input name="password" id="password" type="password" placeholder="Νέος Κωδικός" class="demoInputBox" onKeyUp="checkPasswordStrength();" onkeyup='check();'  required>
         <div id="password-strength-status"></div>
         </div>
-		
-		<label for="p1"><b>Νέος Κωδικός</b></label> 
-        <input name="password" id="password" type="password" placeholder="Κωδικός" class="demoInputBox" onKeyUp="checkPasswordStrength();" onkeyup='check();'  required>
-        <div id="password-strength-status"></div>
+     
         
-             
-        <label for="p1"><b>Επιβεβαίωση Κωδικού</b></label>
-        <input type="password" name="confirm_password" id="confirm_password" placeholder="Επιβεβαίωση Κωδικού" class="demoInputBox"  onkeyup='check();' required>
+        <label for="p2"><b>Επιβεβαίωση Νέου Κωδικού</b></label>
+        <input type="password" name="confirm_password" id="confirm_password" placeholder="Επιβεβαίωση Νέου Κωδικού"  onkeyup='check();' required>
         <br><span id='message'></span>
         <br>
         
-      <button type="submit">Εγγραφή</button>
-     
+		
+      <button type="submit">Αλλαγή</button>
     </div>
     <div class="btn-group">
       
