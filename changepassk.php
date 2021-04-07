@@ -22,40 +22,42 @@ $conf=$_POST['confirm_password'];
                 echo '</script>';
 
 			}
-			if (!empty($_POST['old_password'])){
-				$sql = "UPDATE user_professor
-						SET password='$new'
-						WHERE username='$username';";
-			$qry = mysqli_query($conn, $sql);
+			else{
+				if (!empty($_POST['old_password'])){
+					$sql = "UPDATE user_professor
+							SET password='$new'
+							WHERE username='$username';";
+				$qry = mysqli_query($conn, $sql);
 
-			if($qry){
-				echo "New password in database!!!";
-				// Redirecting To Other Page
-				header("location:profilek.php"); 
-			}
+				if($qry){
+					echo "New password in database!!!";
+					// Redirecting To Other Page
+					header("location:profilek.php"); 
+				}
 
+				}
 			}
 			
 		} else if($rowss == 1) {//student
-			if(strlen($new)<7){
+			if(strlen($new)<6){
 				echo '<script type="text/javascript">'; 
                 echo 'alert("Password not long enough!");'; 
                 echo 'window.location.href = "profilef.php";';
                 echo '</script>';
+			}else{
+				if (!empty($_POST['old_password'])){
+					$sql = "UPDATE user_student
+							SET password='$new'
+							WHERE username='$username';";
+				$qrys = mysqli_query($conn, $sql);
 
-			}
-			if (!empty($_POST['old_password'])){
-				$sql = "UPDATE user_student
-						SET password='$new'
-						WHERE username='$username';";
-			$qrys = mysqli_query($conn, $sql);
+				if($qrys){
+					echo "New password in database!!!";
+					// Redirecting To Other Page
+					header("location:profilef.php"); 
+				}
 
-			if($qrys){
-				echo "New password in database!!!";
-				// Redirecting To Other Page
-				header("location:profilef.php"); 
-			}
-
+				}
 			}
 		
 		
