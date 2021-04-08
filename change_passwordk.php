@@ -53,7 +53,7 @@ session_start();
 		
 		</header>
   
-  <form class="change_password" action="changepassk.php" method="post">
+  <form class="change_password" action="changepass.php" method="post">
     <div class="imgcontainer"> 
       <img src="photos/uop_new_logo.png" alt="Avatar" class="avatar">
     </div>
