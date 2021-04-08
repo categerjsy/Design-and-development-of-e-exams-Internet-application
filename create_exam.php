@@ -102,7 +102,7 @@ include 'config.php';
 
 
 			    <input type="submit" value="Δημιουργία Εξέτασης">
-				<button type="reset"><a href="create_question.php">Έξοδος</a></button>
+				<button class="cancelbtn" type="reset"><a href="create_question.php">Έξοδος</a></button>
                 <br>
     	        <button type="reset" class="cleanbtn">Καθαρισμός</button>
                 <br>

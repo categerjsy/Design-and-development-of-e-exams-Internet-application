@@ -76,13 +76,13 @@ session_start();
     			<h3>Δημιουργία Ερώτησης</h3>
     			<h4>Παρακαλώ επιλέξετε μια κατηγορία ερώτηση</h4>
     			  <div class="w3-container">
-    			    <a href="create_question_tf.php"><button type="reset">True-False</button></a>
+    			    <a href="create_question_tf.php"><button class="but" type="reset">True-False</button></a>
                 	<br>
-    	        	<a href="create_question_mc.php"><button type="reset">Multiple Choice</button></a>
+    	        	<a href="create_question_mc.php"><button class="but" type="reset">Multiple Choice</button></a>
                 	<br>
-    		    	<button type="reset">Multiple Choice με πολλές σωστές απάντησεις</button>
+    		    	<button class="but" type="reset">Multiple Choice με πολλές σωστές απάντησεις</button>
                		<br>
-    	        	<a href="create_question_ft.php"><button type="reset">Ελευθέρου κειμένου</button></a>
+    	        	<a href="create_question_ft.php"><button class="but" type="reset">Ελευθέρου κειμένου</button></a>
             </div>
 	    </div>
       

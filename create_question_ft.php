@@ -120,7 +120,7 @@ include 'config.php';
 			   <!--Σωστή απάντηση;;;--> 
 				<!--ΤΙΜΕ??????!-->
 			    <input type="submit" value="Εισαγωγή ερώτησης ελευθέρου κειμένου">
-				<button type="reset"><a href="create_question.php">Έξοδος</a></button>
+				<button class="cancelbtn" type="reset"><a href="create_question.php">Έξοδος</a></button>
                 <br>
     	        <button type="reset" class="cleanbtn">Καθαρισμός</button>
                 <br>
