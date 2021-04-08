@@ -26,6 +26,7 @@ include 'config.php';
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/responsiveness.css">
 		<link rel="stylesheet" href="assets/css/nav.css">
+		<link rel="stylesheet" href="assets/css/asidenav.css">
 		<link rel="stylesheet" href="assets/css/lf.css">
 		<link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>		
 	
@@ -57,13 +58,16 @@ include 'config.php';
 		
 		</header>
 		<aside>
-		<nav>
-		  <ul>
-		    <li><a href="#">Εγγραφή σε μάθημα</a></li>
-		  </ul>
-		</nav>
+			
+			<!-- Sidebar -->
+			<div id="mySidebar" class="sidebar">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+			<a href="enroll.php">Εγγραφή σε μάθημα</a>
+			</div>
+	
 		</aside>
-		<main>
+		<main>  
+			<button class="openbtn" onclick="openNav()">☰ Βασικές επιλογές</button>   
                        
 		<div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">
 			<h3>Εγγραφή σε μάθημα</h3>
@@ -101,5 +105,6 @@ include 'config.php';
 		<footer>
 		</footer>
 		<script ></script>
+		<script src="assets/js/aside.js"></script>
 	</body>
 </html>

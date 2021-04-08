@@ -25,7 +25,7 @@ include 'config.php';
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/responsiveness.css">
 		<link rel="stylesheet" href="assets/css/nav.css">
-		<link rel="stylesheet" href="assets/css/assidenav.css">
+		<link rel="stylesheet" href="assets/css/asidenav.css">
 		<link rel="stylesheet" href="assets/css/lf.css">
 		<link rel="stylesheet" href="assets/css/button.css">
         <link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>
@@ -60,15 +60,18 @@ include 'config.php';
 		
 		</header>
 		<aside>
-		<nav>
-		  <ul>
-		    <li><a href="create_lesson.php">Δημιουργία μαθήματος</a></li>
-			<li><a href="create_question.php">Εισαγωγή ερώτησης</a></li>
-			<li><a href="#top">Δημιουργία εξέτασης</a></li>
-		  </ul>
-		</nav>
-		</aside>
-		<main>
+			
+		<!-- Sidebar -->
+		<div id="mySidebar" class="sidebar">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+		<a href="create_lesson.php">Δημιουργία μαθήματος</a>
+		<a href="create_question.php">Εισαγωγή ερώτησης</a>
+		<a href="create_exam.php">Δημιουργία εξέτασης</a>
+		</div>
+
+	</aside>
+	<main>  
+		<button class="openbtn" onclick="openNav()">☰ Βασικές επιλογές</button> 
 		<!--<div id="myform" style="margin-left:25%;">-->
         <div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">
 			<h3>Δημιουργία Εξέτασης</h3>
@@ -114,6 +117,6 @@ include 'config.php';
         <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js" ></script>
         <script src="assets\js\bootstrap-number-input.js" ></script>
         <script src="assets\js\bootstrapSwitch.js" ></script>
-		
+		<script src="assets/js/aside.js"></script>
 	</body>
 </html>

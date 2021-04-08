@@ -24,6 +24,7 @@ session_start();
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/responsiveness.css">
 		<link rel="stylesheet" href="assets/css/nav.css">
+		<link rel="stylesheet" href="assets/css/asidenav.css">
 	    <link rel="stylesheet" href="assets/css/lf.css">
 		<link rel="stylesheet" href="assets/css/button.css">
 
@@ -59,15 +60,18 @@ session_start();
 		
 		</header>
 		<aside>
-		<nav>
-		  <ul>
-		    <li><a href="create_lesson.php">Δημιουργία μαθήματος</a></li>
-			<li><a href="#top">Εισαγωγή ερώτησης</a></li>
-			<li><a href="#section-3">Δημιουργία εξέτασης</a></li>
-		  </ul>
-		</nav>
+		
+		<!-- Sidebar -->
+		<div id="mySidebar" class="sidebar">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+		<a href="create_lesson.php">Δημιουργία μαθήματος</a>
+		<a href="create_question.php">Εισαγωγή ερώτησης</a>
+		<a href="create_exam.php">Δημιουργία εξέτασης</a>
+		</div>
+	
 		</aside>
-		<main>
+		<main>  
+			<button class="openbtn" onclick="openNav()">☰ Βασικές επιλογές</button>     
            <div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">
     			<h3>Δημιουργία Ερώτησης</h3>
     			<h4>Παρακαλώ επιλέξετε μια κατηγορία ερώτηση</h4>
@@ -90,6 +94,6 @@ session_start();
         
 		<footer>
 		</footer>
-		<script ></script>
+		<script src="assets/js/aside.js"></script>
 	</body>
 </html>
