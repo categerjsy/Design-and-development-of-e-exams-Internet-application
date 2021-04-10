@@ -82,7 +82,7 @@ include 'config.php';
 			   	$idp=$_SESSION["id_professor"];
 				   echo "<select id='course' name='course'>";
 				   
-				   $s = mysqli_query($conn,"select * from create_lesson where id_professor='12'");
+				   $s = mysqli_query($conn,"select * from create_lesson where id_professor='$idp'");
 				   while ($row = mysqli_fetch_array($s, MYSQLI_ASSOC)) {
 					   $my_lesson=$row["id_lesson"];
 					   $findlesson=mysqli_query($conn,"select * from lesson where id_lesson='$my_lesson'");
@@ -96,6 +96,7 @@ include 'config.php';
 	
 				
 				?>
+			
                 <br> 
 			    <label for="qtext">Κείμενο True-False ερώτησης</label> <br>
 			    <input type="text" id="qtext" name="qtext" placeholder="Κείμενο True-False ερώτησης" required>
