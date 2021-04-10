@@ -11,9 +11,9 @@ include 'config.php';
     $time=$_POST['time'];
     
 	$grade=$_POST['grade'];
-    $ngrade=$_POST['ngrade'];
-    $type="True-False";
-    $answer=true;
+    $ngrade="0";
+    $type="Ελευθέρου κειμένου";
+
 	
 
 		//question
