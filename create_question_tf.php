@@ -89,7 +89,7 @@ include 'config.php';
 					   $findlesson=mysqli_query($conn,"select * from lesson where id_lesson='$my_lesson'");
 					   while ($row = mysqli_fetch_array($findlesson, MYSQLI_ASSOC)) {
 						$my_l=$row["name"];
-						echo "<option value='$my_l'>$my_l</option>";  
+						echo "<option value='$my_lesson'>$my_l</option>";  
 					   }
 				  }
 				  echo "</select>";	 
@@ -113,13 +113,15 @@ include 'config.php';
 				<input type="number" id="chapter" name="chapter" min="1"  required>
 				<br> 
 				<label for="grade">Bαθμόλογηση</label> <br>
-			    <input type="text" id="grade" name="grade" placeholder="Bαθμόλογηση" pattern="[0-9]*.[0-9]*"required>
+			    <input type="text" id="grade" name="grade" placeholder="Bαθμόλογηση" onblur="validateGrade(this);"  pattern="[0-9]{1}.[0-9]{2}"required>
+				<br> <span id='messageGrade'></span>
 				<br> 
 				<label for="ngrade">Αρνητική βαθμόλογηση</label> <br>
-			    <input type="text" id="ngrade" name="ngrade" placeholder="Αρνητική βαθμόλογηση" pattern="[0-9]*.[0-9]*" required>
+			    <input type="text" id="ngrade" name="ngrade" placeholder="Αρνητική βαθμόλογηση" onblur="validateNGrade(this);" pattern="[0-9]{1}.[0-9]{2}" required>
+				<br> <span id='messageNGrade'></span>
 				<br> 
                 <label for="time">Παρακαλώ εισάγετε τον χρόνο απάντησης</label> <br>
-			    <input type="text" id="time" name="time" placeholder="Χρόνος Απάντησης"required>
+			    <input type="text" id="time" name="time" placeholder="Χρόνος Απάντησης" pattern="[0]{2}:[0-6]{1}[0-9]{1}:[0-5]{1}[0-9]{1}" required>
 				<br> 
 				<label for="answer">Σωστή Απάντηση</label> 
                 <br>  
@@ -146,5 +148,7 @@ include 'config.php';
         <script src="assets\js\bootstrap-number-input.js" ></script>
         <script src="assets\js\bootstrapSwitch.js" ></script>
 		<script src="assets/js/aside.js"></script>
+		<script src="assets/js/grade.js"></script>
+		<script src="assets/js/ngrade.js"></script>
 	</body>
 </html>
