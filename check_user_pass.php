@@ -5,7 +5,6 @@ include 'config.php';
 	
 	$username=$_POST['username'];
 	$password=$_POST['password'];
-	/*$user=$_POST['category'];*/
 	
 	if($username && $password){
 		echo "$username<br>";
@@ -53,7 +52,7 @@ include 'config.php';
 				$error = "Username or Password is invalid";
 				echo "$error";
 				// Redirecting To this Page
-				$location="/Ptuxiaki/index.php";
+				$location="/Ptuxiaki/sign_in.php?msg=failed";
 				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
 			
 			}

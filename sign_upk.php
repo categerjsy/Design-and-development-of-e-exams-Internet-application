@@ -33,7 +33,7 @@ session_start();
 				  
 				  <div class="nav-links">
 					<a  href="index.php">Αρχική Σελίδα</a>
-					<a  href="#">Εισαγωγή</a>
+					<a  href="sign_in.php">Εισαγωγή</a>
 					<a href="sign_upf.php">Εγγραφή Φοιτητή</a>
                     <a href="#">Εγγραφή Καθηγητή</a>
 				  </div>
