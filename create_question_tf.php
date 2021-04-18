@@ -121,7 +121,8 @@ include 'config.php';
 				<br> <span id='messageNGrade'></span>
 				<br> 
                 <label for="time">Παρακαλώ εισάγετε τον χρόνο απάντησης</label> <br>
-			    <input type="text" id="time" name="time" placeholder="Χρόνος Απάντησης" pattern="[0]{2}:[0-6]{1}[0-9]{1}:[0-5]{1}[0-9]{1}" required>
+			    <input type="text" id="time" name="time" placeholder="Χρόνος Απάντησης" onblur="validateTime(this);" pattern="[0]{2}:[0-6]{1}[0-9]{1}:[0-5]{1}[0-9]{1}" required>
+				<br> <span id='messageTime'></span>
 				<br> 
 				<label for="answer">Σωστή Απάντηση</label> 
                 <br>  
@@ -150,5 +151,6 @@ include 'config.php';
 		<script src="assets/js/aside.js"></script>
 		<script src="assets/js/grade.js"></script>
 		<script src="assets/js/ngrade.js"></script>
+		<script src="assets/js/inserttime.js"></script>
 	</body>
 </html>
