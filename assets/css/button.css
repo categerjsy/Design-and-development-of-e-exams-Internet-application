@@ -6,8 +6,7 @@
   margin: 28px 0;
   border: none;
   cursor: pointer;
-  width: 100%;
-
+  width: auto;
 }
 .but:hover {
   opacity: 0.8;

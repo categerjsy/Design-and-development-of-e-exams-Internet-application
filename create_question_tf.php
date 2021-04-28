@@ -131,11 +131,11 @@ include 'config.php';
 			      <option value="F">False</option>
 				</select>
 				<input type="submit" value="Εισαγωγή True-False ερώτησης">
-				<br> 
+				<br> <br>
     	        <button type="reset" class="cleanbtn">Καθαρισμός</button>
-                <br>
+                <br> <br>
 				<button class="cancelbtn" type="reset"><a href="create_question.php">Έξοδος</a></button>
-                <br>
+                <br> <br>
 
 
 			  </form>

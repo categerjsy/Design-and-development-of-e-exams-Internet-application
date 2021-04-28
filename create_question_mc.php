@@ -28,6 +28,11 @@ include 'config.php';
 		<link rel="stylesheet" href="assets/css/asidenav.css">
 		<link rel="stylesheet" href="assets/css/lf.css">
 		<link rel="stylesheet" href="assets/css/button.css">
+
+		<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />-->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
         <link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>
 	
 	
@@ -101,6 +106,13 @@ include 'config.php';
 			    <label for="qtext">Κείμενο Multiple Choice ερώτησης</label> <br>
 			    <input type="text" id="qtext" name="qtext" placeholder="Κείμενο Multiple Choice ερώτησης" required>
 				<br> 
+				<label for="patext">Παρακαλώ εισάγετε πιθανή απάντηση</label> <br>
+				<table class="table table-bordered" id="dynamic_field">
+							<input type="text" name="name[]" placeholder="Eισάγετε πιθανή απάντηση" class="form-control name_list" />
+							<button type="button" name="add" id="add" class="cleanbtn">Προσθέστε πιθανή απάντηση </button></td>
+							
+				</table>
+
 				<label for="difficulty_level">Κατηγορία Μαθήματος</label> <br>
 			    <select id="difficulty_level" name="difficulty_level">
 			      <option value="easy">Εύκολη</option>
@@ -136,6 +148,34 @@ include 'config.php';
 		</main>
 		<footer>
 		</footer>
+		<script>
+$(document).ready(function(){
+	var i=1;
+	$('#add').click(function(){
+		i++;
+		$('#dynamic_field').append('<tr id="row'+i+'"><td><input type="text" name="name[]" placeholder="Εισάγετε νέα πιθανή απάντηση" class="form-control name_list" /></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove cancelbtn">Αφαίρεση</button></td></tr>');
+	});
+	
+	$(document).on('click', '.btn_remove', function(){
+		var button_id = $(this).attr("id"); 
+		$('#row'+button_id+'').remove();
+	});
+	
+	$('#submit').click(function(){		
+		$.ajax({
+			url:"name.php",
+			method:"POST",
+			data:$('#add_name').serialize(),
+			success:function(data)
+			{
+				alert(data);
+				$('#add_name')[0].reset();
+			}
+		});
+	});
+	
+});
+</script>
         <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js" ></script>
         <script src="assets\js\bootstrap-number-input.js" ></script>
         <script src="assets\js\bootstrapSwitch.js" ></script>
