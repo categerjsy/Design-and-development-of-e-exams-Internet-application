@@ -149,37 +149,11 @@ include 'config.php';
 		</main>
 		<footer>
 		</footer>
-		<script>
-$(document).ready(function(){
-	var i=1;
-	$('#add').click(function(){
-		i++;
-		$('#dynamic_field').append('<tr id="row'+i+'"><td><input type="text" name="name[]" placeholder="Εισάγετε νέα πιθανή απάντηση" class="form-control name_list" /></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove cancelbtn">Αφαίρεση</button></td></tr>');
-	});
-	
-	$(document).on('click', '.btn_remove', function(){
-		var button_id = $(this).attr("id"); 
-		$('#row'+button_id+'').remove();
-	});
-	
-	$('#submit').click(function(){		
-		$.ajax({
-			url:"name.php",
-			method:"POST",
-			data:$('#add_name').serialize(),
-			success:function(data)
-			{
-				alert(data);
-				$('#add_name')[0].reset();
-			}
-		});
-	});
-	
-});
-</script>
+		
         <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js" ></script>
         <script src="assets\js\bootstrap-number-input.js" ></script>
         <script src="assets\js\bootstrapSwitch.js" ></script>
 		<script src="assets/js/aside.js"></script>
+		<script src="assets/js/addmore.js"></script>
 	</body>
 </html>
