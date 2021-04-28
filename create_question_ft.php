@@ -123,6 +123,8 @@ include 'config.php';
 			    <input type="submit" value="Εισαγωγή ερώτησης ελευθέρου κειμένου">
 				<button class="cancelbtn" type="reset"><a href="create_question.php">Έξοδος</a></button>
                 <br>
+				<br>
+				</br>
     	        <button type="reset" class="cleanbtn">Καθαρισμός</button>
                 <br>
 

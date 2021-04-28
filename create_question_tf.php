@@ -27,7 +27,7 @@ include 'config.php';
 		<link rel="stylesheet" href="assets/css/nav.css">
 		<link rel="stylesheet" href="assets/css/asidenav.css">
 		<link rel="stylesheet" href="assets/css/lf.css">
-		<link rel="stylesheet" href="assets/css/button.css">
+		<!--<link rel="stylesheet" href="assets/css/button.css">-->
         <link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>
 	
 	
@@ -130,12 +130,11 @@ include 'config.php';
 			      <option value="T">True</option>
 			      <option value="F">False</option>
 				</select>
-                <br> 
-				<!--ΤΙΜΕ??????!-->
-			    <input type="submit" value="Εισαγωγή True-False ερώτησης">
-				<button class="cancelbtn" type="reset"><a href="create_question.php">Έξοδος</a></button>
-                <br>
+				<input type="submit" value="Εισαγωγή True-False ερώτησης">
+				<br> 
     	        <button type="reset" class="cleanbtn">Καθαρισμός</button>
+                <br>
+				<button class="cancelbtn" type="reset"><a href="create_question.php">Έξοδος</a></button>
                 <br>
 
 

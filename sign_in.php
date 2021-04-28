@@ -40,12 +40,12 @@
 	
   <?php
 		if (isset($_GET["msg"]) && $_GET["msg"] == 'failed') {
-			print "<h2>Wrong Username or Password</h2>";//προσωρινο
+			print "<h4>Παρακαλώ προσπαθήστε ξανά, λάθος username ή κωδικός.</h4>";//προσωρινο
 		}
 	?>
   <form class="sign_in" action="check_user_pass.php" method="post">
-    <div class="imgcontainer"> 
-      <img src="photos/uop_new_logo.png" alt="Avatar" class="avatar">
+   <div class="imgcontainer"> 
+      <img src="photos/uop_new_logo.png"  alt="Avatar" class="avatar">
     </div>
 	
     <div class="container">
@@ -55,22 +55,18 @@
 		<br>	  
       <label for="username"><b>Username</b></label>
       <input type="text" placeholder="Εισάγετε Username" name="username" required>
-
+	  <br>
       <label for="psw"><b>Κωδικός</b></label>
       <input type="password" placeholder="Εισάγετε κωδικό" name="password" required>
-        
+      <br>  
+	  <button type="submit" class="cleanbtn" style="color:white">Εισαγωγή</button>
+	  <button type="button" class="cleanbtn"><a href="#">Ξεχάσατε τον κωδικό σας;</a></button>
+      <button type="button" class="cancelbtn"><a href="index.php">Έξοδος</a></button>
+      <button type="reset" class="cleanbtn" style="color:white" >Καθαρισμός</button>
 
      
     </div>
-	<div class="btn-group">
-      <button type="submit" class="cleanbtn">Εισαγωγή</button><br><!--we need to fix this shit-->
-	  
-	  <button type="button" class="cleanbtn"><a href="#">Ξεχάσατε τον κωδικό σας;</a></button>
-	</div>
-    <div class="btn-group">
-      <button type="button" class="cancelbtn"><a href="index.php">Έξοδος</a></button>
-      <button type="reset" class="cleanbtn">Καθαρισμός</button>
-    </div>
+	
   </form>
 
 <script src="assets/js/index.js"></script>

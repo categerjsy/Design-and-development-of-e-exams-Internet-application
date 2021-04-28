@@ -86,17 +86,13 @@ session_start();
         <input type="password" name="confirm_password" id="confirm_password" placeholder="Επιβεβαίωση Κωδικού"  onkeyup='check();' required>
         <br><span id='message'></span>
         <br>
-        
-
-        
-      <button type="submit">Εγγραφή</button>
+      <button type="submit" class="cleanbtn" style="color:white">Εγγραφή</button>
+      <button type="button" class="cancelbtn"><a href="index.php">Έξοδος</a></button>
+      <button type="reset" class="cleanbtn"  style="color:white">Καθαρισμός</button>
      
     </div>
 
-    <div class="btn-group">
-      <button type="button" class="cancelbtn"><a href="index.php">Έξοδος</a></button>
-      <button type="reset" class="cleanbtn">Καθαρισμός</button>
-      </div>
+   
 
   </form>
 

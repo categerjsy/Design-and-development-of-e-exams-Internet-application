@@ -92,14 +92,14 @@ session_start();
         <br><span id='message'></span>
         <br>
         
-      <button type="submit">Εγγραφή</button>
-     
-    </div>
-    <div class="btn-group">
-      
+      <button type="submit" class="cleanbtn" style="color:white">Εγγραφή</button>
       <button type="button" class="cancelbtn"><a href="index.php">Έξοδος</a></button>
-      <button type="reset" class="cleanbtn">Καθαρισμός</button>
+      <button type="reset" class="cleanbtn"  style="color:white">Καθαρισμός</button>
     </div>
+    
+      
+     
+
   </form>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
 <script src="assets/js/PcheckLength.js"></script>

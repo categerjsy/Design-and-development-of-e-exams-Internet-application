@@ -92,6 +92,7 @@ session_start();
 			      <option value="ekpt">Επιλογής Κατεύθυνσης  Τηλεπικοινωνιών-Πληροφορικής</option>
 				</select>
 			    <input type="submit" value="Δημιουργία Μαθήματος">
+				<button type="reset" class="cleanbtn">Καθαρισμός</button>
 			  </form>
 			</div>
            
