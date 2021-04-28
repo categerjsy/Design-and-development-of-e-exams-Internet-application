@@ -60,11 +60,13 @@
       <input type="password" placeholder="Εισάγετε κωδικό" name="password" required>
       <br>  
 	  <button type="submit" class="cleanbtn" style="color:white">Εισαγωγή</button>
-	  <button type="button" class="cleanbtn"><a href="#">Ξεχάσατε τον κωδικό σας;</a></button>
-      <button type="button" class="cancelbtn"><a href="index.php">Έξοδος</a></button>
+	  
       <button type="reset" class="cleanbtn" style="color:white" >Καθαρισμός</button>
-
-     
+	  
+	  <button type="button" class="cancelbtn"><a href="index.php">Έξοδος</a></button>
+	 
+	  <a href="#" style="color:#14284B">Ξεχάσατε τον κωδικό σας;</a>
+	  <br> <br> 
     </div>
 	
   </form>
