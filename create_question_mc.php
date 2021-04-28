@@ -108,9 +108,10 @@ include 'config.php';
 				<br> 
 				<label for="patext">Παρακαλώ εισάγετε πιθανή απάντηση</label> <br>
 				<table class="table table-bordered" id="dynamic_field">
-							<input type="text" name="name[]" placeholder="Eισάγετε πιθανή απάντηση" class="form-control name_list" />
-							<button type="button" name="add" id="add" class="cleanbtn">Προσθέστε πιθανή απάντηση </button></td>
-							
+				<tr>
+					<td><input type="text" name="name[]" placeholder="Eισάγετε απάντηση" class="form-control name_list" /></td>
+					<td>&nbsp;<button type="button" name="add" id="add" class="cleanbtn">Προσθέστε απάντηση </button></td>
+				</tr>
 				</table>
 
 				<label for="difficulty_level">Κατηγορία Μαθήματος</label> <br>
