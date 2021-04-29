@@ -28,16 +28,18 @@ if(strlen($pass)<6){
 }  
     if($pass==$cpass) {
 		  if($ru==1){
-				echo '<script type="text/javascript">'; 
-                echo 'alert("Username taken!");'; 
-                echo 'window.location.href = "sign_upf.php";';
-                echo '</script>';
+				$error = "Username taken";
+				echo "$error";
+				// Redirecting To this Page
+				$location="/Ptuxiaki/sign_upf.php?msg=failed_username";
+				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
 			}
             else if($re==1){
-				echo '<script type="text/javascript">'; 
-                echo 'alert("E-mail taken!");'; 
-                echo 'window.location.href = "sign_upf.php";';
-                echo '</script>';
+				$error = "E-mail taken";
+				echo "$error";
+				// Redirecting To this Page
+				$location="/Ptuxiaki/sign_upf.php?msg=failed_mail";
+				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
 			}
 			else{
 					$sql = "INSERT INTO user_student (name, surname, email, phone_number, AM, username,password)

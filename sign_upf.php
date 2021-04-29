@@ -42,7 +42,14 @@ session_start();
     
 </head>
 <body>
-	
+	<?php
+		if (isset($_GET["msg"]) && $_GET["msg"] == 'failed_username') {
+			print "<h4>Παρακαλώ προσπαθήστε ξανά, το username που επιλέξατε χρησιμοποιείται από άλλο χρήστη.</h4>";//προσωρινο
+		}
+		else if (isset($_GET["msg"]) && $_GET["msg"] == 'failed_mail') {
+			print "<h4>Παρακαλώ προσπαθήστε ξανά, το email που επιλέξατε χρησιμοποιείται από άλλο χρήστη.</h4>";//προσωρινο
+		}
+	?>
   
   <form class="signup" action="connectf.php" method="post">
     <div class="imgcontainer"> 
