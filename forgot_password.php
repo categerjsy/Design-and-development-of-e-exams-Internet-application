@@ -3,7 +3,7 @@
 <head>
  
     
-    <title>Είσοδος Χρήστη</title>
+    <title>Ξεχασμένος Κωδικός</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	 <link rel="stylesheet" href="assets/css/nav.css">
@@ -28,7 +28,7 @@
 				  
 				  <div class="nav-links">
 					<a href="index.php">Αρχική Σελίδα</a>
-					<a href="#">Εισαγωγή</a>
+					<a href="sign_in.php">Εισαγωγή</a>
 					<a href="sign_upf.php">Εγγραφή Φοιτητή</a>
                     <a href="sign_upk.php">Εγγραφή Καθηγητή</a>
 				  </div>
@@ -38,12 +38,7 @@
 </head>
 <body>
 	
-  <?php
-		if (isset($_GET["msg"]) && $_GET["msg"] == 'failed') {
-			print "<h4>Παρακαλώ προσπαθήστε ξανά, λάθος username ή κωδικός.</h4>";//προσωρινο
-		}
-	?>
-  <form class="sign_in" action="check_user_pass.php" method="post">
+  <form class="forgot_pass" action="#" method="post">
    <div class="imgcontainer"> 
       <img src="photos/uop_new_logo.png"  alt="Avatar" class="avatar">
     </div>
@@ -51,22 +46,15 @@
     <div class="container">
 	
 		<br>
-			  
-		<br>	  
-      <label for="username"><b>Username</b></label>
-      <input type="text" placeholder="Εισάγετε Username" name="username" required>
-	  <br>
-      <label for="psw"><b>Κωδικός</b></label>
-      <input type="password" placeholder="Εισάγετε κωδικό" name="password" required>
-      <br>  
-	  <button type="submit" class="cleanbtn" style="color:white">Εισαγωγή</button>
+		
+		<br>
+        <label for="email"><b>Εισάγετε το email με το οποίο εγγραφήκατε, ώστε να σας σταλεί προσωρινός κωδικός.</b></label> 
+        <input  type="email" placeholder="E-mail σχολής" id="email" name="email" onblur="validateEmail(this);"  pattern="[a-zA-z0-9]*@uop.gr|[a-zA-z0-9]*@go.uop.gr" required >
+        <br> <span id='messageEmail'></span>
+		<br>
+      
+	  <button type="submit" class="cleanbtn" style="color:white">Αποστολή προσωρινού κωδικού</button>
 	  
-      <button type="reset" class="cleanbtn" style="color:white" >Καθαρισμός</button>
-	  
-	  <button type="button" class="cancelbtn"><a href="index.php">Έξοδος</a></button>
-	 
-	  <a href="forgot_password.php" style="color:#14284B">Ξεχάσατε τον κωδικό σας;</a>
-	  <br> <br> 
     </div>
 	
   </form>

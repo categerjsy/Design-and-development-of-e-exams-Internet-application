@@ -63,7 +63,7 @@ include 'config.php';
 			<!-- Sidebar -->
 			<div id="mySidebar" class="sidebar">
 			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-			<a href="edit_prof.php">Επεξεργασία προφίλ</a>
+			<a href="#">Επεξεργασία προφίλ</a>
 			<a href="enroll.php">Εγγραφή σε μάθημα</a>
 			</div>
 	
@@ -72,33 +72,10 @@ include 'config.php';
 			<button class="openbtn" onclick="openNav()">☰ Βασικές επιλογές</button>   
                        
 		<div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">
-			<h3>Εγγραφή σε μάθημα</h3>
+			<h3>Επεξεργασία προφίλ</h3>
 			
-	
-			  <form action="" method="post">
-			  <label for="course">Παρακαλώ επιλέξτε μάθημα</label> <br>
-			 <!--php για τα μαθηματα απο τη βαση-->
-                  <?php
-					$ids=$_SESSION["id_student"];
-				   echo "<select id='course' name='course'>";
-				   
-				   $s = mysqli_query($conn,"select * from create_lesson");
-				   while ($row = mysqli_fetch_array($s, MYSQLI_ASSOC)) {
-					   $my_lesson=$row["id_lesson"];
-					   $findlesson=mysqli_query($conn,"select * from lesson where id_lesson='$my_lesson'");
-					   while ($row = mysqli_fetch_array($findlesson, MYSQLI_ASSOC)) {
-						$my_l=$row["name"];
-						$cat=$row["category"];
-						$sem=$row["semester"];
-						echo "<option value='$my_l'>$my_l, $cat, $sem εξάμηνο</option>";  
-					   }
-				  }
-				  echo "</select>";	 
-			 	   				
-				?>
-				<br>
-			    <input type="submit" value="Εγγραφή">
-			  </form>
+			<h4>Γεια σας <?php echo "$username"; ?></h4>
+			
 			</div>
                      
 		</main>
