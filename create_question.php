@@ -25,7 +25,7 @@ session_start();
 		<link rel="stylesheet" href="assets/css/responsiveness.css">
 		<link rel="stylesheet" href="assets/css/nav.css">
 		<link rel="stylesheet" href="assets/css/asidenav.css">
-	    <link rel="stylesheet" href="assets/css/lf.css">
+	    <!--<link rel="stylesheet" href="assets/css/lf.css">-->
 		<link rel="stylesheet" href="assets/css/button.css">
 
 		

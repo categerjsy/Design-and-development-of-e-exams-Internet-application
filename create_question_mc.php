@@ -28,8 +28,6 @@ include 'config.php';
 		<link rel="stylesheet" href="assets/css/asidenav.css">
 		<link rel="stylesheet" href="assets/css/lf.css">
 		<link rel="stylesheet" href="assets/css/button.css">
-
-		<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />-->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 
@@ -82,7 +80,7 @@ include 'config.php';
 			<h3>Εκχώρηση Multiple Choice ερώτησης</h3>
 			
 	
-			  <form action="" method="post">
+			  <form action="mc1.php" method="post">
 			  <label for="course">Παρακαλώ επιλέξτε μάθημα</label> <br>
 			  <?php
 			   	$idp=$_SESSION["id_professor"];
@@ -109,7 +107,7 @@ include 'config.php';
 				<label for="patext">Παρακαλώ εισάγετε πιθανή απάντηση</label> <br>
 				<table class="table table-bordered" id="dynamic_field">
 				<tr>
-					<td><input type="text" name="name[]" placeholder="Eισάγετε απάντηση" class="form-control name_list" /></td>
+					<td><input type="text" name="name[]" placeholder="Eισάγετε πιθανή απάντηση" class="form-control name_list" /></td>
 					<td>&nbsp;<button type="button" name="add" id="add" class="cleanbtn">Προσθέστε απάντηση </button></td>
 				</tr>
 				</table>
@@ -125,20 +123,20 @@ include 'config.php';
 				<input type="number" id="chapter" name="chapter" min="1"  required>
 				<br> 
 				<label for="grade">Bαθμόλογηση</label> <br>
-			    <input type="text" id="grade" name="grade" placeholder="Bαθμόλογηση" pattern="[0-9]*.[0-9]*"required>
+			    <input type="text" id="grade" name="grade" placeholder="Bαθμόλογηση" onblur="validateGrade(this);"  pattern="[0-9]{1}.[0-9]{2}"required>
+				<br> <span id='messageGrade'></span>
 				<br> 
 				<label for="ngrade">Αρνητική βαθμόλογηση</label> <br>
-			    <input type="text" id="ngrade" name="ngrade" placeholder="Αρνητική βαθμόλογηση" pattern="[0-9]*.[0-9]*" required>
+			    <input type="text" id="ngrade" name="ngrade" placeholder="Αρνητική βαθμόλογηση" onblur="validateNGrade(this);" pattern="[0-9]{1}.[0-9]{2}" required>
+				<br> <span id='messageNGrade'></span>
 				<br> 
                 <label for="time">Παρακαλώ εισάγετε τον χρόνο απάντησης</label> <br>
-			    <input type="text" id="time" name="time" placeholder="Χρόνος Απάντησης"required>
+			    <input type="text" id="time" name="time" placeholder="Χρόνος Απάντησης" onblur="validateTime(this);" pattern="[0]{2}:[0-6]{1}[0-9]{1}:[0-5]{1}[0-9]{1}" required>
+				<br> <span id='messageTime'></span>
 				<br> 
 				
-			   <!--Σωστή απάντηση;;;--> 
-				<!--ΤΙΜΕ??????!-->
-			    <input type="submit" value="Εισαγωγή Multiple Choice ερώτησης">
+			    <input type="submit" value="Εισαγωγή απάντησης Multiple Choice ερώτησης">
 				<button class="cancelbtn" type="reset"><a href="create_question.php">Έξοδος</a></button>
-                <br>
     	        <button type="reset" class="cleanbtn">Καθαρισμός</button>
                 <br>
 
@@ -155,5 +153,8 @@ include 'config.php';
         <script src="assets\js\bootstrapSwitch.js" ></script>
 		<script src="assets/js/aside.js"></script>
 		<script src="assets/js/addmore.js"></script>
+		<script src="assets/js/grade.js"></script>
+		<script src="assets/js/ngrade.js"></script>
+		<script src="assets/js/inserttime.js"></script>
 	</body>
 </html>

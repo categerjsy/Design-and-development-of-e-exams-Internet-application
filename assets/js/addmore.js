@@ -10,9 +10,9 @@ $(document).ready(function(){
 		$('#row'+button_id+'').remove();
 	});
 	
-	$('#submit').click(function(){		
+	/*$('#submit').click(function(){		
 		$.ajax({
-			url:"name.php",
+			url:"mc1.php",
 			method:"POST",
 			data:$('#add_name').serialize(),
 			success:function(data)
@@ -21,6 +21,6 @@ $(document).ready(function(){
 				$('#add_name')[0].reset();
 			}
 		});
-	});
+	});*/
 	
 });
