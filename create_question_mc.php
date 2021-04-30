@@ -3,7 +3,21 @@
 session_start();	
 include 'config.php';
 ?>
-	
+<style>
+table{
+  width:100%;
+
+}
+
+
+table tr td:first-child{
+  width:750px;
+}
+
+table tr td:last-child{
+  width:calc(100% - 750px);
+}
+</style>	
 
 
 <!DOCTYPE HTML>
