@@ -1,7 +1,0 @@
-<aside>
-		<nav>
-		  <ul>
-		    <li><br><br><a href="#">Εγγραφή σε μάθημα</a></li>
-		  </ul>
-		</nav>
-</aside>

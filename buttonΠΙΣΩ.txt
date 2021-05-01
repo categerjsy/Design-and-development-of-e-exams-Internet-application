@@ -1,0 +1,6 @@
+<button type="button" class="cancelbtn" onclick="goBack()">Πίσω</button>
+			<script>
+			function goBack() {
+			  window.history.back();
+			}
+			</script>

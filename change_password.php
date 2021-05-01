@@ -7,7 +7,7 @@ session_start();
 <html>
 	<head>
 	<?php 
-        if (isset($_SESSION["id_professor"])==NULL){
+        if ((isset($_SESSION["id_student"])==NULL)&&(isset($_SESSION["id_professor"])==NULL)) {
 						
             header("location: index.php");
 						
@@ -46,21 +46,21 @@ session_start();
 				  </div>
 				  
 				  <div class="nav-links">
-					<a  href="profilek.php"> <?php echo "$username"; ?></a>
+					<a  href="profilef.php"> <?php echo "$username"; ?></a>
 					<a href="logout.php">Έξοδος</a>
 				  </div>
 			</div>
 		
 		</header>
   
-  <form class="change_password" action="changepass.php" method="post">
+  <form class="signup" action="changepass.php" method="post">
     <div class="imgcontainer"> 
       <img src="photos/uop_new_logo.png" alt="Avatar" class="avatar">
     </div>
 	
     <div class="container">
          
-		 <label for="psw"><b>Παλιός Κωδικός</b></label>
+    <label for="psw"><b>Παλιός Κωδικός</b></label>
 		<input type="password" placeholder="Παλιός Κωδικός" name="old_password" required>
 		<br>		 
         <br>
@@ -77,11 +77,17 @@ session_start();
         <br>
         
 		
-      <button type="submit">Αλλαγή</button>
     </div>
     <div class="btn-group">
       
-      <button type="button" class="cancelbtn"><a href="profilek.php">Έξοδος</a></button>
+      <button type="submit" class="cleanbtn">Αλλαγή</button>
+     
+      <button type="button" class="cancelbtn" onclick="goBack()">Πίσω</button>
+			<script>
+			function goBack() {
+			  window.history.back();
+			}
+			</script>
       <button type="reset" class="cleanbtn">Καθαρισμός</button>
 	  </div>
     </div>

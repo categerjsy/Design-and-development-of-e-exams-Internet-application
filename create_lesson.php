@@ -50,7 +50,6 @@ session_start();
 				  
 				  <div class="nav-links">
 					<a  href="profilek.php"> <?php echo "$username"; ?></a>
-					<a href="change_passwordk.php">Αλλαγή κωδικού</a>
 					<a href="logout.php">Έξοδος</a>
 				  </div>
 			</div>

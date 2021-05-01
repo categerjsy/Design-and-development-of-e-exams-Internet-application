@@ -53,7 +53,6 @@ session_start();
 				  
 				  <div class="nav-links">
 					<a  href="#"> <?php echo "$username"; ?></a>
-					<a href="change_passwordf.php">Αλλαγή κωδικού</a>
 					<a href="logout.php">Έξοδος</a>
 				  </div>
 			</div>
