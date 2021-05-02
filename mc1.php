@@ -39,14 +39,15 @@ include 'config.php';
 					$pa=trim($_POST['name'][$i]);
 					echo $pa;
 					//de leiourgei
-					mysqli_query($conn,"INSERT INTO possible_answer (text)
-					VALUES ('".mysqli_real_escape_string($conn, $_POST["name"][$i])."')");
-					/*$sql = "INSERT INTO possible_answer(text) VALUES('$pa')";
+					mysqli_query($conn,"INSERT INTO possible_answer (text,id_question)
+					VALUES ('$pa','$id_q')");
+					/*$sql = "INSERT INT possible_answer(text) VALUES('$pa')";
 					mysqli_query($conn, $sql);*/
                     
                 }
             }
             echo "Data Inserted";
+			$_SESSION["id_question"]=$id_q;
         }
         else
         {
@@ -54,7 +55,7 @@ include 'config.php';
         }
 			echo "Make in database final!!!";
 			// Redirecting To Other Page
-			/*$location="/Ptuxiaki/create_question.php";
-		    header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);*/
+			$location="/Ptuxiaki/create_question_mc_2.php";
+		    header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
 		
 ?>

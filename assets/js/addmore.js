@@ -12,7 +12,7 @@ $(document).ready(function(){
 	
 	/*$('#submit').click(function(){		
 		$.ajax({
-			url:"mc1.php",
+			url:"mc2.php",
 			method:"POST",
 			data:$('#add_name').serialize(),
 			success:function(data)
