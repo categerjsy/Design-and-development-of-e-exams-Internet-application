@@ -80,7 +80,7 @@ session_start();
                 	<br>
     	        	<a href="create_question_mc.php"><button class="but" type="reset">Multiple Choice</button></a>
                 	<br>
-    		    	<button class="but" type="reset">Multiple Choice με πολλές σωστές απάντησεις</button>
+    		    	<a href="create_question_mcp.php"><button class="but" type="reset">Multiple Choice με πολλές σωστές απάντησεις</button></a>
                		<br>
     	        	<a href="create_question_ft.php"><button class="but" type="reset">Ελευθέρου κειμένου</button></a>
             </div>
