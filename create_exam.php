@@ -82,7 +82,7 @@ include 'config.php';
 			<h3>Δημιουργία Εξέτασης</h3>
 			
 	
-			  <form action="" method="post">
+			  <form action="exam.php" method="post">
 			  <label for="course">Παρακαλώ επιλέξτε μάθημα εξέτασης</label> <br>
 			  <?php
 			   	$idp=$_SESSION["id_professor"];
@@ -175,6 +175,15 @@ include 'config.php';
 				<input type=text id="small" name=minutes size=2 value=00>
 				:
 				<input type=text id="small" name=seconds size=2 value=00>
+				
+
+				<br>
+				Χρόνος Εξέτασης &nbsp;&nbsp;&nbsp;&nbsp;
+				<input type=text id="small" name=hourse size=2 value=00>
+				:
+				<input type=text id="small" name=minutese size=2 value=00>
+				:
+				<input type=text id="small" name=secondse size=2 value=00>
 				
 
 				<br>
