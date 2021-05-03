@@ -62,13 +62,13 @@ $conf=$_POST['confirm_password'];
 		
 		
 		}else{
-			$error = "Something got wrong";
-			echo "$error";
-			// Redirecting To this Page
-			$location="/Ptuxiaki/index.php";
-			header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
-		
-		}
+				$error = "Password is invalid";
+				echo "$error";
+				// Redirecting To this Page
+				$location="/Ptuxiaki/change_password.php?msg=failed";
+				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+			
+			}
  
 	
 

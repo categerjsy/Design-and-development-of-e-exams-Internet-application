@@ -29,6 +29,11 @@ session_start();
     
 </head>
 <body>
+	<?php
+		if (isset($_GET["msg"]) && $_GET["msg"] == 'failed') {
+			print "<h4>Παρακαλώ προσπαθήστε ξανά, ο παλιός κωδικός σας είναι λανθασμένος.</h4>";//προσωρινο
+		}
+	?>
 	<header>
 			<div class="nav">
 				  <input type="checkbox" id="nav-check">
