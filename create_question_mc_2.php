@@ -77,7 +77,7 @@ include 'config.php';
 			<h3>Εκχώρηση Multiple Choice ερώτησης</h3>
 			
 	
-			  <form  method="post">
+			  <form action="mc2.php" method="post">
 			  <label for="course">Παρακαλώ ορίστε την σωστή απάντηση.</label> <br>
 			  <?php
 			   	$id_q=$_SESSION["id_question"];

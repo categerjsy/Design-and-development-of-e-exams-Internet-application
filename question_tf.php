@@ -13,7 +13,7 @@ include 'config.php';
     $ngrade=$_POST['ngrade'];
     $type="True-False";
 	$id_lesson=$_POST['course'];
-    $answer=true;
+    $answer=$_POST['answer'];
 	
 
 		//question
@@ -28,10 +28,14 @@ include 'config.php';
 		//includes
 		mysqli_query($conn,"INSERT INTO includes (id_lesson, id_question)
 		VALUES ('$id_lesson','$id_q')");
-		//pos_ans PROBLEM
-		mysqli_query($conn, "INSERT INTO possible_answer (is_correct)
-				VALUES ('0')");
-	
+		if($answer=='F'){
+		mysqli_query($conn,"INSERT INTO possible_answer (text,id_question,is_correct)
+					VALUES ('Δεν υπάρχει κείμενο','$id_q',0)");
+		}
+		if($answer=='T'){
+			mysqli_query($conn,"INSERT INTO possible_answer (text,id_question,is_correct)
+						VALUES ('Δεν υπάρχει κείμενο','$id_q',1)");
+			}
 			echo "Make in database final!!!";
 			// Redirecting To Other Page
 			$location="/Ptuxiaki/create_question.php";

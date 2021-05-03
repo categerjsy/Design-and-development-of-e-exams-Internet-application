@@ -13,7 +13,7 @@ include 'config.php';
     $ngrade=$_POST['ngrade'];
     $type="Multiple Choice";
 	$id_lesson=$_POST['course'];
-    $answer=true;
+
 	
 
 		//question
@@ -26,9 +26,10 @@ include 'config.php';
 		mysqli_query($conn,"INSERT INTO make (id_professor, id_question)
 		VALUES ('$id_p','$id_q')");
 		//includes
-		mysqli_query($conn,"INSERT INTO includes (id_lesson, id_question)
-		VALUES ('$id_lesson','$id_q')");
-		//make name pa
+		mysqli_query($conn,"INSERT INTO includes (id_lesson, id_question) VALUES ('$id_lesson','$id_q')");
+
+
+		//
         $number = count($_POST["name"]);
         if($number > 1)
         {
@@ -39,8 +40,8 @@ include 'config.php';
 					$pa=trim($_POST['name'][$i]);
 					echo $pa;
 					//de leiourgei
-					mysqli_query($conn,"INSERT INTO possible_answer (text,id_question)
-					VALUES ('$pa','$id_q')");
+					mysqli_query($conn,"INSERT INTO possible_answer (text,id_question,is_correct)
+					VALUES ('$pa','$id_q',0)");
 					/*$sql = "INSERT INT possible_answer(text) VALUES('$pa')";
 					mysqli_query($conn, $sql);*/
                     
