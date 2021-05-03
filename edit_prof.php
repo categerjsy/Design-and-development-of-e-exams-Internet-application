@@ -1,10 +1,7 @@
-
 <?php
 session_start();	
 include 'config.php';
 ?>
-	
-
 
 <!DOCTYPE HTML>
 
@@ -35,6 +32,14 @@ include 'config.php';
 	
 	
 	<body>
+		<?php
+		if (isset($_GET["msg"]) && $_GET["msg"] == 'failed_username') {
+			print "<h4>Παρακαλώ προσπαθήστε ξανά, το username που επιλέξατε χρησιμοποιείται από άλλο χρήστη.</h4>";//προσωρινο
+		}
+		else if (isset($_GET["msg"]) && $_GET["msg"] == 'failed_mail') {
+			print "<h4>Παρακαλώ προσπαθήστε ξανά, το email που επιλέξατε χρησιμοποιείται από άλλο χρήστη.</h4>";//προσωρινο
+		}
+	?>
 		<header>
 			<div class="nav">
 				  <input type="checkbox" id="nav-check">
@@ -115,7 +120,7 @@ include 'config.php';
 				}
 				
 			?>
-			
+			<form action="change_edited.php" method="post">
 			<label for="email"><b>E-mail σχολής</b></label> 
 			<input  type="email" value="<?php echo "$my_m"; ?>" id="email" name="email" onblur="validateEmail(this);"  pattern="[a-zA-z0-9]*@uop.gr|[a-zA-z0-9]*@go.uop.gr" required >
 			<br> <span id='messageEmail'></span>
@@ -137,10 +142,10 @@ include 'config.php';
 			  window.history.back();
 			}
 			</script>
-			<button type="reset" class="cleanbtn"  style="color:white">Καθαρισμός</button>
+			<button type="reset" class="cleanbtn" onClick="window.location.reload();" style="color:white">Επαναφορά</button>
 			
 			<button type="button" class="cleanbtn"><a href="change_password.php">Αλλαγή κωδικού</a></button>
-			
+			</form>
 		</div>
 		</main>
                      
