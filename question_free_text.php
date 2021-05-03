@@ -9,7 +9,7 @@ include 'config.php';
 	$difficulty_level=$_POST['difficulty_level'];
 	$chapter=$_POST['chapter'];
     $time=$_POST['time'];
-    
+    $id_lesson=$_POST['course'];
 	$grade=$_POST['grade'];
     $ngrade="0";
     $type="Ελευθέρου κειμένου";
@@ -23,10 +23,15 @@ include 'config.php';
 		//make
 		mysqli_query($conn,"INSERT INTO make (id_professor, id_question)
 						VALUES ('$id_p','$id_q')");
-		//pos_ans PROBLEM
-		/*mysqli_query($conn, "INSERT INTO possible_answer (is_correct)
-				SET ('$answer')");*/
-	
+		$sql = "INSERT INTO includes (id_lesson, id_question)
+		VALUES ('$id_lesson','$id_q')";
+
+		if ($conn->query($sql) === TRUE) {
+		  echo "Record updated successfully";
+		} else {
+		  echo "Error updating record: " . $conn->error;
+		}
+
 			echo "Make in database final!!!";
 			// Redirecting To Other Page
 			$location="/Ptuxiaki/create_question.php";

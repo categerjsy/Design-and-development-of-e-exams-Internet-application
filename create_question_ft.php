@@ -88,7 +88,7 @@ include 'config.php';
 					   $findlesson=mysqli_query($conn,"select * from lesson where id_lesson='$my_lesson'");
 					   while ($row = mysqli_fetch_array($findlesson, MYSQLI_ASSOC)) {
 						$my_l=$row["name"];
-						echo "<option value='$my_l'>$my_l</option>";  
+						echo "<option value='$my_lesson'>$my_l</option>";  
 					   }
 				  }
 				  echo "</select>";	 

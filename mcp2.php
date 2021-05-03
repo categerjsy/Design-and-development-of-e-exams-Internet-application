@@ -11,7 +11,6 @@ include 'config.php';
     for ($i=0; $i<sizeof ($pa);$i++) {  
         //question
 		mysqli_query($conn, "UPDATE possible_answer SET is_correct=1 WHERE id_question='$id_q' AND text='".$pa[$i]. "'");
-
      } 
 
 echo "Record is inserted";  
