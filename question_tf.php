@@ -23,18 +23,16 @@ include 'config.php';
 		//make
 		mysqli_query($conn,"INSERT INTO make (id_professor, id_question)
 						VALUES ('$id_p','$id_q')");
-		mysqli_query($conn,"INSERT INTO make (id_professor, id_question)
-		VALUES ('$id_p','$id_q')");
 		//includes
 		mysqli_query($conn,"INSERT INTO includes (id_lesson, id_question)
 		VALUES ('$id_lesson','$id_q')");
 		if($answer=='F'){
 		mysqli_query($conn,"INSERT INTO possible_answer (text,id_question,is_correct)
-					VALUES ('Δεν υπάρχει κείμενο','$id_q',0)");
+					VALUES ('TrueFalse ερώτηση','$id_q',0)");
 		}
 		if($answer=='T'){
 			mysqli_query($conn,"INSERT INTO possible_answer (text,id_question,is_correct)
-						VALUES ('Δεν υπάρχει κείμενο','$id_q',1)");
+						VALUES ('TrueFalse ερώτηση','$id_q',1)");
 			}
 			echo "Make in database final!!!";
 			// Redirecting To Other Page

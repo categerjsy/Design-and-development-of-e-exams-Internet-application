@@ -15,7 +15,6 @@ include 'config.php';
 	$id_lesson=$_POST['course'];
 
 	
-
 		//question
 		mysqli_query($conn, "INSERT INTO question (text, type, difficulty_level, chapter,time, grade, negative_grade)
 				VALUES ('$qtext','$type', '$difficulty_level', '$chapter','$time','$grade','$ngrade')");
@@ -23,13 +22,16 @@ include 'config.php';
 		//make
 		mysqli_query($conn,"INSERT INTO make (id_professor, id_question)
 						VALUES ('$id_p','$id_q')");
-		mysqli_query($conn,"INSERT INTO make (id_professor, id_question)
-		VALUES ('$id_p','$id_q')");
-		//includes
-		mysqli_query($conn,"INSERT INTO includes (id_lesson, id_question) VALUES ('$id_lesson','$id_q')");
+		
+		$sql = "INSERT INTO includes (id_lesson, id_question)
+		VALUES ('$id_lesson','$id_q')";
 
+		if ($conn->query($sql) === TRUE) {
+		  echo "Record updated successfully";
+		} else {
+		  echo "Error updating record: " . $conn->error;
+		}
 
-		//
         $number = count($_POST["name"]);
         if($number > 1)
         {
