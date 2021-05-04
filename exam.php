@@ -24,10 +24,28 @@ include 'config.php';
     $time="$hourse:$minutese:$secondse";
     
 	$date_for_database = date ('Y-m-d H:i:s', strtotime($date_old));
-
+	if($hours+$hourse<24){
+		$h=$hours+$hourse;
+	}else{
+		$h=$hours+$hourse-24;
+	}
+	if($minutes+$minutese<60){
+		$m=$minutes+$minutese;
+	}else{
+		$m=$minutes+$minutese-60;
+		$h=$h+1;
+	}
+	if($seconds+$secondse<60){
+		$s=$seconds+$secondse;
+	}else{
+		$s=$seconds+$secondse-60;
+		$m=$m+1;
+	}
+	$d="$year-$month-$dt $h:$m:$s";
+	$dd = date ('Y-m-d H:i:s', strtotime($d));
 		//question
-		mysqli_query($conn, "INSERT INTO exam (date_time)
-				VALUES ('$date_for_database')");
+		mysqli_query($conn, "INSERT INTO exam (date_time,time)
+				VALUES ('$date_for_database','$dd')");
 		$id_exam = mysqli_insert_id($conn);
 		
 			echo "Make in database final!!!";
