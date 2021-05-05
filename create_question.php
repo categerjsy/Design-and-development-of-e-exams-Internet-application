@@ -73,6 +73,11 @@ session_start();
 		<main>  
 			<button class="openbtn" onclick="openNav()">☰ Βασικές επιλογές</button>     
            <div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">
+				<?php
+					if (isset($_GET["msg"]) && $_GET["msg"] == 'done') {
+						print "<h3 style='color:green'>Η ερώτηση σας, δημιουργήθηκε.</h3>";//προσωρινο
+					}
+				?>
     			<h3>Δημιουργία Ερώτησης</h3>
     			<h4>Παρακαλώ επιλέξετε μια κατηγορία ερώτηση</h4>
     			  <div class="w3-container">

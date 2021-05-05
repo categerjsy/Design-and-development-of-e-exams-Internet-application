@@ -77,6 +77,7 @@ include 'config.php';
 			
 	
 			  <form action="question_free_text.php" method="post">
+			
 			  <label for="course">Παρακαλώ επιλέξτε μάθημα</label> <br>
 			  <?php
 			   	$idp=$_SESSION["id_professor"];
@@ -111,19 +112,20 @@ include 'config.php';
 				<input type="number" id="chapter" name="chapter" min="1"  required>
 				<br> 
 				<label for="grade">Bαθμόλογηση</label> <br>
-			    <input type="text" id="grade" name="grade" placeholder="Bαθμόλογηση" pattern="[0-9]*.[0-9]*"required>
+			    <input type="text" id="grade" name="grade" placeholder="Bαθμόλογηση" onblur="validateGrade(this);"  pattern="[0-9]{1}.[0-9]{2}"required>
+				<br> <span id='messageGrade'></span>
 				<br> 
+			
                 <label for="time">Παρακαλώ εισάγετε τον χρόνο απάντησης</label> <br>
-			    <input type="text" id="time" name="time" placeholder="Χρόνος Απάντησης"required>
+			    <input type="text" id="time" name="time" placeholder="Χρόνος Απάντησης" onblur="validateTime(this);" pattern="[0]{2}:[0-6]{1}[0-9]{1}:[0-5]{1}[0-9]{1}" required>
+				<br> <span id='messageTime'></span>
 				<br> 
 				
 			   <!--Σωστή απάντηση;;;--> 
 				<!--ΤΙΜΕ??????!-->
 			    <input type="submit" value="Εισαγωγή ερώτησης ελευθέρου κειμένου">
 				<button class="cancelbtn" type="reset"><a href="create_question.php">Έξοδος</a></button>
-                <br>
-				<br>
-				</br>
+                
     	        <button type="reset" class="cleanbtn">Καθαρισμός</button>
                 <br>
 
@@ -134,9 +136,13 @@ include 'config.php';
 		</main>
 		<footer>
 		</footer>
-        <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js" ></script>
+		<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js" ></script>
         <script src="assets\js\bootstrap-number-input.js" ></script>
         <script src="assets\js\bootstrapSwitch.js" ></script>
 		<script src="assets/js/aside.js"></script>
+		<script src="assets/js/addmore.js"></script>
+		<script src="assets/js/grade.js"></script>
+		<script src="assets/js/ngrade.js"></script>
+		<script src="assets/js/inserttime.js"></script>
 	</body>
 </html>

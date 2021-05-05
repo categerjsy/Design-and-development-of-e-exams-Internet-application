@@ -40,6 +40,9 @@ include 'config.php';
 		
 	
 	<body>
+		
+
+
 		<header>
 			<div class="nav">
 				  <input type="checkbox" id="nav-check">
@@ -77,7 +80,7 @@ include 'config.php';
 	</aside>
 	<main>  
 		<button class="openbtn" onclick="openNav()">☰ Βασικές επιλογές</button> 
-		<!--<div id="myform" style="margin-left:25%;">-->
+			
         <div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">
 			<h3>Δημιουργία Εξέτασης</h3>
 			

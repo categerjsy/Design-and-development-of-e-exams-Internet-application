@@ -31,6 +31,7 @@ session_start();
 	
 	
 	<body>
+	
 		<header>
 			<div class="nav">
 				  <input type="checkbox" id="nav-check">
@@ -67,8 +68,14 @@ session_start();
 
 	</aside>
 	<main>  
+	
 		<button class="openbtn" onclick="openNav()">☰ Βασικές επιλογές</button> 
             <div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">
+			<?php
+				if (isset($_GET["msg"]) && $_GET["msg"] == 'done') {
+					print "<h3 style='color:green'>Το μάθημα σας, δημιουργήθηκε.</h3>";//προσωρινο
+				}
+			?>
 			<h3>Δημιουργία Μαθήματος</h3>
 			
 	

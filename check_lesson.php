@@ -33,7 +33,7 @@ include 'config.php';
 			if($qryi){
 				echo "Lesson in database final!!!";
 				// Redirecting To Other Page
-				$location="/Ptuxiaki/profilek.php";
+				$location="/Ptuxiaki/create_lesson.php?msg=done";
 			header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
 			}	
 ?>
