@@ -57,7 +57,8 @@
       <input type="text" placeholder="Εισάγετε Username" name="username" required>
 	  <br>
       <label for="psw"><b>Κωδικός</b></label>
-      <input type="password" placeholder="Εισάγετε κωδικό" name="password" required>
+      <input type="password" placeholder="Εισάγετε κωδικό" name="password" id="password" required>
+	  <button onclick="toggler(this)" type="submit" class="cleanbtn" style="color:white">Εμφάνιση κωδικού</button>
       <br>  
 	  <button type="submit" class="cleanbtn" style="color:white">Εισαγωγή</button>
 	  
@@ -70,7 +71,17 @@
     </div>
 	
   </form>
-
+<script>
+function toggler(e) {
+  if( e.innerHTML == 'Εμφάνιση κωδικού' ) {
+      e.innerHTML = 'Απόκρυψη κωδικού'
+      document.getElementById('password').type="text";
+  } else {
+      e.innerHTML = 'Εμφάνιση κωδικού'
+      document.getElementById('password').type="password";
+  }
+}
+</script>
 <script src="assets/js/index.js"></script>
 </body>
 </html>

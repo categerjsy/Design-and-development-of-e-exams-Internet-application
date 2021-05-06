@@ -53,7 +53,7 @@ if(strlen($pass)<6){
 			if($qry){
 				echo "Profile in database!!!";
 				// Redirecting To Other Page
-				$location="/Ptuxiaki/profilek.php";
+				$location="/Ptuxiaki/sign_in.php";
 			header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
 			}
 			
