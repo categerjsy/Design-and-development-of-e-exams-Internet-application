@@ -33,7 +33,11 @@ include 'config.php';
 		if($answer=='T'){
 			mysqli_query($conn,"INSERT INTO possible_answer (text,id_question,is_correct)
 						VALUES ('TrueFalse ερώτηση','$id_q',1)");
-			}
+		}
+		$id_pa = mysqli_insert_id($conn);
+		//has
+		mysqli_query($conn,"INSERT INTO has (id_question,id_possibleAnswer)
+		VALUES ('$id_q','$id_pa')");
 			echo "Make in database final!!!";
 			// Redirecting To Other Page
 			$location="/Ptuxiaki/create_question.php?msg=done";
