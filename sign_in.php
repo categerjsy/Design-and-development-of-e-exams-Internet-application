@@ -58,7 +58,7 @@
 	  <br>
       <label for="psw"><b>Κωδικός</b></label>
       <input type="password" placeholder="Εισάγετε κωδικό" name="password" id="password" required>
-	  <button onclick="toggler(this)" type="submit" class="cleanbtn" style="color:white">Εμφάνιση κωδικού</button>
+	  <button onclick="toggler(this)" type="button" class="cleanbtn" style="color:white">Εμφάνιση κωδικού</button>
       <br>  
 	  <button type="submit" class="cleanbtn" style="color:white">Εισαγωγή</button>
 	  

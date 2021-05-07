@@ -15,6 +15,7 @@ $telephone=$_POST['telephone'];
 ////////////////////////////////////  
 		if (isset($_SESSION["id_student"])!=NULL){
 			$s = mysqli_query($conn,"select * from user_student");
+			$var=1;//is student
 		    while ($row = mysqli_fetch_array($s, MYSQLI_ASSOC)) {
 				$mail=$row["email"];
 				$findmail=mysqli_query($conn,"select * from user_student where username='$oldusername'");
@@ -27,6 +28,7 @@ $telephone=$_POST['telephone'];
 		}
 		else if (isset($_SESSION["id_professor"])!=NULL){
 			$s = mysqli_query($conn,"select * from user_professor");
+			$var=2;//is professor
 			while ($row = mysqli_fetch_array($s, MYSQLI_ASSOC)) {
 			    $mail=$row["email"];
 			    $findmail=mysqli_query($conn,"select * from user_professor where username='$oldusername'");
@@ -65,7 +67,69 @@ $telephone=$_POST['telephone'];
 				// Redirecting To this Page
 				$location="/Ptuxiaki/edit_prof.php?msg=failed_mail";
 				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+		}
+		if($telephone!=$tel){
+			if($var==1){
+				
+				$sql = "UPDATE user_student
+							SET email='$email', phone_number='$telephone', username='$username'
+							WHERE username='$oldusername';";
+
+				$qry = mysqli_query($conn, $sql);
+				if($qry){
+					echo "Profile changed!!";
+					// Redirecting To Other Page
+					$location="/Ptuxiaki/sign_in.php";
+				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+				}
+			
 			}
+			else{
+				$sql = "UPDATE user_professor
+							SET email='$email', phone_number='$telephone', username='$username'
+							WHERE username='$oldusername';";
+
+				$qry = mysqli_query($conn, $sql);
+				if($qry){
+					echo "Profile changed!!";
+					// Redirecting To Other Page
+					$location="/Ptuxiaki/sign_in.php";
+				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+				}
+			
+			}
+		}
+		else{
+			if($var==1){
+				
+				$sql = "UPDATE user_student
+							SET email='$email', username='$username'
+							WHERE username='$oldusername';";
+
+				$qry = mysqli_query($conn, $sql);
+				if($qry){
+					echo "Profile changed!!";
+					// Redirecting To Other Page
+					$location="/Ptuxiaki/sign_in.php";
+				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+				}
+			
+			}
+			else{
+				$sql = "UPDATE user_professor
+							SET email='$email', username='$username'
+							WHERE username='$oldusername';";
+
+				$qry = mysqli_query($conn, $sql);
+				if($qry){
+					echo "Profile changed!!";
+					// Redirecting To Other Page
+					$location="/Ptuxiaki/sign_in.php";
+				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+				}
+			
+			}
+		}
 		
 	}
 	else if($username!=$oldusername){
@@ -81,6 +145,69 @@ $telephone=$_POST['telephone'];
 			// Redirecting To this Page
 			$location="/Ptuxiaki/edit_prof.php?msg=failed_username";
 			header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+		}
+		
+		if($telephone!=$tel){
+			if($var==1){
+				
+				$sql = "UPDATE user_student
+							SET phone_number='$telephone', username='$username'
+							WHERE username='$oldusername';";
+
+				$qry = mysqli_query($conn, $sql);
+				if($qry){
+					echo "Profile changed!!";
+					// Redirecting To Other Page
+					$location="/Ptuxiaki/sign_in.php";
+				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+				}
+			
+			}
+			else{
+				$sql = "UPDATE user_professor
+							SET phone_number='$telephone', username='$username'
+							WHERE username='$oldusername';";
+
+				$qry = mysqli_query($conn, $sql);
+				if($qry){
+					echo "Profile changed!!";
+					// Redirecting To Other Page
+					$location="/Ptuxiaki/sign_in.php";
+				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+				}
+			
+			}
+		}
+		else{
+			if($var==1){
+				
+				$sql = "UPDATE user_student
+							SET username='$username'
+							WHERE username='$oldusername';";
+
+				$qry = mysqli_query($conn, $sql);
+				if($qry){
+					echo "Profile changed!!";
+					// Redirecting To Other Page
+					$location="/Ptuxiaki/sign_in.php";
+				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+				}
+			
+			}
+			else{
+				$sql = "UPDATE user_professor
+							SET username='$username'
+							WHERE username='$oldusername';";
+
+				$qry = mysqli_query($conn, $sql);
+				if($qry){
+					echo "Profile changed!!";
+					// Redirecting To Other Page
+					$location="/Ptuxiaki/sign_in.php";
+				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+				}
+			
+			}
 		}
 	
 	}
@@ -98,25 +225,109 @@ $telephone=$_POST['telephone'];
 				$location="/Ptuxiaki/edit_prof.php?msg=failed_mail";
 				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
 			}
+			
+		if($telephone!=$tel){
+			if($var==1){
+				
+				$sql = "UPDATE user_student
+							SET email='$email', phone_number='$telephone'
+							WHERE username='$oldusername';";
+
+				$qry = mysqli_query($conn, $sql);
+				if($qry){
+					echo "Profile changed!!";
+					// Redirecting To Other Page
+					$location="/Ptuxiaki/sign_in.php";
+				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+				}
+			
+			}
+			else{
+				$sql = "UPDATE user_professor
+							SET email='$email', phone_number='$telephone'
+							WHERE username='$oldusername';";
+
+				$qry = mysqli_query($conn, $sql);
+				if($qry){
+					echo "Profile changed!!";
+					// Redirecting To Other Page
+					$location="/Ptuxiaki/sign_in.php";
+				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+				}
+			
+			}
+		}
+		else{
+			if($var==1){
+				
+				$sql = "UPDATE user_student
+							SET email='$email'
+							WHERE username='$oldusername';";
+
+				$qry = mysqli_query($conn, $sql);
+				if($qry){
+					echo "Profile changed!!";
+					// Redirecting To Other Page
+					$location="/Ptuxiaki/sign_in.php";
+				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+				}
+			
+			}
+			else{
+				$sql = "UPDATE user_professor
+							SET email='$email'
+							WHERE username='$oldusername';";
+
+				$qry = mysqli_query($conn, $sql);
+				if($qry){
+					echo "Profile changed!!";
+					// Redirecting To Other Page
+					$location="/Ptuxiaki/sign_in.php";
+				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+				}
+			
+			}
+		}
 	
 	}
 	else{
-					//$sql = "INSERT INTO user_student (name, surname, email, phone_number, AM, username,password)
-				//VALUES ('$firstname','$lastname', '$email', '$telephone','$am','$username', '$pass')";
-
-			//$qry = mysqli_query($conn, $sql);
-				echo 'Δεν γινεται ακομα αλλαγη φιλε, αλλα ειμαι σε καλο δρομο\n';
-				echo $email, $oldemail;
-				echo $username, $oldusername;
-			/*if($qry){
-				echo "Profile changed!!";
-				// Redirecting To Other Page
-				$location="/Ptuxiaki/index.php";
-			header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
-			}*/
-			
+		if($telephone!=$tel){
+			if($var==1){
 				
-			}		
+				$sql = "UPDATE user_student
+							SET phone_number='$telephone'
+							WHERE username='$oldusername';";
+
+				$qry = mysqli_query($conn, $sql);
+				if($qry){
+					echo "Profile changed!!";
+					// Redirecting To Other Page
+					$location="/Ptuxiaki/sign_in.php";
+				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+				}
+			
+			}
+			else{
+				$sql = "UPDATE user_professor, username='$username'
+							WHERE username='$oldusername';";
+
+				$qry = mysqli_query($conn, $sql);
+				if($qry){
+					echo "Profile changed!!";
+					// Redirecting To Other Page
+					$location="/Ptuxiaki/sign_in.php";
+				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+				}
+			
+			}
+		}
+		else{
+			echo "Nothing changed!!";
+					// Redirecting To Other Page
+					$location="/Ptuxiaki/edit_prof.php";
+				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+		}
+	}		
 
 
 
