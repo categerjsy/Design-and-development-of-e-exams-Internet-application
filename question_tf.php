@@ -19,7 +19,7 @@ include 'config.php';
 		//question
 		mysqli_query($conn, "INSERT INTO question (text, type, difficulty_level, chapter,time, grade, negative_grade)
 				VALUES ('$qtext','$type', '$difficulty_level', '$chapter','$time','$grade','$ngrade')");
-		$id_q = mysqli_insert_id($conn);
+	
 		//make
 		mysqli_query($conn,"INSERT INTO make (id_professor, id_question)
 						VALUES ('$id_p','$id_q')");

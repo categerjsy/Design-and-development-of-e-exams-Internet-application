@@ -182,15 +182,7 @@ include 'config.php';
 				
 
 				<br>
-				Χρόνος Εξέτασης &nbsp;&nbsp;&nbsp;&nbsp;
-				<input type=text id="small" name=hourse size=2 value=00>
-				:
-				<input type=text id="small" name=minutese size=2 value=00>
-				:
-				<input type=text id="small" name=secondse size=2 value=00>
 				
-
-				<br>
 			    <input type="submit" value="Δημιουργία Εξέτασης">
 				<button class="cancelbtn" type="reset"><a href="create_question.php">Έξοδος</a></button>
             

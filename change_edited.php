@@ -53,6 +53,7 @@ $telephone=$_POST['telephone'];
 		$query = mysqli_query($conn,"select * from user_professor where email='$email'");
 		$rep = mysqli_num_rows($query);
 		
+		
 		if($ru==1||$rup==1){
 			$error = "Username taken";
 			echo "$error";
@@ -77,10 +78,13 @@ $telephone=$_POST['telephone'];
 
 				$qry = mysqli_query($conn, $sql);
 				if($qry){
+					$_SESSION["username"]=$username;
 					echo "Profile changed!!";
 					// Redirecting To Other Page
-					$location="/Ptuxiaki/sign_in.php";
-				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+		
+					$location="/Ptuxiaki/profilef.php";
+					header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+				
 				}
 			
 			}
@@ -91,10 +95,13 @@ $telephone=$_POST['telephone'];
 
 				$qry = mysqli_query($conn, $sql);
 				if($qry){
+					$_SESSION["username"]=$username;
 					echo "Profile changed!!";
 					// Redirecting To Other Page
-					$location="/Ptuxiaki/sign_in.php";
-				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+						
+					$location="/Ptuxiaki/profilek.php";
+					header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+						
 				}
 			
 			}
@@ -105,13 +112,16 @@ $telephone=$_POST['telephone'];
 				$sql = "UPDATE user_student
 							SET email='$email', username='$username'
 							WHERE username='$oldusername';";
-
+				
 				$qry = mysqli_query($conn, $sql);
 				if($qry){
+					$_SESSION["username"]=$username;
 					echo "Profile changed!!";
 					// Redirecting To Other Page
-					$location="/Ptuxiaki/sign_in.php";
-				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+				
+					$location="/Ptuxiaki/profilef.php";
+					header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+					
 				}
 			
 			}
@@ -119,13 +129,15 @@ $telephone=$_POST['telephone'];
 				$sql = "UPDATE user_professor
 							SET email='$email', username='$username'
 							WHERE username='$oldusername';";
-
+				
 				$qry = mysqli_query($conn, $sql);
 				if($qry){
+					$_SESSION["username"]=$username;
 					echo "Profile changed!!";
-					// Redirecting To Other Page
-					$location="/Ptuxiaki/sign_in.php";
-				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+					
+					$location="/Ptuxiaki/profilek.php";
+					header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+						
 				}
 			
 			}
@@ -153,13 +165,16 @@ $telephone=$_POST['telephone'];
 				$sql = "UPDATE user_student
 							SET phone_number='$telephone', username='$username'
 							WHERE username='$oldusername';";
-
+				
 				$qry = mysqli_query($conn, $sql);
 				if($qry){
 					echo "Profile changed!!";
+					$_SESSION["username"]=$username;
 					// Redirecting To Other Page
-					$location="/Ptuxiaki/sign_in.php";
-				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+					
+					$location="/Ptuxiaki/profilef.php";
+					header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+						
 				}
 			
 			}
@@ -167,13 +182,16 @@ $telephone=$_POST['telephone'];
 				$sql = "UPDATE user_professor
 							SET phone_number='$telephone', username='$username'
 							WHERE username='$oldusername';";
-
+				
 				$qry = mysqli_query($conn, $sql);
 				if($qry){
+					$_SESSION["username"]=$username;
 					echo "Profile changed!!";
 					// Redirecting To Other Page
-					$location="/Ptuxiaki/sign_in.php";
-				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+					
+					$location="/Ptuxiaki/profilek.php";
+					header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+					
 				}
 			
 			}
@@ -184,13 +202,16 @@ $telephone=$_POST['telephone'];
 				$sql = "UPDATE user_student
 							SET username='$username'
 							WHERE username='$oldusername';";
-
+			
 				$qry = mysqli_query($conn, $sql);
 				if($qry){
+					$_SESSION["username"]=$username;
 					echo "Profile changed!!";
 					// Redirecting To Other Page
-					$location="/Ptuxiaki/sign_in.php";
-				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+					
+					$location="/Ptuxiaki/profilef.php";
+					header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+				
 				}
 			
 			}
@@ -201,10 +222,12 @@ $telephone=$_POST['telephone'];
 
 				$qry = mysqli_query($conn, $sql);
 				if($qry){
+					$_SESSION["username"]=$username;
 					echo "Profile changed!!";
 					// Redirecting To Other Page
-					$location="/Ptuxiaki/sign_in.php";
-				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+					$location="/Ptuxiaki/profilek.php";
+					header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+					
 				}
 			
 			}
@@ -235,10 +258,13 @@ $telephone=$_POST['telephone'];
 
 				$qry = mysqli_query($conn, $sql);
 				if($qry){
+					$_SESSION["username"]=$oldusername;
 					echo "Profile changed!!";
 					// Redirecting To Other Page
-					$location="/Ptuxiaki/sign_in.php";
-				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+					
+					$location="/Ptuxiaki/profilef.php";
+					header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+						
 				}
 			
 			}
@@ -249,10 +275,13 @@ $telephone=$_POST['telephone'];
 
 				$qry = mysqli_query($conn, $sql);
 				if($qry){
+					$_SESSION["username"]=$oldusername;
 					echo "Profile changed!!";
 					// Redirecting To Other Page
-					$location="/Ptuxiaki/sign_in.php";
-				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+					
+					$location="/Ptuxiaki/profilek.php";
+					header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+						
 				}
 			
 			}
@@ -266,10 +295,13 @@ $telephone=$_POST['telephone'];
 
 				$qry = mysqli_query($conn, $sql);
 				if($qry){
+					$_SESSION["username"]=$oldusername;
 					echo "Profile changed!!";
 					// Redirecting To Other Page
-					$location="/Ptuxiaki/sign_in.php";
-				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+					
+					$location="/Ptuxiaki/profilef.php";
+					header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+					
 				}
 			
 			}
@@ -280,10 +312,13 @@ $telephone=$_POST['telephone'];
 
 				$qry = mysqli_query($conn, $sql);
 				if($qry){
+					$_SESSION["username"]=$oldusername;
 					echo "Profile changed!!";
 					// Redirecting To Other Page
-					$location="/Ptuxiaki/sign_in.php";
-				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+					
+					$location="/Ptuxiaki/profilek.php";
+					header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+					
 				}
 			
 			}
@@ -300,10 +335,13 @@ $telephone=$_POST['telephone'];
 
 				$qry = mysqli_query($conn, $sql);
 				if($qry){
+					$_SESSION["username"]=$oldusername;
 					echo "Profile changed!!";
 					// Redirecting To Other Page
-					$location="/Ptuxiaki/sign_in.php";
-				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+				
+					$location="/Ptuxiaki/profilef.php";
+					header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+						
 				}
 			
 			}
@@ -313,10 +351,12 @@ $telephone=$_POST['telephone'];
 
 				$qry = mysqli_query($conn, $sql);
 				if($qry){
+					$_SESSION["username"]=$username;
 					echo "Profile changed!!";
 					// Redirecting To Other Page
-					$location="/Ptuxiaki/sign_in.php";
-				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+					$location="/Ptuxiaki/profilek.php";
+					header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+					
 				}
 			
 			}

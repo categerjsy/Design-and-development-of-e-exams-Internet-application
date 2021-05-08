@@ -13,41 +13,25 @@ include 'config.php';
     $hours=$_POST['hours'];
 	$minutes=$_POST['minutes'];
     $seconds=$_POST['seconds'];
-   
-    $hourse=$_POST['hourse'];
-	$minutese=$_POST['minutese'];
-    $secondse=$_POST['secondse'];
-   
-	$id_lesson=$_POST['course'];
+  
+	$lesson=$_POST['course'];
+	$s = mysqli_query($conn,"select * from lesson where name='$lesson'");
+		 while ($row = mysqli_fetch_array($s, MYSQLI_ASSOC)) {
+			 $my_lesson=$row["id_lesson"];
+		  }
 
     $date_old="$year-$month-$dt $hours:$minutes:$seconds";
-    $time="$hourse:$minutese:$secondse";
+  
     
 	$date_for_database = date ('Y-m-d H:i:s', strtotime($date_old));
-	if($hours+$hourse<24){
-		$h=$hours+$hourse;
-	}else{
-		$h=$hours+$hourse-24;
-	}
-	if($minutes+$minutese<60){
-		$m=$minutes+$minutese;
-	}else{
-		$m=$minutes+$minutese-60;
-		$h=$h+1;
-	}
-	if($seconds+$secondse<60){
-		$s=$seconds+$secondse;
-	}else{
-		$s=$seconds+$secondse-60;
-		$m=$m+1;
-	}
-	$d="$year-$month-$dt $h:$m:$s";
-	$dd = date ('Y-m-d H:i:s', strtotime($d));
+	
 		//question
-		mysqli_query($conn, "INSERT INTO exam (date_time,time)
-				VALUES ('$date_for_database','$dd')");
+		mysqli_query($conn, "INSERT INTO exam (date_time)
+				VALUES ('$date_for_database')");
 		$id_exam = mysqli_insert_id($conn);
-		
+		//question
+		mysqli_query($conn, "INSERT INTO belongs_to (id_lesson,id_exam)
+				VALUES (' $my_lesson','$id_exam')");
 			echo "Make in database final!!!";
 			// Redirecting To Other Page
 			$location="/Ptuxiaki/profilek.php";
