@@ -35,6 +35,7 @@ include 'config.php';
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/bootstrap-timepicker.min.js"></script>
+
 	</head>
 	
 		
@@ -86,7 +87,7 @@ include 'config.php';
 			<h3>Δημιουργία Εξέτασης</h3>
 			
 	
-			  <form action="exam.php" method="post">
+			  <form name="RegForm" action="exam.php"  onsubmit="return time()" method="post">
 			  <label for="course">Παρακαλώ επιλέξτε μάθημα εξέτασης</label> <br>
 			  <?php
 			   	$idp=$_SESSION["id_professor"];
@@ -107,7 +108,7 @@ include 'config.php';
 				
 				?>
                 <br> 
-					 	   <!--https://www.plus2net.com/php_tutorial/date-selection.php-->
+				
 				Ημερομηνία εξέτασης <br>
 				<table border="0" cellspacing="0" >
 
@@ -174,14 +175,17 @@ include 'config.php';
 
 				<br>
 				Ώρα Εξέτασης &nbsp;&nbsp;&nbsp;&nbsp;
-				<input type=text id="small" name=hours size=2 value=00>
+				<input type=text id="small" name=hours size=2 value=00  >
 				:
-				<input type=text id="small" name=minutes size=2 value=00>
+				<input type=text id="small" name=minutes size=2 value=00 >
 				:
-				<input type=text id="small" name=seconds size=2 value=00>
-				
-
-				<br>
+				<input type=text id="small" name=seconds size=2 value=00 >
+				<br><?php
+					if (isset($_GET["msg"]) && $_GET["msg"] == 'done') {
+						print "<p style='color:red'>O χρόνος δεν έχει σωστή μορφή, παρακαλώ εισάγεται μορφή χρονου 24-ώρου.</p>";
+					}
+				?>
+				<br> 
 				
 			    <input type="submit" value="Δημιουργία Εξέτασης">
 				<button class="cancelbtn" type="reset"><a href="create_question.php">Έξοδος</a></button>
@@ -201,8 +205,7 @@ include 'config.php';
         <script src="assets\js\bootstrap-number-input.js" ></script>
         <script src="assets\js\bootstrapSwitch.js" ></script>
 		<script src="assets/js/aside.js"></script>
-
-
+		<script src="assets/js/timeexam.js"></script>
 
 
 	</body>

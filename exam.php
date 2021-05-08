@@ -34,7 +34,7 @@ include 'config.php';
 				VALUES (' $my_lesson','$id_exam')");
 			echo "Make in database final!!!";
 			// Redirecting To Other Page
-			$location="/Ptuxiaki/profilek.php";
+			$location="/Ptuxiaki/create_exam2.php";
 		    header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
 		
 ?>
