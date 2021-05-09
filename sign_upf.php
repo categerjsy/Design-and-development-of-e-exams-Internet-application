@@ -91,12 +91,16 @@ session_start();
         <label for="p1"><b>Κωδικός</b></label> 
         <input name="password" id="password" type="password" placeholder="Κωδικός" class="demoInputBox" onKeyUp="checkPasswordStrength();" onkeyup='check();'  required>
         <div id="password-strength-status"></div>
+        <button onclick="toggler(this)" type="button" class="cleanbtn" style="color:white">Εμφάνιση κωδικού</button>
         </div>
-     
-        
+		<br>
+		
         <label for="p2"><b>Επιβεβαίωση Κωδικού</b></label>
         <input type="password" name="confirm_password" id="confirm_password" placeholder="Επιβεβαίωση Κωδικού"  onkeyup='check();' required>
+		<button onclick="check(this)" type="button" class="cleanbtn" style="color:white">Εμφάνιση κωδικού</button>
         <br><span id='message'></span>
+        
+
         <br>
         
       <button type="submit" class="cleanbtn" style="color:white">Εγγραφή</button>
@@ -113,5 +117,27 @@ session_start();
 <script src="assets/js/emailcheck.js"></script>
 <script src="assets/js/passwordcheck.js"></script>
 <script src="assets/js/index.js"></script>
+<script>
+function toggler(e) {
+  if( e.innerHTML == 'Εμφάνιση κωδικού' ) {
+      e.innerHTML = 'Απόκρυψη κωδικού'
+      document.getElementById('password').type="text";
+  } else {
+      e.innerHTML = 'Εμφάνιση κωδικού'
+      document.getElementById('password').type="password";
+  }
+}
+</script>
+<script>
+function check(e) {
+  if( e.innerHTML == 'Εμφάνιση κωδικού' ) {
+      e.innerHTML = 'Απόκρυψη κωδικού'
+      document.getElementById('confirm_password').type="text";
+  } else {
+      e.innerHTML = 'Εμφάνιση κωδικού'
+      document.getElementById('confirm_password').type="password";
+  }
+}
+</script>
 </body>
 </html>
