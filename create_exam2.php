@@ -93,9 +93,9 @@ include 'config.php';
 					while ($row = mysqli_fetch_array($findlesson, MYSQLI_ASSOC)) {
 					$l=$row["id_lesson"];
 					$namelesson=mysqli_query($conn,"select * from lesson where id_lesson='$l'");
-					while ($row = mysqli_fetch_array($namelesson, MYSQLI_ASSOC)) {
-						$lesson=$row["name"];
-					}
+						while ($row = mysqli_fetch_array($namelesson, MYSQLI_ASSOC)) {
+							$lesson=$row["name"];
+						}
 					}
 			}
 			echo "<h3>Εισαγωγή ερωτήσεων στο διαγώνισμα του μαθήματος $lesson.</h3><p>Το διαγώνισμα σας είναι προγραμματισμένο στις $exam_datetime </p>";
