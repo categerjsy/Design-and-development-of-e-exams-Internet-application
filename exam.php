@@ -29,11 +29,19 @@ include 'config.php';
 		mysqli_query($conn, "INSERT INTO exam (date_time)
 				VALUES ('$date_for_database')");
 		$id_exam = mysqli_insert_id($conn);
+		
 		//question
 		mysqli_query($conn, "INSERT INTO belongs_to (id_lesson,id_exam)
 				VALUES (' $my_lesson','$id_exam')");
+		
+		//create_exam
+		//question
+		mysqli_query($conn, "INSERT INTO create_exam (id_professor,id_exam)
+				VALUES ('$id_p','$id_exam')");
 			echo "Make in database final!!!";
 			// Redirecting To Other Page
+			$_SESSION["id_exam"]=$id_exam;
+	
 			$location="/Ptuxiaki/create_exam2.php";
 		    header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
 		

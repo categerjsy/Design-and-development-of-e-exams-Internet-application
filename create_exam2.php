@@ -84,7 +84,22 @@ include 'config.php';
 		<button class="openbtn" onclick="openNav()">☰ Βασικές επιλογές</button> 
 			
         <div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">
-			<h3>Εισαγωγή ερωτήσεων στο διαγώνισμα.</h3>
+			<?php
+			$exam=$_SESSION["id_exam"];
+			$query=mysqli_query($conn,"SELECT * FROM exam WHERE id_exam='$exam'");
+			while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+				$exam_datetime=$row["date_time"];
+				$findlesson=mysqli_query($conn,"select * from belongs_to where id_exam='$exam'");
+					while ($row = mysqli_fetch_array($findlesson, MYSQLI_ASSOC)) {
+					$l=$row["id_lesson"];
+					$namelesson=mysqli_query($conn,"select * from lesson where id_lesson='$l'");
+					while ($row = mysqli_fetch_array($namelesson, MYSQLI_ASSOC)) {
+						$lesson=$row["name"];
+					}
+					}
+			}
+			echo "<h3>Εισαγωγή ερωτήσεων στο διαγώνισμα του μαθήματος $lesson.</h3><p>Το διαγώνισμα σας είναι προγραμματισμένο στις $exam_datetime </p>";
+			?>
 			
 	
 			  <form  action="exam.php"  onsubmit="return time()" method="post">
