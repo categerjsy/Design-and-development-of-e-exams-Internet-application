@@ -23,12 +23,11 @@ $query = mysqli_query($conn,"select * from user_student where email='$email'");
 $res = mysqli_num_rows($query);
 ////////////////////////////////////    
 if(strlen($pass)<6){
-				echo '<script type="text/javascript">'; 
-                echo 'alert("Password not long enough!");'; 
-                echo 'window.location.href = "sign_upk.php";';
-                echo '</script>';
-		
-}
+	$location="/Ptuxiaki/sign_upk.php?msg=plen";
+	header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+
+}  
+else{
     if($pass==$cpass) {
 		  if($ru==1||$rus==1){
 				$error = "Username taken";
@@ -60,16 +59,14 @@ if(strlen($pass)<6){
 				
 			}
 		
-    }else{
-			echo '<script type="text/javascript">'; 
-                echo 'alert("Unmatched passwords!");'; 
-                echo 'window.location.href = "sign_upk.php";';
-                echo '</script>';
+		}else{
+			$location="/Ptuxiaki/sign_upk.php?msg=cp";
+			header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
 		
+			
+		}
+	
 	}
-
-
-
 ///////////////////////////
 //mysqli_close($conn);
 ?>

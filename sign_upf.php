@@ -44,17 +44,22 @@ session_start();
 <body>
 	<?php
 		if (isset($_GET["msg"]) && $_GET["msg"] == 'failed_username') {
-			print "<h4>Παρακαλώ προσπαθήστε ξανά, το username που επιλέξατε χρησιμοποιείται από άλλο χρήστη.</h4>";//προσωρινο
+			print "<p style='color:red'>Παρακαλώ προσπαθήστε ξανά, το username που επιλέξατε χρησιμοποιείται από άλλο χρήστη.<p>";//προσωρινο
 		}
 		else if (isset($_GET["msg"]) && $_GET["msg"] == 'failed_mail') {
-			print "<h4>Παρακαλώ προσπαθήστε ξανά, το email που επιλέξατε χρησιμοποιείται από άλλο χρήστη.</h4>";//προσωρινο
+			print "<p style='color:red'>Παρακαλώ προσπαθήστε ξανά, το email που επιλέξατε χρησιμοποιείται από άλλο χρήστη.<p>";//προσωρινο
+		}
+    else if (isset($_GET["msg"]) && $_GET["msg"] == 'plen') {
+			print "<p style='color:red'> Ο κωδικός σας δεν ήταν αρκετά μεγάλος.Παρακαλώ προσπαθήστε ξανά.</p>";//προσωρινο
+		}else if (isset($_GET["msg"]) && $_GET["msg"] == 'cp') {
+			print "<p style='color:red'> Οι κωδικοί σας δεν ταίριαζαν.Παρακαλώ προσπαθήστε ξανά.</p>";//προσωρινο
 		}
 	?>
-  
-  <form class="signup" action="connectf.php" method="post">
-    <div class="imgcontainer"> 
+  <!--<div class="imgcontainer"> -->
       <img src="photos/uop_new_logo.png" alt="Avatar" class="avatar">
-    </div>
+  <!--  </div>-->
+  <form class="signup" action="connectf.php" method="post">
+    
 	
     <div class="container">
         <label for="uname"><b>Όνομα</b></label>
@@ -71,9 +76,10 @@ session_start();
         <input  type="email" placeholder="E-mail σχολής" id="email" name="email" onblur="validateEmail(this);"  pattern="[a-zA-z0-9]*@uop.gr|[a-zA-z0-9]*@go.uop.gr" required >
         <br> <span id='messageEmail'></span>
 		<br>
-        
-        <label for="usname"><b>Username</b></label> 
-        <input type="text" placeholder="Username" name="uname" required>
+   
+        		
+        <label for="usname"><b>Όνομα χρήστη (username)</b></label> 
+        <input type="text" placeholder="Όνομα χρήστη (username)" name="uname" required>
         <br>  
         
 		<br>
@@ -89,15 +95,15 @@ session_start();
 		<br>
         <div name="frmCheckPassword" id="frmCheckPassword">  
         <label for="p1"><b>Κωδικός</b></label> 
-        <input name="password" id="password" type="password" placeholder="Κωδικός" class="demoInputBox" onKeyUp="checkPasswordStrength();" onkeyup='check();'  required>
+        <input name="password" id="password" type="password" placeholder="Κωδικός" class="demoInputBox" onKeyUp="checkPasswordStrength();" onkeyup='checkP();'  required>
         <div id="password-strength-status"></div>
         <button onclick="toggler(this)" type="button" class="cleanbtn" style="color:white">Εμφάνιση κωδικού</button>
         </div>
 		<br>
 		
         <label for="p2"><b>Επιβεβαίωση Κωδικού</b></label>
-        <input type="password" name="confirm_password" id="confirm_password" placeholder="Επιβεβαίωση Κωδικού"  onkeyup='check();' required>
-		<button onclick="check(this)" type="button" class="cleanbtn" style="color:white">Εμφάνιση κωδικού</button>
+        <input type="password" name="confirm_password" id="confirm_password" placeholder="Επιβεβαίωση Κωδικού"  onkeyup='checkP();' required>
+	      <button onclick="check(this)" type="button" class="cleanbtn" style="color:white">Εμφάνιση κωδικού</button>
         <br><span id='message'></span>
         
 
@@ -112,7 +118,7 @@ session_start();
      
 
   </form>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="assets/js/PcheckLength.js"></script>
 <script src="assets/js/emailcheck.js"></script>
 <script src="assets/js/passwordcheck.js"></script>

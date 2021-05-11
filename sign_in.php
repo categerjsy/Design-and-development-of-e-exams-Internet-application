@@ -44,9 +44,9 @@
 		}
 	?>
   <form class="sign_in" action="check_user_pass.php" method="post">
-   <div class="imgcontainer"> 
+   <!--<div class="imgcontainer"> -->
       <img src="photos/uop_new_logo.png"  alt="Avatar" class="avatar">
-    </div>
+    <!--</div>-->
 	
     <div class="container">
 	
