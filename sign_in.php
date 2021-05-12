@@ -44,16 +44,16 @@
 		}
 	?>
   <form class="sign_in" action="check_user_pass.php" method="post">
-   <!--<div class="imgcontainer"> -->
+   <div class="imgcontainer">
       <img src="photos/uop_new_logo.png"  alt="Avatar" class="avatar">
-    <!--</div>-->
+    </div>
 	
     <div class="container">
 	
 		<br>
 			  
 		<br>	  
-      <label for="username"><b>Username</b></label>
+      <label for="username"><b>Όνομα χρήστη (username)</b></label>
       <input type="text" placeholder="Εισάγετε Username" name="username" required>
 	  <br>
       <label for="psw"><b>Κωδικός</b></label>

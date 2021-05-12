@@ -10,7 +10,11 @@ include 'config.php';
 	$chapter=$_POST['chapter'];
     $time=$_POST['time'];
 	$grade=$_POST['grade'];
-    $ngrade=$_POST['ngrade'];
+    if(empty($_POST['ngrade'])) {
+		$ngrade=0;
+	 } else {
+		$ngrade=$_POST['ngrade'];
+	 }
     $type="Multiple Choice More";
 	$id_lesson=$_POST['course'];
 

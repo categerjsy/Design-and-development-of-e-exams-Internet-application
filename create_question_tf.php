@@ -116,10 +116,12 @@ include 'config.php';
 			    <input type="text" id="grade" name="grade" placeholder="Bαθμόλογηση" onblur="validateGrade(this);"  pattern="[0-9]{1}.[0-9]{2}"required>
 				<br> <span id='messageGrade'></span>
 				<br> 
-				<label for="ngrade">Αρνητική βαθμόλογηση</label> <br>
-			    <input type="text" id="ngrade" name="ngrade" placeholder="Αρνητική βαθμόλογηση" onblur="validateNGrade(this);" pattern="[0-9]{1}.[0-9]{2}" required>
-				<br> <span id='messageNGrade'></span>
-				<br> 
+				<label for="ngrade">Αρνητική βαθμόλογηση</label> <input type="checkbox" id="myCheck" onclick="negGrade()">
+				<br>
+				<p id="text" style="display:none">Παρακαλώ ορίστε αρνητική βαθμολόγηση
+			    <input type="text" id="ngrade" name="ngrade" placeholder="Αρνητική βαθμολόγηση" onblur="validateNGrade(this);" pattern="[0-9]{1}.[0-9]{2}">
+				<br> <span id='messageNGrade'></span></p>
+				
                 <label for="time">Παρακαλώ εισάγετε τον χρόνο απάντησης</label> <br>
 			    <input type="text" id="time" name="time" placeholder="Χρόνος Απάντησης" onblur="validateTime(this);" pattern="[0]{2}:[0-6]{1}[0-9]{1}:[0-5]{1}[0-9]{1}" required>
 				<br> <span id='messageTime'></span>
@@ -151,5 +153,6 @@ include 'config.php';
 		<script src="assets/js/grade.js"></script>
 		<script src="assets/js/ngrade.js"></script>
 		<script src="assets/js/inserttime.js"></script>
+		<script src="assets/js/negGrade.js"></script>
 	</body>
 </html>

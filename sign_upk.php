@@ -11,10 +11,10 @@ session_start();
     <title>Εγγραφή Καθηγητή</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	 <link rel="stylesheet" href="assets/css/nav.css">
-     <link rel="stylesheet" href="assets/css/st.css">
+	  <link rel="stylesheet" href="assets/css/nav.css">
+    <link rel="stylesheet" href="assets/css/st.css">
      <link rel="stylesheet" href="assets/css/pass.css">
-     <!--<link rel="stylesheet" href="assets/css/responsiveness.css">-->
+  
      
      <link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>
     <div class="nav">

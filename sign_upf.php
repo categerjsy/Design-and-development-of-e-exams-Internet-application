@@ -55,9 +55,9 @@ session_start();
 			print "<p style='color:red'> Οι κωδικοί σας δεν ταίριαζαν.Παρακαλώ προσπαθήστε ξανά.</p>";//προσωρινο
 		}
 	?>
-  <!--<div class="imgcontainer"> -->
+  <div class="imgcontainer"> 
       <img src="photos/uop_new_logo.png" alt="Avatar" class="avatar">
-  <!--  </div>-->
+   </div>
   <form class="signup" action="connectf.php" method="post">
     
 	

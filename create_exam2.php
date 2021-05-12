@@ -92,9 +92,11 @@ include 'config.php';
 				$findlesson=mysqli_query($conn,"select * from belongs_to where id_exam='$exam'");
 					while ($row = mysqli_fetch_array($findlesson, MYSQLI_ASSOC)) {
 					$l=$row["id_lesson"];
+					$SESSION["id_lesson"]=$l;
 					$namelesson=mysqli_query($conn,"select * from lesson where id_lesson='$l'");
 						while ($row = mysqli_fetch_array($namelesson, MYSQLI_ASSOC)) {
 							$lesson=$row["name"];
+							$SESSION["lesson"]=$lesson;
 						}
 					}
 			}
@@ -103,8 +105,66 @@ include 'config.php';
 			
 	
 			  <form  action="exam.php"  onsubmit="return time()" method="post">
-			 
-			    <input type="submit" value="Εισαγ">
+			 	<?php
+				 $id_lesson=$SESSION["id_lesson"];
+				 $lesson=$SESSION["lesson"];
+					$query=mysqli_query($conn,"SELECT * FROM includes WHERE id_lesson='$id_lesson'");
+					echo "<h3>Ερωτήσεις ελευθέρου κειμένου </h3>";
+					while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+						$id_question=$row["id_question"];	
+						$question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='Ελευθέρου κειμένου'");
+						while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
+							$qtext=$row["text"];
+							echo "<p> $qtext </p>";
+						}
+					}
+					$query=mysqli_query($conn,"SELECT * FROM includes WHERE id_lesson='$id_lesson'");
+					echo "<h3>Ερωτήσεις True-False </h3>";
+					while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+						$id_question=$row["id_question"];	
+						$question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='True-False'");
+						while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
+							$qtext=$row["text"];
+							echo "<p> $qtext </p>";
+						}
+					}
+					$query=mysqli_query($conn,"SELECT * FROM includes WHERE id_lesson='$id_lesson'");
+					echo "<h3>Ερωτήσεις Multiple Choice </h3>";
+					while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+						$id_question=$row["id_question"];	
+						$question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='Multiple Choice'");
+						while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
+							$qtext=$row["text"];
+							echo "<p> $qtext </p>";
+							$findpa=mysqli_query($conn,"select * from possible_answer where  id_question='$id_question'");
+								while ($row = mysqli_fetch_array($findpa, MYSQLI_ASSOC)) {
+									$pa=$row["text"];
+									echo "<input type='radio' id='$pa' name='pa' value='$pa'>
+										<label for='$pa'>$pa</label><br>";
+								}
+							
+						}
+					}
+					$query=mysqli_query($conn,"SELECT * FROM includes WHERE id_lesson='$id_lesson'");
+					echo "<h3>Ερωτήσεις Multiple Choice με πολλές σωστές απαντήσεις </h3>";
+					while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+						$id_question=$row["id_question"];	
+						$question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='Multiple Choice More'");
+						while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
+							$qtext=$row["text"];
+							echo "<p> $qtext </p>";
+							$findpa=mysqli_query($conn,"select * from possible_answer where  id_question='$id_question'");
+							while ($row = mysqli_fetch_array($findpa, MYSQLI_ASSOC)) {
+								$pa=$row["text"];
+								echo "<input type='checkbox' id='$pa' name='pa[]' value='$pa'>
+									<label for='$pa'>$pa</label><br>";
+							}
+                   		}
+						
+					}
+					
+				 ?>
+			    <input type="submit" value="Εισαγωγή των ερωτήσεων στο διαγώνισμα.">
 				<button class="cancelbtn" type="reset"><a href="create_question.php">Έξοδος</a></button>
             
     	        <button type="reset" class="cleanbtn">Καθαρισμός</button>

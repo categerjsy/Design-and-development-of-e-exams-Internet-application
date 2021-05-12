@@ -10,7 +10,11 @@ include 'config.php';
 	$chapter=$_POST['chapter'];
     $time=$_POST['time'];
 	$grade=$_POST['grade'];
-    $ngrade=$_POST['ngrade'];
+    if(empty($_POST['ngrade'])) {
+		$ngrade=0;
+	 } else {
+		$ngrade=$_POST['ngrade'];
+	 }
     $type="Multiple Choice";
 	$id_lesson=$_POST['course'];
 
@@ -18,7 +22,7 @@ include 'config.php';
 		//question
 		mysqli_query($conn, "INSERT INTO question (text, type, difficulty_level, chapter,time, grade, negative_grade)
 				VALUES ('$qtext','$type', '$difficulty_level', '$chapter','$time','$grade','$ngrade')");
-		$id_q = mysqli_insert_id($conn);
+		$id_q = mysqli_insert_id($conn);		
 		$_SESSION["id_q"]=$id_q;
 		//make
 		mysqli_query($conn,"INSERT INTO make (id_professor, id_question)
