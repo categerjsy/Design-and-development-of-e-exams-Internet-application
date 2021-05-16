@@ -28,9 +28,12 @@ include 'config.php';
 		<link rel="stylesheet" href="assets/css/asidenav.css">
 		<link rel="stylesheet" href="assets/css/lf.css">
 		<link rel="stylesheet" href="assets/css/button.css">
+		<link rel="stylesheet" href="assets/css/checkbox.css">
         <link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>
+		
+
 	
-	
+		
 
 	</head>
 	
@@ -65,7 +68,7 @@ include 'config.php';
 		
 		</header>
 		<aside>
-			
+	
 		<!-- Sidebar -->
 		<div id="mySidebar" class="sidebar">
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
@@ -74,12 +77,46 @@ include 'config.php';
 		<a href="create_question.php">Εισαγωγή ερώτησης</a>
 		<a href="create_exam.php">Δημιουργία εξέτασης</a>
 		</div>
-
+		<button class="openbtn" onclick="openNav()">☰ Βασικές επιλογές</button> 
+		
 	</aside>
 	<main>  
-		<button class="openbtn" onclick="openNav()">☰ Βασικές επιλογές</button> 
+	<br>
+		<h3>Δυσκολία ερώτησης</h3>
+		<label class="container">Εύκολη
+		<input type="checkbox" value="easy">
+		<span class="checkmark"></span>
+		</label>
+		<label class="container">Μέτρια
+		<input type="checkbox" value="medium">
+		<span class="checkmark"></span>
+		</label>
+		<label class="container">Δύσκολη
+		<input type="checkbox" value="difficult">
+		<span class="checkmark"></span>
+		</label>
+		<br>
+		<h3>Κατηγορίες Ερωτήσεων</h3>
+		<label class="container">True-False
+		<input type="checkbox" value="True-False">
+		<span class="checkmark"></span>
+		</label>
+		<label class="container">Multiple Choice
+		<input type="checkbox" value="Multiple Choice">
+		<span class="checkmark"></span>
+		</label>
+		<label class="container">Multiple Choice με πολλές σωστές απάντησεις
+		<input type="checkbox" value="Multiple Choice More">
+		<span class="checkmark"></span>
+		</label>
+		<label class="container">Ελευθέρου κειμένου
+		<input type="checkbox" value="Ελευθέρου κειμένου">
+		<span class="checkmark"></span>
+		</label>
+        
 			
         <div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">
+
 			<?php
 			$exam=$_SESSION["id_exam"];
 			$query=mysqli_query($conn,"SELECT * FROM exam WHERE id_exam='$exam'");
