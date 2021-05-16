@@ -24,7 +24,14 @@ include 'config.php';
   
     
 	$date_for_database = date ('Y-m-d H:i:s', strtotime($date_old));
+	$now =  date ('Y-m-d H:i:s');
 	
+		if($date_for_database< $now) {
+			
+			$location="/Ptuxiaki/create_exam.php?msg=past";
+		    header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+		}
+		elseif($date_for_database> $now) {
 		//question
 		mysqli_query($conn, "INSERT INTO exam (date_time)
 				VALUES ('$date_for_database')");
@@ -44,5 +51,5 @@ include 'config.php';
 	
 			$location="/Ptuxiaki/create_exam2.php";
 		    header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
-		
+		}
 ?>

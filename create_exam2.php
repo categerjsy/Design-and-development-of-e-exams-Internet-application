@@ -30,11 +30,7 @@ include 'config.php';
 		<link rel="stylesheet" href="assets/css/button.css">
         <link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>
 	
-		<link type="text/css" href="css/bootstrap.min.css" />
-        <link type="text/css" href="css/bootstrap-timepicker.min.css" />
-        <script type="text/javascript" src="js/jquery.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap-timepicker.min.js"></script>
+	
 
 	</head>
 	
@@ -259,10 +255,9 @@ include 'config.php';
 					
 					
 				 ?>
-				<!--<div class="w3-container">-->
-    			    <a href="profilek.php?msg=exam"><button class="but" type="button">Ολοκλήρωση διαγωνίσματος.</button></a>
-					<!--</div>-->
-			    <!--<input type="submit" value="Εισαγωγή των ερωτήσεων στο διαγώνισμα.">-->
+				
+    			<a href="profilek.php?msg=exam"><button class="but" type="button">Ολοκλήρωση διαγωνίσματος.</button></a>
+					
 				<button class="cancelbtn" type="reset"><a href="create_question.php">Έξοδος</a></button>
             
     	        <button type="reset" class="cleanbtn">Καθαρισμός</button>

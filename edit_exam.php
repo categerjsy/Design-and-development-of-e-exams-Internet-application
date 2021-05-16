@@ -78,7 +78,7 @@ include 'config.php';
 			<h3>Επεξεργασία ερωτήσεων</h3>
 			
 	
-			  <form action="edit_questions.php" method="post">
+			  <form action="create_exam2.php" method="post">
 			  <label for="course">Παρακαλώ επιλέξτε διαγώνισμα για επεξεργασία</label> <br>
 			  <?php
 			   	$idp=$_SESSION["id_professor"];
@@ -87,6 +87,7 @@ include 'config.php';
 				   $s = mysqli_query($conn,"select * from create_exam where id_professor='$idp'");
 				   while ($row = mysqli_fetch_array($s, MYSQLI_ASSOC)) {
 					   $my_exam=$row["id_exam"];
+
 					   $findexam=mysqli_query($conn,"select * from exam where id_exam='$my_exam'");
 					   while ($row = mysqli_fetch_array($findexam, MYSQLI_ASSOC)) {
 						$ex_time=$row["date_time"];
@@ -101,6 +102,9 @@ include 'config.php';
                         }
 					   }
 				  }
+				  $_SESSION["id_exam"]=$my_exam;
+				  $SESSION["id_lesson"]=$id_lesson;
+				 
 				  echo "</select>";	 
 			 	   
 	

@@ -29,12 +29,7 @@ include 'config.php';
 		<link rel="stylesheet" href="assets/css/lf.css">
 		<link rel="stylesheet" href="assets/css/button.css">
         <link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>
-	
-		<link type="text/css" href="css/bootstrap.min.css" />
-        <link type="text/css" href="css/bootstrap-timepicker.min.css" />
-        <script type="text/javascript" src="js/jquery.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap-timepicker.min.js"></script>
+
 
 	</head>
 	
@@ -88,6 +83,11 @@ include 'config.php';
 			
 	
 			  <form name="RegForm" action="exam.php"  onsubmit="return time()" method="post">
+			  <?php
+			  	if (isset($_GET["msg"]) && $_GET["msg"] == 'past') {
+						print "<p style='color:red'>Το διαγώνισμα σας δεν μπορεί να προγραμματιστεί στο παρελθόν.</p>";
+					}
+			 ?>
 			  <label for="course">Παρακαλώ επιλέξτε μάθημα εξέτασης</label> <br>
 			  <?php
 			   	$idp=$_SESSION["id_professor"];
@@ -206,7 +206,7 @@ include 'config.php';
         <script src="assets\js\bootstrapSwitch.js" ></script>
 		<script src="assets/js/aside.js"></script>
 		<script src="assets/js/timeexam.js"></script>
-
+		
 
 	</body>
 </html>
