@@ -68,11 +68,17 @@ session_start();
 	<a href="create_question.php">Εισαγωγή ερώτησης</a>
 	<a href="select_lesson.php">Επεξεργασία ερωτήσεων</a>
 	<a href="create_exam.php">Δημιουργία εξέτασης</a>
+	<a href="edit_exam.php">Επεξεργασία διαγωνίσματος</a>
 	</div>
 
 		</aside>
 		<main>  
-		<button class="openbtn" onclick="openNav()">☰ Βασικές επιλογές</button>                     
+		<button class="openbtn" onclick="openNav()">☰ Βασικές επιλογές</button>      
+		<?php
+					if (isset($_GET["msg"]) && $_GET["msg"] == 'exam') {
+						print "<p style='color:green'>Το διαγώνισμα σας, ολοκληρώθηκε.</p>";
+					}
+		?>               
 		</main>
 		<footer>
 		</footer>

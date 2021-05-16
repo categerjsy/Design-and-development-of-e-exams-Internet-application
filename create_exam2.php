@@ -259,7 +259,10 @@ include 'config.php';
 					
 					
 				 ?>
-			    <input type="submit" value="Εισαγωγή των ερωτήσεων στο διαγώνισμα.">
+				<!--<div class="w3-container">-->
+    			    <a href="profilek.php?msg=exam"><button class="but" type="button">Ολοκλήρωση διαγωνίσματος.</button></a>
+					<!--</div>-->
+			    <!--<input type="submit" value="Εισαγωγή των ερωτήσεων στο διαγώνισμα.">-->
 				<button class="cancelbtn" type="reset"><a href="create_question.php">Έξοδος</a></button>
             
     	        <button type="reset" class="cleanbtn">Καθαρισμός</button>
