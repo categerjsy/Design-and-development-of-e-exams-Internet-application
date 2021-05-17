@@ -67,20 +67,18 @@ session_start();
          
     <label for="psw"><b>Παλιός Κωδικός</b></label>
 		<input type="password" placeholder="Παλιός Κωδικός" id="old_password" name="old_password" required>
-		<button onclick="toggler(this)" type="button" class="cleanbtn" style="color:white">Εμφάνιση κωδικού</button>
 		<br>		 
         <br>
         <div name="frmCheckPassword" id="frmCheckPassword">  
         <label for="p1"><b>Νέος Κωδικός</b></label> 
         <input name="new_password" id="new_password" type="password" placeholder="Νέος Κωδικός" class="demoInputBox" onKeyUp="checkPasswordStrength();" onkeyup='check();'  required>
-		<button onclick="check(this)" type="button" class="cleanbtn" style="color:white">Εμφάνιση κωδικού</button>
+		<button onclick="check(this)" type="button" class="cleanbtn" style="color:white">Εμφάνιση νέου κωδικού</button>
         <div id="password-strength-status"></div>
         </div>
      
         
         <label for="p2"><b>Επιβεβαίωση Νέου Κωδικού</b></label>
         <input type="password" name="confirm_password" id="confirm_password" placeholder="Επιβεβαίωση Νέου Κωδικού"  onkeyup='check();' required>
-		<button onclick="confirm(this)" type="button" class="cleanbtn" style="color:white">Εμφάνιση κωδικού</button>
         <br><span id='message'></span>
         <br>
         
@@ -105,38 +103,15 @@ session_start();
 <script src="assets/js/passwordcheck.js"></script>
 <script src="assets/js/index.js"></script>
 <script>
-function toggler(e) {
-  if( e.innerHTML == 'Εμφάνιση κωδικού' ) {
-      e.innerHTML = 'Απόκρυψη κωδικού'
-      document.getElementById('old_password').type="text";
-  } else {
-      e.innerHTML = 'Εμφάνιση κωδικού'
-      document.getElementById('old_password').type="password";
-  }
-}
-</script>
-<script>
 function check(e) {
-  if( e.innerHTML == 'Εμφάνιση κωδικού' ) {
-      e.innerHTML = 'Απόκρυψη κωδικού'
+  if( e.innerHTML == 'Εμφάνιση νέου κωδικού' ) {
+      e.innerHTML = 'Απόκρυψη νέου κωδικού'
       document.getElementById('new_password').type="text";
   } else {
-      e.innerHTML = 'Εμφάνιση κωδικού'
+      e.innerHTML = 'Εμφάνιση νέου κωδικού'
       document.getElementById('new_password').type="password";
   }
 }
 </script>
-<script>
-function confirm(e) {
-  if( e.innerHTML == 'Εμφάνιση κωδικού' ) {
-      e.innerHTML = 'Απόκρυψη κωδικού'
-      document.getElementById('confirm_password').type="text";
-  } else {
-      e.innerHTML = 'Εμφάνιση κωδικού'
-      document.getElementById('confirm_password').type="password";
-  }
-}
-</script>
-
 </body>
 </html>

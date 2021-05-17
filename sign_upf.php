@@ -103,7 +103,6 @@ session_start();
 		
         <label for="p2"><b>Επιβεβαίωση Κωδικού</b></label>
         <input type="password" name="confirm_password" id="confirm_password" placeholder="Επιβεβαίωση Κωδικού"  onkeyup='checkP();' required>
-	      <button onclick="check(this)" type="button" class="cleanbtn" style="color:white">Εμφάνιση κωδικού</button>
         <br><span id='message'></span>
         
 
@@ -131,17 +130,6 @@ function toggler(e) {
   } else {
       e.innerHTML = 'Εμφάνιση κωδικού'
       document.getElementById('password').type="password";
-  }
-}
-</script>
-<script>
-function check(e) {
-  if( e.innerHTML == 'Εμφάνιση κωδικού' ) {
-      e.innerHTML = 'Απόκρυψη κωδικού'
-      document.getElementById('confirm_password').type="text";
-  } else {
-      e.innerHTML = 'Εμφάνιση κωδικού'
-      document.getElementById('confirm_password').type="password";
   }
 }
 </script>
