@@ -1,0 +1,26 @@
+<form action="save_edited_quest.php" method="post">
+			<label for="text"><b>Ερώτηση</b></label> 
+			<input  type="text" value="<?php echo "$my_m"; ?>" id="text" name="email" onblur="validateEmail(this);"  pattern="[a-zA-z0-9]*@uop.gr|[a-zA-z0-9]*@go.uop.gr" required >
+			<br> <span id='messageEmail'></span>
+			<br>
+			
+			<label for="telephone"><b>Αριθμός τηλεφώνου</b></label> 
+			<input type="tel" value="<?php echo "$tel"; ?>" name="telephone" pattern="[0-9]{10}"  required>
+			<br>
+			
+			<br>
+			<label for="usname"><b>Username</b></label> 
+			<input type="text" value="<?php echo "$username"; ?>" name="uname" required>
+			<br>
+					
+			<button type="submit" class="cleanbtn" style="color:white">Αλλαγή</button>
+			<button type="button" class="cancelbtn" onclick="goBack()">Πίσω</button>
+			<script>
+			function goBack() {
+			  window.history.back();
+			}
+			</script>
+			<button type="reset" class="cleanbtn" onClick="window.location.reload();" style="color:white">Επαναφορά</button>
+			
+			<button type="button" class="cleanbtn"><a href="change_password.php">Αλλαγή κωδικού</a></button>
+			</form>

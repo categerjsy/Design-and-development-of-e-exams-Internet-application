@@ -1,13 +1,9 @@
-
 <?php
 session_start();	
 include 'config.php';
 $prof=$_SESSION["id_professor"];
 $id_lesson=$_POST['course'];
 ?>
-	
-
-  <!--εδω πρεπει να εμφανίζονται οι ερωτήσεις του μαθήματος-->
 
 <!DOCTYPE HTML>
 
@@ -30,13 +26,11 @@ $id_lesson=$_POST['course'];
 		<link rel="stylesheet" href="assets/css/nav.css">
 		<link rel="stylesheet" href="assets/css/asidenav.css">
 		<link rel="stylesheet" href="assets/css/lf.css">
-		<!--<link rel="stylesheet" href="assets/css/button.css">-->
+		<link rel="stylesheet" href="assets/css/button.css">
+		<link rel="stylesheet" href="assets/css/checkbox.css">
         <link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>
-	
-	
 	</head>
-	
-	
+		
 	<body>
 		<header>
 			<div class="nav">
@@ -63,76 +57,101 @@ $id_lesson=$_POST['course'];
 		
 		</header>
 		<aside>
-		
+	
 		<!-- Sidebar -->
 		<div id="mySidebar" class="sidebar">
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
 		<a href="edit_prof.php">Επεξεργασία προφίλ</a>
 		<a href="create_lesson.php">Δημιουργία μαθήματος</a>
 		<a href="create_question.php">Εισαγωγή ερώτησης</a>
-		<a href="select_lesson.php">Επεξεργασία ερωτήσεων</a>
 		<a href="create_exam.php">Δημιουργία εξέτασης</a>
 		</div>
-	
-		</aside>
-		<main>  
-			<button class="openbtn" onclick="openNav()">☰ Βασικές επιλογές</button>     
+		<button class="openbtn" onclick="openNav()">☰ Βασικές επιλογές</button> 
+		
+	</aside>
+	<main>
         <div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">
-			<h3>Επεξεργασία ερωτήσεων</h3>
-			
-			  <form action="edit_questions.php" method="post">
-			  <?php
-	//από το id_lesson μέσω της includes βρίσκω το id_question σε πίνακα
-				
-				
-				$sql1 = "SELECT id_question FROM includes WHERE id_lesson='$id_lesson'";
-				$result = $conn->query($sql1);
-
-				if ($result->num_rows > 0) {
-				  // output data of each row
-				  while($row = $result->fetch_assoc()) {
-					echo "id: " . $row["id_question"]. "<br>";
-					$quest=$row["id_question"];
-					
-					$sql2 = "SELECT text FROM question WHERE id_question='$quest'";
-					$res = $conn->query($sql2);
-					if ($res->num_rows > 0) {
-				  // output data of each row
-						while($r = $res->fetch_assoc()) {
-							echo "Q: " . $r["text"]. "<br>";
-						}
+		<?php
+			$query=mysqli_query($conn,"SELECT * FROM includes WHERE id_lesson='$id_lesson'");
+			echo "<h3>Ερωτήσεις ελευθέρου κειμένου </h3>";
+			while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+				$id_question=$row["id_question"];	
+				$question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='Ελευθέρου κειμένου'");
+					while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
+						$qtext=$row["text"];
+						echo "<form method='post' action='change_questions.php'>";
+						echo "<button type = 'submit' name='id_question' class='wbtn' value='$id_question'>";
+						echo "Επεξεργασία";
+						echo "</button>";
+					echo " $qtext<br> <br>";
 					}
-					
-				  }
-				} else {
-				  echo "0 results";
+			}
+			echo "<hr>";
+			$query=mysqli_query($conn,"SELECT * FROM includes WHERE id_lesson='$id_lesson'");
+			echo "<h3>Ερωτήσεις True-False </h3>";
+			while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+				$id_question=$row["id_question"];	
+				$question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='True-False'");
+				while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
+					$qtext=$row["text"];
+					echo "<form method='post' action='change_questions.php'>";
+					echo "<button type = 'submit' name='id_question' class='wbtn' value='$id_question'>";
+					echo "Επεξεργασία";
+					echo "</button>";
+					echo "$qtext<br><br>";
 				}
-				//από το id_question, μέσω της question θα εμφανίζονται οι ερωτήσεις 
-				?>
-				
-				<br>
-				
-				<button type="submit" class="cleanbtn" style="color:white">Επιλογή</button>
-				<br> <br>
-    	        <button type="reset" class="cleanbtn">Καθαρισμός</button>
-                <br> <br>
-				<button class="cancelbtn" type="reset"><a href="create_question.php">Έξοδος</a></button>
-                <br> <br>
-
-
-			  </form>
-			</div>
+			}
+			echo "<hr>";
+			$query=mysqli_query($conn,"SELECT * FROM includes WHERE id_lesson='$id_lesson'");
+			echo "<h3>Ερωτήσεις Multiple Choice </h3>";
+			while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+				$id_question=$row["id_question"];	
+				$question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='Multiple Choice'");
+				while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
+					$qtext=$row["text"];
+					echo "<form method='post' action='change_questions.php'>";
+					echo "<button type = 'submit' name='id_question' class='wbtn' value='$id_question'>";
+					echo "Επεξεργασία";
+					echo "</button>";
+					echo " $qtext <br>";
+				}
+			}
+			echo "<hr>";		
+			$query=mysqli_query($conn,"SELECT * FROM includes WHERE id_lesson='$id_lesson'");
+			echo "<h3>Ερωτήσεις Multiple Choice με πολλές σωστές απαντήσεις </h3>";
+			while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+				$id_question=$row["id_question"];	
+				$question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='Multiple Choice More'");
+				while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
+					$qtext=$row["text"];
+					echo "<form method='post' action='change_questions.php'>";
+					echo "<button type = 'submit' name='id_question' class='wbtn' value='$id_question'>";
+					echo "Επεξεργασία";
+					echo "</button>";
+					echo " $qtext<br> ";
+                }
+			}
+			echo "<hr>";
+		?>
+		<button type="button" class="cancelbtn" onclick="goBack()">Πίσω</button>
+        <button type="reset" class="cleanbtn">Καθαρισμός</button>
+        <br>
+		</div>
                      
 		</main>
 		<footer>
 		</footer>
+		
         <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js" ></script>
         <script src="assets\js\bootstrap-number-input.js" ></script>
         <script src="assets\js\bootstrapSwitch.js" ></script>
 		<script src="assets/js/aside.js"></script>
-		<script src="assets/js/grade.js"></script>
-		<script src="assets/js/ngrade.js"></script>
-		<script src="assets/js/inserttime.js"></script>
-		<script src="assets/js/negGrade.js"></script>
+		<script>
+			function goBack() {
+			  window.history.back();
+			}
+		</script>
+
+
 	</body>
 </html>

@@ -99,7 +99,7 @@ include 'config.php';
 				
 				?>
                 <br> 
-			    <label for="qtext">Κειμένου ερώτησης ελευθέρου κειμένου</label> <br>
+			    <label for="qtext">Κείμενο ερώτησης ελευθέρου κειμένου</label> <br>
 			    <input type="text" id="qtext" name="qtext" placeholder="Κείμενο ερώτησης ελευθέρου κειμένου" required>
 				<br> 
 				<label for="difficulty_level">Κατηγορία Μαθήματος</label> <br>
