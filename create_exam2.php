@@ -239,13 +239,17 @@ include 'config.php';
 								}
 							}
 							echo " $qtext <br>";
-									$findpa=mysqli_query($conn,"select * from possible_answer where  id_question='$id_question'");
+							$findidpa=mysqli_query($conn,"select * from has where  id_question='$id_question'");
+							while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
+								$id_pa=$row["id_possibleAnswer"];
+								$findpa=mysqli_query($conn,"select * from possible_answer where id_possibleAnswer='$id_pa'");
 								while ($row = mysqli_fetch_array($findpa, MYSQLI_ASSOC)) {
 									$pa=$row["text"];
+									
 									echo "<p style='margin-left:30%;'><input type='radio' id='$pa' name='pa' value='$pa'>
 											<label for='$pa'>$pa</label><p>";
 								}
-								
+							}	
 								echo "<hr>";		
 						}
 					}
@@ -278,11 +282,15 @@ include 'config.php';
 								}
 							}
 							echo " $qtext<br> ";
-							$findpa=mysqli_query($conn,"select * from possible_answer where  id_question='$id_question'");
-							while ($row = mysqli_fetch_array($findpa, MYSQLI_ASSOC)) {
-								$pa=$row["text"];
+							$findidpa=mysqli_query($conn,"select * from has where  id_question='$id_question'");
+							while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
+								$id_pa=$row["id_possibleAnswer"];
+								$findpa=mysqli_query($conn,"select * from possible_answer where id_possibleAnswer='$id_pa'");
+								while ($row = mysqli_fetch_array($findpa, MYSQLI_ASSOC)) {
+									$pa=$row["text"];
 								echo "<p style='margin-left:30%;'><input type='checkbox' id='$pa' name='pa[]' value='$pa'>
 								<label for='$pa'>$pa</label><p>";
+								}
 							}
 							echo "<hr>";
                    		}
