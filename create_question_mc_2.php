@@ -86,11 +86,15 @@ include 'config.php';
                    while ($row = mysqli_fetch_array($s, MYSQLI_ASSOC)) {
                    $my_question=$row["text"];
 				   echo "<p>$my_question</p>";
-                   $findpa=mysqli_query($conn,"select * from possible_answer where  id_question='$id_q'");
-					   while ($row = mysqli_fetch_array($findpa, MYSQLI_ASSOC)) {
-						$pa=$row["text"];
-						echo "<input type='radio' id='$pa' name='pa' value='$pa'>
+                   $findidpa=mysqli_query($conn,"select * from has where  id_question='$id_q'");
+					   while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
+						$id_pa=$row["id_possibleAnswer"];
+						$findpa=mysqli_query($conn,"select * from possible_answer where id_possibleAnswer='$id_pa'");
+					  	 while ($row = mysqli_fetch_array($findpa, MYSQLI_ASSOC)) {
+							$pa=$row["text"];
+							echo "<input type='radio' id='$pa' name='pa' value='$pa'>
                               <label for='$pa'>$pa</label><br>";
+						 }
 					   }
                    }
 

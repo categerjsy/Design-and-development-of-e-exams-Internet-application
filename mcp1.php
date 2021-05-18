@@ -46,10 +46,11 @@ include 'config.php';
 					$pa=trim($_POST['name'][$i]);
 					echo $pa;
 					//de leiourgei
-					mysqli_query($conn,"INSERT INTO possible_answer (text,id_question,is_correct)
-					VALUES ('$pa','$id_q',0)");
-					/*$sql = "INSERT INT possible_answer(text) VALUES('$pa')";
-					mysqli_query($conn, $sql);*/
+					mysqli_query($conn,"INSERT INTO possible_answer (text,is_correct)
+					VALUES ('$pa',0)");
+					$id_pa = mysqli_insert_id($conn);		
+					mysqli_query($conn,"INSERT INTO has ( id_question, id_possibleAnswer)
+						VALUES ('$id_q','$id_pa')");
                     
                 }
             }

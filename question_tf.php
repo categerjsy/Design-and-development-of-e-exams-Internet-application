@@ -32,12 +32,12 @@ include 'config.php';
 		mysqli_query($conn,"INSERT INTO includes (id_lesson, id_question)
 		VALUES ('$id_lesson','$id_q')");
 		if($answer=='F'){
-		mysqli_query($conn,"INSERT INTO possible_answer (text,id_question,is_correct)
-					VALUES ('TrueFalse ερώτηση','$id_q',0)");
+		mysqli_query($conn,"INSERT INTO possible_answer (text,is_correct)
+					VALUES ('TrueFalse ερώτηση',0)");
 		}
 		if($answer=='T'){
-			mysqli_query($conn,"INSERT INTO possible_answer (text,id_question,is_correct)
-						VALUES ('TrueFalse ερώτηση','$id_q',1)");
+			mysqli_query($conn,"INSERT INTO possible_answer (text,is_correct)
+						VALUES ('TrueFalse ερώτηση',1)");
 		}
 		$id_pa = mysqli_insert_id($conn);
 		//has
