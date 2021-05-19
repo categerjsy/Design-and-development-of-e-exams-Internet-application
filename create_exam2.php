@@ -53,7 +53,7 @@ include 'config.php';
 					</div>
 	
 				  </div>
-				  <div class="nav-btn">
+				  <div class="nav-btn" onclick="myHide()">
 					<label for="nav-check">
 					  <span></span>
 					  <span></span>
@@ -84,35 +84,27 @@ include 'config.php';
 	</aside>
 	<main>  
 	<div class="float-container">
-
-  	<div class="float-child">
+	
+  	<div class="float-child"  id="myHIDE">
 	  	<h2>Φίλτρα ερωτήσεων</h2>
 		<h4>Δυσκολία ερώτησης</h4>
-		
+
+		<label class="container">Εύκολη
 		<input type="checkbox" value="easy">
-		<label for="easy">Εύκολη</label>
-		<br>
+		<span class="checkmark"></span>
+		</label>
+		<label class="container">Μέτρια
 		<input type="checkbox" value="medium">
-		<label for="medium">Μέτρια</label>
-		<br>
+		<span class="checkmark"></span>
+		</label>
+		<label class="container">Δύσκολη
 		<input type="checkbox" value="difficult">
-		<label for="difficult">Δύσκολη</label>
-		<br>
+		<span class="checkmark"></span>
+		</label>
+		
 		<br>
 		<h4>Κατηγορίες Ερωτήσεων</h4>
-		<input type="checkbox" value="True-False">
-		<label for="True-False">True-False</label>
-		<br>
-		<input type="checkbox" value="Multiple Choice">
-		<label for="Multiple Choice">Multiple Choice</label>
-		<br>
-		<input type="checkbox" value="Multiple Choice More">
-		<label for="Multiple Choice More">Multiple Choice με πολλές σωστές απάντησεις</label>
-		<br>
-		<input type="checkbox" value="Ελευθέρου κειμένου">
-		<label for="Ελευθέρου κειμένου">Ελευθέρου κειμένου</label>
-		<br>
-		<!--<label class="container">True-False
+		<label class="container">True-False
 		<input type="checkbox" value="True-False">
 		<span class="checkmark"></span>
 		</label>
@@ -127,10 +119,10 @@ include 'config.php';
 		<label class="container">Ελευθέρου κειμένου
 		<input type="checkbox" value="Ελευθέρου κειμένου">
 		<span class="checkmark"></span>
-		</label>-->
+		</label>
 		<br>
-		</div>
-  
+	</div>
+		
  	   <div class="float-child2">
 			
         <div id="myform" ><!--style="margin-left:35%;padding:10px 50px;height:1000px;">
@@ -335,7 +327,7 @@ include 'config.php';
 		</main>
 		<footer>
 		</footer>
-		
+		<script src="assets/js/hide.js"></script>
         <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js" ></script>
         <script src="assets\js\bootstrap-number-input.js" ></script>
         <script src="assets\js\bootstrapSwitch.js" ></script>

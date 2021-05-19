@@ -1,6 +1,7 @@
 
 	.float-container {
-		padding: 15px;
+		padding: 5px;
+		
 	}
 
 	.float-child {
@@ -9,7 +10,7 @@
 		padding: 5px;
 	}  
 	.float-child2 {
-		margin-left:50%;
+		/*margin-left:50%*/
 		float: left;
 		padding: 5px;
 
