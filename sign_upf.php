@@ -49,13 +49,14 @@ session_start();
 		else if (isset($_GET["msg"]) && $_GET["msg"] == 'failed_mail') {
 			print "<p style='color:red'>Παρακαλώ προσπαθήστε ξανά, το email που επιλέξατε χρησιμοποιείται από άλλο χρήστη.<p>";//προσωρινο
 		}
-    else if (isset($_GET["msg"]) && $_GET["msg"] == 'plen') {
+		else if (isset($_GET["msg"]) && $_GET["msg"] == 'plen') {
 			print "<p style='color:red'> Ο κωδικός σας δεν ήταν αρκετά μεγάλος.Παρακαλώ προσπαθήστε ξανά.</p>";//προσωρινο
 		}else if (isset($_GET["msg"]) && $_GET["msg"] == 'cp') {
 			print "<p style='color:red'> Οι κωδικοί σας δεν ταίριαζαν.Παρακαλώ προσπαθήστε ξανά.</p>";//προσωρινο
 		}
+	
 	?>
-  <div class="imgcontainer"> 
+	<div class="imgcontainer"> 
       <img src="photos/uop_new_logo.png" alt="Avatar" class="avatar">
    </div>
   <form class="signup" action="connectf.php" method="post">

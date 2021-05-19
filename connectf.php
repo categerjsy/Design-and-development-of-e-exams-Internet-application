@@ -55,7 +55,7 @@ else{
 			if($qry){
 				echo "Profile in database!!!";
 				// Redirecting To Other Page
-				$location="/Ptuxiaki/sign_in.php";
+				$location="/Ptuxiaki/sign_in.php?msg=okay";
 			header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
 			}
 			

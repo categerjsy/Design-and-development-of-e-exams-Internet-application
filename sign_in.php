@@ -42,6 +42,9 @@
 		if (isset($_GET["msg"]) && $_GET["msg"] == 'failed') {
 			print "<h4>Παρακαλώ προσπαθήστε ξανά, λάθος username ή κωδικός.</h4>";//προσωρινο
 		}
+		else if (isset($_GET["msg"]) && $_GET["msg"] == 'okay') {
+			print "<h4> Το προφίλ σας έχει δημιουργηθεί. Συνδεθείτε για να συνεχίσετε.</h4>";//προσωρινο
+		}
 	?>
   <form class="sign_in" action="check_user_pass.php" method="post">
    <div class="imgcontainer">

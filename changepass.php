@@ -42,7 +42,7 @@ $conf=$_POST['confirm_password'];
 			if(strlen($new)<6){
 				echo '<script type="text/javascript">'; 
                 echo 'alert("Password not long enough!");'; 
-                echo 'window.location.href = "profilef.php";';
+                echo 'window.location.href = "change_password.php";';
                 echo '</script>';
 			}else{
 				if (!empty($_POST['old_password'])){
