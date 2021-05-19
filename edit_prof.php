@@ -80,7 +80,9 @@ include 'config.php';
 					echo '<a href="edit_prof.php">Επεξεργασία προφίλ</a>';
 					echo '<a href="create_lesson.php">Δημιουργία μαθήματος</a>';
 					echo '<a href="create_question.php">Εισαγωγή ερώτησης</a>';
+					echo '<a href="select_lesson.php">Επεξεργασία ερωτήσεων</a>';
 					echo '<a href="create_exam.php">Δημιουργία εξέτασης</a>';
+					echo '<a href="edit_exam.php">Επεξεργασία διαγωνίσματος</a>';
 					echo '</div>';
 				}
 			?>

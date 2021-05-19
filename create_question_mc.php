@@ -80,12 +80,14 @@ table tr td:last-child{
 		
 		<!-- Sidebar -->
 		<div id="mySidebar" class="sidebar">
-		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-		<a href="edit_prof.php">Επεξεργασία προφίλ</a>
-		<a href="create_lesson.php">Δημιουργία μαθήματος</a>
-		<a href="create_question.php">Εισαγωγή ερώτησης</a>
-		<a href="create_exam.php">Δημιουργία εξέτασης</a>
-		</div>
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+			<a href="edit_prof.php">Επεξεργασία προφίλ</a>
+			<a href="create_lesson.php">Δημιουργία μαθήματος</a>
+			<a href="create_question.php">Εισαγωγή ερώτησης</a>>
+			<a href="select_lesson.php">Επεξεργασία ερωτήσεων</a>
+			<a href="create_exam.php">Δημιουργία εξέτασης</a>
+			<a href="edit_exam.php">Επεξεργασία διαγωνίσματος</a>
+			</div>
 	
 		</aside>
 		<main>  
