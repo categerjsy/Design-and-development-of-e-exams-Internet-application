@@ -42,6 +42,7 @@ table tr td:last-child{
 		<link rel="stylesheet" href="assets/css/asidenav.css">
 		<link rel="stylesheet" href="assets/css/lf.css">
 		<link rel="stylesheet" href="assets/css/button.css">
+			<link rel="stylesheet" href="assets/css/checkbox.css">
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 
@@ -143,7 +144,11 @@ table tr td:last-child{
 			    <input type="text" id="grade" name="grade" placeholder="Bαθμόλογηση" onblur="validateGrade(this);"  pattern="[0-9]{1}.[0-9]{2}"required>
 				<br> <span id='messageGrade'></span>
 				<br> 
-				<label for="ngrade">Αρνητική βαθμόλογηση</label> <input type="checkbox" id="myCheck" onclick="negGrade()">
+				<!--<label for="ngrade">Αρνητική βαθμόλογηση</label> <input type="checkbox" id="myCheck" onclick="negGrade()">-->
+				<label class="container">Αρνητική βαθμόλογηση
+				<input type="checkbox" id="myCheck" onclick="negGrade()">
+				<span class="checkmark"></span>
+				</label>
 				<br>
 				<p id="text" style="display:none">Παρακαλώ ορίστε αρνητική βαθμολόγηση
 			    <input type="text" id="ngrade" name="ngrade" placeholder="Αρνητική βαθμολόγηση" onblur="validateNGrade(this);" pattern="[0-9]{1}.[0-9]{2}">

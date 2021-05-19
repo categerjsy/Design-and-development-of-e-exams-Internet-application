@@ -26,6 +26,7 @@ include 'config.php';
 		<link rel="stylesheet" href="assets/css/asidenav.css">
 		<link rel="stylesheet" href="assets/css/lf.css">
 		<link rel="stylesheet" href="assets/css/button.css">
+		<link rel="stylesheet" href="assets/css/radiobutton.css">
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 
@@ -94,8 +95,10 @@ include 'config.php';
 						$findpa=mysqli_query($conn,"select * from possible_answer where id_possibleAnswer='$id_pa'");
 					  	 while ($row = mysqli_fetch_array($findpa, MYSQLI_ASSOC)) {
 							$pa=$row["text"];
-							echo "<input type='radio' id='$pa' name='pa' value='$pa'>
-                              <label for='$pa'>$pa</label><br>";
+							echo "<h1 style='margin-left:30%;'><label class='containerr' for='$pa'> $pa
+									<input type='radio'  id='$pa' name='pa' value='$pa'>
+									<span class='checkmarkr'></span>
+								  	</label><h1>";
 						 }
 					   }
                    }

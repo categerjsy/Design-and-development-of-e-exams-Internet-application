@@ -29,6 +29,7 @@ include 'config.php';
 		<link rel="stylesheet" href="assets/css/lf.css">
 		<link rel="stylesheet" href="assets/css/button.css">
 		<link rel="stylesheet" href="assets/css/checkbox.css">
+		<link rel="stylesheet" href="assets/css/radiobutton.css">
 		<link rel="stylesheet" href="assets/css/filter.css">
         <link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>
 		
@@ -258,8 +259,10 @@ include 'config.php';
 								while ($row = mysqli_fetch_array($findpa, MYSQLI_ASSOC)) {
 									$pa=$row["text"];
 									
-									echo "<p style='margin-left:30%;'><input type='radio' id='$pa' name='pa' value='$pa'>
-											<label for='$pa'>$pa</label><p>";
+									echo "<p style='margin-left:30%;'><label class='containerr' for='$pa'> $pa
+									<input type='radio' id='$pa' name='pa' value='$pa'>
+									<span class='checkmarkr'></span>
+								  	</label><p>";
 								}
 							}	
 								echo "<hr>";		
@@ -300,8 +303,10 @@ include 'config.php';
 								$findpa=mysqli_query($conn,"select * from possible_answer where id_possibleAnswer='$id_pa'");
 								while ($row = mysqli_fetch_array($findpa, MYSQLI_ASSOC)) {
 									$pa=$row["text"];
-								echo "<p style='margin-left:30%;'><input type='checkbox' id='$pa' name='pa[]' value='$pa'>
-								<label for='$pa'>$pa</label><p>";
+								echo "<p style='margin-left:30%;'><label class='container' for='$pa'>$pa
+								<input type='checkbox' id='$pa' name='pa[]' value='$pa'>
+								<span class='checkmark'></span>
+								</label><p>";
 								}
 							}
 							echo "<hr>";
