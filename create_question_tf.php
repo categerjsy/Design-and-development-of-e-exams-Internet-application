@@ -27,7 +27,7 @@ include 'config.php';
 		<link rel="stylesheet" href="assets/css/nav.css">
 		<link rel="stylesheet" href="assets/css/asidenav.css">
 		<link rel="stylesheet" href="assets/css/lf.css">
-		<!--<link rel="stylesheet" href="assets/css/button.css">-->
+		<link rel="stylesheet" href="assets/css/checkbox.css">
         <link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>
 	
 	
@@ -116,7 +116,10 @@ include 'config.php';
 			    <input type="text" id="grade" name="grade" placeholder="Bαθμόλογηση" onblur="validateGrade(this);"  pattern="[0-9]{1}.[0-9]{2}"required>
 				<br> <span id='messageGrade'></span>
 				<br> 
-				<label for="ngrade">Αρνητική βαθμόλογηση</label> <input type="checkbox" id="myCheck" onclick="negGrade()">
+				<label class="container">Αρνητική βαθμόλογηση
+				<input type="checkbox" id="myCheck" onclick="negGrade()">
+				<span class="checkmark"></span>
+				</label>
 				<br>
 				<p id="text" style="display:none">Παρακαλώ ορίστε αρνητική βαθμολόγηση
 			    <input type="text" id="ngrade" name="ngrade" placeholder="Αρνητική βαθμολόγηση" onblur="validateNGrade(this);" pattern="[0-9]{1}.[0-9]{2}">

@@ -258,7 +258,7 @@ include 'config.php';
 									$pa=$row["text"];
 									
 									echo "<p style='margin-left:30%;'><label class='containerr' for='$pa'> $pa
-									<input type='radio' name='radio' id='$pa' name='pa' value='$pa'>
+									<input type='radio' id='$pa' name='pa' value='$pa'>
 									<span class='checkmarkr'></span>
 								  	</label><p>";
 								}
