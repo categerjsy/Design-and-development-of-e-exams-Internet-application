@@ -1,0 +1,17 @@
+
+	.float-container {
+		padding: 15px;
+	}
+
+	.float-child {
+		margin-right:10%;
+		float: right;
+		padding: 5px;
+	}  
+	.float-child2 {
+		margin-left:50%;
+		float: left;
+		padding: 5px;
+
+	}  
+		

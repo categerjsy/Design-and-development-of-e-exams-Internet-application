@@ -29,6 +29,7 @@ include 'config.php';
 		<link rel="stylesheet" href="assets/css/lf.css">
 		<link rel="stylesheet" href="assets/css/button.css">
 		<link rel="stylesheet" href="assets/css/checkbox.css">
+		<link rel="stylesheet" href="assets/css/filter.css">
         <link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>
 		
 
@@ -78,26 +79,40 @@ include 'config.php';
 		<a href="create_exam.php">Δημιουργία εξέτασης</a>
 		</div>
 		<button class="openbtn" onclick="openNav()">☰ Βασικές επιλογές</button> 
+		<br>
 		
 	</aside>
 	<main>  
-	<br>
-		<h3>Δυσκολία ερώτησης</h3>
-		<label class="container">Εύκολη
+	<div class="float-container">
+
+  	<div class="float-child">
+	  	<h2>Φίλτρα ερωτήσεων</h2>
+		<h4>Δυσκολία ερώτησης</h4>
+		
 		<input type="checkbox" value="easy">
-		<span class="checkmark"></span>
-		</label>
-		<label class="container">Μέτρια
-		<input type="checkbox" value="medium">
-		<span class="checkmark"></span>
-		</label>
-		<label class="container">Δύσκολη
-		<input type="checkbox" value="difficult">
-		<span class="checkmark"></span>
-		</label>
+		<label for="easy">Εύκολη</label>
 		<br>
-		<h3>Κατηγορίες Ερωτήσεων</h3>
-		<label class="container">True-False
+		<input type="checkbox" value="medium">
+		<label for="medium">Μέτρια</label>
+		<br>
+		<input type="checkbox" value="difficult">
+		<label for="difficult">Δύσκολη</label>
+		<br>
+		<br>
+		<h4>Κατηγορίες Ερωτήσεων</h4>
+		<input type="checkbox" value="True-False">
+		<label for="True-False">True-False</label>
+		<br>
+		<input type="checkbox" value="Multiple Choice">
+		<label for="Multiple Choice">Multiple Choice</label>
+		<br>
+		<input type="checkbox" value="Multiple Choice More">
+		<label for="Multiple Choice More">Multiple Choice με πολλές σωστές απάντησεις</label>
+		<br>
+		<input type="checkbox" value="Ελευθέρου κειμένου">
+		<label for="Ελευθέρου κειμένου">Ελευθέρου κειμένου</label>
+		<br>
+		<!--<label class="container">True-False
 		<input type="checkbox" value="True-False">
 		<span class="checkmark"></span>
 		</label>
@@ -112,10 +127,13 @@ include 'config.php';
 		<label class="container">Ελευθέρου κειμένου
 		<input type="checkbox" value="Ελευθέρου κειμένου">
 		<span class="checkmark"></span>
-		</label>
-        
+		</label>-->
+		<br>
+		</div>
+  
+ 	   <div class="float-child2">
 			
-        <div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">
+        <div id="myform" ><!--style="margin-left:35%;padding:10px 50px;height:1000px;">
 
 			<?php
 			$exam=$_SESSION["id_exam"];
@@ -137,7 +155,7 @@ include 'config.php';
 			?>
 			
 	
-			  <!--<form  action=""  onsubmit="return time()" method="post">-->
+			  <!-<form  action=""  onsubmit="return time()" method="post">-->
 			 	<?php
 				 
 				 $exam=$_SESSION["id_exam"];
@@ -161,13 +179,13 @@ include 'config.php';
 								if ($row) { 
 								echo "<form name='like' method='post' action='delete_contains.php'>";
 								echo "<button type = 'submit' name='btn' class='wbtn' value='$id_question'>";
-								echo "Αφαίρεση ερώτησης απο το διαγώνισμα";
+								echo "Αφαίρεση ερώτησης";
 								echo "</button>";
 								}
 								else{
 								echo "<form name='like' method='post' action='contains.php'>";
 								echo "<button type = 'submit' name='btn' class='wbtn' value='$id_question'>";
-								echo "Προσθήκη ερώτησης στο διαγώνισμα";
+								echo "Προσθήκη ερώτησης";
 								echo "</button>";
 								}
 							}
@@ -195,13 +213,13 @@ include 'config.php';
 								if ($row) { 
 								echo "<form name='like' method='post' action='delete_contains.php'>";
 								echo "<button type = 'submit' name='btn' class='wbtn' value='$id_question'>";
-								echo "Αφαίρεση ερώτησης απο το διαγώνισμα";
+								echo "Αφαίρεση ερώτησης";
 								echo "</button>";
 								}
 								else{
 								echo "<form name='like' method='post' action='contains.php'>";
 								echo "<button type = 'submit' name='btn' class='wbtn' value='$id_question'>";
-								echo "Προσθήκη ερώτησης στο διαγώνισμα";
+								echo "Προσθήκη ερώτησης";
 								echo "</button>";
 								}
 							}
@@ -228,13 +246,13 @@ include 'config.php';
 								if ($row) { 
 								echo "<form name='like' method='post' action='delete_contains.php'>";
 								echo "<button type = 'submit' name='btn' class='wbtn' value='$id_question'>";
-								echo "Αφαίρεση ερώτησης απο το διαγώνισμα";
+								echo "Αφαίρεση ερώτησης";
 								echo "</button>";
 								}
 								else{
 								echo "<form name='like' method='post' action='contains.php'>";
 								echo "<button type = 'submit' name='btn' class='wbtn' value='$id_question'>";
-								echo "Προσθήκη ερώτησης στο διαγώνισμα";
+								echo "Προσθήκη ερώτησης";
 								echo "</button>";
 								}
 							}
@@ -271,13 +289,13 @@ include 'config.php';
 								if ($row) { 
 								echo "<form name='like' method='post' action='delete_contains.php'>";
 								echo "<button type = 'submit' name='btn' class='wbtn' value='$id_question'>";
-								echo "Αφαίρεση ερώτησης απο το διαγώνισμα";
+								echo "Αφαίρεση ερώτησης";
 								echo "</button>";
 								}
 								else{
 								echo "<form name='like' method='post' action='contains.php'>";
 								echo "<button type = 'submit' name='btn' class='wbtn' value='$id_question'>";
-								echo "Προσθήκη ερώτησης στο διαγώνισμα";
+								echo "Προσθήκη ερώτησης";
 								echo "</button>";
 								}
 							}
@@ -300,14 +318,17 @@ include 'config.php';
 					
 					
 				 ?>
+					
 				
-    			<a href="profilek.php?msg=exam"><button class="but" type="button">Ολοκλήρωση διαγωνίσματος.</button></a>
+    			<a href="profilek.php?msg=exam"><button class="but" type="button">Ολοκλήρωση</button></a>
 					
 				<button class="cancelbtn" type="reset"><a href="create_question.php">Έξοδος</a></button>
             
     	        <button type="reset" class="cleanbtn">Καθαρισμός</button>
                 <br>
-
+				</div>
+	
+	</div>
 			 <!-- </form>-->
 			</div>
                      

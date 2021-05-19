@@ -49,6 +49,7 @@ body {
 
 .nav > .nav-links > a:hover {
   background-color: rgba(0, 0, 0, 0.3);
+  
 }
 
 .nav > #nav-check {
@@ -70,6 +71,7 @@ body {
   }
   .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
     background-color: #14284B;/*rgba(0, 0, 0, 0.3);*/
+      
   }
   .nav > .nav-btn > label > span {
     display: block;
@@ -94,6 +96,7 @@ body {
   }
   .nav > #nav-check:not(:checked) ~ .nav-links {
     height: 0px;
+    
   }
   .nav > #nav-check:checked ~ .nav-links {
     height: calc(100vh - 50px);
