@@ -57,7 +57,14 @@ include 'config.php';
 				  </div>
 				  
 				  <div class="nav-links">
-					<a  href="profilef.php"> <?php echo "$username"; ?></a>
+				  <?php 
+        			if (isset($_SESSION["id_student"])==NULL){
+					echo "<a  href='profilek.php'>$username</a>";
+					}
+					if (isset($_SESSION["id_professor"])==NULL){
+					echo "<a  href='profilef.php'>$username</a>";
+					}
+					?>
 					<a href="logout.php">Έξοδος</a>
 				  </div>
 			</div>
