@@ -109,6 +109,11 @@ include 'config.php';
 		
 		<br>
 		<h4>Κατηγορίες Ερωτήσεων</h4>
+		<label class="container">Ελευθέρου κειμένου
+		<input type="checkbox" value="Ελευθέρου κειμένου">
+		<span class="checkmark"></span>
+		</label>
+		
 		<label class="container">True-False
 		<input type="checkbox" value="True-False">
 		<span class="checkmark"></span>
@@ -121,10 +126,7 @@ include 'config.php';
 		<input type="checkbox" value="Multiple Choice More">
 		<span class="checkmark"></span>
 		</label>
-		<label class="container">Ελευθέρου κειμένου
-		<input type="checkbox" value="Ελευθέρου κειμένου">
-		<span class="checkmark"></span>
-		</label>
+		
 		<br>
 	</div>
 		
@@ -199,6 +201,12 @@ include 'config.php';
 					
 								
 					}
+				?>
+				<?php
+				 
+				 $exam=$_SESSION["id_exam"];
+				 $id_lesson=$SESSION["id_lesson"];
+				 $lesson=$SESSION["lesson"];
 					$query=mysqli_query($conn,"SELECT * FROM includes WHERE id_lesson='$id_lesson'");
 					echo "<h3>Ερωτήσεις True-False </h3>";
 					while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
@@ -232,6 +240,12 @@ include 'config.php';
 						}
 						
 					}
+					?>
+					<?php
+				 
+				 $exam=$_SESSION["id_exam"];
+				 $id_lesson=$SESSION["id_lesson"];
+				 $lesson=$SESSION["lesson"];
 					$query=mysqli_query($conn,"SELECT * FROM includes WHERE id_lesson='$id_lesson'");
 					echo "<h3>Ερωτήσεις Multiple Choice </h3>";
 					while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
@@ -277,6 +291,12 @@ include 'config.php';
 								echo "<hr>";		
 						}
 					}
+				?>
+				<?php
+				 
+				 $exam=$_SESSION["id_exam"];
+				 $id_lesson=$SESSION["id_lesson"];
+				 $lesson=$SESSION["lesson"];
 					$query=mysqli_query($conn,"SELECT * FROM includes WHERE id_lesson='$id_lesson'");
 					echo "<h3>Ερωτήσεις Multiple Choice με πολλές σωστές απαντήσεις </h3>";
 					while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
@@ -322,7 +342,7 @@ include 'config.php';
                    		}
 						   
 						   
-					}
+					} 
 					
 					
 				 ?>
