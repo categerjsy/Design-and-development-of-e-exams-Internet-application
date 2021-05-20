@@ -86,6 +86,8 @@ include 'config.php';
 		
 	</aside>
 	<main>  
+	
+
 	<div class="float-container">
 	
   	<div class="float-child"  id="myHIDE">
@@ -127,7 +129,14 @@ include 'config.php';
 	</div>
 		
  	   <div class="float-child2">
-			
+		<?php
+		if (isset($_GET["msg"]) && $_GET["msg"] == 'minus') {
+			print "<p style='color:red'>Η ερώτηση σας, αφαιρέθηκε.</p>";
+		}
+		if (isset($_GET["msg"]) && $_GET["msg"] == 'plus') {
+			print "<p style='color:green'>Η ερώτηση σας, εισάγθηκε.</p>";//προσωρινο
+		}
+		?>
         <div id="myform" ><!--style="margin-left:35%;padding:10px 50px;height:1000px;">
 
 			<?php
@@ -172,14 +181,14 @@ include 'config.php';
 									// it return number of rows in the table. 
 								$row = mysqli_num_rows($result); 
 								if ($row) { 
-								echo "<form name='like' method='post' action='delete_contains.php'>";
-								echo "<button type = 'submit' name='btn' class='wbtn' value='$id_question'>";
+								echo "<form method='post' action='contains.php'>";
+								echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
 								echo "Αφαίρεση ερώτησης";
 								echo "</button>";
 								}
 								else{
-								echo "<form name='like' method='post' action='contains.php'>";
-								echo "<button type = 'submit' name='btn' class='wbtn' value='$id_question'>";
+								echo "<form method='post' action='contains.php'>";
+								echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
 								echo "Προσθήκη ερώτησης";
 								echo "</button>";
 								}
@@ -203,17 +212,17 @@ include 'config.php';
 							$result1 = mysqli_query($conn, $q); 
 								
 							if ($result1) { 
-									// it return number of rows in the table. 
-								$row = mysqli_num_rows($result1); 
+								// it return number of rows in the table. 
+							$row = mysqli_num_rows($result1); 
 								if ($row) { 
-								echo "<form name='like' method='post' action='delete_contains.php'>";
-								echo "<button type = 'submit' name='btn' class='wbtn' value='$id_question'>";
+								echo "<form method='post' action='contains.php'>";
+								echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
 								echo "Αφαίρεση ερώτησης";
 								echo "</button>";
 								}
 								else{
-								echo "<form name='like' method='post' action='contains.php'>";
-								echo "<button type = 'submit' name='btn' class='wbtn' value='$id_question'>";
+								echo "<form method='post' action='contains.php'>";
+								echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
 								echo "Προσθήκη ερώτησης";
 								echo "</button>";
 								}
@@ -239,17 +248,17 @@ include 'config.php';
 									// it return number of rows in the table. 
 								$row = mysqli_num_rows($result2); 
 								if ($row) { 
-								echo "<form name='like' method='post' action='delete_contains.php'>";
-								echo "<button type = 'submit' name='btn' class='wbtn' value='$id_question'>";
-								echo "Αφαίρεση ερώτησης";
-								echo "</button>";
-								}
-								else{
-								echo "<form name='like' method='post' action='contains.php'>";
-								echo "<button type = 'submit' name='btn' class='wbtn' value='$id_question'>";
-								echo "Προσθήκη ερώτησης";
-								echo "</button>";
-								}
+									echo "<form method='post' action='contains.php'>";
+									echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
+									echo "Αφαίρεση ερώτησης";
+									echo "</button>";
+									}
+									else{
+									echo "<form method='post' action='contains.php'>";
+									echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
+									echo "Προσθήκη ερώτησης";
+									echo "</button>";
+									}
 							}
 							echo " $qtext <br>";
 							$findidpa=mysqli_query($conn,"select * from has where  id_question='$id_question'");
@@ -284,17 +293,17 @@ include 'config.php';
 									// it return number of rows in the table. 
 								$row = mysqli_num_rows($result3); 
 								if ($row) { 
-								echo "<form name='like' method='post' action='delete_contains.php'>";
-								echo "<button type = 'submit' name='btn' class='wbtn' value='$id_question'>";
-								echo "Αφαίρεση ερώτησης";
-								echo "</button>";
-								}
-								else{
-								echo "<form name='like' method='post' action='contains.php'>";
-								echo "<button type = 'submit' name='btn' class='wbtn' value='$id_question'>";
-								echo "Προσθήκη ερώτησης";
-								echo "</button>";
-								}
+									echo "<form method='post' action='contains.php'>";
+									echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
+									echo "Αφαίρεση ερώτησης";
+									echo "</button>";
+									}
+									else{
+									echo "<form method='post' action='contains.php'>";
+									echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
+									echo "Προσθήκη ερώτησης";
+									echo "</button>";
+									}
 							}
 							echo " $qtext<br> ";
 							$findidpa=mysqli_query($conn,"select * from has where  id_question='$id_question'");

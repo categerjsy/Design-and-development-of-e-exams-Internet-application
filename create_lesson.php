@@ -78,6 +78,7 @@ session_start();
 				if (isset($_GET["msg"]) && $_GET["msg"] == 'done') {
 					print "<h3 style='color:green'>Το μάθημα σας, δημιουργήθηκε.</h3>";//προσωρινο
 				}
+				
 			?>
 			<h3>Δημιουργία Μαθήματος</h3>
 			
