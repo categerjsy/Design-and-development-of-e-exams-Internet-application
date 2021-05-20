@@ -34,7 +34,7 @@ include 'config.php';
 
 			echo "Make in database final!!!";
 			// Redirecting To Other Page
-			$location="/Ptuxiaki/create_question.php";
+			$location="/Ptuxiaki/create_question.php?msg=done";
 		    header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
 		
 ?>

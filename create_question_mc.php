@@ -72,7 +72,7 @@ table tr td:last-child{
 				  
 				  <div class="nav-links">
 					<a  href="profilek.php"> <?php echo "$username"; ?></a>
-					<a href="logout.php">Έξοδος</a>
+					<a href="logout.php">Αποσύνδεση</a>
 				  </div>
 			</div>
 		

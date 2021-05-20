@@ -53,7 +53,7 @@ include 'config.php';
 				  <div class="nav-links">
 					<a  href="profilef.php"> <?php echo "$username"; ?></a>
 					<a href="change_passwordf.php">Αλλαγή κωδικού</a>
-					<a href="logout.php">Έξοδος</a>
+					<a href="logout.php">Αποσύνδεση</a>
 				  </div>
 			</div>
 		

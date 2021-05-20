@@ -65,7 +65,7 @@ include 'config.php';
 					echo "<a  href='profilef.php'>$username</a>";
 					}
 					?>
-					<a href="logout.php">Έξοδος</a>
+					<a href="logout.php">Αποσύνδεση</a>
 				  </div>
 			</div>
 		

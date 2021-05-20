@@ -53,7 +53,7 @@ session_start();
 				  
 				  <div class="nav-links">
 					<a  href="#"> <?php echo "$username"; ?></a>
-					<a href="logout.php">Έξοδος</a>
+					<a href="logout.php">Αποσύνδεση</a>
 				  </div>
 			</div>
 		
