@@ -193,7 +193,7 @@ $_SESSION["DIFF"]=(!$_SESSION["easy"]&&!$_SESSION["medium"]&&!$_SESSION["Multipl
                         echo "<h3>Ερωτήσεις ελευθέρου κειμένου </h3>";
                         while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
                             $id_question=$row["id_question"];	
-                            if(!$_SESSION["all_diff"]){
+                            if($_SESSION["all_diff"]){
                                 $question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='Ελευθέρου κειμένου'");
                                 while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
                                     $qtext=$row["text"];
@@ -222,6 +222,36 @@ $_SESSION["DIFF"]=(!$_SESSION["easy"]&&!$_SESSION["medium"]&&!$_SESSION["Multipl
                                     echo "<hr>";
                                 }
                             }else{
+                                 if(!$_SESSION["easy"]&&!$_SESSION["medium"]&&!$_SESSION["difficult"]){
+                                    $question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='Ελευθέρου κειμένου'");
+                                    while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
+                                        $qtext=$row["text"];
+                                        $q = "select * from contains where id_question='$id_question' and id_exam='$exam'"; 
+                                            
+                                            // Execute the query and store the result set 
+                                        $result = mysqli_query($conn, $q); 
+                                            
+                                        if ($result) { 
+                                                // it return number of rows in the table. 
+                                            $row = mysqli_num_rows($result); 
+                                            if ($row) { 
+                                            echo "<form method='post' action='contains.php'>";
+                                            echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
+                                            echo "Αφαίρεση ερώτησης";
+                                            echo "</button>";
+                                            }
+                                            else{
+                                            echo "<form method='post' action='contains.php'>";
+                                            echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
+                                            echo "Προσθήκη ερώτησης";
+                                            echo "</button>";
+                                            }
+                                        }
+                                        echo " $qtext<br> <br>";
+                                        echo "<hr>";
+                                    }
+                                 }
+
                                     if($_SESSION["easy"]){
                                         $question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='Ελευθέρου κειμένου' and difficulty_level='easy'");
                                         while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
@@ -311,11 +341,10 @@ $_SESSION["DIFF"]=(!$_SESSION["easy"]&&!$_SESSION["medium"]&&!$_SESSION["Multipl
                                     }
                                 }
                             }
+                        }
                         
-                    }
-                    else{
-
-                    }
+                    
+                    
 				?>
 				<?php
 				 if($_SESSION["True-False"]||($_SESSION["DIF"])){
@@ -326,7 +355,7 @@ $_SESSION["DIFF"]=(!$_SESSION["easy"]&&!$_SESSION["medium"]&&!$_SESSION["Multipl
                         echo "<h3>Ερωτήσεις True-False </h3>";
                         while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
                             $id_question=$row["id_question"];	
-                            if(!$_SESSION["all_diff"]){
+                            if($_SESSION["all_diff"]){
                                 $question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='True-False'");
                                 while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
                                     $qtext=$row["text"];
@@ -359,6 +388,39 @@ $_SESSION["DIFF"]=(!$_SESSION["easy"]&&!$_SESSION["medium"]&&!$_SESSION["Multipl
                                     echo "<hr>";
                                 }
                             }else{
+                                if(!$_SESSION["easy"]&&!$_SESSION["medium"]&&!$_SESSION["difficult"]){
+                                    $question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='True-False'");
+                                    while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
+                                        $qtext=$row["text"];
+                                        $q = "select * from contains where id_question='$id_question' and id_exam='$exam'"; 
+                                            
+                                            // Execute the query and store the result set 
+                                        $result1 = mysqli_query($conn, $q); 
+                                            
+                                        if ($result1) { 
+                                            // it return number of rows in the table. 
+                                        $row = mysqli_num_rows($result1); 
+                                            if ($row) { 
+                                            echo "<form method='post' action='contains.php'>";
+                                            echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
+                                            echo "Αφαίρεση ερώτησης";
+                                            echo "</button>";
+                                            }
+                                            else{
+                                            echo "<form method='post' action='contains.php'>";
+                                            echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
+                                            echo "Προσθήκη ερώτησης";
+                                            echo "</button>";
+                                            }
+                                        }
+                                        echo "$qtext<br><br>";
+                                        echo " <select id='answer' name='answer'>
+                                        <option value='T'>True</option>
+                                        <option value='F'>False</option>
+                                        </select>";
+                                        echo "<hr>";
+                                    }
+                                 }
                                 if($_SESSION["easy"]){
                                     $question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='True-False'and difficulty_level='easy'");
                                     while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
@@ -471,7 +533,7 @@ $_SESSION["DIFF"]=(!$_SESSION["easy"]&&!$_SESSION["medium"]&&!$_SESSION["Multipl
                         echo "<h3>Ερωτήσεις Multiple Choice </h3>";
                         while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
                             $id_question=$row["id_question"];	
-                            if(!$_SESSION["all_diff"]){
+                            if($_SESSION["all_diff"]){
                                 $question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='Multiple Choice'");
                                 while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
                                     $qtext=$row["text"];
@@ -514,6 +576,48 @@ $_SESSION["DIFF"]=(!$_SESSION["easy"]&&!$_SESSION["medium"]&&!$_SESSION["Multipl
                                 }
                             }
                             else{
+                                if(!$_SESSION["easy"]&&!$_SESSION["medium"]&&!$_SESSION["difficult"]){
+                                    $question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='Multiple Choice'");
+                                    while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
+                                        $qtext=$row["text"];
+                                        $q = "select * from contains where id_question='$id_question' and id_exam='$exam'"; 
+                                            
+                                            // Execute the query and store the result set 
+                                        $result2 = mysqli_query($conn, $q); 
+                                            
+                                        if ($result2) { 
+                                                // it return number of rows in the table. 
+                                            $row = mysqli_num_rows($result2); 
+                                            if ($row) { 
+                                                echo "<form method='post' action='contains.php'>";
+                                                echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
+                                                echo "Αφαίρεση ερώτησης";
+                                                echo "</button>";
+                                                }
+                                                else{
+                                                echo "<form method='post' action='contains.php'>";
+                                                echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
+                                                echo "Προσθήκη ερώτησης";
+                                                echo "</button>";
+                                                }
+                                        }
+                                        echo " $qtext <br>";
+                                        $findidpa=mysqli_query($conn,"select * from has where  id_question='$id_question'");
+                                        while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
+                                            $id_pa=$row["id_possibleAnswer"];
+                                            $findpa=mysqli_query($conn,"select * from possible_answer where id_possibleAnswer='$id_pa'");
+                                            while ($row = mysqli_fetch_array($findpa, MYSQLI_ASSOC)) {
+                                                $pa=$row["text"];
+                                                
+                                                echo "<p style='margin-left:30%;'><label class='containerr' for='$pa'> $pa
+                                                <input type='radio' id='$pa' name='pa' value='$pa'>
+                                                <span class='checkmarkr'></span>
+                                                </label><p>";
+                                            }
+                                        }	
+                                            echo "<hr>";		
+                                    }
+                                 }
                                 if($_SESSION["easy"]){
                                     $question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='Multiple Choice' and difficulty_level='easy'");
                                     while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
@@ -653,7 +757,7 @@ $_SESSION["DIFF"]=(!$_SESSION["easy"]&&!$_SESSION["medium"]&&!$_SESSION["Multipl
                         echo "<h3>Ερωτήσεις Multiple Choice με πολλές σωστές απαντήσεις </h3>";
                         while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
                             $id_question=$row["id_question"];
-                            if(!$_SESSION["all_diff"]){	
+                            if($_SESSION["all_diff"]){	
                                 $question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='Multiple Choice More'");
                                 while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
                                     $qtext=$row["text"];
@@ -694,6 +798,47 @@ $_SESSION["DIFF"]=(!$_SESSION["easy"]&&!$_SESSION["medium"]&&!$_SESSION["Multipl
                                     echo "<hr>";
                                 }
                             } else {
+                                if(!$_SESSION["easy"]&&!$_SESSION["medium"]&&!$_SESSION["difficult"]){
+                                    $question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='Multiple Choice More'");
+                                    while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
+                                        $qtext=$row["text"];
+                                        $q = "select * from contains where id_question='$id_question' and id_exam='$exam'"; 
+                                            
+                                            // Execute the query and store the result set 
+                                        $result3 = mysqli_query($conn, $q); 
+                                            
+                                        if ($result3) { 
+                                                // it return number of rows in the table. 
+                                            $row = mysqli_num_rows($result3); 
+                                            if ($row) { 
+                                                echo "<form method='post' action='contains.php'>";
+                                                echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
+                                                echo "Αφαίρεση ερώτησης";
+                                                echo "</button>";
+                                                }
+                                                else{
+                                                echo "<form method='post' action='contains.php'>";
+                                                echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
+                                                echo "Προσθήκη ερώτησης";
+                                                echo "</button>";
+                                                }
+                                        }
+                                        echo " $qtext<br> ";
+                                        $findidpa=mysqli_query($conn,"select * from has where  id_question='$id_question'");
+                                        while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
+                                            $id_pa=$row["id_possibleAnswer"];
+                                            $findpa=mysqli_query($conn,"select * from possible_answer where id_possibleAnswer='$id_pa'");
+                                            while ($row = mysqli_fetch_array($findpa, MYSQLI_ASSOC)) {
+                                                $pa=$row["text"];
+                                            echo "<p style='margin-left:30%;'><label class='container' for='$pa'>$pa
+                                            <input type='checkbox' id='$pa' name='pa[]' value='$pa'>
+                                            <span class='checkmark'></span>
+                                            </label><p>";
+                                            }
+                                        }
+                                        echo "<hr>";
+                                    }
+                                 }
                                 if($_SESSION["easy"]){
                                     $question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='Multiple Choice More' and difficulty_level='easy'");
                                     while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
@@ -823,7 +968,11 @@ $_SESSION["DIFF"]=(!$_SESSION["easy"]&&!$_SESSION["medium"]&&!$_SESSION["Multipl
                      }
 					
 				 ?>
-					
+				<?php
+                if(!$_SESSION["all_categ"]){
+
+                }
+                ?>	
 				
     			<a href="profilek.php?msg=exam"><button class="but" type="button">Ολοκλήρωση</button></a>
 					
