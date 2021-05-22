@@ -95,7 +95,7 @@ include 'config.php';
 		<form action="f1.php" method="post">
 		<h4>Δυσκολία ερώτησης</h4>
 		<label class="container">Όλες οι δυσκολίες
-		<input type="checkbox" class="checked_alld" name="all diff" value="alldif" checked>
+		<input type="checkbox" class="checked_alld" name="all_diff" value="all_diff" checked>
 		<span class="checkmark"></span>
 		</label>
 		<label class="container">Εύκολη
@@ -115,7 +115,7 @@ include 'config.php';
 		<h4>Κατηγορίες Ερωτήσεων</h4>
 
 		<label class="container">Όλες οι κατηγορίες
-		<input type="checkbox" class="checked_all" name="allcateg" value="allcateg" checked>
+		<input type="checkbox" class="checked_all" name="all_categ" value="all_categ" checked>
 		<span class="checkmark"></span>
 		</label>
 		<label class="container">Ελευθέρου κειμένου
