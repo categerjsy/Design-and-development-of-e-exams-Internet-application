@@ -94,7 +94,7 @@ include 'config.php';
 	  	<h2>Φίλτρα ερωτήσεων</h2>
 		<h4>Δυσκολία ερώτησης</h4>
 		<label class="container">Όλες οι δυσκολίες
-		<input type="checkbox" class="checked_alld" value="all" >
+		<input type="checkbox" class="checked_alld" value="all" checked>
 		<span class="checkmark"></span>
 		</label>
 		<label class="container">Εύκολη
@@ -114,7 +114,7 @@ include 'config.php';
 		<h4>Κατηγορίες Ερωτήσεων</h4>
 
 		<label class="container">Όλες οι κατηγορίες
-		<input type="checkbox" class="checked_all" value="all" >
+		<input type="checkbox" class="checked_all" value="all" checked>
 		<span class="checkmark"></span>
 		</label>
 		<label class="container">Ελευθέρου κειμένου
