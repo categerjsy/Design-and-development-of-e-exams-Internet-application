@@ -11,7 +11,8 @@ $_SESSION["medium"]=isset($_POST['medium']);
 $_SESSION["difficult"]=isset($_POST['difficult']);
 $_SESSION["all_diff"]=isset($_POST['all_diff']);
 $_SESSION["all_categ"]=isset($_POST['all_categ']);
-
+$_SESSION["DIF"]=(!$_SESSION["Text"]&&!$_SESSION["True-False"]&&!$_SESSION["Multiple-Choice"]&&!$_SESSION["Multiple-Choice-More"]&&!$_SESSION["all_categ"]);
+$_SESSION["DIFF"]=(!$_SESSION["easy"]&&!$_SESSION["medium"]&&!$_SESSION["Multiple-Choice"]);
 ?>
 	
 
@@ -184,7 +185,7 @@ $_SESSION["all_categ"]=isset($_POST['all_categ']);
 	
 		
 			 	<?php
-				  if($_SESSION["Text"]){
+				  if(($_SESSION["Text"])||($_SESSION["DIF"])){
                         $exam=$_SESSION["id_exam"];
                         $id_lesson=$SESSION["id_lesson"];
                         $lesson=$SESSION["lesson"];
@@ -192,7 +193,7 @@ $_SESSION["all_categ"]=isset($_POST['all_categ']);
                         echo "<h3>Ερωτήσεις ελευθέρου κειμένου </h3>";
                         while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
                             $id_question=$row["id_question"];	
-                            if($_SESSION["all_diff"]){
+                            if(!$_SESSION["all_diff"]){
                                 $question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='Ελευθέρου κειμένου'");
                                 while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
                                     $qtext=$row["text"];
@@ -312,9 +313,12 @@ $_SESSION["all_categ"]=isset($_POST['all_categ']);
                             }
                         
                     }
+                    else{
+
+                    }
 				?>
 				<?php
-				 if($_SESSION["True-False"]){
+				 if($_SESSION["True-False"]||($_SESSION["DIF"])){
                     $exam=$_SESSION["id_exam"];
                     $id_lesson=$SESSION["id_lesson"];
                     $lesson=$SESSION["lesson"];
@@ -322,7 +326,7 @@ $_SESSION["all_categ"]=isset($_POST['all_categ']);
                         echo "<h3>Ερωτήσεις True-False </h3>";
                         while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
                             $id_question=$row["id_question"];	
-                            if($_SESSION["all_diff"]){
+                            if(!$_SESSION["all_diff"]){
                                 $question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='True-False'");
                                 while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
                                     $qtext=$row["text"];
@@ -459,7 +463,7 @@ $_SESSION["all_categ"]=isset($_POST['all_categ']);
                     }
 					?>
 					<?php
-				  if($_SESSION["Multiple-Choice"]){
+				  if($_SESSION["Multiple-Choice"]||($_SESSION["DIF"])){
                     $exam=$_SESSION["id_exam"];
                     $id_lesson=$SESSION["id_lesson"];
                     $lesson=$SESSION["lesson"];
@@ -467,7 +471,7 @@ $_SESSION["all_categ"]=isset($_POST['all_categ']);
                         echo "<h3>Ερωτήσεις Multiple Choice </h3>";
                         while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
                             $id_question=$row["id_question"];	
-                            if($_SESSION["all_diff"]){
+                            if(!$_SESSION["all_diff"]){
                                 $question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='Multiple Choice'");
                                 while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
                                     $qtext=$row["text"];
@@ -641,7 +645,7 @@ $_SESSION["all_categ"]=isset($_POST['all_categ']);
                   }
 				?>
 				<?php
-				if($_SESSION["Multiple-Choice-More"]){
+				if($_SESSION["Multiple-Choice-More"]||($_SESSION["DIF"])){
                     $exam=$_SESSION["id_exam"];
                     $id_lesson=$SESSION["id_lesson"];
                     $lesson=$SESSION["lesson"];
@@ -649,7 +653,7 @@ $_SESSION["all_categ"]=isset($_POST['all_categ']);
                         echo "<h3>Ερωτήσεις Multiple Choice με πολλές σωστές απαντήσεις </h3>";
                         while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
                             $id_question=$row["id_question"];
-                            if($_SESSION["all_diff"]){	
+                            if(!$_SESSION["all_diff"]){	
                                 $question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='Multiple Choice More'");
                                 while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
                                     $qtext=$row["text"];
