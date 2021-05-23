@@ -157,7 +157,7 @@ $id_question=$_POST['id_question'];
 					}
 				
 				?>	
-				<button type="sybmit" class="cleanbtn"><a href="delete_question.php">Διαγραφή</a></button>
+				<button type="sybmit" class="cancelbtn" formaction="delete_question.php">Διαγραφή</button>
 				<button type="submit" class="cleanbtn" style="color:white">Αλλαγή</button>
 				<br><br>
 				<button type="button" class="cancelbtn"><a href="select_lesson.php">Έξοδος</a></button>

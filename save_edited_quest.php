@@ -6,9 +6,6 @@ $username=$_SESSION["username"];
 $id_question=$_POST['idq'];
 $question=$_POST['txt'];
 
-echo $id_question;
-echo $question;
-
 $s = mysqli_query($conn,"select * from question");
 while ($row = mysqli_fetch_array($s, MYSQLI_ASSOC)) {
 	$txt=$row["text"];
@@ -25,7 +22,7 @@ if($question!=$oldquestion){
 	$qry = mysqli_query($conn, $sql);
 	if($qry){
 		$_SESSION["username"]=$username;
-		echo "Profile changed!!";
+		echo "Question changed!!";
 		// Redirecting To Other Page
 		$location="/Ptuxiaki/select_lesson.php";
 		header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
