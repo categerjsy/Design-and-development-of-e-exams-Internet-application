@@ -89,6 +89,7 @@ $id_question=$_POST['id_question'];
 			<form action="save_edited_quest.php" method="post">
 				<label for="text"><b>Κείμενο Ερώτησης <?php echo "$qtype"; ?></b></label> 
 				<input  type="text" value="<?php echo "$text"; ?>" id="txt" name="txt" required >
+				<input type="hidden" id="idq" name="idq" value="<?php echo "$id_question"; ?>">
 				<br> <hr>
 				<?php
 					if($qtype=="Multiple Choice"){
@@ -156,9 +157,10 @@ $id_question=$_POST['id_question'];
 					}
 				
 				?>	
-				<button type="button" class="cancelbtn"><a href="select_lesson.php">Έξοδος</a></button>
+				<button type="sybmit" class="cleanbtn"><a href="delete_question.php">Διαγραφή</a></button>
 				<button type="submit" class="cleanbtn" style="color:white">Αλλαγή</button>
-				<br>
+				<br><br>
+				<button type="button" class="cancelbtn"><a href="select_lesson.php">Έξοδος</a></button>
 			</form>
 		</div>
 		</main>

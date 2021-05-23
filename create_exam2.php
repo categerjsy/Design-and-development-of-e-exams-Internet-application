@@ -92,41 +92,52 @@ include 'config.php';
 	
   	<div class="float-child"  id="myHIDE">
 	  	<h2>Φίλτρα ερωτήσεων</h2>
+		<form action="f1.php" method="post">
 		<h4>Δυσκολία ερώτησης</h4>
-
+		<label class="container">Όλες οι δυσκολίες
+		<input type="checkbox" class="checked_alld" name="all_diff" value="all_diff" checked>
+		<span class="checkmark"></span>
+		</label>
 		<label class="container">Εύκολη
-		<input type="checkbox" value="easy">
+		<input type="checkbox" class="checkboxd" name="easy" value="easy">
 		<span class="checkmark"></span>
 		</label>
 		<label class="container">Μέτρια
-		<input type="checkbox" value="medium">
+		<input type="checkbox" class="checkboxd" name="medium" value="medium">
 		<span class="checkmark"></span>
 		</label>
 		<label class="container">Δύσκολη
-		<input type="checkbox" value="difficult">
+		<input type="checkbox" class="checkboxd" name="difficult" value="difficult">
 		<span class="checkmark"></span>
 		</label>
 		
 		<br>
 		<h4>Κατηγορίες Ερωτήσεων</h4>
+
+		<label class="container">Όλες οι κατηγορίες
+		<input type="checkbox" class="checked_all" name="all_categ" value="all_categ" checked>
+		<span class="checkmark"></span>
+		</label>
 		<label class="container">Ελευθέρου κειμένου
-		<input type="checkbox" value="Ελευθέρου κειμένου">
+		<input type="checkbox" class="checkbox" name="Text" value="Text" >
 		<span class="checkmark"></span>
 		</label>
 		
 		<label class="container">True-False
-		<input type="checkbox" value="True-False">
+		<input type="checkbox" class="checkbox" name="True-False" value="True-False">
 		<span class="checkmark"></span>
 		</label>
 		<label class="container">Multiple Choice
-		<input type="checkbox" value="Multiple Choice">
+		<input type="checkbox" class="checkbox" name="Multiple-Choice" value="Multiple-Choice">
 		<span class="checkmark"></span>
 		</label>
 		<label class="container">Multiple Choice με πολλές σωστές απάντησεις
-		<input type="checkbox" value="Multiple Choice More">
+		<input type="checkbox" class="checkbox" name="Multiple-Choice-More" value="Multiple-Choice-More">
 		<span class="checkmark"></span>
 		</label>
-		
+		<input type="submit" value="Εφαρμογή επιλεγμένων φίλτρων">
+		</form>
+
 		<br>
 	</div>
 		
@@ -139,7 +150,7 @@ include 'config.php';
 			print "<p style='color:green'>Η ερώτηση σας, εισάγθηκε.</p>";//προσωρινο
 		}
 		?>
-        <div id="myform" ><!--style="margin-left:35%;padding:10px 50px;height:1000px;">
+        <div id="myform" >
 
 			<?php
 			$exam=$_SESSION["id_exam"];
@@ -161,7 +172,7 @@ include 'config.php';
 			?>
 			
 	
-			  <!-<form  action=""  onsubmit="return time()" method="post">-->
+		
 			 	<?php
 				 
 				 $exam=$_SESSION["id_exam"];
@@ -171,6 +182,7 @@ include 'config.php';
 					echo "<h3>Ερωτήσεις ελευθέρου κειμένου </h3>";
 					while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 						$id_question=$row["id_question"];	
+						
 						$question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='Ελευθέρου κειμένου'");
 						while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
 							$qtext=$row["text"];
@@ -236,6 +248,10 @@ include 'config.php';
 								}
 							}
 							echo "$qtext<br><br>";
+							echo " <select id='answer' name='answer'>
+							<option value='T'>True</option>
+							<option value='F'>False</option>
+						 	 </select>";
 							echo "<hr>";
 						}
 						
@@ -368,8 +384,7 @@ include 'config.php';
         <script src="assets\js\bootstrap-number-input.js" ></script>
         <script src="assets\js\bootstrapSwitch.js" ></script>
 		<script src="assets/js/aside.js"></script>
-		
-
+		<script src="assets/js/celall.js"></script>
 
 	</body>
 </html>

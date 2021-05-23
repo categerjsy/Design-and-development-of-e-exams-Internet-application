@@ -12,8 +12,9 @@ $exam=$_SESSION["id_exam"];
 
 		mysqli_query($conn,$sql);
 
-		$location="/Ptuxiaki/create_exam2.php?msg=plus";
-		header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+		//$location="/Ptuxiaki/create_exam2.php?msg=plus";
+		//header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+		header('Location: ' . $_SERVER['HTTP_REFERER']);
 
 	}
 	
@@ -30,8 +31,9 @@ $exam=$_SESSION["id_exam"];
 	  // $query = mysqli_query($conn,"DELETE FROM contains WHERE id_exam='$exam' AND id_question=$id'");
    
 	   
-  	$location="/Ptuxiaki/create_exam2.php?msg=minus";
-		   header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+  	//$location="/Ptuxiaki/create_exam2.php?msg=minus";
+		//   header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+		header('Location: ' . $_SERVER['HTTP_REFERER']);
 	
 	}
 	
