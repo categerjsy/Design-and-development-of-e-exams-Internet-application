@@ -132,6 +132,10 @@ include 'config.php';
 		<script src="assets/js/ngrade.js"></script>
 		<script src="assets/js/inserttime.js"></script>
 		<script src="assets/js/negGrade.js"></script>
-		
+		<script>
+			function goBack() {
+			  window.history.back();
+			}
+		</script>
 	</body>
 </html>
