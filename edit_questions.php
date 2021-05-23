@@ -85,10 +85,10 @@ $id_lesson=$_POST['course'];
 						echo "<button type = 'submit' name='id_question' class='wbtn' value='$id_question'>";
 						echo "Επεξεργασία";
 						echo "</button>";
-					echo " $qtext<br> <br>";
+						echo " $qtext<br> <br>";
+						echo "<hr>";
 					}
 			}
-			echo "<hr>";
 			$query=mysqli_query($conn,"SELECT * FROM includes WHERE id_lesson='$id_lesson'");
 			echo "<h3>Ερωτήσεις True-False </h3>";
 			while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
@@ -97,13 +97,34 @@ $id_lesson=$_POST['course'];
 				while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
 					$qtext=$row["text"];
 					echo "<form method='post' action='change_questions.php'>";
+					echo "$qtext<br><br>";
+					$findidpa=mysqli_query($conn,"select * from has where  id_question='$id_question'");
+						while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
+							$id_pa=$row["id_possibleAnswer"];
+							$findpa=mysqli_query($conn,"select * from possible_answer where id_possibleAnswer='$id_pa'");
+							while ($row = mysqli_fetch_array($findpa, MYSQLI_ASSOC)) {
+								$pa=$row["text"];
+								$iscorrect=$row["is_correct"];
+								if($iscorrect=="0"){
+									echo "<p><input type='checkbox' id='true' name='true' value='true' disabled>
+									<label for='true'>True</label><p>";
+									echo "<p><input type='checkbox' id='false' name='false' value='false' checked disabled>
+									<label for='false'>False</label><p>";
+								}
+								else{
+									echo "<p><input type='checkbox' id='true' name='true' value='true' checked disabled>
+									<label for='true'>True</label><p>";
+									echo "<p><input type='checkbox' id='false' name='false' value='false' disabled>
+									<label for='false'>False</label><p>";
+								}
+							}
+						}
 					echo "<button type = 'submit' name='id_question' class='wbtn' value='$id_question'>";
 					echo "Επεξεργασία";
 					echo "</button>";
-					echo "$qtext<br><br>";
+					echo "<hr>";
 				}
 			}
-			echo "<hr>";
 			$query=mysqli_query($conn,"SELECT * FROM includes WHERE id_lesson='$id_lesson'");
 			echo "<h3>Ερωτήσεις Multiple Choice </h3>";
 			while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
@@ -112,13 +133,30 @@ $id_lesson=$_POST['course'];
 				while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
 					$qtext=$row["text"];
 					echo "<form method='post' action='change_questions.php'>";
+					echo " $qtext <br>";
+					$findidpa=mysqli_query($conn,"select * from has where  id_question='$id_question'");
+						while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
+							$id_pa=$row["id_possibleAnswer"];
+							$findpa=mysqli_query($conn,"select * from possible_answer where id_possibleAnswer='$id_pa'");
+							while ($row = mysqli_fetch_array($findpa, MYSQLI_ASSOC)) {
+								$pa=$row["text"];
+								$iscorrect=$row["is_correct"];
+								if($iscorrect=="0"){
+									echo "<p><input type='checkbox' id='$pa' name='pa[]' value='$pa' disabled>
+								<label for='$pa'>$pa</label><p>";
+								}
+								else{
+									echo "<p><input type='checkbox' id='$pa' name='pa[]' value='$pa' checked disabled>
+								<label for='$pa'>$pa</label><p>";
+								}
+							}
+						}
 					echo "<button type = 'submit' name='id_question' class='wbtn' value='$id_question'>";
 					echo "Επεξεργασία";
 					echo "</button>";
-					echo " $qtext <br>";
+					echo "<hr>";
 				}
-			}
-			echo "<hr>";		
+			}		
 			$query=mysqli_query($conn,"SELECT * FROM includes WHERE id_lesson='$id_lesson'");
 			echo "<h3>Ερωτήσεις Multiple Choice με πολλές σωστές απαντήσεις </h3>";
 			while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
@@ -127,16 +165,35 @@ $id_lesson=$_POST['course'];
 				while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
 					$qtext=$row["text"];
 					echo "<form method='post' action='change_questions.php'>";
+					echo " $qtext<br> ";
+					$findidpa=mysqli_query($conn,"select * from has where  id_question='$id_question'");
+						while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
+							$id_pa=$row["id_possibleAnswer"];
+							$findpa=mysqli_query($conn,"select * from possible_answer where id_possibleAnswer='$id_pa'");
+							while ($row = mysqli_fetch_array($findpa, MYSQLI_ASSOC)) {
+								$pa=$row["text"];
+								$iscorrect=$row["is_correct"];
+								if($iscorrect=="0"){
+									echo "<p><input type='checkbox' id='$pa' name='pa[]' value='$pa' disabled>
+								<label for='$pa'>$pa</label><p>";
+								}
+								else{
+									echo "<p><input type='checkbox' id='$pa' name='pa[]' value='$pa' checked disabled>
+								<label for='$pa'>$pa</label><p>";
+								}	
+							}
+						}
 					echo "<button type = 'submit' name='id_question' class='wbtn' value='$id_question'>";
 					echo "Επεξεργασία";
 					echo "</button>";
-					echo " $qtext<br> ";
+					echo "<hr>";
                 }
 			}
-			echo "<hr>";
 		?>
+		<br>
 		<button type="button" class="cancelbtn" onclick="goBack()">Πίσω</button>
         <button type="reset" class="cleanbtn">Καθαρισμός</button>
+        <br>
         <br>
 		</div>
                      
