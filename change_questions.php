@@ -100,7 +100,7 @@ $id_question=$_POST['id_question'];
 							$findpa=mysqli_query($conn,"select * from possible_answer where id_possibleAnswer='$id_pa'");
 							while ($row = mysqli_fetch_array($findpa, MYSQLI_ASSOC)) {
 								$pa=$row["text"];
-								echo "<p><input  type='text' value='$pa' id='pa' name='pa' required>
+								echo "<p><input  type='text' value='$pa' id='pa' name='pa[]' required>
 										<input type='hidden' id='idpa' name='idpa' value=$id_pa><p>";
 							}
 						}
@@ -113,7 +113,7 @@ $id_question=$_POST['id_question'];
 							$findpa=mysqli_query($conn,"select * from possible_answer where id_possibleAnswer='$id_pa'");
 							while ($row = mysqli_fetch_array($findpa, MYSQLI_ASSOC)) {
 								$pa=$row["text"];
-								echo "<p><input  type='text' value='$pa' id='pa' name='pa' required>
+								echo "<p><input  type='text' value='$pa' id='pa' name='pa[]' required>
 										<input type='hidden' id='idpa' name='idpa' value=$id_pa><p>";
 							}
 						}
@@ -144,8 +144,8 @@ $id_question=$_POST['id_question'];
 					}
 				
 				?>	
-				<button type="submit" class="cancelbtn" formaction="delete_question.php">Διαγραφή</button>
 				<button type="submit" class="cleanbtn" style="color:white">Αλλαγή</button>
+				<button type="submit" class="cancelbtn" formaction="delete_question.php">Διαγραφή</button>
 				<br><br>
 				<button type="button" class="cancelbtn"><a href="select_lesson.php">Έξοδος</a></button>
 			</form>

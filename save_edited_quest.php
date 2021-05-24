@@ -6,7 +6,7 @@ $username=$_SESSION["username"];
 $id_question=$_POST['idq'];
 $question=$_POST['txt'];
 
-//ελεγχος για όλες τις αλλαγές παράλλλα
+//ελεγχος για όλες τις αλλαγές παράλληλα, επισης πρέπει να πηγαίνει το χρήστη στην επιλογή της σωστής απάντησης
 
 $s = mysqli_query($conn,"select * from question");
 while ($row = mysqli_fetch_array($s, MYSQLI_ASSOC)) {
@@ -67,21 +67,30 @@ if($qtype=="True-False"){
 	}
 }
 else if(($qtype=="Multiple Choice")||($qtype=="Multiple Choice More")){
-	$findidpa=mysqli_query($conn,"select * from has where  id_question='$id_question'");
-	while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
-		$id_pa=$row["id_possibleAnswer"];
-		$findpa=mysqli_query($conn,"select * from possible_answer where id_possibleAnswer='$id_pa'");
-		while ($row = mysqli_fetch_array($findpa, MYSQLI_ASSOC)) {
-			$pa=$row["text"];
+		$idpa=$_POST['idpa'];
+		$number = count($_POST["pa"]);
+		for($i=0; $i<$number; $i++){
+			$findpa=mysqli_query($conn,"select * from possible_answer where id_possibleAnswer='$idpa'-'$number'+1+'$i'");
+			while ($row = mysqli_fetch_array($findpa, MYSQLI_ASSOC)) {
+				$pa=$row["text"];
+			}
+			if(trim($_POST["pa"][$i] != '')){
+				$p_a=trim($_POST['pa'][$i]);
+				if($p_a!=$pa){
+					$sql = "UPDATE possible_answer
+						SET text='$p_a'
+						WHERE id_possibleAnswer='$idpa'-'$number'+1+'$i';";
+					$qry = mysqli_query($conn, $sql);
+				}
+				if($qry){
+					$_SESSION["username"]=$username;
+					echo "Question changed!!";
+					// Redirecting To Other Page
+					$location="/Ptuxiaki/change_correct.php";
+					header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+				}
+			}
 		}
-		echo $pa;//old possible answers
-		echo "<br>";
-	}
-	$possibleanswer=$_POST['pa'];
-	$idpa=$_POST['idpa'];
-	echo $idpa;
-	echo "<br>";
-	echo $possibleanswer;//παίρνει μόνο την τελευταία
 }
 	
 
