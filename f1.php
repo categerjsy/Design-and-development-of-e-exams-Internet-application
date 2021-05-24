@@ -13,6 +13,13 @@ $_SESSION["all_diff"]=isset($_POST['all_diff']);
 $_SESSION["all_categ"]=isset($_POST['all_categ']);
 $_SESSION["DIF"]=(!$_SESSION["Text"]&&!$_SESSION["True-False"]&&!$_SESSION["Multiple-Choice"]&&!$_SESSION["Multiple-Choice-More"]&&!$_SESSION["all_categ"]);
 $_SESSION["DIFF"]=(!$_SESSION["easy"]&&!$_SESSION["medium"]&&!$_SESSION["Multiple-Choice"]);
+
+if(($_SESSION["all_diff"])&&($_SESSION["all_categ"])){
+    // Redirecting To Other Page
+			$location="/Ptuxiaki/create_exam2.php";
+		    header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+}
+
 ?>
 	
 
@@ -44,7 +51,7 @@ $_SESSION["DIFF"]=(!$_SESSION["easy"]&&!$_SESSION["medium"]&&!$_SESSION["Multipl
 		<link rel="stylesheet" href="assets/css/filter.css">
         <link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>
 		
-
+       
 	
 		
 
