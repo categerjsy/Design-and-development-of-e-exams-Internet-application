@@ -135,7 +135,7 @@ include 'config.php';
 		<input type="checkbox" class="checkbox" name="Multiple-Choice-More" value="Multiple-Choice-More">
 		<span class="checkmark"></span>
 		</label>
-		<input type="submit" value="Εφαρμογή επιλεγμένων φίλτρων">
+		<input type="submit" value="Εφαρμογή φίλτρων">
 		</form>
 
 		<br>
