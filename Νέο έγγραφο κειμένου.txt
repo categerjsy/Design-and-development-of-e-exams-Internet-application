@@ -1,8 +1,0 @@
-		if(($qry1)&&($qry2)&&($qry3)&&($qry4)){
-		$_SESSION["username"]=$username;
-		echo "Question changed!!";
-		// Redirecting To Other Page
-		$location="/Ptuxiaki/select_lesson.php";
-		header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
-				
-	}	

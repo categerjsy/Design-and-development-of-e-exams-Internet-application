@@ -6,6 +6,8 @@ $username=$_SESSION["username"];
 $id_question=$_POST['idq'];
 $question=$_POST['txt'];
 
+//ελεγχος για όλες τις αλλαγές παράλλλα
+
 $s = mysqli_query($conn,"select * from question");
 while ($row = mysqli_fetch_array($s, MYSQLI_ASSOC)) {
 	$txt=$row["text"];
@@ -63,8 +65,25 @@ if($qtype=="True-False"){
 					
 		}
 	}
-	echo $truefalse;
 }
+else if(($qtype=="Multiple Choice")||($qtype=="Multiple Choice More")){
+	$findidpa=mysqli_query($conn,"select * from has where  id_question='$id_question'");
+	while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
+		$id_pa=$row["id_possibleAnswer"];
+		$findpa=mysqli_query($conn,"select * from possible_answer where id_possibleAnswer='$id_pa'");
+		while ($row = mysqli_fetch_array($findpa, MYSQLI_ASSOC)) {
+			$pa=$row["text"];
+		}
+		echo $pa;//old possible answers
+		echo "<br>";
+	}
+	$possibleanswer=$_POST['pa'];
+	$idpa=$_POST['idpa'];
+	echo $idpa;
+	echo "<br>";
+	echo $possibleanswer;//παίρνει μόνο την τελευταία
+}
+	
 
 ///////////////////////////
 //mysqli_close($conn);
