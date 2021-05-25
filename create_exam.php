@@ -28,6 +28,10 @@ include 'config.php';
 		<link rel="stylesheet" href="assets/css/asidenav.css">
 		<link rel="stylesheet" href="assets/css/lf.css">
 		<link rel="stylesheet" href="assets/css/button.css">
+		<link rel="stylesheet" href="assets/css/checkbox.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
         <link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>
 
 
@@ -189,6 +193,15 @@ include 'config.php';
 				?>
 				<br> 
 				
+				<label class="container">Βοnus βαθμολογία
+				<input type="checkbox" id="myCheck" onclick="negGrade()">
+				<span class="checkmark"></span>
+				</label>
+				<br>
+				<p id="text" style="display:none">Παρακαλώ ορίστε Βοnus βαθμολογία
+			    <input type="text" id="ngrade" name="ngrade" placeholder="Βοnus βαθμολογία" onblur="validateNGrade(this);" pattern="[0-9]{1}.[0-9]{2}">
+				<br> <span id='messageNGrade'></span></p>
+
 			    <input type="submit" value="Δημιουργία Εξέτασης">
 				<button class="cancelbtn" type="reset"><a href="create_question.php">Έξοδος</a></button>
             
@@ -208,7 +221,8 @@ include 'config.php';
         <script src="assets\js\bootstrapSwitch.js" ></script>
 		<script src="assets/js/aside.js"></script>
 		<script src="assets/js/timeexam.js"></script>
-		
+		<script src="assets/js/ngrade.js"></script>
+		<script src="assets/js/negGrade.js"></script>
 
 	</body>
 </html>
