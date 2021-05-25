@@ -94,7 +94,7 @@ include 'config.php';
 					}
 		?>    
 
-
+<button class="wbtn" style="width: 38%;float: right;" ><a href="create_exam2.php">Επεξεργασία διαγωνίσματος</a></button>
 <div id="myform" >
 
 <?php
@@ -193,7 +193,7 @@ echo "<h3>Προβολή ερωτήσεων στο διαγώνισμα του �
 				 $exam=$_SESSION["id_exam"];
 				 $id_lesson=$SESSION["id_lesson"];
 				 $lesson=$SESSION["lesson"];
-				 	$query=mysqli_query($conn,"SELECT * FROM contains WHERE id_exam='$exam'");
+				 $query=mysqli_query($conn,"SELECT * FROM contains WHERE id_exam='$exam'");
 					echo "<h3>Ερωτήσεις Multiple Choice με πολλές σωστές απαντήσεις </h3>";
 					while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 						$id_question=$row["id_question"];	
@@ -226,9 +226,9 @@ echo "<h3>Προβολή ερωτήσεων στο διαγώνισμα του �
 				
     			<a href="show_exam.php?msg=exam"><button class="but" type="button">Ολοκλήρωση</button></a>
 					
-				<button class="cancelbtn" type="reset"><a href="create_question.php">Έξοδος</a></button>
+				<button class="cancelbtn" type="reset"><a href="profilek.php">Έξοδος</a></button>
             
-    	        <button type="reset" class="cleanbtn">Καθαρισμός</button>
+    	        
                 <br>
 				</div>
 </div>
