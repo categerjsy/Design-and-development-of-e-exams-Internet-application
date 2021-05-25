@@ -100,15 +100,8 @@ $id_question=$_POST['id_question'];
 							$findpa=mysqli_query($conn,"select * from possible_answer where id_possibleAnswer='$id_pa'");
 							while ($row = mysqli_fetch_array($findpa, MYSQLI_ASSOC)) {
 								$pa=$row["text"];
-								$iscorrect=$row["is_correct"];
-								if($iscorrect=="0"){
-									echo "<p><input type='radio' id='$pa' name='pa[]' value='$pa'>
-								<label for='$pa'>$pa</label><p>";
-								}
-								else{
-									echo "<p><input type='radio' id='$pa' name='pa[]' value='$pa' checked>
-								<label for='$pa'>$pa</label><p>";
-								}	
+								echo "<p><input  type='text' value='$pa' id='pa' name='pa[]' required>
+										<input type='hidden' id='idpa' name='idpa' value=$id_pa><p>";
 							}
 						}
 					}
@@ -120,15 +113,8 @@ $id_question=$_POST['id_question'];
 							$findpa=mysqli_query($conn,"select * from possible_answer where id_possibleAnswer='$id_pa'");
 							while ($row = mysqli_fetch_array($findpa, MYSQLI_ASSOC)) {
 								$pa=$row["text"];
-								$iscorrect=$row["is_correct"];
-								if($iscorrect=="0"){
-									echo "<p><input type='checkbox' id='$pa' name='pa[]' value='$pa'>
-								<label for='$pa'>$pa</label><p>";
-								}
-								else{
-									echo "<p><input type='checkbox' id='$pa' name='pa[]' value='$pa' checked>
-								<label for='$pa'>$pa</label><p>";
-								}	
+								echo "<p><input  type='text' value='$pa' id='pa' name='pa[]' required>
+										<input type='hidden' id='idpa' name='idpa' value=$id_pa><p>";
 							}
 						}
 					}
@@ -140,25 +126,26 @@ $id_question=$_POST['id_question'];
 							$findpa=mysqli_query($conn,"select * from possible_answer where id_possibleAnswer='$id_pa'");
 							while ($row = mysqli_fetch_array($findpa, MYSQLI_ASSOC)) {
 								$iscorrect=$row["is_correct"];
+								echo "<input type='hidden' id='idpa' name='idpa' value=$id_pa>";
 							}
 						}
 						if($iscorrect=="0"){
-							echo "<p><input type='radio' id='true' name='true' value='true'>
+							echo "<p><input type='radio' id='tf' name='tf' value='true'>
 								<label for='true'>True</label><p>";
-							echo "<p><input type='radio' id='false' name='false' value='false' checked>
+							echo "<p><input type='radio' id='tf' name='tf' value='false' checked>
 								<label for='false'>False</label><p>";
 						}
 						else{
-							echo "<p><input type='radio' id='true' name='true' value='true' checked>
+							echo "<p><input type='radio' id='tf' name='tf' value='true' checked>
 								<label for='true'>True</label><p>";
-							echo "<p><input type='radio' id='false' name='false' value='false'>
+							echo "<p><input type='radio' id='tf' name='tf' value='false'>
 								<label for='false'>False</label><p>";
 						}
 					}
 				
 				?>	
-				<button type="submit" class="cancelbtn" formaction="delete_question.php">Διαγραφή</button>
 				<button type="submit" class="cleanbtn" style="color:white">Αλλαγή</button>
+				<button type="submit" class="cancelbtn" formaction="delete_question.php">Διαγραφή</button>
 				<br><br>
 				<button type="button" class="cancelbtn"><a href="select_lesson.php">Έξοδος</a></button>
 			</form>
