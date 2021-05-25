@@ -364,7 +364,7 @@ include 'config.php';
 				 ?>
 					
 				
-    			<a href="profilek.php?msg=exam"><button class="but" type="button">Ολοκλήρωση</button></a>
+    			<a href="show_exam.php?msg=exam"><button class="but" type="button">Ολοκλήρωση</button></a>
 					
 				<button class="cancelbtn" type="reset"><a href="create_question.php">Έξοδος</a></button>
             

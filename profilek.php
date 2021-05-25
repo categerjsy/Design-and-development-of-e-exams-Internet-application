@@ -74,11 +74,7 @@ session_start();
 		</aside>
 		<main>  
 		<button class="openbtn" onclick="openNav()">☰ Βασικές επιλογές</button>      
-		<?php
-					if (isset($_GET["msg"]) && $_GET["msg"] == 'exam') {
-						print "<p style='color:green'>Το διαγώνισμα σας, ολοκληρώθηκε.</p>";
-					}
-		?>               
+		           
 		</main>
 		<footer>
 		</footer>
