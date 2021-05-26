@@ -137,7 +137,7 @@ include 'config.php';
 		</label>
 		<input type="submit" value="Εφαρμογή φίλτρων">
 		</form>
-
+		<button class="wbtn" style=" width: 100%;"><a href="random_test.php">Εισαγωγή τυχαίων ερωτήσεων</a></button>
 		<br>
 	</div>
 		
@@ -160,11 +160,11 @@ include 'config.php';
 				$findlesson=mysqli_query($conn,"select * from belongs_to where id_exam='$exam'");
 					while ($row = mysqli_fetch_array($findlesson, MYSQLI_ASSOC)) {
 					$l=$row["id_lesson"];
-					$SESSION["id_lesson"]=$l;
+					$_SESSION["id_lesson"]=$l;
 					$namelesson=mysqli_query($conn,"select * from lesson where id_lesson='$l'");
 						while ($row = mysqli_fetch_array($namelesson, MYSQLI_ASSOC)) {
 							$lesson=$row["name"];
-							$SESSION["lesson"]=$lesson;
+							$_SESSION["lesson"]=$lesson;
 						}
 					}
 			}
@@ -176,8 +176,8 @@ include 'config.php';
 			 	<?php
 				 
 				 $exam=$_SESSION["id_exam"];
-				 $id_lesson=$SESSION["id_lesson"];
-				 $lesson=$SESSION["lesson"];
+				 $id_lesson=$_SESSION["id_lesson"];
+				 $lesson=$_SESSION["lesson"];
 					$query=mysqli_query($conn,"SELECT * FROM includes WHERE id_lesson='$id_lesson'");
 					echo "<h3>Ερωτήσεις ελευθέρου κειμένου </h3>";
 					while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
@@ -217,8 +217,8 @@ include 'config.php';
 				<?php
 				 
 				 $exam=$_SESSION["id_exam"];
-				 $id_lesson=$SESSION["id_lesson"];
-				 $lesson=$SESSION["lesson"];
+				 $id_lesson=$_SESSION["id_lesson"];
+				 $lesson=$_SESSION["lesson"];
 					$query=mysqli_query($conn,"SELECT * FROM includes WHERE id_lesson='$id_lesson'");
 					echo "<h3>Ερωτήσεις True-False </h3>";
 					while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
@@ -260,8 +260,8 @@ include 'config.php';
 					<?php
 				 
 				 $exam=$_SESSION["id_exam"];
-				 $id_lesson=$SESSION["id_lesson"];
-				 $lesson=$SESSION["lesson"];
+				 $id_lesson=$_SESSION["id_lesson"];
+				 $lesson=$_SESSION["lesson"];
 					$query=mysqli_query($conn,"SELECT * FROM includes WHERE id_lesson='$id_lesson'");
 					echo "<h3>Ερωτήσεις Multiple Choice </h3>";
 					while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
@@ -311,8 +311,8 @@ include 'config.php';
 				<?php
 				 
 				 $exam=$_SESSION["id_exam"];
-				 $id_lesson=$SESSION["id_lesson"];
-				 $lesson=$SESSION["lesson"];
+				 $id_lesson=$_SESSION["id_lesson"];
+				 $lesson=$_SESSION["lesson"];
 					$query=mysqli_query($conn,"SELECT * FROM includes WHERE id_lesson='$id_lesson'");
 					echo "<h3>Ερωτήσεις Multiple Choice με πολλές σωστές απαντήσεις </h3>";
 					while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
