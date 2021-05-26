@@ -92,6 +92,9 @@ include 'config.php';
 					if (isset($_GET["msg"]) && $_GET["msg"] == 'exam') {
 						print "<p style='color:green'>Το διαγώνισμα σας, ολοκληρώθηκε.</p>";
 					}
+					if (isset($_GET["msg"]) && $_GET["msg"] == 'rtest') {
+						print "<p style='color:green'>Το τυχαίο διαγώνισμα σας, ολοκληρώθηκε.</p>";
+					}
 		?>    
 
 <button class="wbtn" style="width: 38%;float: right;" ><a href="create_exam2.php">Επεξεργασία διαγωνίσματος</a></button>

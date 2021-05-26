@@ -137,7 +137,11 @@ include 'config.php';
 		</label>
 		<input type="submit" value="Εφαρμογή φίλτρων">
 		</form>
-		<button class="wbtn" style=" width: 100%;"><a href="random_test.php">Εισαγωγή τυχαίων ερωτήσεων</a></button>
+		<form action="random_test.php" method="post">
+		<label for="number_questions">Αριθμός ερωτήσεων</label>
+		<input type="number" id="number_questions" name="number_questions" min="1"  required>
+		<input type="submit" value="Τυχαία επιλογή ερωτήσεων">
+		</form>
 		<br>
 	</div>
 		
