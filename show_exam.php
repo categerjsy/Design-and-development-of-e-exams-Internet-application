@@ -130,7 +130,9 @@ echo "<h3>Προβολή ερωτήσεων στο διαγώνισμα του �
 						$question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='Ελευθέρου κειμένου'");
 						while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
 							$qtext=$row["text"];
+							$grade=$row["grade"];
 							echo " $qtext<br> <br>";
+							echo "Βαθμοί: $grade<br> <br>";
 							echo "<hr>";
 						}
 					
@@ -149,12 +151,15 @@ echo "<h3>Προβολή ερωτήσεων στο διαγώνισμα του �
 						$question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='True-False'");
 						while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
 							$qtext=$row["text"];
-							
+							$grade=$row["grade"];
+							$ngrade=$row["negative_grade"];
 							echo "$qtext<br><br>";
 							echo " <select id='answer' name='answer'>
 							<option value='T'>True</option>
 							<option value='F'>False</option>
 						 	 </select>";
+							 
+							echo "Βαθμοί: $grade <br> Αρνητική βαθμολογία: $ngrade <br> <br>";  
 							echo "<hr>";
 						}
 						
@@ -172,7 +177,8 @@ echo "<h3>Προβολή ερωτήσεων στο διαγώνισμα του �
 						$question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='Multiple Choice'");
 						while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
 							$qtext=$row["text"];
-							
+							$grade=$row["grade"];
+							$ngrade=$row["negative_grade"];
 							echo " $qtext <br>";
 							$findidpa=mysqli_query($conn,"select * from has where  id_question='$id_question'");
 							while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
@@ -187,6 +193,7 @@ echo "<h3>Προβολή ερωτήσεων στο διαγώνισμα του �
 								  	</label><p>";
 								}
 							}	
+								echo "Βαθμοί: $grade <br> Αρνητική βαθμολογία: $ngrade <br> <br>";  
 								echo "<hr>";		
 						}
 					}
@@ -203,7 +210,8 @@ echo "<h3>Προβολή ερωτήσεων στο διαγώνισμα του �
 						$question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='Multiple Choice More'");
 						while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
 							$qtext=$row["text"];
-							
+							$grade=$row["grade"];
+							$ngrade=$row["negative_grade"];
 							echo " $qtext<br> ";
 							$findidpa=mysqli_query($conn,"select * from has where  id_question='$id_question'");
 							while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
@@ -217,6 +225,7 @@ echo "<h3>Προβολή ερωτήσεων στο διαγώνισμα του �
 								</label><p>";
 								}
 							}
+							echo "Βαθμοί: $grade <br>  Αρνητική βαθμολογία: $ngrade <br> <br>";  
 							echo "<hr>";
                    		}
 						   

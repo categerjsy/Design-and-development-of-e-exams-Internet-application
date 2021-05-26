@@ -370,7 +370,7 @@ include 'config.php';
 				
     			<a href="show_exam.php?msg=exam"><button class="but" type="button">Ολοκλήρωση</button></a>
 					
-				<button class="cancelbtn" type="reset"><a href="create_question.php">Έξοδος</a></button>
+				<button class="cancelbtn" type="reset"><a href="profilek.php">Έξοδος</a></button>
             
     	        <button type="reset" class="cleanbtn">Καθαρισμός</button>
                 <br>
