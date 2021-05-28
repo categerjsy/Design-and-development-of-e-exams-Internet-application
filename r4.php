@@ -77,16 +77,19 @@ include 'config.php';
 		<button class="openbtn" onclick="openNav()">☰ Βασικές επιλογές</button>     
         <div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">
 			<h3>Εκχώρηση αριθμόυ ερωτήσεων που θέλετε στο διαγώνισμα</h3>
-			<form action="random_test2.php" method="post">
+			<form action="random_test3.php" method="post">
 
-            <label for="number_questionse">Αριθμός ερωτήσεων εύκολης δυσκολίας </label>
-            <input type="number" id="number_questionse" name="number_questionse" min="1"  required>
+            <label for="number_questionsft">Αριθμός ερωτήσεων ελευθέρου κειμένου </label>
+            <input type="number" id="number_questionsft" name="number_questionsft" min="1"  required>
             <br> <br> <br>
-			<label for="number_questionsm">Αριθμός ερωτήσεων μέτριας δυσκολίας  </label>
-            <input type="number" id="number_questionsm" name="number_questionsm" min="1" required>
+			<label for="number_questionstf">Αριθμός ερωτήσεων True-False </label>
+            <input type="number" id="number_questionstf" name="number_questionstf" min="1" required>
 			<br> <br> <br>
-			<label for="number_questionse">Αριθμός ερωτήσεων δύσκολης δυσκολίας  </label>
-            <input type="number" id="number_questionsd" name="number_questionsd" min="1" required>
+			<label for="number_questionsmc">Αριθμός ερωτήσεων Multiple Choice  </label>
+            <input type="number" id="number_questionsmc" name="number_questionsmc" min="1"  required>
+			<br> <br> <br>
+            <label for="number_questionsmcp">Αριθμός ερωτήσεων Multiple Choice με πολλές σωστές απάντησεις </label>
+            <input type="number" id="number_questionsmcp" name="number_questionsmcp" min="1"  required>
 			<br> <br> <br>
             <input type="submit" value="Τυχαία επιλογή ερωτήσεων">
             </form>
