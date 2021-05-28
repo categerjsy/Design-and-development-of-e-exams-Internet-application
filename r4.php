@@ -78,18 +78,65 @@ include 'config.php';
         <div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">
 			<h3>Εκχώρηση αριθμόυ ερωτήσεων που θέλετε στο διαγώνισμα</h3>
 			<form action="random_test3.php" method="post">
-
-            <label for="number_questionsft">Αριθμός ερωτήσεων ελευθέρου κειμένου </label>
-            <input type="number" id="number_questionsft" name="number_questionsft" min="1"  required>
+			<?php 
+			$max=0;
+			$id_lesson=$_SESSION["id_lesson"];
+			$query=mysqli_query($conn,"SELECT * FROM includes WHERE id_lesson='$id_lesson'");
+			while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+				$id_question=$row["id_question"];	
+				$querye=mysqli_query($conn,"SELECT * FROM question WHERE type='Ελευθέρου κειμένου' AND id_question='$id_question'");
+           		 while ($rowe = mysqli_fetch_array($querye, MYSQLI_ASSOC)) {
+				$max=$max+1;
+				}
+			}
+			echo "
+            <label for='number_questionsft'>Αριθμός ερωτήσεων ελευθέρου κειμένου </label>
+            <input type='number' id='number_questionsft' name='number_questionsft'  min='0' max='$max'  required>"; ?>
             <br> <br> <br>
-			<label for="number_questionstf">Αριθμός ερωτήσεων True-False </label>
-            <input type="number" id="number_questionstf" name="number_questionstf" min="1" required>
+			<?php 
+			$max=0;
+			$id_lesson=$_SESSION["id_lesson"];
+			$query=mysqli_query($conn,"SELECT * FROM includes WHERE id_lesson='$id_lesson'");
+			while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+				$id_question=$row["id_question"];	
+				$querye=mysqli_query($conn,"SELECT * FROM question WHERE type='True-False' AND id_question='$id_question'");
+           		 while ($rowe = mysqli_fetch_array($querye, MYSQLI_ASSOC)) {
+				$max=$max+1;
+				}
+			}
+			echo "
+			<label for='number_questionstf'>Αριθμός ερωτήσεων True-False </label>
+            <input type='number' id='number_questionstf' name='number_questionstf' min='0' max='$max'  required>"; ?>
 			<br> <br> <br>
-			<label for="number_questionsmc">Αριθμός ερωτήσεων Multiple Choice  </label>
-            <input type="number" id="number_questionsmc" name="number_questionsmc" min="1"  required>
+			<?php 
+			$max=0;
+			$id_lesson=$_SESSION["id_lesson"];
+			$query=mysqli_query($conn,"SELECT * FROM includes WHERE id_lesson='$id_lesson'");
+			while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+				$id_question=$row["id_question"];	
+				$querye=mysqli_query($conn,"SELECT * FROM question WHERE type='Multiple Choice' AND id_question='$id_question'");
+           		 while ($rowe = mysqli_fetch_array($querye, MYSQLI_ASSOC)) {
+				$max=$max+1;
+				}
+			}
+			echo "
+			<label for='number_questionsmc'>Αριθμός ερωτήσεων Multiple Choice  </label>
+            <input type='number' id='number_questionsmc' name='number_questionsmc' min='0' max='$max'  required>"; ?>
 			<br> <br> <br>
-            <label for="number_questionsmcp">Αριθμός ερωτήσεων Multiple Choice με πολλές σωστές απάντησεις </label>
-            <input type="number" id="number_questionsmcp" name="number_questionsmcp" min="1"  required>
+            <?php 
+			$max=0;
+			$id_lesson=$_SESSION["id_lesson"];
+			$query=mysqli_query($conn,"SELECT * FROM includes WHERE id_lesson='$id_lesson'");
+			while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+				$id_question=$row["id_question"];	
+				$querye=mysqli_query($conn,"SELECT * FROM question WHERE type='Multiple Choice More' AND id_question='$id_question'");
+           		 while ($rowe = mysqli_fetch_array($querye, MYSQLI_ASSOC)) {
+				$max=$max+1;
+				}
+			}
+			echo "
+			<label for='number_questionsmc'>Αριθμός ερωτήσεων με πολλές σωστές απάντησεις </label>
+            <input type='number' id='number_questionsmcp' name='number_questionsmcp'  min='0' max='$max'  required>"; ?>
 			<br> <br> <br>
             <input type="submit" value="Τυχαία επιλογή ερωτήσεων">
             </form>
