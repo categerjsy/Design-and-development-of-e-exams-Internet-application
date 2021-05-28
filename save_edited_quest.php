@@ -82,13 +82,15 @@ else if(($qtype=="Multiple Choice")||($qtype=="Multiple Choice More")){
 						WHERE id_possibleAnswer='$idpa'-'$number'+1+'$i';";
 					$qry = mysqli_query($conn, $sql);
 				}
-				if($qry){
-					$_SESSION["username"]=$username;
+				$sql = "UPDATE possible_answer
+						SET is_correct='0'
+						WHERE id_possibleAnswer='$idpa'-'$number'+1+'$i';";
+					$qry = mysqli_query($conn, $sql);
+					$_SESSION["id_question"]=$id_question;
 					echo "Question changed!!";
 					// Redirecting To Other Page
 					$location="/Ptuxiaki/change_correct.php";
 					header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
-				}
 			}
 		}
 }

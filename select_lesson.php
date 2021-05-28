@@ -80,6 +80,11 @@ include 'config.php';
 			
 	
 			  <form action="edit_questions.php" method="post">
+			  <?php
+					if (isset($_GET["msg"]) && $_GET["msg"] == 'done') {
+						print "<p style='color:green'>Η ερώτηση σας, άλλαξε.</p>";//προσωρινο
+					}
+				?>
 			  <label for="course">Παρακαλώ επιλέξτε μάθημα</label> <br>
 			  <?php
 			   	$idp=$_SESSION["id_professor"];
