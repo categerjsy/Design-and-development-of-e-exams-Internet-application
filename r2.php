@@ -78,8 +78,15 @@ include 'config.php';
         <div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">
 			<h3>Εκχώρηση αριθμόυ ερωτήσεων που θέλετε στο διαγώνισμα</h3>
 			<form action="random_test.php" method="post">
-            <label for="number_questions">Αριθμός ερωτήσεων</label>
-            <input type="number" id="number_questions" name="number_questions" min="1"  required>
+			<?php 
+			$max=0;
+			$id_lesson=$_SESSION["id_lesson"];
+			$query=mysqli_query($conn,"SELECT * FROM includes WHERE id_lesson='$id_lesson'");
+			while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+				$max=$max+1;
+			}
+            echo "<label for='number_questions'>Αριθμός ερωτήσεων</label>";
+            echo "<input type='number' id='number_questions' name='number_questions' min='0' max='$max'  required>"; ?>
             <input type="submit" value="Τυχαία επιλογή ερωτήσεων">
             </form>
 			</div>
