@@ -24,6 +24,9 @@ $id_question=$_POST['id_question'];
 		<link rel="stylesheet" href="assets/css/st.css">
 		<link rel="stylesheet" href="assets/css/asidenav.css">
 		<link rel="stylesheet" href="assets/css/lf.css">
+		<link rel="stylesheet" href="assets/css/button.css">
+		<link rel="stylesheet" href="assets/css/checkbox.css">
+		<link rel="stylesheet" href="assets/css/radiobutton.css">
 		<link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>		
 	
 	</head>
@@ -142,7 +145,6 @@ $id_question=$_POST['id_question'];
 								<label for='false'>False</label><p>";
 						}
 					}
-				
 				?>	
 				<button type="submit" class="cleanbtn" style="color:white">Αλλαγή</button>
 				<button type="submit" class="cancelbtn" formaction="delete_question.php">Διαγραφή</button>

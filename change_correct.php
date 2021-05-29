@@ -37,6 +37,7 @@ while ($row = mysqli_fetch_array($s, MYSQLI_ASSOC)) {
 		<link rel="stylesheet" href="assets/css/asidenav.css">
 		<link rel="stylesheet" href="assets/css/lf.css">
 		<link rel="stylesheet" href="assets/css/button.css">
+		<link rel="stylesheet" href="assets/css/checkbox.css">
 		<link rel="stylesheet" href="assets/css/radiobutton.css">
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
@@ -97,38 +98,38 @@ while ($row = mysqli_fetch_array($s, MYSQLI_ASSOC)) {
 			    $s = mysqli_query($conn,"select text from question where id_question='$id_q'");
                    while ($row = mysqli_fetch_array($s, MYSQLI_ASSOC)) {
 					   $my_question=$row["text"];
-					   echo "<p>$my_question</p>";
+					   echo "<h4>$my_question</h4>";
 					   $findidpa=mysqli_query($conn,"select * from has where  id_question='$id_q'");
 						while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
 							$id_pa=$row["id_possibleAnswer"];
 							$findpa=mysqli_query($conn,"select * from possible_answer where id_possibleAnswer='$id_pa'");
 							while ($row = mysqli_fetch_array($findpa, MYSQLI_ASSOC)) {
 								$pa=$row["text"];
-								echo "<h1 style='margin-left:30%;'><label class='containerr' for='$pa'> $pa
+								echo "<p style='margin-left:10%;'><label class='containerr' for='$pa'> $pa
 										<input type='radio'  id='$pa' name='pa' value='$pa'>
 										<span class='checkmarkr'></span>
-										</label><h1>";
+										</label><p>";
 							}
 						}
                     }
 			}
-			else{
+			else if($qtype=="Multiple Choice More"){
 				echo "<form action='correct_answer2.php' method='post'>";
 				echo "<label for='course'>Παρακαλώ ορίστε την σωστή απάντηση.</label> <br>";
 			    $s = mysqli_query($conn,"select text from question where id_question='$id_q'");
                    while ($row = mysqli_fetch_array($s, MYSQLI_ASSOC)) {
 					   $my_question=$row["text"];
-					   echo "<p>$my_question</p>";
+					   echo "<h4>$my_question</h4>";
 					   $findidpa=mysqli_query($conn,"select * from has where  id_question='$id_q'");
 						while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
 							$id_pa=$row["id_possibleAnswer"];
 							$findpa=mysqli_query($conn,"select * from possible_answer where id_possibleAnswer='$id_pa'");
 							while ($row = mysqli_fetch_array($findpa, MYSQLI_ASSOC)) {
-								$pa=$row["text"];
-								echo "<h1 style='margin-left:30%;'><label class='containerr' for='$pa'> $pa
-										<input type='checkbox'  id='$pa' name='pa[]' value='$pa'>
-										<span class='checkmarkr'></span>
-										</label><h1>";
+								$pa=$row["text"];	
+								echo "<p style='margin-left:10%;'><label class='container' for='$pa'>$pa
+									<input type='checkbox' id='$pa' name='pa[]' value='$pa'>
+									<span class='checkmark'></span>
+									</label><p>";
 							}
 						}
                     }

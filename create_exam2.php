@@ -213,6 +213,7 @@ include 'config.php';
 								}
 							}
 							echo " $qtext<br> <br>";
+							echo "</form>";
 							echo "<hr>";
 						}
 					
@@ -257,6 +258,7 @@ include 'config.php';
 							<option value='T'>True</option>
 							<option value='F'>False</option>
 						 	 </select>";
+							 echo "</form>";
 							echo "<hr>";
 						}
 						
@@ -309,6 +311,7 @@ include 'config.php';
 								  	</label><p>";
 								}
 							}	
+							echo "</form>";
 								echo "<hr>";		
 						}
 					}

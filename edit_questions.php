@@ -28,6 +28,7 @@ $id_lesson=$_POST['course'];
 		<link rel="stylesheet" href="assets/css/lf.css">
 		<link rel="stylesheet" href="assets/css/button.css">
 		<link rel="stylesheet" href="assets/css/checkbox.css">
+		<link rel="stylesheet" href="assets/css/radiobutton.css">
         <link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>
 	</head>
 		
@@ -75,29 +76,28 @@ $id_lesson=$_POST['course'];
         <div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">
 		<?php
 			$query=mysqli_query($conn,"SELECT * FROM includes WHERE id_lesson='$id_lesson'");
-			echo "<h3>Ερωτήσεις ελευθέρου κειμένου </h3>";
+			echo "<h2>Ερωτήσεις ελευθέρου κειμένου </h2>";
 			while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 				$id_question=$row["id_question"];	
 				$question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='Ελευθέρου κειμένου'");
 					while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
 						$qtext=$row["text"];
 						echo "<form method='post' action='change_questions.php'>";
-						echo "<button type = 'submit' name='id_question' class='wbtn' value='$id_question'>";
-						echo "Επεξεργασία";
-						echo "</button>";
-						echo " $qtext<br> <br>";
+						echo "<h4>$qtext</h4>";
+						echo "<button class='but' style='width:60%;' type='submit' name='id_question' value='$id_question'>Επεξεργασία</button>";
+						echo "</form>";
 						echo "<hr>";
 					}
 			}
 			$query=mysqli_query($conn,"SELECT * FROM includes WHERE id_lesson='$id_lesson'");
-			echo "<h3>Ερωτήσεις True-False </h3>";
+			echo "<h2>Ερωτήσεις True-False </h2>";
 			while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 				$id_question=$row["id_question"];	
 				$question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='True-False'");
 				while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
 					$qtext=$row["text"];
 					echo "<form method='post' action='change_questions.php'>";
-					echo "$qtext<br><br>";
+					echo "<h4>$qtext</h4>";
 					$findidpa=mysqli_query($conn,"select * from has where  id_question='$id_question'");
 						while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
 							$id_pa=$row["id_possibleAnswer"];
@@ -106,34 +106,41 @@ $id_lesson=$_POST['course'];
 								$pa=$row["text"];
 								$iscorrect=$row["is_correct"];
 								if($iscorrect=="0"){
-									echo "<p><input type='checkbox' id='true' name='true' value='true' disabled>
-									<label for='true'>True</label><p>";
-									echo "<p><input type='checkbox' id='false' name='false' value='false' checked disabled>
-									<label for='false'>False</label><p>";
+									echo "<p style='margin-left:10%;'><label class='container' for='true'>True
+									<input type='checkbox' id='true' name='true' value='true' disabled>
+									<span class='checkmark'></span>
+									</label><p>";
+									echo "<p style='margin-left:10%;'><label class='container' for='false'>False
+									<input type='checkbox' id='false' name='false' value='false' checked disabled>
+									<span class='checkmark'></span>
+									</label><p>";
 								}
 								else{
-									echo "<p><input type='checkbox' id='true' name='true' value='true' checked disabled>
-									<label for='true'>True</label><p>";
-									echo "<p><input type='checkbox' id='false' name='false' value='false' disabled>
-									<label for='false'>False</label><p>";
+									echo "<p style='margin-left:10%;'><label class='container' for='true'>True
+									<input type='checkbox' id='true' name='true' value='true' checked disabled>
+									<span class='checkmark'></span>
+									</label><p>";
+									echo "<p style='margin-left:10%;'><label class='container' for='false'>False
+									<input type='checkbox' id='false' name='false' value='false' disabled>
+									<span class='checkmark'></span>
+									</label><p>";
 								}
 							}
 						}
-					echo "<button type = 'submit' name='id_question' class='wbtn' value='$id_question'>";
-					echo "Επεξεργασία";
-					echo "</button>";
-					echo "<hr>";
+						echo "<button class='but' style='width:60%;' type='submit' name='id_question' value='$id_question'>Επεξεργασία</button>";
+						echo "</form>";
+						echo "<hr>";
 				}
 			}
 			$query=mysqli_query($conn,"SELECT * FROM includes WHERE id_lesson='$id_lesson'");
-			echo "<h3>Ερωτήσεις Multiple Choice </h3>";
+			echo "<h2>Ερωτήσεις Multiple Choice </h2>";
 			while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 				$id_question=$row["id_question"];	
 				$question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='Multiple Choice'");
 				while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
 					$qtext=$row["text"];
 					echo "<form method='post' action='change_questions.php'>";
-					echo " $qtext <br>";
+					echo "<h4>$qtext</h4>";
 					$findidpa=mysqli_query($conn,"select * from has where  id_question='$id_question'");
 						while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
 							$id_pa=$row["id_possibleAnswer"];
@@ -142,30 +149,33 @@ $id_lesson=$_POST['course'];
 								$pa=$row["text"];
 								$iscorrect=$row["is_correct"];
 								if($iscorrect=="0"){
-									echo "<p><input type='checkbox' id='$pa' name='pa[]' value='$pa' disabled>
-								<label for='$pa'>$pa</label><p>";
+									echo "<p style='margin-left:10%;'><label class='containerr' for='$pa'> $pa
+									<input type='radio' id='$pa' name='pa' value='$pa' disabled>
+									<span class='checkmarkr'></span>
+								  	</label><p>";
 								}
 								else{
-									echo "<p><input type='checkbox' id='$pa' name='pa[]' value='$pa' checked disabled>
-								<label for='$pa'>$pa</label><p>";
+									echo "<p style='margin-left:10%;'><label class='containerr' for='$pa'> $pa
+									<input type='radio' id='$pa' name='pa' value='$pa' checked disabled>
+									<span class='checkmarkr'></span>
+								  	</label><p>";
 								}
 							}
 						}
-					echo "<button type = 'submit' name='id_question' class='wbtn' value='$id_question'>";
-					echo "Επεξεργασία";
-					echo "</button>";
+					echo "<button class='but' style='width:60%;' type='submit' name='id_question' value='$id_question'>Επεξεργασία</button>";
+					echo "</form>";
 					echo "<hr>";
 				}
 			}		
 			$query=mysqli_query($conn,"SELECT * FROM includes WHERE id_lesson='$id_lesson'");
-			echo "<h3>Ερωτήσεις Multiple Choice με πολλές σωστές απαντήσεις </h3>";
+			echo "<h2>Ερωτήσεις Multiple Choice με πολλές σωστές απαντήσεις </h2>";
 			while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 				$id_question=$row["id_question"];	
 				$question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='Multiple Choice More'");
 				while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
 					$qtext=$row["text"];
 					echo "<form method='post' action='change_questions.php'>";
-					echo " $qtext<br> ";
+					echo "<h4>$qtext</h4> ";
 					$findidpa=mysqli_query($conn,"select * from has where  id_question='$id_question'");
 						while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
 							$id_pa=$row["id_possibleAnswer"];
@@ -174,18 +184,21 @@ $id_lesson=$_POST['course'];
 								$pa=$row["text"];
 								$iscorrect=$row["is_correct"];
 								if($iscorrect=="0"){
-									echo "<p><input type='checkbox' id='$pa' name='pa[]' value='$pa' disabled>
-								<label for='$pa'>$pa</label><p>";
+									echo "<p style='margin-left:10%;'><label class='container' for='$pa'>$pa
+									<input type='checkbox' id='$pa' name='pa[]' value='$pa' disabled>
+									<span class='checkmark'></span>
+									</label><p>";
 								}
 								else{
-									echo "<p><input type='checkbox' id='$pa' name='pa[]' value='$pa' checked disabled>
-								<label for='$pa'>$pa</label><p>";
+									echo "<p style='margin-left:10%;'><label class='container' for='$pa'>$pa
+									<input type='checkbox' id='$pa' name='pa[]' value='$pa' checked disabled>
+									<span class='checkmark'></span>
+									</label><p>";
 								}	
 							}
 						}
-					echo "<button type = 'submit' name='id_question' class='wbtn' value='$id_question'>";
-					echo "Επεξεργασία";
-					echo "</button>";
+					echo "<button class='but' style='width:60%;' type='submit' name='id_question' value='$id_question'>Επεξεργασία</button>";
+					echo "</form>";
 					echo "<hr>";
                 }
 			}
