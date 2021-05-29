@@ -133,17 +133,25 @@ $id_question=$_POST['id_question'];
 							}
 						}
 						if($iscorrect=="0"){
-							echo "<p><input type='radio' id='tf' name='tf' value='true'>
-								<label for='true'>True</label><p>";
-							echo "<p><input type='radio' id='tf' name='tf' value='false' checked>
-								<label for='false'>False</label><p>";
-						}
-						else{
-							echo "<p><input type='radio' id='tf' name='tf' value='true' checked>
-								<label for='true'>True</label><p>";
-							echo "<p><input type='radio' id='tf' name='tf' value='false'>
-								<label for='false'>False</label><p>";
-						}
+									echo "<p style='margin-left:10%;'><label class='container' for='true'>True
+									<input type='radio' id='true' name='tf' value='true'>
+									<span class='checkmark'></span>
+									</label><p>";
+									echo "<p style='margin-left:10%;'><label class='container' for='false'>False
+									<input type='radio' id='false' name='tf' value='false' checked>
+									<span class='checkmark'></span>
+									</label><p>";
+								}
+								else{
+									echo "<p style='margin-left:10%;'><label class='container' for='true'>True
+									<input type='radio' id='true' name='tf' value='true' checked>
+									<span class='checkmark'></span>
+									</label><p>";
+									echo "<p style='margin-left:10%;'><label class='container' for='false'>False
+									<input type='radio' id='false' name='tf' value='false'>
+									<span class='checkmark'></span>
+									</label><p>";
+								}
 					}
 				?>	
 				<button type="submit" class="cleanbtn" style="color:white">Αλλαγή</button>

@@ -6,7 +6,6 @@ $username=$_SESSION["username"];
 $id_question=$_POST['idq'];
 $question=$_POST['txt'];
 
-//ελεγχος για όλες τις αλλαγές παράλληλα, επισης πρέπει να πηγαίνει το χρήστη στην επιλογή της σωστής απάντησης
 
 $s = mysqli_query($conn,"select * from question");
 while ($row = mysqli_fetch_array($s, MYSQLI_ASSOC)) {
@@ -64,6 +63,12 @@ if($qtype=="True-False"){
 			header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
 					
 		}
+	}
+	else{
+		$_SESSION["username"]=$username;
+		// Redirecting To Other Page
+		$location="/Ptuxiaki/select_lesson.php";
+		header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
 	}
 }
 else if(($qtype=="Multiple Choice")||($qtype=="Multiple Choice More")){
