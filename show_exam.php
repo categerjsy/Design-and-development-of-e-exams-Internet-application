@@ -101,6 +101,7 @@ include 'config.php';
 <div id="myform" >
 
 <?php
+
 $exam=$_SESSION["id_exam"];
 $query=mysqli_query($conn,"SELECT * FROM exam WHERE id_exam='$exam'");
 while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
@@ -108,20 +109,46 @@ while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
     $findlesson=mysqli_query($conn,"select * from belongs_to where id_exam='$exam'");
         while ($row = mysqli_fetch_array($findlesson, MYSQLI_ASSOC)) {
         $l=$row["id_lesson"];
-        $SESSION["id_lesson"]=$l;
+        $_SESSION["id_lesson"]=$l;
         $namelesson=mysqli_query($conn,"select * from lesson where id_lesson='$l'");
             while ($row = mysqli_fetch_array($namelesson, MYSQLI_ASSOC)) {
                 $lesson=$row["name"];
-                $SESSION["lesson"]=$lesson;
+                $_SESSION["lesson"]=$lesson;
             }
         }
 }
 echo "<h3>Προβολή ερωτήσεων στο διαγώνισμα του μαθήματος $lesson.</h3><p>Το διαγώνισμα σας είναι προγραμματισμένο στις $exam_datetime </p>";
+
+
+$exam=$_SESSION["id_exam"];
+$id_lesson=$_SESSION["id_lesson"];
+$lesson=$_SESSION["lesson"];
+   $query=mysqli_query($conn,"SELECT * FROM contains WHERE id_exam='$exam'");
+   $var1 = "00:00:00";
+   $date = new DateTime($var1);
+   while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+	   $id_question=$row["id_question"];	
+	   
+	   $question=mysqli_query($conn,"select * from question where id_question='$id_question'");
+	   while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
+		   $var2=$row["time"];
+		   list($hours, $minutes, $seconds) = explode(":", $var2);
+			$interval = new DateInterval("PT" . $hours . "H" . $minutes . "M" . $seconds . "S");
+
+			$date->add($interval);
+			
+	   }
+   }   
+  	 
+    echo "<p>Το διαγώνισμα σας υπολογίζεται να έχει χρονική διάρκεια ";
+    echo $date->format("H:i:s");
+	echo "</p>";
+
 ?>
 <?php 
 				 $exam=$_SESSION["id_exam"];
-				 $id_lesson=$SESSION["id_lesson"];
-				 $lesson=$SESSION["lesson"];
+				 $id_lesson=$_SESSION["id_lesson"];
+				 $lesson=$_SESSION["lesson"];
 					$query=mysqli_query($conn,"SELECT * FROM contains WHERE id_exam='$exam'");
 					echo "<h3>Ερωτήσεις ελευθέρου κειμένου </h3>";
 					while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
@@ -142,8 +169,8 @@ echo "<h3>Προβολή ερωτήσεων στο διαγώνισμα του �
 <?php
 				 
 				 $exam=$_SESSION["id_exam"];
-				 $id_lesson=$SESSION["id_lesson"];
-				 $lesson=$SESSION["lesson"];
+				 $id_lesson=$_SESSION["id_lesson"];
+				 $lesson=$_SESSION["lesson"];
 				 $query=mysqli_query($conn,"SELECT * FROM contains WHERE id_exam='$exam'");
 					echo "<h3>Ερωτήσεις True-False </h3>";
 					while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
@@ -168,8 +195,8 @@ echo "<h3>Προβολή ερωτήσεων στο διαγώνισμα του �
 					<?php
 				 
 				 $exam=$_SESSION["id_exam"];
-				 $id_lesson=$SESSION["id_lesson"];
-				 $lesson=$SESSION["lesson"];
+				 $id_lesson=$_SESSION["id_lesson"];
+				 $lesson=$_SESSION["lesson"];
 				 $query=mysqli_query($conn,"SELECT * FROM contains WHERE id_exam='$exam'");
 					echo "<h3>Ερωτήσεις Multiple Choice </h3>";
 					while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
@@ -201,8 +228,8 @@ echo "<h3>Προβολή ερωτήσεων στο διαγώνισμα του �
 				<?php
 				 
 				 $exam=$_SESSION["id_exam"];
-				 $id_lesson=$SESSION["id_lesson"];
-				 $lesson=$SESSION["lesson"];
+				 $id_lesson=$_SESSION["id_lesson"];
+				 $lesson=$_SESSION["lesson"];
 				 $query=mysqli_query($conn,"SELECT * FROM contains WHERE id_exam='$exam'");
 					echo "<h3>Ερωτήσεις Multiple Choice με πολλές σωστές απαντήσεις </h3>";
 					while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
