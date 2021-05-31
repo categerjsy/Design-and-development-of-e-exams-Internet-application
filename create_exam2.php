@@ -137,11 +137,7 @@ include 'config.php';
 		</label>
 		<input type="submit" value="Εφαρμογή φίλτρων">
 		</form>
-		<!--<form action="random_test.php" method="post">
-		<label for="number_questions">Αριθμός ερωτήσεων</label>
-		<input type="number" id="number_questions" name="number_questions" min="1"  required>
-		<input type="submit" value="Τυχαία επιλογή ερωτήσεων">
-		</form>-->
+		
 		<button class="wbtn" style="width:100%"><a href="r1.php">Τυχαίο Διαγώνισμα</a></button>
 		<br>
 	</div>
@@ -156,6 +152,25 @@ include 'config.php';
 		}
 		?>
         <div id="myform" >
+		<?php
+		$exam=$_SESSION["id_exam"];
+		$query=mysqli_query($conn,"SELECT * FROM exam WHERE id_exam='$exam'");
+		while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+			$final_grade=$row["final_grade"];
+		}
+		if($final_grade==10){
+		echo "<form action='bonus.php' method='post' >
+		<label class='container'>Βοnus βαθμολογία
+		<input type='checkbox' id='myCheck' onclick='negGrade()'>
+		<span class='checkmark'></span>
+		</label>
+		<br>
+		<p id='text' style='display:none'>Παρακαλώ ορίστε Βοnus βαθμολογία
+		<input type='text' id='ngrade' name='ngrade' placeholder='Βοnus βαθμολογία' onblur='validateNGrade(this);' pattern='[0-9]{1}.[0-9]{2}'>
+		<br> <span id='messageNGrade'></span>
+		<input type='submit' value='Ορισμός Bonus βαθμολογίας' /></p>";
+		}
+		?>
 
 			<?php
 			$exam=$_SESSION["id_exam"];
@@ -381,7 +396,7 @@ include 'config.php';
 				</div>
 	
 	</div>
-			 <!-- </form>-->
+			 
 			</div>
                      
 		</main>
@@ -393,6 +408,9 @@ include 'config.php';
         <script src="assets\js\bootstrapSwitch.js" ></script>
 		<script src="assets/js/aside.js"></script>
 		<script src="assets/js/celall.js"></script>
+		<script src="assets/js/ngrade.js"></script>
+		<script src="assets/js/negGrade.js"></script>
+		
 
 	</body>
 </html>

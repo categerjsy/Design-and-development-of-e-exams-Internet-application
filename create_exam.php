@@ -115,6 +115,7 @@ include 'config.php';
 				?>
                 <br> 
 				
+				
 				Ημερομηνία εξέτασης <br>
 				<table border="0" cellspacing="0" >
 
@@ -193,15 +194,7 @@ include 'config.php';
 				?>
 				<br> 
 				
-				<label class="container">Βοnus βαθμολογία
-				<input type="checkbox" id="myCheck" onclick="negGrade()">
-				<span class="checkmark"></span>
-				</label>
-				<br>
-				<p id="text" style="display:none">Παρακαλώ ορίστε Βοnus βαθμολογία
-			    <input type="text" id="ngrade" name="ngrade" placeholder="Βοnus βαθμολογία" onblur="validateNGrade(this);" pattern="[0-9]{1}.[0-9]{2}">
-				<br> <span id='messageNGrade'></span></p>
-
+				
 			    <input type="submit" value="Δημιουργία Εξέτασης">
 				<button class="cancelbtn" type="reset"><a href="create_question.php">Έξοδος</a></button>
             

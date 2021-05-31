@@ -33,8 +33,8 @@ include 'config.php';
 		}
 		elseif($date_for_database> $now) {
 		//question
-		mysqli_query($conn, "INSERT INTO exam (date_time)
-				VALUES ('$date_for_database')");
+		mysqli_query($conn, "INSERT INTO exam (date_time,final_grade)
+				VALUES ('$date_for_database',10)");
 		$id_exam = mysqli_insert_id($conn);
 		
 		//question
