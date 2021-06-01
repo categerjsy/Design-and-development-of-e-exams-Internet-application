@@ -387,7 +387,7 @@ include 'config.php';
 				 ?>
 					
 				
-    			<a href="show_exam.php?msg=exam"><button class="but" type="button">Ολοκλήρωση</button></a>
+    			<a href="s_exam.php"><button class="but" type="button">Ολοκλήρωση</button></a>
 					
 				<button class="cancelbtn" type="reset"><a href="profilek.php">Έξοδος</a></button>
             

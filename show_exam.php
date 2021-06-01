@@ -126,22 +126,27 @@ $lesson=$_SESSION["lesson"];
    $query=mysqli_query($conn,"SELECT * FROM contains WHERE id_exam='$exam'");
    $var1 = "00:00:00";
    $date = new DateTime($var1);
+   $gradefornow=0;
    while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 	   $id_question=$row["id_question"];	
 	   
 	   $question=mysqli_query($conn,"select * from question where id_question='$id_question'");
 	   while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
+		   $grade=$row["grade"];
 		   $var2=$row["time"];
 		   list($hours, $minutes, $seconds) = explode(":", $var2);
 			$interval = new DateInterval("PT" . $hours . "H" . $minutes . "M" . $seconds . "S");
 
 			$date->add($interval);
-			
+			$gradefornow+=$grade;
 	   }
    }   
   	 
     echo "<p>Το διαγώνισμα σας υπολογίζεται να έχει χρονική διάρκεια ";
     echo $date->format("H:i:s");
+	echo "</p>";
+	echo "<p>Το διαγώνισμα σας υπολογίζεται σε βαθμολογία  ";
+    echo $gradefornow;
 	echo "</p>";
 
 ?>

@@ -17,7 +17,7 @@ session_start();
         }
         else{
 		  $username=$_SESSION["username"];
-		  echo "<title>Δημιουργία ερώτησης</title>";
+		  echo "<title>Εισαγωγή  ερώτησης</title>";
         }
 		?>
 		<meta charset="utf-8" />
@@ -81,7 +81,7 @@ session_start();
 						print "<p style='color:green'>Η ερώτηση σας, δημιουργήθηκε.</p>";//προσωρινο
 					}
 				?>
-    			<h3>Δημιουργία Ερώτησης</h3>
+    			<h3>Εισαγωγή Ερώτησης</h3>
     			<h4>Παρακαλώ επιλέξετε μια κατηγορία ερώτηση</h4>
     			  <div class="w3-container">
     			    <a href="create_question_tf.php"><button class="but" type="reset">True-False</button></a>
