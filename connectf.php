@@ -25,7 +25,7 @@ $rup = mysqli_num_rows($query);
 $query = mysqli_query($conn,"select * from user_professor where email='$email'");
 $rep = mysqli_num_rows($query);
 ////////////////////////////////////  
-if(strlen($pass)<6){
+if((strlen($pass)<6)||(strlen($pass)>16)){
 	$location="/Ptuxiaki/sign_upf.php?msg=plen";
 	header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
 

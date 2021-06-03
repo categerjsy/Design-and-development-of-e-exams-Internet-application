@@ -15,9 +15,9 @@ $conf=$_POST['confirm_password'];
 		
 		
 		if($rowsp == 1) {//prof
-			if(strlen($new)<6){
+			if((strlen($new)<6)||(strlen($new)>16)){
 				echo '<script type="text/javascript">'; 
-                echo 'alert("Password not long enough!");'; 
+                echo 'alert("Ο κωδικός σας πρέπει να έχει μέγεθος 7 έως 15 χαρακτήρων.Παρακαλώ προσπαθήστε ξανά.");'; 
                 echo 'window.location.href = "profilek.php";';
                 echo '</script>';
 
@@ -39,9 +39,9 @@ $conf=$_POST['confirm_password'];
 			}
 			
 		} else if($rowss == 1) {//student
-			if(strlen($new)<6){
+			if((strlen($new)<6)||(strlen($new)>16)){
 				echo '<script type="text/javascript">'; 
-                echo 'alert("Password not long enough!");'; 
+                echo 'alert("Ο κωδικός σας πρέπει να έχει μέγεθος 7 έως 15 χαρακτήρων.Παρακαλώ προσπαθήστε ξανά.");'; 
                 echo 'window.location.href = "change_password.php";';
                 echo '</script>';
 			}else{
