@@ -138,7 +138,7 @@ include 'config.php';
 		<input type="submit" value="Εφαρμογή φίλτρων">
 		</form>
 		
-		<button class="wbtn" style="width:100%"><a href="r1.php">Τυχαίο Διαγώνισμα</a></button>
+		<a href="r1.php"><button class="wbtn" style="width:100%">Τυχαίο Διαγώνισμα</button></a>
 		<br>
 	</div>
 		
