@@ -212,13 +212,13 @@ include 'config.php';
 									// it return number of rows in the table. 
 								$row = mysqli_num_rows($result); 
 								if ($row) { 
-								echo "<form method='post' action='contains.php'>";
+								echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
 								echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
 								echo "Αφαίρεση ερώτησης";
 								echo "</button>";
 								}
 								else{
-								echo "<form method='post' action='contains.php'>";
+								echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
 								echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
 								echo "Προσθήκη ερώτησης";
 								echo "</button>";
@@ -253,20 +253,20 @@ include 'config.php';
 								// it return number of rows in the table. 
 							$row = mysqli_num_rows($result1); 
 								if ($row) { 
-								echo "<form method='post' action='contains.php'>";
+								echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
 								echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
 								echo "Αφαίρεση ερώτησης";
 								echo "</button>";
 								}
 								else{
-								echo "<form method='post' action='contains.php'>";
+								echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
 								echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
 								echo "Προσθήκη ερώτησης";
 								echo "</button>";
 								}
 							}
 							echo "$qtext<br><br>";
-							echo " <select id='answer' name='answer'>
+							echo " <select id='answer' name='answer' disabled>
 							<option value='T'>True</option>
 							<option value='F'>False</option>
 						 	 </select>";
@@ -297,13 +297,13 @@ include 'config.php';
 									// it return number of rows in the table. 
 								$row = mysqli_num_rows($result2); 
 								if ($row) { 
-									echo "<form method='post' action='contains.php'>";
+									echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
 									echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
 									echo "Αφαίρεση ερώτησης";
 									echo "</button>";
 									}
 									else{
-									echo "<form method='post' action='contains.php'>";
+									echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
 									echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
 									echo "Προσθήκη ερώτησης";
 									echo "</button>";
@@ -318,7 +318,7 @@ include 'config.php';
 									$pa=$row["text"];
 									
 									echo "<p style='margin-left:30%;'><label class='containerr' for='$pa'> $pa
-									<input type='radio' id='$pa' name='pa' value='$pa'>
+									<input type='radio' id='$pa' name='pa' value='$pa' disabled>
 									<span class='checkmarkr'></span>
 								  	</label><p>";
 								}
@@ -349,13 +349,13 @@ include 'config.php';
 									// it return number of rows in the table. 
 								$row = mysqli_num_rows($result3); 
 								if ($row) { 
-									echo "<form method='post' action='contains.php'>";
+									echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
 									echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
 									echo "Αφαίρεση ερώτησης";
 									echo "</button>";
 									}
 									else{
-									echo "<form method='post' action='contains.php'>";
+									echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
 									echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
 									echo "Προσθήκη ερώτησης";
 									echo "</button>";
@@ -369,7 +369,7 @@ include 'config.php';
 								while ($row = mysqli_fetch_array($findpa, MYSQLI_ASSOC)) {
 									$pa=$row["text"];
 								echo "<p style='margin-left:30%;'><label class='container' for='$pa'>$pa
-								<input type='checkbox' id='$pa' name='pa[]' value='$pa'>
+								<input type='checkbox' id='$pa' name='pa[]' value='$pa' disabled>
 								<span class='checkmark'></span>
 								</label><p>";
 								}
