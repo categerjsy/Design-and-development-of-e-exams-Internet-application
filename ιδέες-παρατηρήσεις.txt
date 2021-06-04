@@ -16,3 +16,11 @@
 
 //reminder
 1.γενικες λειτουργιες true-false στο edit με radio buttton
+<<<<<<< HEAD
+=======
+
+
+//Διορθώσεις που έγιναν 
+-change password... νομιζω ολα οκ!-απο δικα μ
+-edit_question ! - απο δικά μ
+>>>>>>> 6c6a4e56a416516fdcb00a7a000bac3be71be795
