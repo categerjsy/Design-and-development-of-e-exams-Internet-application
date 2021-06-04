@@ -19,4 +19,5 @@
 
 
 //Διορθώσεις που έγιναν 
--change password... νομιζω ολα οκ!
+-change password... νομιζω ολα οκ!-απο δικα μ
+-edit_question ! - απο δικά μ
