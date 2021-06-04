@@ -4,21 +4,20 @@ session_start();
 
 $username=$_SESSION["username"];
 $old=$_POST['old_password'];
-$new=$_POST['new_password'];
+$new=$_POST['password'];
 $conf=$_POST['confirm_password'];
 
 		$queryp = mysqli_query($conn,"select * from user_professor where password='$old' AND username='$username'");
         $querys = mysqli_query($conn,"select * from user_student where password='$old' AND username='$username'");
 		$rowsp = mysqli_num_rows($queryp);
         $rowss = mysqli_num_rows($querys);
-  
+if($new==$conf){
 		
 		
 		if($rowsp == 1) {//prof
-			if((strlen($new)<6)||(strlen($new)>16)){
+			if((strlen($new)<7)||(strlen($new)>16)){
 				echo '<script type="text/javascript">'; 
-                echo 'alert("Ο κωδικός σας πρέπει να έχει μέγεθος 7 έως 15 χαρακτήρων.Παρακαλώ προσπαθήστε ξανά.");'; 
-                echo 'window.location.href = "profilek.php";';
+                echo 'window.location.href = "change_password.php?msg=plen";';
                 echo '</script>';
 
 			}
@@ -39,10 +38,9 @@ $conf=$_POST['confirm_password'];
 			}
 			
 		} else if($rowss == 1) {//student
-			if((strlen($new)<6)||(strlen($new)>16)){
+			if((strlen($new)<7)||(strlen($new)>16)){
 				echo '<script type="text/javascript">'; 
-                echo 'alert("Ο κωδικός σας πρέπει να έχει μέγεθος 7 έως 15 χαρακτήρων.Παρακαλώ προσπαθήστε ξανά.");'; 
-                echo 'window.location.href = "change_password.php";';
+                echo 'window.location.href = "change_password.php?msg=plen";';
                 echo '</script>';
 			}else{
 				if (!empty($_POST['old_password'])){
@@ -70,6 +68,9 @@ $conf=$_POST['confirm_password'];
 			
 			}
  
-	
+}else {
+	$location="/Ptuxiaki/change_password.php?msg=cp";
+	header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+}	
 
 ?>

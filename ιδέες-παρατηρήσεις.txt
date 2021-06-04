@@ -16,3 +16,7 @@
 
 //reminder
 1.γενικες λειτουργιες true-false στο edit με radio buttton
+
+
+//Διορθώσεις που έγιναν 
+-change password... νομιζω ολα οκ!
