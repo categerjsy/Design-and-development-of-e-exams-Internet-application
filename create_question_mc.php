@@ -83,6 +83,7 @@ table tr td:last-child{
 		<div id="mySidebar" class="sidebar">
 			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
 			<a href="edit_prof.php">Επεξεργασία προφίλ</a>
+			<a href="change_password.php">Αλλαγή κωδικού</a>
 			<a href="create_lesson.php">Δημιουργία μαθήματος</a>
 			<a href="create_question.php">Εισαγωγή ερώτησης</a>>
 			<a href="select_lesson.php">Επεξεργασία ερωτήσεων</a>

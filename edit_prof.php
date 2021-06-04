@@ -26,6 +26,7 @@ include 'config.php';
 		<link rel="stylesheet" href="assets/css/st.css">
 		<link rel="stylesheet" href="assets/css/asidenav.css">
 		<link rel="stylesheet" href="assets/css/lf.css">
+		<link rel="stylesheet" href="assets/css/button.css">
 		<link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>		
 	
 	</head>
@@ -85,6 +86,7 @@ include 'config.php';
 					echo '<div id="mySidebar" class="sidebar">';
 					echo '<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>';
 					echo '<a href="edit_prof.php">Επεξεργασία προφίλ</a>';
+					echo '<a href="change_password.php">Αλλαγή κωδικού</a>';
 					echo '<a href="create_lesson.php">Δημιουργία μαθήματος</a>';
 					echo '<a href="create_question.php">Εισαγωγή ερώτησης</a>';
 					echo '<a href="select_lesson.php">Επεξεργασία ερωτήσεων</a>';
@@ -101,7 +103,6 @@ include 'config.php';
 			<h3>Επεξεργασία προφίλ</h3>
 			
 			<h4>Γειά σας <?php echo "$username"; ?>!</h4>
-		
 			<?php 
 				if (isset($_SESSION["id_student"])!=NULL){
 				   $s = mysqli_query($conn,"select * from user_student");
@@ -144,6 +145,7 @@ include 'config.php';
 			<input type="text" value="<?php echo "$username"; ?>" name="uname" required>
 			<br>
 					
+			<br>
 			<button type="submit" class="cleanbtn" style="color:white">Αλλαγή</button>
 			<button type="button" class="cancelbtn" onclick="goBack()">Πίσω</button>
 			<script>
@@ -152,8 +154,7 @@ include 'config.php';
 			}
 			</script>
 			<button type="reset" class="cleanbtn" onClick="window.location.reload();" style="color:white">Επαναφορά</button>
-			
-			<button type="button" class="cleanbtn"><a href="change_password.php">Αλλαγή κωδικού</a></button>
+
 			</form>
 		</div>
 		</main>

@@ -32,11 +32,7 @@ include 'config.php';
 		<link rel="stylesheet" href="assets/css/radiobutton.css">
 		<link rel="stylesheet" href="assets/css/filter.css">
         <link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>
-		
-
 	
-		
-
 	</head>
 	
 		
@@ -75,6 +71,7 @@ include 'config.php';
 		<div id="mySidebar" class="sidebar">
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
 		<a href="edit_prof.php">Επεξεργασία προφίλ</a>
+		<a href="change_password.php">Αλλαγή κωδικού</a>
 		<a href="create_lesson.php">Δημιουργία μαθήματος</a>
 		<a href="create_question.php">Εισαγωγή ερώτησης</a>
 		<a href="select_lesson.php">Επεξεργασία ερωτήσεων</a>

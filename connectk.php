@@ -22,7 +22,7 @@ $rus = mysqli_num_rows($query);
 $query = mysqli_query($conn,"select * from user_student where email='$email'");
 $res = mysqli_num_rows($query);
 ////////////////////////////////////    
-if(strlen($pass)<6){
+if((strlen($pass)<7)||(strlen($pass)>16)){
 	$location="/Ptuxiaki/sign_upk.php?msg=plen";
 	header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
 

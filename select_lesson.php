@@ -65,6 +65,7 @@ include 'config.php';
 		<div id="mySidebar" class="sidebar">
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
 		<a href="edit_prof.php">Επεξεργασία προφίλ</a>
+		<a href="change_password.php">Αλλαγή κωδικού</a>
 		<a href="create_lesson.php">Δημιουργία μαθήματος</a>
 		<a href="create_question.php">Εισαγωγή ερώτησης</a>>
 		<a href="select_lesson.php">Επεξεργασία ερωτήσεων</a>
@@ -79,12 +80,8 @@ include 'config.php';
 			<h3>Επεξεργασία ερωτήσεων</h3>
 			
 	
-			  <form action="edit_questions.php" method="post">
-			  <?php
-					if (isset($_GET["msg"]) && $_GET["msg"] == 'done') {
-						print "<p style='color:green'>Η ερώτηση σας, άλλαξε.</p>";//προσωρινο
-					}
-				?>
+			  <form action="sess_lesson.php" method="post">
+			
 			  <label for="course">Παρακαλώ επιλέξτε μάθημα</label> <br>
 			  <?php
 			   	$idp=$_SESSION["id_professor"];

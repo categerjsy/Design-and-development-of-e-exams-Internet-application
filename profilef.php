@@ -65,6 +65,7 @@ session_start();
 			<div id="mySidebar" class="sidebar">
 			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
 			<a href="edit_prof.php">Επεξεργασία προφίλ</a>
+			<a href="change_password.php">Αλλαγή κωδικού</a>
 			<a href="enroll.php">Εγγραφή σε μάθημα</a>
 			</div>
 	

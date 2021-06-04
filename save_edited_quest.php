@@ -27,10 +27,13 @@ if($question!=$oldquestion){
 		$_SESSION["username"]=$username;
 		echo "Question changed!!";
 		// Redirecting To Other Page
-		$location="/Ptuxiaki/select_lesson.php";
+		$location="/Ptuxiaki/edit_questions.php?msg=ch";
 		header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
 				
 	}
+}else{
+	$location="/Ptuxiaki/edit_questions.php?msg=samequestion";
+		header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
 }
 
 if($qtype=="True-False"){
@@ -59,7 +62,7 @@ if($qtype=="True-False"){
 			$_SESSION["username"]=$username;
 			echo "Question changed!!";
 			// Redirecting To Other Page
-			$location="/Ptuxiaki/select_lesson.php";
+			$location="/Ptuxiaki/edit_questions.php?msg=ch";
 			header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
 					
 		}
@@ -67,7 +70,7 @@ if($qtype=="True-False"){
 	else{
 		$_SESSION["username"]=$username;
 		// Redirecting To Other Page
-		$location="/Ptuxiaki/select_lesson.php";
+		$location="/Ptuxiaki/edit_questions.php?msg=ch";
 		header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
 	}
 }
