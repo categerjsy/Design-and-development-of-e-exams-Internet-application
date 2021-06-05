@@ -100,12 +100,14 @@ include 'config.php';
 			   	   $idp=$_SESSION["id_professor"];
 				   echo "<select id='course' name='course' disabled>";
 				   $my_exam=$_POST["exam"];
+				   $_SESSION["id_exam"]=$my_exam;
                    $sa = mysqli_query($conn,"select * from belongs_to where id_exam='$my_exam'");
                    while ($row = mysqli_fetch_array($sa, MYSQLI_ASSOC)) {
                     $id_lesson=$row["id_lesson"];
                     $s = mysqli_query($conn,"select * from lesson where id_lesson='$id_lesson'");
                     while ($row = mysqli_fetch_array($s, MYSQLI_ASSOC)) {
                             $my_l=$row["name"];
+							$_SESSION["lesson"]=$my_l;
                             echo "<option value='$my_l'>$my_l</option>";  
                         }
                     }
