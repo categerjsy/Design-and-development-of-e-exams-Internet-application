@@ -165,7 +165,8 @@ include 'config.php';
 		<p id='text' style='display:none'>Παρακαλώ ορίστε Βοnus βαθμολογία
 		<input type='text' id='ngrade' name='ngrade' placeholder='Βοnus βαθμολογία' onblur='validateNGrade(this);' pattern='[0-9]{1}.[0-9]{2}'>
 		<br> <span id='messageNGrade'></span>
-		<input type='submit' value='Ορισμός Bonus βαθμολογίας' /></p>";
+		<input type='submit' value='Ορισμός Bonus βαθμολογίας' /></p>
+		</form>";
 		}
 		?>
 
@@ -212,20 +213,23 @@ include 'config.php';
 									// it return number of rows in the table. 
 								$row = mysqli_num_rows($result); 
 								if ($row) { 
-								echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
+								echo "<form  action='contains.php#form-anchor' id='form-anchor' method='post'>";
 								echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
 								echo "Αφαίρεση ερώτησης";
 								echo "</button>";
+								
 								}
 								else{
-								echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
+								echo "<form action='contains.php#form-anchor' id='form-anchor' method='post' >";
 								echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
 								echo "Προσθήκη ερώτησης";
 								echo "</button>";
+							
 								}
+								echo "</form>";
 							}
 							echo " $qtext<br> <br>";
-							echo "</form>";
+							
 							echo "<hr>";
 						}
 					
@@ -257,12 +261,14 @@ include 'config.php';
 								echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
 								echo "Αφαίρεση ερώτησης";
 								echo "</button>";
+								echo "</form>";
 								}
 								else{
 								echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
 								echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
 								echo "Προσθήκη ερώτησης";
 								echo "</button>";
+								echo "</form>";
 								}
 							}
 							echo "$qtext<br><br>";
@@ -270,7 +276,7 @@ include 'config.php';
 							<option value='T'>True</option>
 							<option value='F'>False</option>
 						 	 </select>";
-							 echo "</form>";
+				
 							echo "<hr>";
 						}
 						
@@ -301,12 +307,14 @@ include 'config.php';
 									echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
 									echo "Αφαίρεση ερώτησης";
 									echo "</button>";
+									echo "</form>";
 									}
 									else{
 									echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
 									echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
 									echo "Προσθήκη ερώτησης";
 									echo "</button>";
+									echo "</form>";
 									}
 							}
 							echo " $qtext <br>";
@@ -323,7 +331,7 @@ include 'config.php';
 								  	</label><p>";
 								}
 							}	
-							echo "</form>";
+		
 								echo "<hr>";		
 						}
 					}
@@ -349,16 +357,18 @@ include 'config.php';
 									// it return number of rows in the table. 
 								$row = mysqli_num_rows($result3); 
 								if ($row) { 
-									echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
+									echo "<form  action='contains.php#form-anchor' id='form-anchor' method='post'>";
 									echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
 									echo "Αφαίρεση ερώτησης";
 									echo "</button>";
+									echo "</form>";
 									}
 									else{
 									echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
 									echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
 									echo "Προσθήκη ερώτησης";
 									echo "</button>";
+									echo "</form>";
 									}
 							}
 							echo " $qtext<br> ";
