@@ -78,10 +78,10 @@ include 'config.php';
 		<main>  
 			<button class="openbtn" onclick="openNav()">☰ Βασικές επιλογές</button>     
         <div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">
-			<h3>Επεξεργασία ερωτήσεων</h3>
+			<h3>Επεξεργασία Διαγωνίσματος</h3>
 			
 	
-			  <form action="create_exam2.php" method="post">
+			  <form action="edit_exam2.php" method="post">
 			  <label for="course">Παρακαλώ επιλέξτε διαγώνισμα για επεξεργασία</label> <br>
 			  <?php
 			   	$idp=$_SESSION["id_professor"];
@@ -100,13 +100,14 @@ include 'config.php';
                         $findlesson=mysqli_query($conn,"select * from lesson where id_lesson='$id_lesson'");
                             while ($row = mysqli_fetch_array($findlesson, MYSQLI_ASSOC)) {
                             $my_lesson=$row["name"];
+							$myid=$id_lesson;
                             echo "<option value='$my_exam'>$my_lesson, $ex_time</option>";  
                             }
                         }
 					   }
 				  }
 				  $_SESSION["id_exam"]=$my_exam;
-				  $SESSION["id_lesson"]=$id_lesson;
+				  $_SESSION["id_lesson"]=$id_lesson;
 				 
 				  echo "</select>";	 
 			 	   
