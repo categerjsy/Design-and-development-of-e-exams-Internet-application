@@ -214,18 +214,19 @@ if(($_SESSION["all_diff"])&&($_SESSION["all_categ"])){
                                             // it return number of rows in the table. 
                                         $row = mysqli_num_rows($result); 
                                         if ($row) { 
-                                        echo "<form method='post' action='contains.php'>";
+                                        echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                         echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
                                         echo "Αφαίρεση ερώτησης";
                                         echo "</button>";
                                         }
                                         else{
-                                        echo "<form method='post' action='contains.php'>";
+                                            echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                         echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
                                         echo "Προσθήκη ερώτησης";
                                         echo "</button>";
                                         }
                                     }
+                                    echo "</form>";
                                     echo " $qtext<br> <br>";
                                     echo "<hr>";
                                 }
@@ -243,13 +244,13 @@ if(($_SESSION["all_diff"])&&($_SESSION["all_categ"])){
                                                 // it return number of rows in the table. 
                                             $row = mysqli_num_rows($result); 
                                             if ($row) { 
-                                            echo "<form method='post' action='contains.php'>";
+                                                echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                             echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
                                             echo "Αφαίρεση ερώτησης";
                                             echo "</button>";
                                             }
                                             else{
-                                            echo "<form method='post' action='contains.php'>";
+                                                echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                             echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
                                             echo "Προσθήκη ερώτησης";
                                             echo "</button>";
@@ -273,18 +274,19 @@ if(($_SESSION["all_diff"])&&($_SESSION["all_categ"])){
                                                     // it return number of rows in the table. 
                                                 $row = mysqli_num_rows($result); 
                                                 if ($row) { 
-                                                echo "<form method='post' action='contains.php'>";
+                                                    echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                                 echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
                                                 echo "Αφαίρεση ερώτησης";
                                                 echo "</button>";
                                                 }
                                                 else{
-                                                echo "<form method='post' action='contains.php'>";
+                                                    echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                                 echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
                                                 echo "Προσθήκη ερώτησης";
                                                 echo "</button>";
                                                 }
                                             }
+                                            echo "</form>";
                                             echo " $qtext<br> <br>";
                                             echo "<hr>";
                                         }
@@ -302,13 +304,13 @@ if(($_SESSION["all_diff"])&&($_SESSION["all_categ"])){
                                                     // it return number of rows in the table. 
                                                 $row = mysqli_num_rows($result); 
                                                 if ($row) { 
-                                                echo "<form method='post' action='contains.php'>";
+                                                    echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                                 echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
                                                 echo "Αφαίρεση ερώτησης";
                                                 echo "</button>";
                                                 }
                                                 else{
-                                                echo "<form method='post' action='contains.php'>";
+                                                    echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                                 echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
                                                 echo "Προσθήκη ερώτησης";
                                                 echo "</button>";
@@ -331,18 +333,19 @@ if(($_SESSION["all_diff"])&&($_SESSION["all_categ"])){
                                                     // it return number of rows in the table. 
                                                 $row = mysqli_num_rows($result); 
                                                 if ($row) { 
-                                                echo "<form method='post' action='contains.php'>";
+                                                echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                                 echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
                                                 echo "Αφαίρεση ερώτησης";
                                                 echo "</button>";
                                                 }
                                                 else{
-                                                echo "<form method='post' action='contains.php'>";
+                                                echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                                 echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
                                                 echo "Προσθήκη ερώτησης";
                                                 echo "</button>";
                                                 }
                                             }
+                                            echo "</form>";
                                             echo " $qtext<br> <br>";
                                             echo "<hr>";
                                         }
@@ -376,20 +379,21 @@ if(($_SESSION["all_diff"])&&($_SESSION["all_categ"])){
                                         // it return number of rows in the table. 
                                     $row = mysqli_num_rows($result1); 
                                         if ($row) { 
-                                        echo "<form method='post' action='contains.php'>";
+                                        echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                         echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
                                         echo "Αφαίρεση ερώτησης";
                                         echo "</button>";
                                         }
                                         else{
-                                        echo "<form method='post' action='contains.php'>";
+                                        echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                         echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
                                         echo "Προσθήκη ερώτησης";
                                         echo "</button>";
                                         }
                                     }
+                                    echo "</form>";
                                     echo "$qtext<br><br>";
-                                    echo " <select id='answer' name='answer'>
+                                    echo " <select id='answer' name='answer' disabled>
                                     <option value='T'>True</option>
                                     <option value='F'>False</option>
                                     </select>";
@@ -409,20 +413,21 @@ if(($_SESSION["all_diff"])&&($_SESSION["all_categ"])){
                                             // it return number of rows in the table. 
                                         $row = mysqli_num_rows($result1); 
                                             if ($row) { 
-                                            echo "<form method='post' action='contains.php'>";
+                                            echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                             echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
                                             echo "Αφαίρεση ερώτησης";
                                             echo "</button>";
                                             }
                                             else{
-                                            echo "<form method='post' action='contains.php'>";
+                                                echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                             echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
                                             echo "Προσθήκη ερώτησης";
                                             echo "</button>";
                                             }
                                         }
+                                        echo "</form>";
                                         echo "$qtext<br><br>";
-                                        echo " <select id='answer' name='answer'>
+                                        echo " <select id='answer' name='answer' disabled>
                                         <option value='T'>True</option>
                                         <option value='F'>False</option>
                                         </select>";
@@ -442,20 +447,21 @@ if(($_SESSION["all_diff"])&&($_SESSION["all_categ"])){
                                             // it return number of rows in the table. 
                                         $row = mysqli_num_rows($result1); 
                                             if ($row) { 
-                                            echo "<form method='post' action='contains.php'>";
+                                            echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                             echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
                                             echo "Αφαίρεση ερώτησης";
                                             echo "</button>";
                                             }
                                             else{
-                                            echo "<form method='post' action='contains.php'>";
+                                            echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                             echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
                                             echo "Προσθήκη ερώτησης";
                                             echo "</button>";
                                             }
                                         }
+                                        echo "</form>";
                                         echo "$qtext<br><br>";
-                                        echo " <select id='answer' name='answer'>
+                                        echo " <select id='answer' name='answer' disabled>
                                         <option value='T'>True</option>
                                         <option value='F'>False</option>
                                         </select>";
@@ -475,20 +481,21 @@ if(($_SESSION["all_diff"])&&($_SESSION["all_categ"])){
                                                 // it return number of rows in the table. 
                                             $row = mysqli_num_rows($result1); 
                                                 if ($row) { 
-                                                echo "<form method='post' action='contains.php'>";
+                                                echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                                 echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
                                                 echo "Αφαίρεση ερώτησης";
                                                 echo "</button>";
                                                 }
                                                 else{
-                                                echo "<form method='post' action='contains.php'>";
+                                                echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                                 echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
                                                 echo "Προσθήκη ερώτησης";
                                                 echo "</button>";
                                                 }
                                             }
+                                            echo "</form>";
                                             echo "$qtext<br><br>";
-                                            echo " <select id='answer' name='answer'>
+                                            echo " <select id='answer' name='answer' disabled>
                                             <option value='T'>True</option>
                                             <option value='F'>False</option>
                                             </select>";
@@ -508,20 +515,21 @@ if(($_SESSION["all_diff"])&&($_SESSION["all_categ"])){
                                                     // it return number of rows in the table. 
                                                 $row = mysqli_num_rows($result1); 
                                                     if ($row) { 
-                                                    echo "<form method='post' action='contains.php'>";
+                                                    echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                                     echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
                                                     echo "Αφαίρεση ερώτησης";
                                                     echo "</button>";
                                                     }
                                                     else{
-                                                    echo "<form method='post' action='contains.php'>";
+                                                    echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                                     echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
                                                     echo "Προσθήκη ερώτησης";
                                                     echo "</button>";
                                                     }
                                                 }
+                                                echo "</form>";
                                                 echo "$qtext<br><br>";
-                                                echo " <select id='answer' name='answer'>
+                                                echo " <select id='answer' name='answer' disabled>
                                                 <option value='T'>True</option>
                                                 <option value='F'>False</option>
                                                 </select>";
@@ -554,18 +562,19 @@ if(($_SESSION["all_diff"])&&($_SESSION["all_categ"])){
                                             // it return number of rows in the table. 
                                         $row = mysqli_num_rows($result2); 
                                         if ($row) { 
-                                            echo "<form method='post' action='contains.php'>";
+                                            echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                             echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
                                             echo "Αφαίρεση ερώτησης";
                                             echo "</button>";
                                             }
                                             else{
-                                            echo "<form method='post' action='contains.php'>";
+                                            echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                             echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
                                             echo "Προσθήκη ερώτησης";
                                             echo "</button>";
                                             }
                                     }
+                                    echo "</form>";
                                     echo " $qtext <br>";
                                     $findidpa=mysqli_query($conn,"select * from has where  id_question='$id_question'");
                                     while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
@@ -597,18 +606,19 @@ if(($_SESSION["all_diff"])&&($_SESSION["all_categ"])){
                                                 // it return number of rows in the table. 
                                             $row = mysqli_num_rows($result2); 
                                             if ($row) { 
-                                                echo "<form method='post' action='contains.php'>";
+                                                echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                                 echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
                                                 echo "Αφαίρεση ερώτησης";
                                                 echo "</button>";
                                                 }
                                                 else{
-                                                echo "<form method='post' action='contains.php'>";
+                                                echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                                 echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
                                                 echo "Προσθήκη ερώτησης";
                                                 echo "</button>";
                                                 }
                                         }
+                                        echo "</form>";
                                         echo " $qtext <br>";
                                         $findidpa=mysqli_query($conn,"select * from has where  id_question='$id_question'");
                                         while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
@@ -618,7 +628,7 @@ if(($_SESSION["all_diff"])&&($_SESSION["all_categ"])){
                                                 $pa=$row["text"];
                                                 
                                                 echo "<p style='margin-left:30%;'><label class='containerr' for='$pa'> $pa
-                                                <input type='radio' id='$pa' name='pa' value='$pa'>
+                                                <input type='radio' id='$pa' name='pa' value='$pa'disabled>
                                                 <span class='checkmarkr'></span>
                                                 </label><p>";
                                             }
@@ -639,18 +649,19 @@ if(($_SESSION["all_diff"])&&($_SESSION["all_categ"])){
                                                 // it return number of rows in the table. 
                                             $row = mysqli_num_rows($result2); 
                                             if ($row) { 
-                                                echo "<form method='post' action='contains.php'>";
+                                                echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                                 echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
                                                 echo "Αφαίρεση ερώτησης";
                                                 echo "</button>";
                                                 }
                                                 else{
-                                                echo "<form method='post' action='contains.php'>";
+                                                echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                                 echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
                                                 echo "Προσθήκη ερώτησης";
                                                 echo "</button>";
                                                 }
                                         }
+                                        echo "</form>";
                                         echo " $qtext <br>";
                                         $findidpa=mysqli_query($conn,"select * from has where  id_question='$id_question'");
                                         while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
@@ -660,7 +671,7 @@ if(($_SESSION["all_diff"])&&($_SESSION["all_categ"])){
                                                 $pa=$row["text"];
                                                 
                                                 echo "<p style='margin-left:30%;'><label class='containerr' for='$pa'> $pa
-                                                <input type='radio' id='$pa' name='pa' value='$pa'>
+                                                <input type='radio' id='$pa' name='pa' value='$pa' disabled>
                                                 <span class='checkmarkr'></span>
                                                 </label><p>";
                                             }
@@ -681,18 +692,19 @@ if(($_SESSION["all_diff"])&&($_SESSION["all_categ"])){
                                                 // it return number of rows in the table. 
                                             $row = mysqli_num_rows($result2); 
                                             if ($row) { 
-                                                echo "<form method='post' action='contains.php'>";
+                                                echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                                 echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
                                                 echo "Αφαίρεση ερώτησης";
                                                 echo "</button>";
                                                 }
                                                 else{
-                                                echo "<form method='post' action='contains.php'>";
+                                                echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                                 echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
                                                 echo "Προσθήκη ερώτησης";
                                                 echo "</button>";
                                                 }
                                         }
+                                        echo "</form>";
                                         echo " $qtext <br>";
                                         $findidpa=mysqli_query($conn,"select * from has where  id_question='$id_question'");
                                         while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
@@ -702,7 +714,7 @@ if(($_SESSION["all_diff"])&&($_SESSION["all_categ"])){
                                                 $pa=$row["text"];
                                                 
                                                 echo "<p style='margin-left:30%;'><label class='containerr' for='$pa'> $pa
-                                                <input type='radio' id='$pa' name='pa' value='$pa'>
+                                                <input type='radio' id='$pa' name='pa' value='$pa' disabled>
                                                 <span class='checkmarkr'></span>
                                                 </label><p>";
                                             }
@@ -723,18 +735,19 @@ if(($_SESSION["all_diff"])&&($_SESSION["all_categ"])){
                                                 // it return number of rows in the table. 
                                             $row = mysqli_num_rows($result2); 
                                             if ($row) { 
-                                                echo "<form method='post' action='contains.php'>";
+                                                echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                                 echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
                                                 echo "Αφαίρεση ερώτησης";
                                                 echo "</button>";
                                                 }
                                                 else{
-                                                echo "<form method='post' action='contains.php'>";
+                                                echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                                 echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
                                                 echo "Προσθήκη ερώτησης";
                                                 echo "</button>";
                                                 }
                                         }
+                                        echo "</form>";
                                         echo " $qtext <br>";
                                         $findidpa=mysqli_query($conn,"select * from has where  id_question='$id_question'");
                                         while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
@@ -744,7 +757,7 @@ if(($_SESSION["all_diff"])&&($_SESSION["all_categ"])){
                                                 $pa=$row["text"];
                                                 
                                                 echo "<p style='margin-left:30%;'><label class='containerr' for='$pa'> $pa
-                                                <input type='radio' id='$pa' name='pa' value='$pa'>
+                                                <input type='radio' id='$pa' name='pa' value='$pa' disabled>
                                                 <span class='checkmarkr'></span>
                                                 </label><p>";
                                             }
@@ -778,18 +791,19 @@ if(($_SESSION["all_diff"])&&($_SESSION["all_categ"])){
                                             // it return number of rows in the table. 
                                         $row = mysqli_num_rows($result3); 
                                         if ($row) { 
-                                            echo "<form method='post' action='contains.php'>";
+                                            echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                             echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
                                             echo "Αφαίρεση ερώτησης";
                                             echo "</button>";
                                             }
                                             else{
-                                            echo "<form method='post' action='contains.php'>";
+                                            echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                             echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
                                             echo "Προσθήκη ερώτησης";
                                             echo "</button>";
                                             }
                                     }
+                                    echo "</form>";
                                     echo " $qtext<br> ";
                                     $findidpa=mysqli_query($conn,"select * from has where  id_question='$id_question'");
                                     while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
@@ -798,7 +812,7 @@ if(($_SESSION["all_diff"])&&($_SESSION["all_categ"])){
                                         while ($row = mysqli_fetch_array($findpa, MYSQLI_ASSOC)) {
                                             $pa=$row["text"];
                                         echo "<p style='margin-left:30%;'><label class='container' for='$pa'>$pa
-                                        <input type='checkbox' id='$pa' name='pa[]' value='$pa'>
+                                        <input type='checkbox' id='$pa' name='pa[]' value='$pa' disabled>
                                         <span class='checkmark'></span>
                                         </label><p>";
                                         }
@@ -819,18 +833,19 @@ if(($_SESSION["all_diff"])&&($_SESSION["all_categ"])){
                                                 // it return number of rows in the table. 
                                             $row = mysqli_num_rows($result3); 
                                             if ($row) { 
-                                                echo "<form method='post' action='contains.php'>";
+                                                echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                                 echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
                                                 echo "Αφαίρεση ερώτησης";
                                                 echo "</button>";
                                                 }
                                                 else{
-                                                echo "<form method='post' action='contains.php'>";
+                                                echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                                 echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
                                                 echo "Προσθήκη ερώτησης";
                                                 echo "</button>";
                                                 }
                                         }
+                                        echo "</form>";
                                         echo " $qtext<br> ";
                                         $findidpa=mysqli_query($conn,"select * from has where  id_question='$id_question'");
                                         while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
@@ -839,7 +854,7 @@ if(($_SESSION["all_diff"])&&($_SESSION["all_categ"])){
                                             while ($row = mysqli_fetch_array($findpa, MYSQLI_ASSOC)) {
                                                 $pa=$row["text"];
                                             echo "<p style='margin-left:30%;'><label class='container' for='$pa'>$pa
-                                            <input type='checkbox' id='$pa' name='pa[]' value='$pa'>
+                                            <input type='checkbox' id='$pa' name='pa[]' value='$pa' disabled>
                                             <span class='checkmark'></span>
                                             </label><p>";
                                             }
@@ -860,18 +875,19 @@ if(($_SESSION["all_diff"])&&($_SESSION["all_categ"])){
                                                 // it return number of rows in the table. 
                                             $row = mysqli_num_rows($result3); 
                                             if ($row) { 
-                                                echo "<form method='post' action='contains.php'>";
+                                                echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                                 echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
                                                 echo "Αφαίρεση ερώτησης";
                                                 echo "</button>";
                                                 }
                                                 else{
-                                                echo "<form method='post' action='contains.php'>";
+                                                echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                                 echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
                                                 echo "Προσθήκη ερώτησης";
                                                 echo "</button>";
                                                 }
                                         }
+                                        echo "</form>";
                                         echo " $qtext<br> ";
                                         $findidpa=mysqli_query($conn,"select * from has where  id_question='$id_question'");
                                         while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
@@ -880,7 +896,7 @@ if(($_SESSION["all_diff"])&&($_SESSION["all_categ"])){
                                             while ($row = mysqli_fetch_array($findpa, MYSQLI_ASSOC)) {
                                                 $pa=$row["text"];
                                             echo "<p style='margin-left:30%;'><label class='container' for='$pa'>$pa
-                                            <input type='checkbox' id='$pa' name='pa[]' value='$pa'>
+                                            <input type='checkbox' id='$pa' name='pa[]' value='$pa' disabled>
                                             <span class='checkmark'></span>
                                             </label><p>";
                                             }
@@ -901,18 +917,19 @@ if(($_SESSION["all_diff"])&&($_SESSION["all_categ"])){
                                                 // it return number of rows in the table. 
                                             $row = mysqli_num_rows($result3); 
                                             if ($row) { 
-                                                echo "<form method='post' action='contains.php'>";
+                                                echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                                 echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
                                                 echo "Αφαίρεση ερώτησης";
                                                 echo "</button>";
                                                 }
                                                 else{
-                                                echo "<form method='post' action='contains.php'>";
+                                                echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                                 echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
                                                 echo "Προσθήκη ερώτησης";
                                                 echo "</button>";
                                                 }
                                         }
+                                        echo "</form>";
                                         echo " $qtext<br> ";
                                         $findidpa=mysqli_query($conn,"select * from has where  id_question='$id_question'");
                                         while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
@@ -921,7 +938,7 @@ if(($_SESSION["all_diff"])&&($_SESSION["all_categ"])){
                                             while ($row = mysqli_fetch_array($findpa, MYSQLI_ASSOC)) {
                                                 $pa=$row["text"];
                                             echo "<p style='margin-left:30%;'><label class='container' for='$pa'>$pa
-                                            <input type='checkbox' id='$pa' name='pa[]' value='$pa'>
+                                            <input type='checkbox' id='$pa' name='pa[]' value='$pa' disabled>
                                             <span class='checkmark'></span>
                                             </label><p>";
                                             }
@@ -942,18 +959,19 @@ if(($_SESSION["all_diff"])&&($_SESSION["all_categ"])){
                                                 // it return number of rows in the table. 
                                             $row = mysqli_num_rows($result3); 
                                             if ($row) { 
-                                                echo "<form method='post' action='contains.php'>";
+                                                echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                                 echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
                                                 echo "Αφαίρεση ερώτησης";
                                                 echo "</button>";
                                                 }
                                                 else{
-                                                echo "<form method='post' action='contains.php'>";
+                                                echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                                 echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
                                                 echo "Προσθήκη ερώτησης";
                                                 echo "</button>";
                                                 }
                                         }
+                                        echo "</form>";
                                         echo " $qtext<br> ";
                                         $findidpa=mysqli_query($conn,"select * from has where  id_question='$id_question'");
                                         while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
@@ -962,7 +980,7 @@ if(($_SESSION["all_diff"])&&($_SESSION["all_categ"])){
                                             while ($row = mysqli_fetch_array($findpa, MYSQLI_ASSOC)) {
                                                 $pa=$row["text"];
                                             echo "<p style='margin-left:30%;'><label class='container' for='$pa'>$pa
-                                            <input type='checkbox' id='$pa' name='pa[]' value='$pa'>
+                                            <input type='checkbox' id='$pa' name='pa[]' value='$pa' disabled>
                                             <span class='checkmark'></span>
                                             </label><p>";
                                             }
