@@ -89,7 +89,7 @@ include 'config.php';
 	
   	<div class="float-child"  id="myHIDE">
 	  	<h2>Φίλτρα ερωτήσεων</h2>
-		<form action="f1.php" method="post">
+		<form action="tof1.php" method="post">
 		<h4>Δυσκολία ερώτησης</h4>
 		<label class="container">Όλες οι δυσκολίες
 		<input type="checkbox" class="checked_alld" name="all_diff" value="all_diff" checked>

@@ -12,9 +12,11 @@ $exam=$_SESSION["id_exam"];
 
 		mysqli_query($conn,$sql);
 
-		//$location="/Ptuxiaki/create_exam2.php?msg=plus";
-		//header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
-		header('Location: ' . $_SERVER['HTTP_REFERER']);
+	
+		//header('Location: ' . $_SERVER['HTTP_REFERER']);
+		echo '<script type="text/JavaScript"> 
+		history.back()
+				</script>';
 
 	}
 	
@@ -26,14 +28,11 @@ $exam=$_SESSION["id_exam"];
 		$sql = "DELETE FROM contains WHERE id_exam='$exam' AND id_question=".$_POST["remove_enemy"]."";
 	
 		mysqli_query($conn,$sql);
-	   
-	  // $id = $_POST['delete_id'];
-	  // $query = mysqli_query($conn,"DELETE FROM contains WHERE id_exam='$exam' AND id_question=$id'");
-   
-	   
-  	//$location="/Ptuxiaki/create_exam2.php?msg=minus";
-		//   header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
-		header('Location: ' . $_SERVER['HTTP_REFERER']);
+	
+	//header('Location: ' . $_SERVER['HTTP_REFERER']);
+		echo '<script type="text/JavaScript"> 
+		history.back()
+			</script>';
 	
 	}
 	
