@@ -78,10 +78,13 @@ $id_lesson=$_SESSION["idl"];
         <div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">
 		<?php
 			if (isset($_GET["msg"]) && $_GET["msg"] == 'ch') {
-				print "<p style='color:green'>Η ερώτηση σας άλλαξε.<p>";//προσωρινο
+				print "<p style='color:green'>Η ερώτηση σας άλλαξε.<p>";
 			}
 			else if (isset($_GET["msg"]) && $_GET["msg"] == 'samequestion') {
-				print "<p style='color:red'>Το κείμενο δεν είχε αλλαγή.<p>";//προσωρινο
+				print "<p style='color:red'>Το κείμενο δεν είχε αλλαγή.<p>";
+			}
+			else if (isset($_GET["msg"]) && $_GET["msg"] == 'deleted') {
+				print "<p style='color:red'>Η ερώτηση έχει διαγραφεί.<p>";
 			}
 			$query=mysqli_query($conn,"SELECT * FROM includes WHERE id_lesson='$id_lesson'");
 			echo "<h2>Ερωτήσεις ελευθέρου κειμένου </h2>";

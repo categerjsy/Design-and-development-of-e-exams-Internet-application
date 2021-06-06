@@ -145,7 +145,7 @@ include 'config.php';
 			print "<p style='color:red'>Η ερώτηση σας, αφαιρέθηκε.</p>";
 		}
 		if (isset($_GET["msg"]) && $_GET["msg"] == 'plus') {
-			print "<p style='color:green'>Η ερώτηση σας, εισάγθηκε.</p>";//προσωρινο
+			print "<p style='color:green'>Η ερώτηση σας, εισήχθη.</p>";
 		}
 		?>
         <div id="myform" >

@@ -78,6 +78,6 @@ $qry6 = mysqli_query($conn, $sql6);
 		header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
 				
 	}	
-	
+
 //mysqli_close($conn);
 ?>

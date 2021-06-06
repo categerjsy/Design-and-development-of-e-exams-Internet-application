@@ -33,14 +33,7 @@ include 'config.php';
 	
 	
 	<body>
-		<?php
-		if (isset($_GET["msg"]) && $_GET["msg"] == 'failed_username') {
-			print "<h4>Παρακαλώ προσπαθήστε ξανά, το username που επιλέξατε χρησιμοποιείται από άλλο χρήστη.</h4>";//προσωρινο
-		}
-		else if (isset($_GET["msg"]) && $_GET["msg"] == 'failed_mail') {
-			print "<h4>Παρακαλώ προσπαθήστε ξανά, το email που επιλέξατε χρησιμοποιείται από άλλο χρήστη.</h4>";//προσωρινο
-		}
-	?>
+		
 		<header>
 			<div class="nav">
 				  <input type="checkbox" id="nav-check">
@@ -79,6 +72,7 @@ include 'config.php';
 					echo '<div id="mySidebar" class="sidebar">';
 					echo '<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>';
 					echo '<a href="#">Επεξεργασία προφίλ</a>';
+					echo '<a href="change_password.php">Αλλαγή κωδικού</a>';
 					echo '<a href="enroll.php">Εγγραφή σε μάθημα</a>';
 					echo '</div>';
 				}
@@ -98,7 +92,14 @@ include 'config.php';
 		</aside>
 		<main>  
 			<button class="openbtn" onclick="openNav()">☰ Βασικές επιλογές</button>   
-                       
+            <?php
+				if (isset($_GET["msg"]) && $_GET["msg"] == 'failed_username') {
+					print "<h4>Παρακαλώ προσπαθήστε ξανά, το username που επιλέξατε χρησιμοποιείται από άλλο χρήστη.</h4>";//προσωρινο
+				}
+				else if (isset($_GET["msg"]) && $_GET["msg"] == 'failed_mail') {
+					print "<h4>Παρακαλώ προσπαθήστε ξανά, το email που επιλέξατε χρησιμοποιείται από άλλο χρήστη.</h4>";//προσωρινο
+				}
+			?>
 		<div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">
 			<h3>Επεξεργασία προφίλ</h3>
 			

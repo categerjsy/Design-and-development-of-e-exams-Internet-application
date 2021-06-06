@@ -40,10 +40,10 @@
 	
   <?php
 		if (isset($_GET["msg"]) && $_GET["msg"] == 'failed') {
-			print "<h4>Παρακαλώ προσπαθήστε ξανά, λάθος username ή κωδικός.</h4>";//προσωρινο
+			print "<h4>Παρακαλώ προσπαθήστε ξανά, λάθος username ή κωδικός.</h4>";
 		}
 		else if (isset($_GET["msg"]) && $_GET["msg"] == 'okay') {
-			print "<h4> Το προφίλ σας έχει δημιουργηθεί. Συνδεθείτε για να συνεχίσετε.</h4>";//προσωρινο
+			print "<h4> Το προφίλ σας έχει δημιουργηθεί. Συνδεθείτε για να συνεχίσετε.</h4>";
 		}
 	?>
   <form class="sign_in" action="check_user_pass.php" method="post">
@@ -62,7 +62,7 @@
       <label for="psw"><b>Κωδικός</b></label>
       <input type="password" placeholder="Εισάγετε κωδικό" name="password" id="password" required>
 	  <button onclick="toggler(this)" type="button" class="cleanbtn" style="color:white">Εμφάνιση κωδικού</button>
-      <br>  
+      <br> <br> 
 	  <button type="submit" class="cleanbtn" style="color:white">Εισαγωγή</button>
 	  
       <button type="reset" class="cleanbtn" style="color:white" >Καθαρισμός</button>
