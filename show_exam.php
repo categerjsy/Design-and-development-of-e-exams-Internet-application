@@ -130,26 +130,39 @@ $lesson=$_SESSION["lesson"];
    $gradefornow=0;
    while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 	   $id_question=$row["id_question"];	
-	   
 	   $question=mysqli_query($conn,"select * from question where id_question='$id_question'");
 	   while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
 		   $grade=$row["grade"];
 		   $var2=$row["time"];
-		   list($hours, $minutes, $seconds) = explode(":", $var2);
+		    list($hours, $minutes, $seconds) = explode(":", $var2);
 			$interval = new DateInterval("PT" . $hours . "H" . $minutes . "M" . $seconds . "S");
-
 			$date->add($interval);
 			$gradefornow+=$grade;
 	   }
    }   
-  	 
+  	
+	$time= new DateTime($exam_datetime);
+	$d=$date->format("H:i:s");
+	list($h, $m, $s) = explode(":", $d);
+	$inter = new DateInterval("PT" . $h . "H" . $m . "M" . $s . "S");
+	$time->add($inter);
+
+	$time_for_database = $time->format('Y-m-d H:i:s');
+	
+	$sql = "UPDATE exam SET time='$time_for_database' WHERE id_exam='$exam'";
+    $conn->query($sql);
+
+   	//$endtime=$datime+" "+$time;
+	//$end = new DateTime($endtime);
     echo "<p>Το διαγώνισμα σας υπολογίζεται να έχει χρονική διάρκεια ";
     echo $date->format("H:i:s");
 	echo "</p>";
 	echo "<p>Το διαγώνισμα σας υπολογίζεται σε βαθμολογία  ";
     echo $gradefornow;
 	echo "</p>";
-
+	echo "<p>Το διαγώνισμα σας υπολογίζεται να λήγει  ";
+    echo $time_for_database;
+	echo "</p>";
 ?>
 <?php 
 				 $exam=$_SESSION["id_exam"];
