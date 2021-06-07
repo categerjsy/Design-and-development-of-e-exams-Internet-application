@@ -11,7 +11,7 @@ include 'config.php';
 <html>
 	<head>
 		<?php 
-        if (isset($_SESSION["id_professor"])==NULL) {
+        if ((isset($_SESSION["id_professor"])==NULL)||(isset($_SESSION["id_student"])==NULL)) {
 						
             header("location: index.php");
 						
@@ -42,7 +42,7 @@ include 'config.php';
 				  <input type="checkbox" id="nav-check">
 				  <div class="nav-header">
 					<div class="nav-title">
-					 <a href="index.php"> <img src="photos/uop_logo4_navigation.gif" width="60" height="40"/> </a>
+					 <img src="photos/uop_logo4_navigation.gif" width="60" height="40"/> 
 					</div>
 	
 				  </div>

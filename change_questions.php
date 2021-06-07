@@ -33,13 +33,14 @@ $id_question=$_POST['id_question'];
 	
 	
 	<body>
-		<header>
+	<header>
 			<div class="nav">
 				  <input type="checkbox" id="nav-check">
 				  <div class="nav-header">
 					<div class="nav-title">
-					 <a href="index.php"> <img src="photos/uop_logo4_navigation.gif" width="60" height="40"/> </a>
+					 <img src="photos/uop_logo4_navigation.gif" width="60" height="40"/> 
 					</div>
+	
 				  </div>
 				  <div class="nav-btn">
 					<label for="nav-check">
@@ -50,7 +51,7 @@ $id_question=$_POST['id_question'];
 				  </div>
 				  
 				  <div class="nav-links">
-					<a  href="profilef.php"> <?php echo "$username"; ?></a>
+					<a  href="profilek.php"> <?php echo "$username"; ?></a>
 					<a href="logout.php">Αποσύνδεση</a>
 				  </div>
 			</div>

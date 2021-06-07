@@ -37,7 +37,7 @@ session_start();
 				  <input type="checkbox" id="nav-check">
 				  <div class="nav-header">
 					<div class="nav-title">
-					 <a href="index.php"> <img src="photos/uop_logo4_navigation.gif" width="60" height="40"/> </a>
+					<img src="photos/uop_logo4_navigation.gif" width="60" height="40"/>
 					</div>
 	
 				  </div>
