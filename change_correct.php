@@ -21,8 +21,8 @@ while ($row = mysqli_fetch_array($s, MYSQLI_ASSOC)) {
 	<head>
 		<?php 
         if (isset($_SESSION["id_professor"])==NULL) {
-						
-            header("location: index.php");
+			$location="/Ptuxiaki/index.php";
+			header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);			
 						
         }
         else{
@@ -54,7 +54,7 @@ while ($row = mysqli_fetch_array($s, MYSQLI_ASSOC)) {
 				  <input type="checkbox" id="nav-check">
 				  <div class="nav-header">
 					<div class="nav-title">
-					 <a href="index.php"> <img src="photos/uop_logo4_navigation.gif" width="60" height="40"/> </a>
+					 <img src="photos/uop_logo4_navigation.gif" width="60" height="40"/> 
 					</div>
 	
 				  </div>

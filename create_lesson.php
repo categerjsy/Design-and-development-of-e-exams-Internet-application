@@ -11,8 +11,9 @@ session_start();
 	<head>
 		<?php 
         if (isset($_SESSION["id_professor"])==NULL) {
+			$location="/Ptuxiaki/index.php";
+			header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);			
 						
-            header("location: index.php");
 						
         }
         else{

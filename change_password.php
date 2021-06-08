@@ -10,10 +10,11 @@ include 'config.php';
 
 <html>
 	<head>
-		<?php 
-        if ((isset($_SESSION["id_professor"])==NULL)||(isset($_SESSION["id_student"])==NULL)) {
+	<?php 
+        if ((isset($_SESSION["id_student"])==NULL)&&(isset($_SESSION["id_professor"])==NULL)) {
+			$location="/Ptuxiaki/index.php";
+			header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);			
 						
-            header("location: index.php");
 						
         }
         else{
@@ -55,7 +56,14 @@ include 'config.php';
 				  </div>
 				  
 				  <div class="nav-links">
-					<a  href="profilek.php"> <?php echo "$username"; ?></a>
+				  <?php 
+        			if (isset($_SESSION["id_student"])==NULL){
+					echo "<a  href='profilek.php'>$username</a>";
+					}
+					if (isset($_SESSION["id_professor"])==NULL){
+					echo "<a  href='profilef.php'>$username</a>";
+					}
+					?>
 					<a href="logout.php">Αποσύνδεση</a>
 				  </div>
 			</div>

@@ -12,8 +12,8 @@ $id_lesson=$_SESSION["idl"];
 	<head>
 		<?php 
         if (isset($_SESSION["id_professor"])==NULL) {
-						
-            header("location: index.php");
+			$location="/Ptuxiaki/index.php";
+			header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);			
 						
         }
         else{
