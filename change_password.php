@@ -89,9 +89,13 @@ include 'config.php';
         <div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">
         <?php
         if (isset($_GET["msg"]) && $_GET["msg"] == 'plen') {
-          print "<p style='color:red'> Ο κωδικός σας πρέπει να έχει μέγεθος 7 έως 15 χαρακτήρων.Παρακαλώ προσπαθήστε ξανά.</p>";//προσωρινο
-        }else if (isset($_GET["msg"]) && $_GET["msg"] == 'cp') {
-          print "<p style='color:red'> Οι κωδικοί σας δεν ταίριαζαν.Παρακαλώ προσπαθήστε ξανά.</p>";//προσωρινο
+          print "<p style='color:red'> Ο κωδικός σας πρέπει να έχει μέγεθος 7 έως 15 χαρακτήρων. Παρακαλώ προσπαθήστε ξανά.</p>";//προσωρινο
+        }
+		else if (isset($_GET["msg"]) && $_GET["msg"] == 'cp') {
+          print "<p style='color:red'> Οι κωδικοί σας δεν ταίριαζαν. Παρακαλώ προσπαθήστε ξανά.</p>";//προσωρινο
+        }
+		else if (isset($_GET["msg"]) && $_GET["msg"] == 'failed') {
+          print "<p style='color:red'> Ο παλιός κωδικός σας δεν είναι σωστός. Παρακαλώ προσπαθήστε ξανά.</p>";//προσωρινο
         }
       
       ?>

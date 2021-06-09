@@ -54,7 +54,7 @@ if (isset($_SESSION["id_student"])!=NULL){
 		
 
 	}
-	if (isset($_POST['usename'])){ 
+	if (isset($_POST['username'])){ 
 
 		$username=$_POST['uname'];
 		$query = mysqli_query($conn,"select * from user_professor where username='$username'");
@@ -139,7 +139,7 @@ else if (isset($_SESSION["id_professor"])!=NULL){
 		
 
 	}
-	if (isset($_POST['usename'])){ 
+	if (isset($_POST['username'])){ 
 
 		$username=$_POST['uname'];
 		$query = mysqli_query($conn,"select * from user_professor where username='$username'");
