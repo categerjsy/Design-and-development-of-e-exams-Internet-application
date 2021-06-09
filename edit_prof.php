@@ -2,7 +2,22 @@
 session_start();	
 include 'config.php';
 ?>
+        
+<style>
+table{
+  width:100%;
 
+}
+
+
+table tr td:first-child{
+  width:750px;
+}
+
+table tr td:last-child{
+  width:calc(100% - 750px);
+}
+</style>
 <!DOCTYPE HTML>
 
 <html>
@@ -132,22 +147,40 @@ include 'config.php';
 				
 			?>
 			<form action="change_edited.php" method="post">
-			<label for="email"><b>E-mail σχολής</b></label> 
-			<input  type="email" value="<?php echo "$my_m"; ?>" id="email" name="email" onblur="validateEmail(this);"  pattern="[a-zA-z0-9]*@uop.gr|[a-zA-z0-9]*@go.uop.gr" required >
-			<br> <span id='messageEmail'></span>
-			<br>
+			<br> 
+				<label for="email"><b>E-mail σχολής</b></label> <br>
+				<table class="table table-bordered" id="e-mail">
+				<tr>
+					<td><input type="email" value="<?php echo "$my_m"; ?>" id="email" name="email" onblur="validateEmail(this);"  pattern="[a-zA-z0-9]*@uop.gr|[a-zA-z0-9]*@go.uop.gr" class="form-control name_list" /></td>
+					<td>&nbsp;<button type = 'submit' name='e-mail' class="cleanbtn">Αλλαγή e-mail</button></td>
+				</tr>
+				</table>
+				<br> <span id='messageEmail'></span>
 			
-			<label for="telephone"><b>Αριθμός τηλεφώνου</b></label> 
-			<input type="tel" value="<?php echo "$tel"; ?>" name="telephone" pattern="[0-9]{10}"  required>
-			<br>
+			</form>
+			<form action="change_edited.php" method="post">
+			<br> 
+				<label for="telephone"><b>Αριθμός τηλεφώνου</b></label> 
+				<table class="table table-bordered" id="telephone">
+				<tr>
+					<td><input type="tel" value="<?php echo "$tel"; ?>" name="tel" pattern="[0-9]{10}"  class="form-control name_list" /></td>
+					<td>&nbsp;<button type = 'submit' name="telephone" class="cleanbtn">Αλλαγή τηλεφώνου</button></td>
+				</tr>
+				</table>
+		
+			</form>
 			
-			<br>
-			<label for="usname"><b>Username</b></label> 
-			<input type="text" value="<?php echo "$username"; ?>" name="uname" required>
-			<br>
-					
-			<br>
-			<button type="submit" class="cleanbtn" style="color:white">Αλλαγή</button>
+			<form action="change_edited.php" method="post">
+			<br> 
+				<label for="usname"><b>Όνομα Χρήστη</b></label> 
+				<table class="table table-bordered" id="uname">
+				<tr>
+					<td><input type="text" value="<?php echo "$username"; ?>" name="uname"  class="form-control name_list" /></td>
+					<td>&nbsp;<button type = 'submit' name='usename' class="cleanbtn">Αλλαγή ονόματος </button></td>
+				</tr>
+				</table>
+			
+			</form>
 			<button type="button" class="cancelbtn" onclick="goBack()">Πίσω</button>
 			<script>
 			function goBack() {
