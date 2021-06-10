@@ -128,6 +128,7 @@ table tr td:last-child{
 					   while ($row = mysqli_fetch_array($findmail, MYSQLI_ASSOC)) {
 						$my_m=$row["email"];
 						$tel=$row["phone_number"];
+						$_SESSION["oldemail"]=$my_m;
 					   }
 				  }
 			 	   				
@@ -140,6 +141,7 @@ table tr td:last-child{
 					   while ($row = mysqli_fetch_array($findmail, MYSQLI_ASSOC)) {
 						$my_m=$row["email"];
 						$tel=$row["phone_number"];
+						$_SESSION["oldemail"]=$my_m;
 					   }
 				  }
 			 	   				
