@@ -216,7 +216,6 @@ $id_lesson=$_SESSION["idl"];
 		?>
 		<br>
 		<button type="button" class="cancelbtn" onclick="goBack()">Πίσω</button>
-        <button type="reset" class="cleanbtn">Καθαρισμός</button>
         <br>
         <br>
 		</div>
