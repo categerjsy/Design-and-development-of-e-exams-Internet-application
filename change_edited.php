@@ -2,6 +2,8 @@
 include 'config.php';
 session_start ();
 $oldusername=$_SESSION["username"];
+$oldemail=$_SESSION["oldemail"];
+
 if (isset($_SESSION["id_student"])!=NULL){
 	if (isset($_POST['e-mail'])){ 
 		$email=$_POST['email'];
@@ -12,9 +14,17 @@ if (isset($_SESSION["id_student"])!=NULL){
 		if($re==1||$res==1){
 			$error = "E-mail taken";
 			echo "$error";
-			// Redirecting To this Page
+			
+			
+			if($oldemail!=$email){
+				// Redirecting To this Page
 			$location="/Ptuxiaki/edit_prof.php?msg=failed_mail";
 			header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+			}
+			else{
+			$location="/Ptuxiaki/edit_prof.php";
+			header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+			}
 		}
 		else{
 		$sql = "UPDATE user_student
@@ -54,7 +64,7 @@ if (isset($_SESSION["id_student"])!=NULL){
 		
 
 	}
-	if (isset($_POST['username'])){ 
+	if (isset($_POST['usename'])){ 
 
 		$username=$_POST['uname'];
 		$query = mysqli_query($conn,"select * from user_professor where username='$username'");
@@ -65,9 +75,15 @@ if (isset($_SESSION["id_student"])!=NULL){
 		if($ru==1||$rus==1){
 			$error = "Username taken";
 			echo "$error";
-			// Redirecting To this Page
+			
+			if($oldusername!=$username){
 			$location="/Ptuxiaki/edit_prof.php?msg=failed_username";
 			header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+			}
+			else{
+			$location="/Ptuxiaki/edit_prof.php";
+			header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+			}
 		}
 		else{
 		$sql = "UPDATE user_student
@@ -97,9 +113,15 @@ else if (isset($_SESSION["id_professor"])!=NULL){
 		if($re==1||$res==1){
 			$error = "E-mail taken";
 			echo "$error";
-			// Redirecting To this Page
+			
+			if($oldemail!=$email){
 			$location="/Ptuxiaki/edit_prof.php?msg=failed_mail";
 			header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+			}
+			else{
+			$location="/Ptuxiaki/edit_prof.php";
+			header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+			}
 		}
 		else{
 		$sql = "UPDATE user_professor
@@ -109,8 +131,10 @@ else if (isset($_SESSION["id_professor"])!=NULL){
 				$qry = mysqli_query($conn, $sql);
 				if($qry){
 					$_SESSION["username"]=$oldusername;
+				
 					$location="/Ptuxiaki/edit_prof.php";
 					header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+					
 					
 				}
 		}
@@ -139,7 +163,7 @@ else if (isset($_SESSION["id_professor"])!=NULL){
 		
 
 	}
-	if (isset($_POST['username'])){ 
+	if (isset($_POST['usename'])){ 
 
 		$username=$_POST['uname'];
 		$query = mysqli_query($conn,"select * from user_professor where username='$username'");
@@ -150,9 +174,15 @@ else if (isset($_SESSION["id_professor"])!=NULL){
 		if($ru==1||$rus==1){
 			$error = "Username taken";
 			echo "$error";
+			if($oldusername!=$username){
 			// Redirecting To this Page
 			$location="/Ptuxiaki/edit_prof.php?msg=failed_username";
 			header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+			}
+			else{
+				$location="/Ptuxiaki/edit_prof.php";
+			header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+			}
 		}
 		else{
 		$sql = "UPDATE user_professor

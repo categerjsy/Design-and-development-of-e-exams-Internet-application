@@ -205,7 +205,7 @@ include 'config.php';
                                         echo "</button>";
                                         }
                                         else{
-                                            echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
+                                        echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
                                         echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
                                         echo "Προσθήκη ερώτησης";
                                         echo "</button>";

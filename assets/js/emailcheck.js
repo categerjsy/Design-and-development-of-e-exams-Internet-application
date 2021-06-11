@@ -1,5 +1,9 @@
 function validateEmail(emailField){
+<<<<<<< HEAD
         var reg = /^[\w-\.]+@\(uop.gr\|go.uop.gr\)+$/;
+=======
+        var reg = /^[\w-\.]+@(uop.gr|go.uop.gr)$/;
+>>>>>>> 2daffdfe9debc0a395a543d66e5a486ab249317c
 
         if (reg.test(emailField.value) == false) 
         {
