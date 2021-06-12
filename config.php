@@ -2,7 +2,7 @@
 
 $host = "localhost"; /* Host name */
 $user = "root"; /* User */
-$password = ""; /* Password */  //8873
+$password = "8873"; /* Password */  //8873
 $dbname = "examination_system_db"; /* Database name */
 
 

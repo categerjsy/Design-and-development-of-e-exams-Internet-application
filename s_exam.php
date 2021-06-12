@@ -24,7 +24,7 @@ $lesson=$_SESSION["lesson"];
    }
    if($final_grade>$gradefornow){
     echo '<script type="text/javascript">'; 
-    echo 'alert("To άρθοισμα των εισαγθέντων ερωτήσεων δεν φτάνει την ορισμένη τελική βαθμολογία.Παρακαλούμε προσθέστε και άλλες ερωτήσεις");'; 
+    echo 'alert("To άρθοισμα των εισαχθέντων ερωτήσεων δεν φτάνει την ορισμένη τελική βαθμολογία.Παρακαλούμε προσθέστε και άλλες ερωτήσεις");'; 
     echo 'window.location.href = "create_exam2.php";';
     echo '</script>';
     }
