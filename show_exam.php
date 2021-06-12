@@ -98,7 +98,6 @@ include 'config.php';
 					}
 		?>    
 
-<button class="wbtn" style="width: 38%;float: right;" ><a href="create_exam2.php">Επεξεργασία διαγωνίσματος</a></button>
 <div id="myform" >
 
 <?php
@@ -274,20 +273,11 @@ $lesson=$_SESSION["lesson"];
 							echo "Βαθμοί: $grade <br>  Αρνητική βαθμολογία: $ngrade <br> <br>";  
 							echo "<hr>";
                    		}
-						   
-						   
 					} 
-					
-					
 				 ?>
-					
-				
-    			
-					
 				<button class="cancelbtn" type="reset"><a href="profilek.php">Έξοδος</a></button>
-            
-    	        
-                <br>
+				<button class="wbtn" style="width: 38%;" ><a href="create_exam2.php">Επεξεργασία διαγωνίσματος</a></button>    	        
+                <br><br>
 				</div>
 </div>
                      

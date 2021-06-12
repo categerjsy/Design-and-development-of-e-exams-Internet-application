@@ -46,7 +46,6 @@ include 'config.php';
                 {
 					$pa=trim($_POST['name'][$i]);
 					echo $pa;
-					//de leiourgei
 					mysqli_query($conn,"INSERT INTO possible_answer (text,is_correct)
 					VALUES ('$pa',0)");
 					$id_pa = mysqli_insert_id($conn);		

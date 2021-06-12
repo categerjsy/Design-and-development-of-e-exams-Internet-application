@@ -78,7 +78,6 @@ include 'config.php';
 	
 			  <form action="" method="post">
 			  <label for="course">Παρακαλώ επιλέξτε μάθημα</label> <br>
-			 <!--php για τα μαθηματα απο τη βαση-->
                   <?php
 					$ids=$_SESSION["id_student"];
 				   echo "<select id='course' name='course'>";

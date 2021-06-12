@@ -45,7 +45,6 @@ $number_questionsmcp=$_POST['number_questionsmcp'];
         $sql = "INSERT INTO contains (id_exam,id_question)
 			VALUES ('$id_exam','$q')";
         mysqli_query($conn,$sql);
-        //echo $arr[$toexam] ;
         unset($arrft[$toexam]); 
         $arrft=array_values($arrft);
         }
@@ -56,7 +55,6 @@ $number_questionsmcp=$_POST['number_questionsmcp'];
             $sql = "INSERT INTO contains (id_exam,id_question)
                 VALUES ('$id_exam','$q')";
             mysqli_query($conn,$sql);
-            //echo $arr[$toexam] ;
             unset($arrtf[$toexam]); 
             $arrtf=array_values($arrtf);
         }
@@ -67,7 +65,6 @@ $number_questionsmcp=$_POST['number_questionsmcp'];
             $sql = "INSERT INTO contains (id_exam,id_question)
                 VALUES ('$id_exam','$q')";
             mysqli_query($conn,$sql);
-            //echo $arr[$toexam] ;
             unset($arrmc[$toexam]); 
             $arrmc=array_values($arrmc);
         }
@@ -78,7 +75,6 @@ $number_questionsmcp=$_POST['number_questionsmcp'];
             $sql = "INSERT INTO contains (id_exam,id_question)
                 VALUES ('$id_exam','$q')";
             mysqli_query($conn,$sql);
-            //echo $arr[$toexam] ;
             unset($arrmcp[$toexam]); 
             $arrmcp=array_values($arrmcp);
         }
@@ -123,9 +119,5 @@ $number_questionsmcp=$_POST['number_questionsmcp'];
     }
 
 
-
-        // Redirecting To Other Page
-		//	$location="/Ptuxiaki/show_exam.php?msg=rtest";
-		//    header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
 		
 ?>

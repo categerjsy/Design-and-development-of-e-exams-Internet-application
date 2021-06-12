@@ -194,20 +194,9 @@ else if (isset($_SESSION["id_professor"])!=NULL){
 					$_SESSION["username"]=$username;
 					$location="/Ptuxiaki/edit_prof.php";
 					header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
-					
 				}
 		}
-		
-
-	}
-							
+	}					
 }
-	
-	
-	 
-	
-	
-	
-	 
 	
 ?>

@@ -50,7 +50,6 @@ else{
 				$qry = mysqli_query($conn, $sql);
 
 				if($qry){
-					//echo "Profile in database!!!";
 					// Redirecting To Other Page
 					$location="/Ptuxiaki/sign_in.php?msg=okay";
 				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);

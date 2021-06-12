@@ -8,8 +8,6 @@ $username=$_SESSION["username"];
 $id_question=$_POST['idq'];
 $question=$_POST['txt'];
 
-//πρέπει να διαγραφούν όλες οι εγγραφές που περιέχουν το id_question
-
 $sql1 = "DELETE FROM question WHERE id_question=$id_question";
 $qry1 = mysqli_query($conn, $sql1);
 if($qry1){

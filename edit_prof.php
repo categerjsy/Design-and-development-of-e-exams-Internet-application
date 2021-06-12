@@ -109,10 +109,10 @@ table tr td:last-child{
 			<button class="openbtn" onclick="openNav()">☰ Βασικές επιλογές</button>   
             <?php
 				if (isset($_GET["msg"]) && $_GET["msg"] == 'failed_username') {
-					print "<h4>Παρακαλώ προσπαθήστε ξανά, το username που επιλέξατε χρησιμοποιείται από άλλο χρήστη.</h4>";//προσωρινο
+					print "<h4>Παρακαλώ προσπαθήστε ξανά, το username που επιλέξατε χρησιμοποιείται από άλλο χρήστη.</h4>";
 				}
 				else if (isset($_GET["msg"]) && $_GET["msg"] == 'failed_mail') {
-					print "<h4>Παρακαλώ προσπαθήστε ξανά, το email που επιλέξατε χρησιμοποιείται από άλλο χρήστη.</h4>";//προσωρινο
+					print "<h4>Παρακαλώ προσπαθήστε ξανά, το email που επιλέξατε χρησιμοποιείται από άλλο χρήστη.</h4>";
 				}
 			?>
 		<div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">

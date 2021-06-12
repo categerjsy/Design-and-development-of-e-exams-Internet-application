@@ -19,7 +19,6 @@ $number_questions=$_POST['number_questions'];
         $sql = "INSERT INTO contains (id_exam,id_question)
 			VALUES ('$id_exam','$q')";
         mysqli_query($conn,$sql);
-        //echo $arr[$toexam] ;
         unset($arr[$toexam]); 
         $arr=array_values($arr);
         }
@@ -62,11 +61,5 @@ $lesson=$_SESSION["lesson"];
         echo 'window.location.href = "show_exam.php?msg=rtest";';
         echo '</script>';
     }
-
-
-
-        // Redirecting To Other Page
-		//	$location="/Ptuxiaki/show_exam.php?msg=rtest";
-		//    header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
 		
 ?>

@@ -38,7 +38,6 @@ $number_questionsd=$_POST['number_questionsd'];
         $sql = "INSERT INTO contains (id_exam,id_question)
 			VALUES ('$id_exam','$q')";
         mysqli_query($conn,$sql);
-        //echo $arr[$toexam] ;
         unset($arre[$toexam]); 
         $arre=array_values($arre);
         }
@@ -49,7 +48,6 @@ $number_questionsd=$_POST['number_questionsd'];
             $sql = "INSERT INTO contains (id_exam,id_question)
                 VALUES ('$id_exam','$q')";
             mysqli_query($conn,$sql);
-            //echo $arr[$toexam] ;
             unset($arrm[$toexam]); 
             $arrm=array_values($arrm);
         }
@@ -60,7 +58,6 @@ $number_questionsd=$_POST['number_questionsd'];
             $sql = "INSERT INTO contains (id_exam,id_question)
                 VALUES ('$id_exam','$q')";
             mysqli_query($conn,$sql);
-            //echo $arr[$toexam] ;
             unset($arrd[$toexam]); 
             $arrd=array_values($arrd);
         }
@@ -104,11 +101,4 @@ $number_questionsd=$_POST['number_questionsd'];
              echo 'window.location.href = "show_exam.php?msg=rtest";';
              echo '</script>';
          }
-     
-     
-     
-             // Redirecting To Other Page
-             //	$location="/Ptuxiaki/show_exam.php?msg=rtest";
-             //    header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
-		
 ?>

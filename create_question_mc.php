@@ -145,7 +145,6 @@ table tr td:last-child{
 			    <input type="text" id="grade" name="grade" placeholder="Bαθμόλογηση" onblur="validateGrade(this);"  pattern="[0-9]{1}.[0-9]{2}"required>
 				<br> <span id='messageGrade'></span>
 				<br> 
-				<!--<label for="ngrade">Αρνητική βαθμόλογηση</label> <input type="checkbox" id="myCheck" onclick="negGrade()">-->
 				<label class="container">Αρνητική βαθμόλογηση
 				<input type="checkbox" id="myCheck" onclick="negGrade()">
 				<span class="checkmark"></span>
