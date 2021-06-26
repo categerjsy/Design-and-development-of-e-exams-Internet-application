@@ -77,7 +77,7 @@ include 'config.php';
 			<h3>Εγγραφή σε μάθημα</h3>
 			
 	
-			  <form action="" method="post">
+			  
 			  <label for="course">Παρακαλώ επιλέξτε μάθημα</label> <br>
                  <!-- <?php
 					$ids=$_SESSION["id_student"];
@@ -163,7 +163,7 @@ include 'config.php';
 								
 					}
 				?>
-			  </form>
+			 
 			</div>
                      
 		</main>
