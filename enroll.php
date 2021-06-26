@@ -67,6 +67,7 @@ include 'config.php';
 			<a href="edit_prof.php">Επεξεργασία προφίλ</a>
 			<a href="change_password.php">Αλλαγή κωδικού</a>
 			<a href="enroll.php">Εγγραφή σε μάθημα</a>
+			<a href="st_exam.php">Εξετάσεις μαθημάτων</a>
 			</div>
 	
 		</aside>
@@ -74,7 +75,7 @@ include 'config.php';
 			<button class="openbtn" onclick="openNav()">☰ Βασικές επιλογές</button>   
                        
 		<div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">
-			<h3>Εγγραφή σε μάθημα</h3>
+			<h3>Εγγραφή και απεγγραφή μαθημάτων</h3>
 			
 	
 			  
