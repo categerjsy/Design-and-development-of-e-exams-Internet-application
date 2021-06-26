@@ -29,6 +29,7 @@ include 'config.php';
 		<link rel="stylesheet" href="assets/css/nav.css">
 		<link rel="stylesheet" href="assets/css/asidenav.css">
 		<link rel="stylesheet" href="assets/css/lf.css">
+		<link rel="stylesheet" href="assets/css/button.css">
 		<link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>		
 	
 	</head>
@@ -78,7 +79,7 @@ include 'config.php';
 	
 			  <form action="" method="post">
 			  <label for="course">Παρακαλώ επιλέξτε μάθημα</label> <br>
-                  <?php
+                 <!-- <?php
 					$ids=$_SESSION["id_student"];
 				   echo "<select id='course' name='course'>";
 				   
@@ -97,7 +98,71 @@ include 'config.php';
 			 	   				
 				?>
 				<br>
-			    <input type="submit" value="Εγγραφή">
+			    <input type="submit" value="Εγγραφή">-->
+				<?php
+		
+					$query=mysqli_query($conn,"SELECT * FROM lesson ORDER BY semester ");
+					
+					while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+						$lesson_name=$row["name"];
+						$semester=$row["semester"];	
+						$ids=$_SESSION["id_student"];
+						$idl=$row["id_lesson"];
+						$categ=$row["category"];
+						switch ($categ) {
+							case "kormou":
+								$categ="Κορμού";
+								break;
+							case "bkp":
+								$categ="Βασικό Κατεύθυνσης Πληροφορικής";
+								break;
+							case "bkt":
+								$categ="Βασικό Κατεύθυνσης Τηλεπικοινωνιών";
+								break;
+							case "ekp":
+								$categ="Επιλογής Κατεύθυνσης  Πληροφορικής";
+								break;
+							case "ekt":
+								$categ="Επιλογής Κατεύθυνσης  Τηλεπικοινωνιών";
+								break;
+							case "ekpt":
+								$categ="Επιλογής Κατεύθυνσης  Τηλεπικοινωνιών-Πληροφορικής";
+								break;
+						}
+			
+			
+							$q = "select * from enroll_on where id_student='$ids' and id_lesson='$idl'"; 
+								
+								// Execute the query and store the result set 
+							$result = mysqli_query($conn, $q); 
+								
+							if ($result) { 
+									// it returns number of rows in the table. 
+								$row = mysqli_num_rows($result); 
+								if ($row) { 
+								echo "<form  action='enroll_on.php#form-anchor' id='form-anchor' method='post'>";
+								echo "<button type ='submit' name='remove_lesson' class='wbtn' value='$idl'>";
+								echo "Απεγγραφή";
+								echo "</button>";
+								echo "<br><br>";
+								}
+								else{
+								echo "<form action='enroll_on.php#form-anchor' id='form-anchor' method='post' >";
+								echo "<button type = 'submit' name='add_lesson' class='wbtn' value='$idl'>";
+								echo "Εγγραφή";
+								echo "</button>";
+								echo "<br><br>";
+								}
+								echo "</form>";
+							}
+							echo " $lesson_name Εξάμηνο: $semester Κατηγορία: $categ<br> <br>";
+							
+							echo "<hr>";
+					
+					
+								
+					}
+				?>
 			  </form>
 			</div>
                      
