@@ -105,9 +105,11 @@ include 'config.php';
 							$date = new DateTime($end_time);
 							$now = new DateTime();
 								if($date > $now) {
-								echo "<button type = 'submit' name='add_lesson' class='wbtn' value='$id_exam'>";
+								echo "<form action='st_exam2.php'  method='post' >";
+								echo "<button type = 'submit' name='id_exam' class='wbtn' value='$id_exam'>";
 								echo "Συμμετοχή στην εξέταση";
 								echo "</button>";
+								echo "</form>";
 								echo " Έναρξη:  $start_time Λήξη:  $end_time";
 								echo "<hr>";
 								}
