@@ -86,33 +86,43 @@ include 'config.php';
 					
 					while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 						$id_lesson=$row["id_lesson"];
-						$query=mysqli_query($conn,"SELECT * FROM lesson WHERE id_lesson='$id_lesson' ");
+						$querys=mysqli_query($conn,"SELECT * FROM lesson WHERE id_lesson='$id_lesson' ");
 						
-						while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
-							$lesson=$row["name"];
+						while ($rows = mysqli_fetch_array($querys, MYSQLI_ASSOC)) {
+							$lesson=$rows["name"];
+							echo " <h3>$lesson</h3>";
 						}
-						echo "Μάθημα: $lesson";
-						$query=mysqli_query($conn,"SELECT * FROM belongs_to WHERE id_lesson='$id_lesson' ");
 						
-						while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+						$queryt=mysqli_query($conn,"SELECT * FROM belongs_to WHERE id_lesson='$id_lesson' ");
+						
+						while ($row = mysqli_fetch_array($queryt, MYSQLI_ASSOC)) {
 							$id_exam=$row["id_exam"];
-							$query=mysqli_query($conn,"SELECT * FROM exam WHERE id_exam='$id_exam' ");
+							$queryf=mysqli_query($conn,"SELECT * FROM exam WHERE id_exam='$id_exam' ");
 						
-							while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+							while ($row = mysqli_fetch_array($queryf, MYSQLI_ASSOC)) {
 							$start_time=$row["date_time"];
 							$end_time=$row["time"];
+							$date = new DateTime($end_time);
+							$now = new DateTime();
+								if($date > $now) {
+								echo "<button type = 'submit' name='add_lesson' class='wbtn' value='$id_exam'>";
+								echo "Συμμετοχή στην εξέταση";
+								echo "</button>";
+								echo " Έναρξη:  $start_time Λήξη:  $end_time";
+								echo "<hr>";
+								}
 							}
-							echo " Έναρξη:  $start_time Λήξη:  $end_time";
-
+							
 
 						}
-
+						
+						
 					}
 			
 			
 							
 							
-					echo "<hr>";
+					
 					
 
 				?>
