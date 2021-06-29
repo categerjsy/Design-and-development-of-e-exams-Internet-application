@@ -15,10 +15,13 @@ $exam=$_POST["id_exam"];
 			$date_start = new DateTime($start_time);
 			$date_end = new DateTime($end_time);
 			$now = new DateTime();
+
 			if($now>$date_start) {
-                echo"gkjdfd";
+                $_SESSION["id_exam"]=$exam;
+				$location="/Ptuxiaki/examination1.php";
+				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
 			}
-			if($now<$start_time){
+			if($now<$date_start){
                 $msg="Η εξέταση σας ξεκινάει στις $start_time";
                 function_alert($msg);  
                 echo '<script type="text/JavaScript"> 

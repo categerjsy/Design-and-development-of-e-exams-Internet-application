@@ -75,7 +75,7 @@ include 'config.php';
 			<button class="openbtn" onclick="openNav()">☰ Βασικές επιλογές</button>   
                        
 		<div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">
-			<h3>Εγγραφή σε μάθημα</h3>
+			<h3>Συμμετοχή σε εξέταση</h3>
 			
 	
 			  
