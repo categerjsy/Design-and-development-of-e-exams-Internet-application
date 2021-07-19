@@ -1,25 +1,7 @@
 <?php
 include 'config.php';
 session_start ();
-$id_exam=$_SESSION["id_exam"];
 
-     $arr = array();
-     $exam_array=array();
-     $number_questions=0;
-     $query=mysqli_query($conn,"SELECT * FROM contains WHERE id_exam='$id_exam'");
-		while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
-			$id_question=$row["id_question"];	
-			array_push($arr,$id_question);
-         $number_questions++;
-      }
-      for($i=0;$i<$number_questions;$i++){
-        $max=sizeof($arr)-1;
-        $toexam=rand ( 0 ,$max);
-        $q=$arr[$toexam];
-        array_push($exam_array,$q);
-        unset($arr[$toexam]); 
-        $arr=array_values($arr);
-      }
  
 ?>
 
@@ -101,17 +83,28 @@ $id_exam=$_SESSION["id_exam"];
 			  
 			
 				<?php
+				$exam_array= $_SESSION["ex_array"];
 					$max_questions=sizeof($exam_array)-1;
-			
-               for($i=0;$i<sizeof($exam_array);$i++){
-				  $qu=$exam_array[$i];
+
+               //for($i=0;$i<sizeof($exam_array);$i++){
+				$i=0;
+				$now = new DateTime();
+				
+				   $qu=$exam_array[$i];
+				   $_SESSION["qu"]=$qu;
                   $query=mysqli_query($conn,"SELECT * FROM question WHERE id_question='$qu'");
                   while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+					 $qt=$row["time"]; 
+					 $qtime=new DateTime($qt);
+					 list($hours, $minutes, $seconds) = explode(":", $qt);
+					 $interval = new DateInterval("PT" . $hours . "H" . $minutes . "M" . $seconds . "S");
+					 $end =$now->add($interval);
+					 
                      echo $row["text"];
+					
+
 					 if(strcmp($row["type"],"Ελευθέρου κειμένου")==0){
-						echo "<br><textarea id='$qu' name='$qu' rows='4' cols='150'>
-								Παρακαλώ εισάγετε την  απάντηση σας.
-							</textarea>";
+						echo "<br><textarea id='$qu' name='$qu' rows='4' cols='150' placeholder='Παρακαλώ εισάγετε την  απάντηση σας.'></textarea>";
 					 }
 					 if(strcmp($row["type"],"True-False")==0){
 						echo " <select id='answer' name='answer'>
@@ -119,47 +112,65 @@ $id_exam=$_SESSION["id_exam"];
 						<option value='F'>False</option>
 						</select>";
 					 }
-					// if($row["type"]=="Multiple Choice More"){
-					// 	$findidpa=mysqli_query($conn,"select * from has where  id_question='$qu'");
-                    //         while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
-                    //             $id_pa=$row["id_possibleAnswer"];
-                    //             $findpa=mysqli_query($conn,"select * from possible_answer where id_possibleAnswer='$id_pa'");
-                    //                         while ($row = mysqli_fetch_array($findpa, MYSQLI_ASSOC)) {
-                    //                             $pa=$row["text"];
-                    //                         echo "<p style='margin-left:30%;'><label class='container' for='$pa'>$pa
-                    //                         <input type='checkbox' id='$pa' name='pa[]' value='$pa'>
-                    //                         <span class='checkmark'></span>
-                    //                         </label><p>";
-                    //                         }
-                    //         }
-					// }
+					if($row["type"]=="Multiple Choice More"){
+						$findidpa=mysqli_query($conn,"select * from has where  id_question='$qu'");
+                            while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
+                                $id_pa=$row["id_possibleAnswer"];
+                                $findpa=mysqli_query($conn,"select * from possible_answer where id_possibleAnswer='$id_pa'");
+                                            while ($row = mysqli_fetch_array($findpa, MYSQLI_ASSOC)) {
+                                                $pa=$row["text"];
+                                            echo "<p style='margin-left:30%;'><label class='container' for='$pa'>$pa
+                                            <input type='checkbox' id='$pa' name='pa[]' value='$pa'>
+                                            <span class='checkmark'></span>
+                                            </label><p>";
+                                            }
+                            }
+		 			}
 					if($row["type"]=="Multiple Choice"){
 						$findidpaf=mysqli_query($conn,"select * from has where  id_question='$qu'");
 						while ($row = mysqli_fetch_array($findidpaf, MYSQLI_ASSOC)) {
 							$id_paf=$row["id_possibleAnswer"];
 							$findpaf=mysqli_query($conn,"select * from possible_answer where id_possibleAnswer='$id_paf'");
 							while ($row = mysqli_fetch_array($findpaf, MYSQLI_ASSOC)) {
-								$pa=$row["text"];
+								$paf=$row["text"];
 								
-								echo "<p style='margin-left:30%;'><label class='containerr' for='$pa'> $pa
-								<input type='radio' id='$pa' name='pa' value='$pa' disabled>
+								echo "<p style='margin-left:30%;'><label class='containerr' for='$paf'> $paf
+								<input type='radio' id='$paf' name='paf' value='$paf' disabled>
 								<span class='checkmarkr'></span>
 								</label><p>";
 							}
 						}
 					}
 
-                  }
-				  //unset($exam_array[$i]); 
-        		  //$exam_array=array_values($exam_array);
+                 }
+
+				//   unset($exam_array[$i]); 
+        		//   $exam_array=array_values($exam_array);
 				  echo "<hr>";
-               }
-							
-							
-					
-					
+				  if($end<$now){
+				  $i++;
+				  }
+
 
 				?>
+				<div id="clockdiv">
+				<div>
+					<span class="days"></span>
+					<div class="smalltext">Days</div>
+				</div>
+				<div>
+					<span class="hours"></span>
+					<div class="smalltext">Hours</div>
+				</div>
+				<div>
+					<span class="minutes"></span>
+					<div class="smalltext">Minutes</div>
+				</div>
+				<div>
+					<span class="seconds"></span>
+					<div class="smalltext">Seconds</div>
+				</div>
+				</div>
 			 
 			</div>
                      
@@ -168,7 +179,51 @@ $id_exam=$_SESSION["id_exam"];
 		</main>
 		<footer>
 		</footer>
-		<script ></script>
+		<script >
+		function getTimeRemaining(endtime) {
+		const total = Date.parse(endtime) - Date.parse(new Date());
+		const seconds = Math.floor((total / 1000) % 60);
+		const minutes = Math.floor((total / 1000 / 60) % 60);
+		const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+		const days = Math.floor(total / (1000 * 60 * 60 * 24));
+		
+		return {
+			total,
+			days,
+			hours,
+			minutes,
+			seconds
+		};
+		}
+
+		function initializeClock(id, endtime) {
+		const clock = document.getElementById(id);
+		const daysSpan = clock.querySelector('.days');
+		const hoursSpan = clock.querySelector('.hours');
+		const minutesSpan = clock.querySelector('.minutes');
+		const secondsSpan = clock.querySelector('.seconds');
+
+		function updateClock() {
+			const t = getTimeRemaining(endtime);
+
+			daysSpan.innerHTML = t.days;
+			hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+			minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+			secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+			if (t.total <= 0) {
+			clearInterval(timeinterval);
+			}
+		}
+
+		updateClock();
+		const timeinterval = setInterval(updateClock, 1000);
+		}
+
+		const deadline = new Date(Date.parse(new Date()) +6 * 60 * 1000);
+		initializeClock('clockdiv', deadline);
+		</script>
+
 		<script src="assets/js/aside.js"></script>
 	</body>
 </html>
