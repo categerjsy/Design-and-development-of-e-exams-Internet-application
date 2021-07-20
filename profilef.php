@@ -67,6 +67,7 @@ session_start();
 			<a href="edit_prof.php">Επεξεργασία προφίλ</a>
 			<a href="change_password.php">Αλλαγή κωδικού</a>
 			<a href="enroll.php">Εγγραφή σε μάθημα</a>
+			<a href="st_exam.php">Εξετάσεις μαθημάτων</a>
 			</div>
 	
 		</aside>

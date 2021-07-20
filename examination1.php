@@ -99,7 +99,7 @@ session_start ();
 					 list($hours, $minutes, $seconds) = explode(":", $qt);
 					 $interval = new DateInterval("PT" . $hours . "H" . $minutes . "M" . $seconds . "S");
 					 $end =$now->add($interval);
-					 
+					 $total=$seconds+(60*$minutes)+(3600*$hours);
                      echo $row["text"];
 					
 
@@ -146,32 +146,32 @@ session_start ();
 
 				//   unset($exam_array[$i]); 
         		//   $exam_array=array_values($exam_array);
-				  echo "<hr>";
+				  
 				  if($end<$now){
 				  $i++;
 				  }
 
 
 				?>
-				<div id="clockdiv">
-				<div>
-					<span class="days"></span>
-					<div class="smalltext">Days</div>
+				<div class="countdown-container">
+					
+				<div class="hours-container">
+					<div class="hours"></div>
+					<div class="hours-label">Ώρες</div>
 				</div>
-				<div>
-					<span class="hours"></span>
-					<div class="smalltext">Hours</div>
+				
+				<div class="minutes-container">
+					<div class="minutes"></div>
+					<div class="minutes-label">Λεπτά</div>
 				</div>
-				<div>
-					<span class="minutes"></span>
-					<div class="smalltext">Minutes</div>
+				
+				<div class="seconds-container">
+					<div class="seconds"></div>
+					<div class="seconds-label">Δευτερόλεπτα</div>
 				</div>
-				<div>
-					<span class="seconds"></span>
-					<div class="smalltext">Seconds</div>
+				
 				</div>
-				</div>
-			 
+			<hr>
 			</div>
                      
 		</main>
@@ -179,51 +179,66 @@ session_start ();
 		</main>
 		<footer>
 		</footer>
-		<script >
-		function getTimeRemaining(endtime) {
-		const total = Date.parse(endtime) - Date.parse(new Date());
-		const seconds = Math.floor((total / 1000) % 60);
-		const minutes = Math.floor((total / 1000 / 60) % 60);
-		const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
-		const days = Math.floor(total / (1000 * 60 * 60 * 24));
+	
+		<script>
+		const countDownClock = (number = 100, format = 'seconds') => {
 		
-		return {
-			total,
-			days,
-			hours,
-			minutes,
-			seconds
-		};
-		}
-
-		function initializeClock(id, endtime) {
-		const clock = document.getElementById(id);
-		const daysSpan = clock.querySelector('.days');
-		const hoursSpan = clock.querySelector('.hours');
-		const minutesSpan = clock.querySelector('.minutes');
-		const secondsSpan = clock.querySelector('.seconds');
-
-		function updateClock() {
-			const t = getTimeRemaining(endtime);
-
-			daysSpan.innerHTML = t.days;
-			hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
-			minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-			secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
-
-			if (t.total <= 0) {
-			clearInterval(timeinterval);
+		const d = document;
+		
+		const hoursElement = d.querySelector('.hours');
+		const minutesElement = d.querySelector('.minutes');
+		const secondsElement = d.querySelector('.seconds');
+		let countdown;
+		convertFormat(format);
+		
+		
+		function convertFormat(format) {
+			switch(format) {
+			case 'seconds':
+				return timer(number);
+			case 'minutes':
+				return timer(number * 60);
+				case 'hours':
+				return timer(number * 60 * 60);
+					
 			}
 		}
 
-		updateClock();
-		const timeinterval = setInterval(updateClock, 1000);
+		function timer(seconds) {
+			const now = Date.now();
+			const then = now + seconds * 1000;
+
+			countdown = setInterval(() => {
+			const secondsLeft = Math.round((then - Date.now()) / 1000);
+
+			if(secondsLeft <= 0) {
+				clearInterval(countdown);
+				return;
+			};
+
+			displayTimeLeft(secondsLeft);
+
+			},1000);
 		}
 
-		const deadline = new Date(Date.parse(new Date()) +6 * 60 * 1000);
-		initializeClock('clockdiv', deadline);
-		</script>
+		function displayTimeLeft(seconds) {
+		
+			hoursElement.textContent = Math.floor((seconds % 86400) / 3600);
+			minutesElement.textContent = Math.floor((seconds % 86400) % 3600 / 60);
+			secondsElement.textContent = seconds % 60 < 10 ? `0${seconds % 60}` : seconds % 60;
+		}
+		}
 
+
+		/*
+		start countdown
+		enter number and format
+		days, hours, minutes or seconds
+		*/
+		var total = '<?=$total?>';
+		
+		countDownClock(total,'seconds');
+		</script>
 		<script src="assets/js/aside.js"></script>
 	</body>
 </html>
