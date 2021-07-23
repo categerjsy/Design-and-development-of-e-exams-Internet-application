@@ -32,7 +32,10 @@ input[type=submit]:hover {
 #after {
   width: 55%;
 }
-
+textarea {
+  width: 500px;
+  height: 150px;
+}
 
 
 .button {
@@ -104,7 +107,8 @@ a:active {
 
 .countdown-container {
   display:flex;
-  width: 100%;
+  width: 50%;
+  
 }
 
 .hours-container {

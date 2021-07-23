@@ -63,31 +63,48 @@ session_start ();
 		</header>
 		<aside>
 			
-			<!-- Sidebar -->
+			<!-- 
 			<div id="mySidebar" class="sidebar">
 			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
 			<a href="edit_prof.php">Επεξεργασία προφίλ</a>
 			<a href="change_password.php">Αλλαγή κωδικού</a>
 			<a href="enroll.php">Εγγραφή σε μάθημα</a>
 			<a href="st_exam.php">Εξετάσεις μαθημάτων</a>
-			</div>
+			</div>-->
 	
 		</aside>
 		<main>  
 			<button class="openbtn" onclick="openNav()">☰ Βασικές επιλογές</button>   
                        
-		<div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">
+		<div id="myform" style="margin-left:15%;padding:10px 50px;height:1000px;">
 			<h3>Εξέταση</h3>
 			
 	
-			  
-			
+			<div class="countdown-container" style="width:55%;">
+					
+					<div class="hours-container">
+						<div class="hours"></div>
+						<div class="hours-label">Ώρες</div>
+					</div>
+					
+					<div class="minutes-container">
+						<div class="minutes"></div>
+						<div class="minutes-label">Λεπτά</div>
+					</div>
+					
+					<div class="seconds-container">
+						<div class="seconds"></div>
+						<div class="seconds-label">Δευτερόλεπτα</div>
+					</div>
+					
+			</div>
+			<form action="ans.php" method="post">
 				<?php
 				$exam_array= $_SESSION["ex_array"];
 					$max_questions=sizeof($exam_array)-1;
 
                //for($i=0;$i<sizeof($exam_array);$i++){
-				$i=0;
+				$i=$_SESSION["number"];
 				$now = new DateTime();
 				
 				   $qu=$exam_array[$i];
@@ -104,7 +121,7 @@ session_start ();
 					
 
 					 if(strcmp($row["type"],"Ελευθέρου κειμένου")==0){
-						echo "<br><textarea id='$qu' name='$qu' rows='4' cols='150' placeholder='Παρακαλώ εισάγετε την  απάντηση σας.'></textarea>";
+						echo "<br><textarea id='$qu' name='$qu' placeholder='Παρακαλώ εισάγετε την  απάντηση σας.'></textarea>";
 					 }
 					 if(strcmp($row["type"],"True-False")==0){
 						echo " <select id='answer' name='answer'>
@@ -147,30 +164,18 @@ session_start ();
 				//   unset($exam_array[$i]); 
         		//   $exam_array=array_values($exam_array);
 				  
-				  if($end<$now){
-				  $i++;
-				  }
+				  
 
 
 				?>
-				<div class="countdown-container">
-					
-				<div class="hours-container">
-					<div class="hours"></div>
-					<div class="hours-label">Ώρες</div>
-				</div>
+				<input type="submit" value="Ορισμός απάντησης">
+				<button class="cancelbtn" type="reset"><a href="next_question.php">Επόμενη ερώτηση</a></button>
+    	        <button type="reset" class="cleanbtn">Καθαρισμός</button>
+                <br>
+
+
+			  </form>
 				
-				<div class="minutes-container">
-					<div class="minutes"></div>
-					<div class="minutes-label">Λεπτά</div>
-				</div>
-				
-				<div class="seconds-container">
-					<div class="seconds"></div>
-					<div class="seconds-label">Δευτερόλεπτα</div>
-				</div>
-				
-				</div>
 			<hr>
 			</div>
                      
@@ -213,6 +218,7 @@ session_start ();
 
 			if(secondsLeft <= 0) {
 				clearInterval(countdown);
+				window.location.href = "examination2.php";
 				return;
 			};
 
@@ -226,6 +232,7 @@ session_start ();
 			hoursElement.textContent = Math.floor((seconds % 86400) / 3600);
 			minutesElement.textContent = Math.floor((seconds % 86400) % 3600 / 60);
 			secondsElement.textContent = seconds % 60 < 10 ? `0${seconds % 60}` : seconds % 60;
+		
 		}
 		}
 

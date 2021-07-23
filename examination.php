@@ -22,6 +22,7 @@ $id_exam=$_SESSION["id_exam"];
       }
 
       $_SESSION["ex_array"]=$exam_array;
+      $_SESSION["number"]=0;
       $location="/Ptuxiaki/examination1.php";
       header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
 
