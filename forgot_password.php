@@ -42,7 +42,12 @@
    <div class="imgcontainer"> 
       <img src="photos/uop_new_logo.png"  alt="Avatar" class="avatar">
     </div>
-	
+	<?php
+				if (isset($_GET["msg"]) && $_GET["msg"] == 'nu') {
+					print "<p>Κάτι πήγε λάθος, προσπαθήστε ξανά</p>";
+				}
+				
+			?>
     <div class="container">
 	
 		<br>
