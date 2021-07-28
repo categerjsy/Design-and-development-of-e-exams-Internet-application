@@ -38,7 +38,7 @@
 </head>
 <body>
 	
-  <form class="forgot_pass" action="#" method="post">
+  <form  action="forgot_pass.php" method="post">
    <div class="imgcontainer"> 
       <img src="photos/uop_new_logo.png"  alt="Avatar" class="avatar">
     </div>

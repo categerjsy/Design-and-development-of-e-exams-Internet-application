@@ -101,10 +101,14 @@ session_start ();
 			<form action="ans.php" method="post">
 				<?php
 				$exam_array= $_SESSION["ex_array"];
-					$max_questions=sizeof($exam_array)-1;
-
+				$max_questions=sizeof($exam_array)-1;
+				
                //for($i=0;$i<sizeof($exam_array);$i++){
 				$i=$_SESSION["number"];
+				// if($i==$max_questions){
+				// 	$location="/Ptuxiaki/profilef.php";
+				// 	header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);		
+				// }
 				$now = new DateTime();
 				
 				   $qu=$exam_array[$i];
