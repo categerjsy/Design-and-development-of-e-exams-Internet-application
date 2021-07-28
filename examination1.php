@@ -125,13 +125,21 @@ session_start ();
 					
 
 					 if(strcmp($row["type"],"Ελευθέρου κειμένου")==0){
+						echo "<form  action='answer.php'  method='post'>";
 						echo "<br><textarea id='$qu' name='$qu' placeholder='Παρακαλώ εισάγετε την  απάντηση σας.'></textarea>";
+						echo "<button type ='submit' name='ek' class='cleanbtn' value='$qu'>";
+						echo "Ορισμός απάντησης";
+						echo "</button>";
 					 }
 					 if(strcmp($row["type"],"True-False")==0){
+						echo "<form  action='answer.php'  method='post'>";
 						echo " <select id='answer' name='answer'>
 						<option value='T'>True</option>
 						<option value='F'>False</option>
 						</select>";
+						echo "<button type ='submit' name='tf' class='cleanbtn' value='$qu'>";
+						echo "Ορισμός απάντησης";
+						echo "</button>";
 					 }
 					if($row["type"]=="Multiple Choice More"){
 						$findidpa=mysqli_query($conn,"select * from has where  id_question='$qu'");
@@ -140,10 +148,14 @@ session_start ();
                                 $findpa=mysqli_query($conn,"select * from possible_answer where id_possibleAnswer='$id_pa'");
                                             while ($row = mysqli_fetch_array($findpa, MYSQLI_ASSOC)) {
                                                 $pa=$row["text"];
+											echo "<form  action='answer.php'  method='post'>";
                                             echo "<p style='margin-left:30%;'><label class='container' for='$pa'>$pa
                                             <input type='checkbox' id='$pa' name='pa[]' value='$pa'>
                                             <span class='checkmark'></span>
                                             </label><p>";
+											echo "<button type ='submit' name='ek' class='cleanbtn' value='$qu'>";
+											echo "Ορισμός απάντησης";
+											echo "</button>";
                                             }
                             }
 		 			}
@@ -154,11 +166,14 @@ session_start ();
 							$findpaf=mysqli_query($conn,"select * from possible_answer where id_possibleAnswer='$id_paf'");
 							while ($row = mysqli_fetch_array($findpaf, MYSQLI_ASSOC)) {
 								$paf=$row["text"];
-								
+								echo "<form  action='answer.php'  method='post'>";
 								echo "<p style='margin-left:30%;'><label class='containerr' for='$paf'> $paf
 								<input type='radio' id='$paf' name='paf' value='$paf' disabled>
 								<span class='checkmarkr'></span>
 								</label><p>";
+								echo "<button type ='submit' name='ek' class='cleanbtn' value='$qu'>";
+								echo "Ορισμός απάντησης";
+								echo "</button>";
 							}
 						}
 					}
@@ -172,7 +187,7 @@ session_start ();
 
 
 				?>
-				<input type="submit" value="Ορισμός απάντησης">
+				<!--<input type="submit" value="Ορισμός απάντησης">-->
 				<button class="cancelbtn" type="reset"><a href="next_question.php">Επόμενη ερώτηση</a></button>
     	        <button type="reset" class="cleanbtn">Καθαρισμός</button>
                 <br>
