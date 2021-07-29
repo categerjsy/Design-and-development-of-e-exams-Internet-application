@@ -63,14 +63,14 @@ session_start ();
 		</header>
 		<aside>
 			
-			<!-- 
+
 			<div id="mySidebar" class="sidebar">
 			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
 			<a href="edit_prof.php">Επεξεργασία προφίλ</a>
 			<a href="change_password.php">Αλλαγή κωδικού</a>
 			<a href="enroll.php">Εγγραφή σε μάθημα</a>
 			<a href="st_exam.php">Εξετάσεις μαθημάτων</a>
-			</div>-->
+			</div>
 	
 		</aside>
 		<main>  
@@ -109,8 +109,7 @@ session_start ();
 				// 	$location="/Ptuxiaki/profilef.php";
 				// 	header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);		
 				// }
-				$now = new DateTime();
-				
+
 				   $qu=$exam_array[$i];
 				   $_SESSION["qu"]=$qu;
                   $query=mysqli_query($conn,"SELECT * FROM question WHERE id_question='$qu'");
@@ -119,7 +118,6 @@ session_start ();
 					 $qtime=new DateTime($qt);
 					 list($hours, $minutes, $seconds) = explode(":", $qt);
 					 $interval = new DateInterval("PT" . $hours . "H" . $minutes . "M" . $seconds . "S");
-					 $end =$now->add($interval);
 					 $total=$seconds+(60*$minutes)+(3600*$hours);
                      echo $row["text"];
 					
