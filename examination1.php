@@ -105,10 +105,10 @@ session_start ();
 				
                //for($i=0;$i<sizeof($exam_array);$i++){
 				$i=$_SESSION["number"];
-				// if($i==$max_questions){
-				// 	$location="/Ptuxiaki/profilef.php";
-				// 	header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);		
-				// }
+				if($i==$max_questions){
+					$location="/Ptuxiaki/profilef.php";
+					header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);		
+				}
 
 				   $qu=$exam_array[$i];
 				   $_SESSION["qu"]=$qu;
@@ -143,50 +143,58 @@ session_start ();
 						echo "</button>";
 						echo "</form>";
 					 }
-					if($row["type"]=="Multiple Choice More"){
-						$findidpa=mysqli_query($conn,"select * from has where  id_question='$qu'");
-                            while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
-                                $id_pa=$row["id_possibleAnswer"];
-                                $findpa=mysqli_query($conn,"select * from possible_answer where id_possibleAnswer='$id_pa'");
-                                            while ($row = mysqli_fetch_array($findpa, MYSQLI_ASSOC)) {
-                                                $pa=$row["text"];
-											echo "<form  action='answer.php'  method='post'>";
-                                            echo "<p style='margin-left:30%;'><label class='container' for='$pa'>$pa
-                                            <input type='checkbox' id='$pa' name='pa[]' value='$pa'>
-                                            <span class='checkmark'></span>
-                                            </label><p>";
-											
-                                            }
-											
-                            }
+					 $try=0;
+					 if($try==0){
+						if($row["type"]=="Multiple Choice"){
+							$findidpaf=mysqli_query($conn,"select * from has where  id_question='$qu'");
+							while ($row = mysqli_fetch_array($findidpaf, MYSQLI_ASSOC)) {
+								$id_paf=$row["id_possibleAnswer"];
+								echo "<form  action='answer.php'  method='post'>";
+								$findpaf=mysqli_query($conn,"select * from possible_answer where id_possibleAnswer='$id_paf'");
+								while ($row = mysqli_fetch_array($findpaf, MYSQLI_ASSOC)) {
+									$paf=$row["text"];
+									
+									echo "<p style='margin-left:30%;'><label class='containerr' for='$paf'> $paf
+									<input type='radio' id='$paf' name='paf' value='$paf' disabled>
+									<span class='checkmarkr'></span>
+									</label><p>";
+								}
+									
+							}
 							echo "<br>";
 							echo "<button type ='submit' name='ek' class='clbtn' value='$qu'>";
 							echo "Ορισμός απάντησης";
 							echo "</button>";
 							echo "</form>";
-		 			}
-					if($row["type"]=="Multiple Choice"){
-						$findidpaf=mysqli_query($conn,"select * from has where  id_question='$qu'");
-						while ($row = mysqli_fetch_array($findidpaf, MYSQLI_ASSOC)) {
-							$id_paf=$row["id_possibleAnswer"];
-							$findpaf=mysqli_query($conn,"select * from possible_answer where id_possibleAnswer='$id_paf'");
-							while ($row = mysqli_fetch_array($findpaf, MYSQLI_ASSOC)) {
-								$paf=$row["text"];
-								echo "<form  action='answer.php'  method='post'>";
-								echo "<p style='margin-left:30%;'><label class='containerr' for='$paf'> $paf
-								<input type='radio' id='$paf' name='paf' value='$paf' disabled>
-								<span class='checkmarkr'></span>
-								</label><p>";
-							}
-								
+							$try=1;
 						}
-						echo "<br>";
-						echo "<button type ='submit' name='ek' class='clbtn' value='$qu'>";
-						echo "Ορισμός απάντησης";
-						echo "</button>";
-						echo "</form>";
 					}
-
+					if($try==0){
+						if($row["type"]=="Multiple Choice More"){
+							$findidpa=mysqli_query($conn,"select * from has where  id_question='$qu'");
+								while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
+									$id_pa=$row["id_possibleAnswer"];
+									echo "<form  action='answer.php'  method='post'>";
+									$findpa=mysqli_query($conn,"select * from possible_answer where id_possibleAnswer='$id_pa'");
+												while ($row = mysqli_fetch_array($findpa, MYSQLI_ASSOC)) {
+													$pa=$row["text"];
+													echo "<p style='margin-left:30%;'><label class='container' for='$pa'>$pa
+													<input type='checkbox' id='$pa' name='pa[]' value='$pa'>
+													<span class='checkmark'></span>
+													</label><p>";
+												
+												}
+												
+								}
+								echo "<br>";
+								echo "<button type ='submit' name='ek' class='clbtn' value='$qu'>";
+								echo "Ορισμός απάντησης";
+								echo "</button>";
+								echo "</form>";
+								$try=1;
+						}
+					}
+					
                  }
 
 				//   unset($exam_array[$i]); 
