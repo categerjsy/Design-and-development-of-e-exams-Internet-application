@@ -155,7 +155,7 @@ session_start ();
 									$paf=$row["text"];
 									
 									echo "<p style='margin-left:30%;'><label class='containerr' for='$paf'> $paf
-									<input type='radio' id='$paf' name='paf' value='$paf' disabled>
+									<input type='radio' id='$paf' name='paf' value='$paf' >
 									<span class='checkmarkr'></span>
 									</label><p>";
 								}
