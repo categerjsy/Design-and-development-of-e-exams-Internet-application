@@ -69,7 +69,13 @@ textarea {
   background-color:#14284B;
   border-radius: 4px;
 }
-
+.clbtn{
+  color: white;
+  width: 100%;
+  padding: 12px 18px;
+  background-color:#14284B;
+  border-radius: 4px;
+}
 .wbtn{
   color: white;
   width: auto;

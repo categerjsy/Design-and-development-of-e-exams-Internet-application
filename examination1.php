@@ -98,7 +98,7 @@ session_start ();
 					</div>
 					
 			</div>
-			<form action="ans.php" method="post">
+			
 				<?php
 				$exam_array= $_SESSION["ex_array"];
 				$max_questions=sizeof($exam_array)-1;
@@ -127,9 +127,11 @@ session_start ();
 					 if(strcmp($row["type"],"Ελευθέρου κειμένου")==0){
 						echo "<form  action='answer.php'  method='post'>";
 						echo "<br><textarea id='$qu' name='$qu' placeholder='Παρακαλώ εισάγετε την  απάντηση σας.'></textarea>";
-						echo "<button type ='submit' name='ek' class='cleanbtn' value='$qu'>";
+						echo "<br>";
+						echo "<button type ='submit' name='ek' class='clbtn' value='$qu'>";
 						echo "Ορισμός απάντησης";
 						echo "</button>";
+						echo "</form>";
 					 }
 					 if(strcmp($row["type"],"True-False")==0){
 						echo "<form  action='answer.php'  method='post'>";
@@ -137,9 +139,11 @@ session_start ();
 						<option value='T'>True</option>
 						<option value='F'>False</option>
 						</select>";
-						echo "<button type ='submit' name='tf' class='cleanbtn' value='$qu'>";
+						echo "<br>";
+						echo "<button type ='submit' name='tf' class='clbtn' value='$qu'>";
 						echo "Ορισμός απάντησης";
 						echo "</button>";
+						echo "</form>";
 					 }
 					if($row["type"]=="Multiple Choice More"){
 						$findidpa=mysqli_query($conn,"select * from has where  id_question='$qu'");
@@ -153,11 +157,15 @@ session_start ();
                                             <input type='checkbox' id='$pa' name='pa[]' value='$pa'>
                                             <span class='checkmark'></span>
                                             </label><p>";
-											echo "<button type ='submit' name='ek' class='cleanbtn' value='$qu'>";
-											echo "Ορισμός απάντησης";
-											echo "</button>";
+											
                                             }
+											
                             }
+							echo "<br>";
+							echo "<button type ='submit' name='ek' class='clbtn' value='$qu'>";
+							echo "Ορισμός απάντησης";
+							echo "</button>";
+							echo "</form>";
 		 			}
 					if($row["type"]=="Multiple Choice"){
 						$findidpaf=mysqli_query($conn,"select * from has where  id_question='$qu'");
@@ -171,11 +179,14 @@ session_start ();
 								<input type='radio' id='$paf' name='paf' value='$paf' disabled>
 								<span class='checkmarkr'></span>
 								</label><p>";
-								echo "<button type ='submit' name='ek' class='cleanbtn' value='$qu'>";
-								echo "Ορισμός απάντησης";
-								echo "</button>";
 							}
+								
 						}
+						echo "<br>";
+						echo "<button type ='submit' name='ek' class='clbtn' value='$qu'>";
+						echo "Ορισμός απάντησης";
+						echo "</button>";
+						echo "</form>";
 					}
 
                  }
@@ -188,7 +199,7 @@ session_start ();
 
 				?>
 				<!--<input type="submit" value="Ορισμός απάντησης">-->
-				<button class="cancelbtn" type="reset"><a href="next_question.php">Επόμενη ερώτηση</a></button>
+				<button class="cancelbtn" type="reset"><a href="examination2.php">Επόμενη ερώτηση</a></button>
     	        <button type="reset" class="cleanbtn">Καθαρισμός</button>
                 <br>
 
