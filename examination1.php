@@ -101,11 +101,11 @@ session_start ();
 			
 				<?php
 				$exam_array= $_SESSION["ex_array"];
-				$max_questions=sizeof($exam_array)-1;
+				$max_question=sizeof($exam_array)-1;
 				
-               //for($i=0;$i<sizeof($exam_array);$i++){
+
 				$i=$_SESSION["number"];
-				if($i==$max_questions){
+				if($i==$max_question){
 					$location="/Ptuxiaki/profilef.php";
 					header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);		
 				}
@@ -124,7 +124,7 @@ session_start ();
 
 					 if(strcmp($row["type"],"Ελευθέρου κειμένου")==0){
 						echo "<form  action='answer.php'  method='post'>";
-						echo "<br><textarea id='$qu' name='$qu' placeholder='Παρακαλώ εισάγετε την  απάντηση σας.'></textarea>";
+						echo "<br><textarea id='text' name='text' placeholder='Παρακαλώ εισάγετε την  απάντηση σας.'></textarea>";
 						echo "<br>";
 						echo "<button type ='submit' name='ek' class='clbtn' value='$qu'>";
 						echo "Ορισμός απάντησης";
@@ -162,7 +162,7 @@ session_start ();
 									
 							}
 							echo "<br>";
-							echo "<button type ='submit' name='ek' class='clbtn' value='$qu'>";
+							echo "<button type ='submit' name='mc' class='clbtn' value='$qu'>";
 							echo "Ορισμός απάντησης";
 							echo "</button>";
 							echo "</form>";
@@ -187,7 +187,7 @@ session_start ();
 												
 								}
 								echo "<br>";
-								echo "<button type ='submit' name='ek' class='clbtn' value='$qu'>";
+								echo "<button type ='submit' name='mcm' class='clbtn' value='$qu'>";
 								echo "Ορισμός απάντησης";
 								echo "</button>";
 								echo "</form>";
@@ -197,15 +197,9 @@ session_start ();
 					
                  }
 
-				//   unset($exam_array[$i]); 
-        		//   $exam_array=array_values($exam_array);
-				  
-				  
-
-
 				?>
-				<!--<input type="submit" value="Ορισμός απάντησης">-->
-				<button class="cancelbtn" type="reset"><a href="examination2.php">Επόμενη ερώτηση</a></button>
+				
+				<a href="examination2.php"><button class="cancelbtn" type="reset">Επόμενη ερώτηση</button></a>
     	        <button type="reset" class="cleanbtn">Καθαρισμός</button>
                 <br>
 
