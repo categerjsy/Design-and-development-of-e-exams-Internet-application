@@ -109,6 +109,11 @@ session_start ();
 					$location="/Ptuxiaki/profilef.php";
 					header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);		
 				}
+				// $end_time=$_SESSION["end_exam"];
+				// if($now>$end_time){
+				// 	$location="/Ptuxiaki/profilef.php";
+				// 	header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);		
+				// }
 
 				   $qu=$exam_array[$i];
 				   $_SESSION["qu"]=$qu;
@@ -130,6 +135,7 @@ session_start ();
 						echo "Ορισμός απάντησης";
 						echo "</button>";
 						echo "</form>";
+						echo "<br>";
 					 }
 					 if(strcmp($row["type"],"True-False")==0){
 						echo "<form  action='answer.php'  method='post'>";
@@ -142,6 +148,7 @@ session_start ();
 						echo "Ορισμός απάντησης";
 						echo "</button>";
 						echo "</form>";
+						echo "<br>";
 					 }
 					 $try=0;
 					 if($try==0){
