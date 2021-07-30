@@ -258,11 +258,12 @@ session_start ();
 		}
 
 		function displayTimeLeft(seconds) {
-		
 			hoursElement.textContent = Math.floor((seconds % 86400) / 3600);
 			minutesElement.textContent = Math.floor((seconds % 86400) % 3600 / 60);
 			secondsElement.textContent = seconds % 60 < 10 ? `0${seconds % 60}` : seconds % 60;
-		
+			document.cookie='hours='+hoursElement.textContent;
+			document.cookie='minutes='+minutesElement.textContent;
+			document.cookie='seconds='+(seconds % 60 < 10 ? `0${seconds % 60}` : seconds % 60);
 		}
 		}
 
