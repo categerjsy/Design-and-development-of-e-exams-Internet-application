@@ -12,7 +12,7 @@ include 'config.php';
         //question
 		mysqli_query($conn, "UPDATE possible_answer SET is_correct=1 WHERE text='".$pa[$i]. "'");
      } 
-	 
+	 //?
 	 for ($i=0; $i<sizeof ($pa);$i++) {  
 		$sql = "SELECT id_possibleAnswer  FROM  possible_answer WHERE text='".$pa[$i]. "'";
 		
