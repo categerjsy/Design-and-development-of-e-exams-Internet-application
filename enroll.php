@@ -68,6 +68,7 @@ include 'config.php';
 			<a href="change_password.php">Αλλαγή κωδικού</a>
 			<a href="enroll.php">Εγγραφή σε μάθημα</a>
 			<a href="st_exam.php">Εξετάσεις μαθημάτων</a>
+                <a href="correction.php">Διόρθωση διαγωνισμάτων</a>
 			</div>
 	
 		</aside>

@@ -79,6 +79,7 @@ include 'config.php';
 		<a href="select_lesson.php">Επεξεργασία ερωτήσεων</a>
 		<a href="create_exam.php">Δημιουργία εξέτασης</a>
 		<a href="edit_exam.php">Επεξεργασία διαγωνίσματος</a>
+            <a href='correction.php'>Διόρθωση διαγωνισμάτων</a>
 		</div>
 		<button class="openbtn" onclick="openNav()">☰ Βασικές επιλογές</button> 
 		<br>

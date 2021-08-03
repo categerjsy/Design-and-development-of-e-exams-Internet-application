@@ -69,7 +69,8 @@ session_start();
 			<a href="select_lesson.php">Επεξεργασία ερωτήσεων</a>
 			<a href="create_exam.php">Δημιουργία εξέτασης</a>
 			<a href="edit_exam.php">Επεξεργασία διαγωνίσματος</a>
-		</div>
+            <a href='correction.php'>Διόρθωση διαγωνισμάτων</a>
+        </div>
 
 	</aside>
 	<main>  

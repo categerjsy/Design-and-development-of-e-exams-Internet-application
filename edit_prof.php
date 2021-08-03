@@ -90,6 +90,7 @@ table tr td:last-child{
 					echo '<a href="change_password.php">Αλλαγή κωδικού</a>';
 					echo '<a href="enroll.php">Εγγραφή σε μάθημα</a>';
 					echo '<a href="st_exam.php">Εξετάσεις μαθημάτων</a>';
+
 					echo '</div>';
 				}
 				else if (isset($_SESSION["id_professor"])!=NULL){
@@ -102,6 +103,7 @@ table tr td:last-child{
 					echo '<a href="select_lesson.php">Επεξεργασία ερωτήσεων</a>';
 					echo '<a href="create_exam.php">Δημιουργία εξέτασης</a>';
 					echo '<a href="edit_exam.php">Επεξεργασία διαγωνίσματος</a>';
+                    echo '<a href="correction.php">Διόρθωση διαγωνισμάτων</a>';
 					echo '</div>';
 				}
 			?>

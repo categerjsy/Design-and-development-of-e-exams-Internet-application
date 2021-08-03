@@ -77,16 +77,17 @@ include 'config.php';
 			<?php
 
 			if (isset($_SESSION["id_student"])==NULL){
-			echo "<a href='edit_prof.php'>Επεξεργασία προφίλ</a>";
-			echo "<a href='#'>Αλλαγή κωδικού</a>";
-			echo "<a href='create_lesson.php'>Δημιουργία μαθήματος</a>";
-			echo "<a href='create_question.php'>Εισαγωγή ερώτησης</a>";
-			echo "<a href='select_lesson.php'>Επεξεργασία ερωτήσεων</a>";
-			echo "<a href='create_exam.php'>Δημιουργία εξέτασης</a>";
-			echo "<a href='edit_exam.php'>Επεξεργασία διαγωνίσματος</a>";
+                echo "<a href='edit_prof.php'>Επεξεργασία προφίλ</a>";
+                echo "<a href='#'>Αλλαγή κωδικού</a>";
+                echo "<a href='create_lesson.php'>Δημιουργία μαθήματος</a>";
+                echo "<a href='create_question.php'>Εισαγωγή ερώτησης</a>";
+                echo "<a href='select_lesson.php'>Επεξεργασία ερωτήσεων</a>";
+                echo "<a href='create_exam.php'>Δημιουργία εξέτασης</a>";
+                echo "<a href='edit_exam.php'>Επεξεργασία διαγωνίσματος</a>";
+                echo "<a href='correction.php'>Διόρθωση διαγωνισμάτων</a>";
 			}
 			if (isset($_SESSION["id_professor"])==NULL){
-				echo "<a href='edit_prof.php'>Επεξεργασία προφίλ</a>";
+			    echo "<a href='edit_prof.php'>Επεξεργασία προφίλ</a>";
 				echo "<a href='change_password.php'>Αλλαγή κωδικού</a>";
 				echo "<a href='enroll.php'>Εγγραφή σε μάθημα</a>";
 				echo "<a href='st_exam.php'>Εξετάσεις μαθημάτων</a>";
