@@ -2,7 +2,9 @@
 include 'config.php';
 session_start ();
 $id_exam=$_SESSION["id_exam"];
-
+$st=$_SESSION["id_student"];
+        mysqli_query($conn, "INSERT INTO gives (id_exam,id_student)
+                VALUES ('$id_exam','$st')");
      $arr = array();
      $exam_array=array();
      $number_questions=0;
