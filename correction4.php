@@ -94,13 +94,13 @@ include 'config.php';
                 $name=$rows["name"];
                 $surname=$rows["surname"];
 
-                            echo "<form action='correction3.php'  method='post' >";
-                            echo "<button type = 'submit' name='id_student' class='wbtn' value='$id_student'>";
-                            echo "Διόρθωση εξέτασης φοιτητή";
-                            echo "</button>";
-                            echo "</form>";
-                            echo "$name $surname";
-                            echo "<hr>";
+                echo "<form action='correction3.php'  method='post' >";
+                echo "<button type = 'submit' name='id_student' class='wbtn' value='$id_student'>";
+                echo "Διόρθωση εξέτασης φοιτητή";
+                echo "</button>";
+                echo "</form>";
+                echo "$name $surname";
+                echo "<hr>";
 
             }
 
@@ -128,3 +128,4 @@ include 'config.php';
 <script src="assets/js/aside.js"></script>
 </body>
 </html>
+
