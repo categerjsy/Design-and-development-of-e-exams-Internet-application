@@ -57,9 +57,9 @@ if (isset($_POST['tf'])){
 
 if (isset($_POST['mc'])){
     $paf=$_POST['paf'];
-    echo $paf;
+   // echo $paf;
     $sql = "INSERT INTO answer (id_exam,id_student,id_question,student_answer,time_answer)
-			VALUES ('$exam','$st', ".$_POST["mc"].",'$paf','$time')";
+			VALUES ('$exam','$st', ".$_POST["mc"].",".$_POST['paf'].",'$time')";
 
 
     mysqli_query($conn,$sql);

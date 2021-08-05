@@ -163,7 +163,7 @@ session_start ();
 									$paf=$row["text"];
 									
 									echo "<p style='margin-left:30%;'><label class='containerr' for='$paf'> $paf
-									<input type='radio' id='$paf' name='paf' value='$paf' >
+									<input type='radio' id='$paf' name='paf' value='$id_paf' >
 									<span class='checkmarkr'></span>
 									</label><p>";
 								}
@@ -187,7 +187,7 @@ session_start ();
 												while ($row = mysqli_fetch_array($findpa, MYSQLI_ASSOC)) {
 													$pa=$row["text"];
 													echo "<p style='margin-left:30%;'><label class='container' for='$pa'>$pa
-													<input type='checkbox' id='$pa' name='pa[]' value='$pa'>
+													<input type='checkbox' id='$pa' name='pa[]' value='$id_pa'>
 													<span class='checkmark'></span>
 													</label><p>";
 												
