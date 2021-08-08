@@ -11,6 +11,7 @@ $query=mysqli_query($conn,"SELECT * FROM contains WHERE id_exam='$id_exam'");
 
 while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
     $id_question=$row["id_question"];
+    //TRUE/FALSE
     $query1=mysqli_query($conn,"SELECT * FROM question WHERE id_question='$id_question' and type='True-False'");
     while ($row1 = mysqli_fetch_array($query1, MYSQLI_ASSOC)) {
         $grade=$row1["grade"];
@@ -50,6 +51,40 @@ while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 			                VALUES ('$id_exam','$id_st', '$id_question','-$neg_grade')");
             }
         }
+    }
+    $query6=mysqli_query($conn,"SELECT * FROM question WHERE id_question='$id_question' and type='Multiple Choice'");
+    while ($row6 = mysqli_fetch_array($query6, MYSQLI_ASSOC)) {
+        $grade=$row6["grade"];
+        $neg_grade=$row6["negative_grade"];
+        //Τhis is for correction !! epilegmeno - 1
+        $query7=mysqli_query($conn,"SELECT * FROM has WHERE id_question='$id_question'");
+        while ($row7 = mysqli_fetch_array($query7, MYSQLI_ASSOC)) {
+            $id_pa = $row7["id_possibleAnswer"];
+            $query8 = mysqli_query($conn, "SELECT * FROM possible_answer WHERE id_possibleAnswer='$id_pa'");
+            while ($row8 = mysqli_fetch_array($query8, MYSQLI_ASSOC)) {
+                $is_correct = $row8["is_correct"];
+                if($is_correct==1){
+                    $correct=$id_pa;
+                }
+            }
+        }
+        //This is for answer ΜC
+        $query9=mysqli_query($conn,"SELECT * FROM answer WHERE id_question='$id_question' AND id_exam='$id_exam' AND id_student='$id_st'");
+        while ($row9 = mysqli_fetch_array($query9, MYSQLI_ASSOC)) {
+            $student_answer=$row9["student_answer"];
+        }
+        if($student_answer==$correct){
+            echo $student_answer.",,,,,".$correct;
+            mysqli_query($conn, "INSERT INTO correction  (id_exam,id_student,id_question,st_grade)
+			                VALUES ('$id_exam','$id_st', '$id_question','$grade')");
+        }
+        else {
+            echo $student_answer.",,,,,".$correct;
+            mysqli_query($conn, "INSERT INTO correction (id_exam,id_student,id_question,st_grade)
+			                VALUES ('$id_exam','$id_st', '$id_question','-$neg_grade')");
+
+        }
+
     }
 }
 //$location="/Ptuxiaki/correction4.php";
