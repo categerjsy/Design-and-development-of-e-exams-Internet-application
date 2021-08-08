@@ -31,7 +31,13 @@ include 'config.php';
     <link rel="stylesheet" href="assets/css/lf.css">
     <link rel="stylesheet" href="assets/css/button.css">
     <link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>
+    <style>
+        input[type="text"] {
 
+            width: 25%;
+
+        }
+    </style>
 </head>
 
 
@@ -83,7 +89,7 @@ include 'config.php';
 
 
 
-
+        <form action="result.php" method="post">
         <?php
         $id_st=$_SESSION["cor_id_student"];
         $id_exam=$_SESSION["correction_id_exam"];
@@ -96,6 +102,8 @@ include 'config.php';
             $query1=mysqli_query($conn,"SELECT * FROM question WHERE id_question='$id_question' and type='Ελευθέρου κειμένου'");
             while ($row1 = mysqli_fetch_array($query1, MYSQLI_ASSOC)) {
             $text=$row1["text"];
+            $grade=$row1["grade"];
+            $neq_grade=$row1["negative_grade"];
             echo "<h4> $text </h4>";
                 $query2=mysqli_query($conn,"SELECT * FROM answer WHERE id_question='$id_question' AND id_exam='$id_exam' AND id_student='$id_st'");
                 while ($row2 = mysqli_fetch_array($query2, MYSQLI_ASSOC)) {
@@ -103,15 +111,22 @@ include 'config.php';
                     echo "<h4> Απάντήση φοιτητή:</h4>";
                     echo "$student_answer";
                 }
+                echo "<br><label for='grade'>Βαθμολογία ερώτησης</label> <br>
+                <input id='$id_question' name='gradeID[]' type='hidden' value='$id_question'>
+			    <input type='text' id='$id_question' name='grade[]'  required> &nbsp;/$grade
+				<br>";
                 echo "<hr>";
             }
 
 
 
         }
-
-
         ?>
+            <input type="submit" value="Εισαγωγή βαθμολογιών">
+            <br>
+
+
+        </form>
 
     </div>
 
