@@ -52,6 +52,7 @@ while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
             }
         }
     }
+    //This is for answer ΜC
     $query6=mysqli_query($conn,"SELECT * FROM question WHERE id_question='$id_question' and type='Multiple Choice'");
     while ($row6 = mysqli_fetch_array($query6, MYSQLI_ASSOC)) {
         $grade=$row6["grade"];
@@ -68,27 +69,70 @@ while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
                 }
             }
         }
-        //This is for answer ΜC
+
         $query9=mysqli_query($conn,"SELECT * FROM answer WHERE id_question='$id_question' AND id_exam='$id_exam' AND id_student='$id_st'");
         while ($row9 = mysqli_fetch_array($query9, MYSQLI_ASSOC)) {
             $student_answer=$row9["student_answer"];
         }
         if($student_answer==$correct){
-            echo $student_answer.",,,,,".$correct;
             mysqli_query($conn, "INSERT INTO correction  (id_exam,id_student,id_question,st_grade)
 			                VALUES ('$id_exam','$id_st', '$id_question','$grade')");
         }
         else {
-            echo $student_answer.",,,,,".$correct;
             mysqli_query($conn, "INSERT INTO correction (id_exam,id_student,id_question,st_grade)
 			                VALUES ('$id_exam','$id_st', '$id_question','-$neg_grade')");
 
         }
 
     }
+
+    //This is for answer ΜCM
+    $query10=mysqli_query($conn,"SELECT * FROM question WHERE id_question='$id_question' and type='Multiple Choice More'");
+    while ($row10 = mysqli_fetch_array($query10, MYSQLI_ASSOC)) {
+        $grade=$row10["grade"];
+        $neg_grade=$row10["negative_grade"];
+        //Τhis is for correction !! epilegmeno - 1
+        $nump_idpa=0;
+        $query11=mysqli_query($conn,"SELECT * FROM has WHERE id_question='$id_question'");
+        while ($row11 = mysqli_fetch_array($query11, MYSQLI_ASSOC)) {
+            $id_pa = $row11["id_possibleAnswer"];
+            $nump_idpa++;
+            $arr_correct = array();
+            $query12 = mysqli_query($conn, "SELECT * FROM possible_answer WHERE id_possibleAnswer='$id_pa'");
+            while ($row12 = mysqli_fetch_array($query12, MYSQLI_ASSOC)) {
+                $is_correct = $row12["is_correct"];
+                if($is_correct==1){
+                    array_push($arr_correct,$id_pa);
+                }
+            }
+        }
+
+        $sg=$grade/$nump_idpa;
+        $sng=$neg_grade/$nump_idpa;
+        $mcm=0;
+
+        $query13=mysqli_query($conn,"SELECT * FROM answer WHERE id_question='$id_question' AND id_exam='$id_exam' AND id_student='$id_st'");
+        while ($row13 = mysqli_fetch_array($query13, MYSQLI_ASSOC)) {
+            $student_answer=$row13["student_answer"];
+
+            if (in_array( $student_answer, $arr_correct))
+            {
+                $mcm=$mcm+$sg;
+            }
+            else
+            {
+                $mcm=$mcm-$sng;
+            }
+
+        }
+        mysqli_query($conn, "INSERT INTO correction  (id_exam,id_student,id_question,st_grade)
+			                VALUES ('$id_exam','$id_st', '$id_question','$mcm')");
+
+
+    }
 }
-//$location="/Ptuxiaki/correction4.php";
-//header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+$location="/Ptuxiaki/correction4.php";
+header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
 
 
 ?>
