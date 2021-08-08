@@ -66,9 +66,12 @@ include 'config.php';
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
         <a href="edit_prof.php">Επεξεργασία προφίλ</a>
         <a href="change_password.php">Αλλαγή κωδικού</a>
-        <a href="enroll.php">Εγγραφή σε μάθημα</a>
-        <a href="st_exam.php">Εξετάσεις μαθημάτων</a>
-        <a href="#">Διόρθωση διαγωνισμάτων</a>
+        <a href="create_lesson.php">Δημιουργία μαθήματος</a>
+        <a href="create_question.php">Εισαγωγή ερώτησης</a>
+        <a href="select_lesson.php">Επεξεργασία ερωτήσεων</a>
+        <a href="create_exam.php">Δημιουργία εξέτασης</a>
+        <a href="edit_exam.php">Επεξεργασία διαγωνίσματος</a>
+        <a href='correction.php'>Διόρθωση διαγωνισμάτων</a>
     </div>
 
 </aside>
