@@ -30,6 +30,7 @@ include 'config.php';
     <link rel="stylesheet" href="assets/css/asidenav.css">
     <link rel="stylesheet" href="assets/css/lf.css">
     <link rel="stylesheet" href="assets/css/button.css">
+    <link rel="stylesheet" href="assets/css/radiobutton.css">
     <link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>
     <style>
         input[type="text"] {
@@ -130,9 +131,76 @@ include 'config.php';
             }
             echo "<p>Βαθμολογία : ". $final_grade."/$exam_final</p>";
             if($final_grade>5){
-                echo "<b style='color:green;'>Επιτυχής</b>";
+                echo "<b style='color:green;'>Επιτυχής</b><br><br>";
             }else{
-                echo "<b style='color:red;'>Αποτυχής</b>";
+                echo "<b style='color:red;'>Αποτυχής</b><br><br>";
+            }
+
+
+
+            $query=mysqli_query($conn,"SELECT * FROM contains WHERE id_exam='$id_exam'");
+
+            while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+                $id_question = $row["id_question"];
+                //TRUE/FALSE
+                $query1 = mysqli_query($conn, "SELECT * FROM question WHERE id_question='$id_question' and type='True-False'");
+                while ($row1 = mysqli_fetch_array($query1, MYSQLI_ASSOC)) {
+                echo $row1["text"];
+
+                    $query2=mysqli_query($conn,"SELECT * FROM answer WHERE id_question='$id_question' AND id_exam='$id_exam' AND id_student='$id_st'");
+                    while ($row2 = mysqli_fetch_array($query2, MYSQLI_ASSOC)) {
+                        echo "<br>Απάντηση φοιτητή: ";
+                        echo "<b>".$row2['student_answer']."</b>";
+                    }
+                    $query3=mysqli_query($conn,"SELECT * FROM correction WHERE id_question='$id_question' AND id_exam='$id_exam' AND id_student='$id_st'");
+                    while ($row3 = mysqli_fetch_array($query3, MYSQLI_ASSOC)) {
+                        echo "<br>Βαθμολογία φοιτητή: ";
+                        echo $row3['st_grade'];
+                    }
+                    echo "<hr>";
+                }
+                //end TRUE/FALSE
+                //MULTIPLE CHOICE
+                $query1 = mysqli_query($conn, "SELECT * FROM question WHERE id_question='$id_question' and type='Multiple Choice'");
+                while ($row1 = mysqli_fetch_array($query1, MYSQLI_ASSOC)) {
+                    echo $row1["text"];
+                    $query2=mysqli_query($conn,"SELECT * FROM answer WHERE id_question='$id_question' AND id_exam='$id_exam' AND id_student='$id_st'");
+                    while ($row2 = mysqli_fetch_array($query2, MYSQLI_ASSOC)) {
+                        echo "<br>Απάντηση φοιτητή: ";
+                        $st_a=$row2['student_answer'];
+                    }
+                    $query4=mysqli_query($conn,"SELECT * FROM has WHERE id_question='$id_question'");
+                    while ($row4 = mysqli_fetch_array($query4, MYSQLI_ASSOC)) {
+                        $id_pa = $row4["id_possibleAnswer"];
+                        echo "<form>";
+                        $query5 = mysqli_query($conn, "SELECT * FROM possible_answer WHERE id_possibleAnswer='$id_pa'");
+                        while ($row5 = mysqli_fetch_array($query5, MYSQLI_ASSOC)) {
+                            $pa=$row5["text"];
+                            if($id_pa!=$st_a) {
+                                echo "<h1 style='margin-left:30%;'><label class='containerr' for='$pa'> $pa
+									<input type='radio'  id='$pa' name='pa' value='$pa' disabled>
+									<span class='checkmarkr'></span>
+								  	</label></h1>";
+                            }
+                            if($id_pa==$st_a) {
+                                echo "<h1 style='margin-left:30%;'><label class='containerr' for='$pa'> $pa
+									<input type='radio'  id='$pa' name='pa' value='$pa' checked>
+									<span class='checkmarkr'></span>
+								  	</label></h1>";
+                            }
+
+                        }
+                        echo "</form>";
+                    }
+
+                    $query3=mysqli_query($conn,"SELECT * FROM correction WHERE id_question='$id_question' AND id_exam='$id_exam' AND id_student='$id_st'");
+                    while ($row3 = mysqli_fetch_array($query3, MYSQLI_ASSOC)) {
+                        echo "<br>Βαθμολογία φοιτητή: ";
+                        echo $row3['st_grade'];
+                    }
+                    echo "<hr>";
+                }
+                //end MULTIPLE CHOICE
             }
             ?>
 
