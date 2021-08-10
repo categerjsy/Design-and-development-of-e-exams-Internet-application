@@ -91,6 +91,11 @@ include 'config.php';
 
         <form action="result.php" method="post">
         <?php
+
+        if (isset($_GET["msg"]) && $_GET["msg"] == 'w') {
+            print "<p style='color:red'>H μορφή κάποιας βαθμολογίας δεν ήταν σωστή.</p>";
+        }
+
         $id_st=$_SESSION["cor_id_student"];
         $id_exam=$_SESSION["correction_id_exam"];
 
@@ -113,8 +118,9 @@ include 'config.php';
                 }
                 echo "<br><label for='grade'>Βαθμολογία ερώτησης</label> <br>
                 <input id='$id_question' name='gradeID[]' type='hidden' value='$id_question'>
-			    <input type='text' id='$id_question' name='grade[]'  required> &nbsp;/$grade
-				<br>";
+                <input id='$grade' name='ofgrades[]' type='hidden' value='$grade'>
+			    <input type='text' id='$id_question' name='grade[]' pattern='[0-9]{1}.[0-9]{2}'  required> &nbsp;/$grade
+				<br> ";
                 echo "<hr>";
             }
 
@@ -136,6 +142,7 @@ include 'config.php';
 <footer>
 </footer>
 <script ></script>
+<script src="assets/js/grade.js"></script>
 <script src="assets/js/aside.js"></script>
 </body>
 </html>
