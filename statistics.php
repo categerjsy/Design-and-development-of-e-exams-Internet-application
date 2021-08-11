@@ -32,6 +32,7 @@ include 'config.php';
     <link rel="stylesheet" href="assets/css/button.css">
     <link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
 </head>
 
 
@@ -140,7 +141,7 @@ include 'config.php';
         ]);
 
         var options = {
-            title:'Ποσοστά βαθμολογίων',
+            title:'Επιδώσεις φοιτητών',
             is3D:true
         };
 
