@@ -87,7 +87,7 @@ include 'config.php';
     <button class="openbtn" onclick="openNav()">☰ Βασικές επιλογές</button>
 
     <div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">
-        <h3>Προβολή Διόρθωσης Εξέτασης</h3>
+        <h3>Αναλυτική βαθμολογία εξέτασης</h3>
 
 
 
@@ -147,11 +147,15 @@ include 'config.php';
                 $query1 = mysqli_query($conn, "SELECT * FROM question WHERE id_question='$id_question' and type='True-False'");
                 while ($row1 = mysqli_fetch_array($query1, MYSQLI_ASSOC)) {
                 echo $row1["text"];
-
+                    $i=0;
                     $query2=mysqli_query($conn,"SELECT * FROM answer WHERE id_question='$id_question' AND id_exam='$id_exam' AND id_student='$id_st'");
                     while ($row2 = mysqli_fetch_array($query2, MYSQLI_ASSOC)) {
                         echo "<br>Απάντηση φοιτητή: ";
                         echo "<b>".$row2['student_answer']."</b>";
+                        $i=1;
+                    }
+                    if($i==0){
+                        echo "<br><b>Ο φοιτητής δεν έδωσε απάντηση </b>";
                     }
                     $query3=mysqli_query($conn,"SELECT * FROM correction WHERE id_question='$id_question' AND id_exam='$id_exam' AND id_student='$id_st'");
                     while ($row3 = mysqli_fetch_array($query3, MYSQLI_ASSOC)) {
@@ -165,10 +169,15 @@ include 'config.php';
                 $query1 = mysqli_query($conn, "SELECT * FROM question WHERE id_question='$id_question' and type='Multiple Choice'");
                 while ($row1 = mysqli_fetch_array($query1, MYSQLI_ASSOC)) {
                     echo $row1["text"];
+                    $i=0;
                     $query2=mysqli_query($conn,"SELECT * FROM answer WHERE id_question='$id_question' AND id_exam='$id_exam' AND id_student='$id_st'");
                     while ($row2 = mysqli_fetch_array($query2, MYSQLI_ASSOC)) {
                         echo "<br>Απάντηση φοιτητή: ";
                         $st_a=$row2['student_answer'];
+                        $i=1;
+                    }
+                    if($i==0){
+                        echo "<br><b>Ο φοιτητής δεν έδωσε απάντηση </b>";
                     }
                     $query4=mysqli_query($conn,"SELECT * FROM has WHERE id_question='$id_question'");
                     while ($row4 = mysqli_fetch_array($query4, MYSQLI_ASSOC)) {
@@ -207,10 +216,15 @@ include 'config.php';
                 while ($row1 = mysqli_fetch_array($query1, MYSQLI_ASSOC)) {
                     echo $row1["text"];
                     $st_a = array();
+                    $i=0;
                     $query2=mysqli_query($conn,"SELECT * FROM answer WHERE id_question='$id_question' AND id_exam='$id_exam' AND id_student='$id_st'");
                     while ($row2 = mysqli_fetch_array($query2, MYSQLI_ASSOC)) {
                         echo "<br>Απάντηση φοιτητή: ";
                         array_push( $st_a,$row2['student_answer']);
+                        $i=1;
+                    }
+                    if($i==0){
+                        echo "<br><b>Ο φοιτητής δεν έδωσε απάντηση </b>";
                     }
                     $query4=mysqli_query($conn,"SELECT * FROM has WHERE id_question='$id_question'");
                     while ($row4 = mysqli_fetch_array($query4, MYSQLI_ASSOC)) {
@@ -254,11 +268,16 @@ include 'config.php';
                     $grade=$row1["grade"];
                     $neq_grade=$row1["negative_grade"];
                     echo "<h4> $text </h4>";
+                    $i=0;
                     $query2=mysqli_query($conn,"SELECT * FROM answer WHERE id_question='$id_question' AND id_exam='$id_exam' AND id_student='$id_st'");
                     while ($row2 = mysqli_fetch_array($query2, MYSQLI_ASSOC)) {
                         $student_answer=$row2["student_answer"];
                         echo " Απάντήση φοιτητή:";
                         echo "$student_answer";
+                        $i=1;
+                    }
+                    if($i==0){
+                        echo "<br><b>Ο φοιτητής δεν έδωσε απάντηση </b>";
                     }
                     $query3=mysqli_query($conn,"SELECT * FROM correction WHERE id_question='$id_question' AND id_exam='$id_exam' AND id_student='$id_st'");
                     while ($row3 = mysqli_fetch_array($query3, MYSQLI_ASSOC)) {
