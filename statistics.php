@@ -31,7 +31,7 @@ include 'config.php';
     <link rel="stylesheet" href="assets/css/lf.css">
     <link rel="stylesheet" href="assets/css/button.css">
     <link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>
-
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 
 
@@ -79,68 +79,36 @@ include 'config.php';
     <button class="openbtn" onclick="openNav()">☰ Βασικές επιλογές</button>
 
     <div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">
-        <h3>Διόρθωση εξέτασης</h3>
-
-
-
-
+        <h3>Ποσοστά εξέτασης</h3>
         <?php
         $id_exam=$_SESSION["correction_id_exam"];
-        $query=mysqli_query($conn,"SELECT * FROM gives WHERE id_exam='$id_exam'");
-        $statistics=0;
-        while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
-            $id_student=$row["id_student"];
-
-            $querys=mysqli_query($conn,"SELECT * FROM user_student WHERE id_student='$id_student' ");
-
-            while ($rows = mysqli_fetch_array($querys, MYSQLI_ASSOC)) {
-                $name=$rows["name"];
-                $surname=$rows["surname"];
-                $query1=mysqli_query($conn,"SELECT * FROM get WHERE id_student='$id_student' ");
-                $flag=0;
-                while ($row1 = mysqli_fetch_array($query1, MYSQLI_ASSOC)) {
-                    $id_result=$row1["id_results"];
-                    $query2=mysqli_query($conn,"SELECT * FROM results WHERE id_results='$id_result' and exam='$id_exam'");
-
-                    while ($row2 = mysqli_fetch_array($query2, MYSQLI_ASSOC)) {
-                        echo "<form action='cal_resultp.php'  method='post' >";
-                        echo "<button type = 'submit' name='id_student' class='wbtn' value='$id_student'>";
-                        echo "Αναλυτική βαθμολογία εξέτασης";
-                        echo "</button>";
-                        echo "</form>";
-                        echo "$name $surname";
-                        echo "<hr>";
-                        $flag=1;
-                    }
-
+        $id_pr=$_SESSION["id_professor"];
+        $queryex=mysqli_query($conn,"SELECT * FROM wants WHERE id_professor='$id_pr'");
+        while ($rowex = mysqli_fetch_array($queryex, MYSQLI_ASSOC)) {
+            $res=$rowex["id_results"];
+            $query = mysqli_query($conn, "SELECT * FROM results WHERE exam='$id_exam' and id_results='$res'");
+            while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+                $gr = $row["final_grade"];
+                $a = 0;
+                $k = 0;
+                $m = 0;
+                $an = 0;
+                if ($gr >= 9) {
+                    $a = $a + 1;
+                } else if (($gr < 9) && ($gr > 7)) {
+                    $k = $k + 1;
+                } else if (($gr <= 7) && ($gr > 5)) {
+                    $m = $m + 1;
+                } else {
+                    $an = $an + 1;
                 }
-                            if($flag==0) {
-                                $statistics=1;
-                                echo "<form action='correction3.php'  method='post' >";
-                                echo "<button type = 'submit' name='id_student' class='wbtn' value='$id_student'>";
-                                echo "Διόρθωση εξέτασης φοιτητή";
-                                echo "</button>";
-                                echo "</form>";
-                                echo "$name $surname";
-                                echo "<hr>";
-                            }
-
             }
-
-
-
-
         }
-
-        if($statistics==0){
-            echo "<button type='button' class='cleanbtn'><a href='statistics.php'>Προβολή στατιστικών</a></button>";
-        }
-
-
-
-
-
+        echo $a." ddd".$k."sss ".$m." ssssad".$an;
         ?>
+        <div
+                id="myChart" style="width:100%; max-width:600px; height:500px;">
+        </div>
 
     </div>
 
@@ -150,6 +118,34 @@ include 'config.php';
 <footer>
 </footer>
 <script ></script>
+<script>
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        var a=<?php Print($a); ?>;
+        var k=<?php Print($k); ?>;
+        var m=<?php Print($m); ?>;
+        var an=<?php Print($an); ?>;
+        var data = google.visualization.arrayToDataTable([
+            ['Βαθμολογία', 'Mhl'],
+            ['Άριστη',a],
+            ['Καλή',k],
+            ['Μέτρια',m],
+            ['Άνεπαρκής',an],
+        ]);
+
+        var options = {
+            title:'Ποσοστά βαθμολογίων',
+            is3D:true
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('myChart'));
+        chart.draw(data, options);
+    }
+</script>
+<script src="assets/js/grade.js"></script>
 <script src="assets/js/aside.js"></script>
 </body>
 </html>
+
