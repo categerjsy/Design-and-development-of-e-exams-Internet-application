@@ -83,28 +83,32 @@ include 'config.php';
         <?php
         $id_exam=$_SESSION["correction_id_exam"];
         $id_pr=$_SESSION["id_professor"];
+
+        $a = 0;
+        $k = 0;
+        $m = 0;
+        $an = 0;
+
+
         $queryex=mysqli_query($conn,"SELECT * FROM wants WHERE id_professor='$id_pr'");
         while ($rowex = mysqli_fetch_array($queryex, MYSQLI_ASSOC)) {
             $res=$rowex["id_results"];
             $query = mysqli_query($conn, "SELECT * FROM results WHERE exam='$id_exam' and id_results='$res'");
             while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
                 $gr = $row["final_grade"];
-                $a = 0;
-                $k = 0;
-                $m = 0;
-                $an = 0;
+
                 if ($gr >= 9) {
                     $a = $a + 1;
-                } else if (($gr < 9) && ($gr > 7)) {
+                } else if (($gr < 9) && ($gr >= 7)) {
                     $k = $k + 1;
-                } else if (($gr <= 7) && ($gr > 5)) {
+                } else if (($gr <= 7) && ($gr >= 5)) {
                     $m = $m + 1;
                 } else {
                     $an = $an + 1;
                 }
             }
         }
-        echo $a." ddd".$k."sss ".$m." ssssad".$an;
+
         ?>
         <div
                 id="myChart" style="width:100%; max-width:600px; height:500px;">
