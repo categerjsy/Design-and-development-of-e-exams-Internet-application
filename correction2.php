@@ -96,14 +96,33 @@ include 'config.php';
             while ($rows = mysqli_fetch_array($querys, MYSQLI_ASSOC)) {
                 $name=$rows["name"];
                 $surname=$rows["surname"];
+                $query1=mysqli_query($conn,"SELECT * FROM get WHERE id_student='$id_student' ");
+                $flag=0;
+                while ($row1 = mysqli_fetch_array($query1, MYSQLI_ASSOC)) {
+                    $id_result=$row1["id_results"];
+                    $query2=mysqli_query($conn,"SELECT * FROM results WHERE id_results='$id_result' and exam='$id_exam'");
 
-                            echo "<form action='correction3.php'  method='post' >";
-                            echo "<button type = 'submit' name='id_student' class='wbtn' value='$id_student'>";
-                            echo "Διόρθωση εξέτασης φοιτητή";
-                            echo "</button>";
-                            echo "</form>";
-                            echo "$name $surname";
-                            echo "<hr>";
+                    while ($row2 = mysqli_fetch_array($query2, MYSQLI_ASSOC)) {
+                        echo "<form action='cal_resultp.php'  method='post' >";
+                        echo "<button type = 'submit' name='id_student' class='wbtn' value='$id_student'>";
+                        echo "Αναλυτική βαθμολογία εξέτασης";
+                        echo "</button>";
+                        echo "</form>";
+                        echo "$name $surname";
+                        echo "<hr>";
+                        $flag=1;
+                    }
+
+                }
+                            if($flag==0) {
+                                echo "<form action='correction3.php'  method='post' >";
+                                echo "<button type = 'submit' name='id_student' class='wbtn' value='$id_student'>";
+                                echo "Διόρθωση εξέτασης φοιτητή";
+                                echo "</button>";
+                                echo "</form>";
+                                echo "$name $surname";
+                                echo "<hr>";
+                            }
 
             }
 
