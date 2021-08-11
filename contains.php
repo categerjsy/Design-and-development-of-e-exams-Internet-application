@@ -6,9 +6,9 @@ $exam=$_SESSION["id_exam"];
 
        
 //mysqli_close($conn);
-	if (isset($_POST['add_enemy'])){
+	if (isset($_POST['add_question'])){
 			$sql = "INSERT INTO contains (id_exam,id_question)
-			VALUES ('$exam', ".$_POST["add_enemy"].")";
+			VALUES ('$exam', ".$_POST["add_question"].")";
 
 		mysqli_query($conn,$sql);
 
@@ -22,10 +22,10 @@ $exam=$_SESSION["id_exam"];
 	
 	 
 	
-	if (isset($_POST['remove_enemy'])){
+	if (isset($_POST['remove_question'])){
 	
 		 
-		$sql = "DELETE FROM contains WHERE id_exam='$exam' AND id_question=".$_POST["remove_enemy"]."";
+		$sql = "DELETE FROM contains WHERE id_exam='$exam' AND id_question=".$_POST["remove_question"]."";
 	
 		mysqli_query($conn,$sql);
 	
