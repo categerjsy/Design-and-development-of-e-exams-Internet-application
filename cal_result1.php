@@ -152,6 +152,8 @@ include 'config.php';
                     while ($row2 = mysqli_fetch_array($query2, MYSQLI_ASSOC)) {
                         echo "<br>Απάντηση φοιτητή: ";
                         echo "<b>".$row2['student_answer']."</b>";
+                        echo "<br>Υπολειπόμενος φοιτητή: ";
+                        echo "<b>".$row2['time_answer']."</b>";
                         $i=1;
                     }
                     if($i==0){
@@ -174,6 +176,7 @@ include 'config.php';
                     while ($row2 = mysqli_fetch_array($query2, MYSQLI_ASSOC)) {
                         echo "<br>Απάντηση φοιτητή: ";
                         $st_a=$row2['student_answer'];
+                        $t=$row2['time_answer'];
                         $i=1;
                     }
                     if($i==0){
@@ -201,8 +204,10 @@ include 'config.php';
 
                         }
                         echo "</form>";
-                    }
 
+                    }
+                    echo "<br>Υπολειπόμενος φοιτητή: ";
+                    echo "<b>$t</b>";
                     $query3=mysqli_query($conn,"SELECT * FROM correction WHERE id_question='$id_question' AND id_exam='$id_exam' AND id_student='$id_st'");
                     while ($row3 = mysqli_fetch_array($query3, MYSQLI_ASSOC)) {
                         echo "<br>Βαθμολογία φοιτητή: ";
@@ -221,6 +226,7 @@ include 'config.php';
                     while ($row2 = mysqli_fetch_array($query2, MYSQLI_ASSOC)) {
                         echo "<br>Απάντηση φοιτητή: ";
                         array_push( $st_a,$row2['student_answer']);
+                        $t=$row2['time_answer'];
                         $i=1;
                     }
                     if($i==0){
@@ -250,9 +256,11 @@ include 'config.php';
 
 
                         }
+
                         echo "</form>";
                     }
-
+                    echo "<br>Υπολειπόμενος φοιτητή: ";
+                    echo "<b>$t</b>";
                     $query3=mysqli_query($conn,"SELECT * FROM correction WHERE id_question='$id_question' AND id_exam='$id_exam' AND id_student='$id_st'");
                     while ($row3 = mysqli_fetch_array($query3, MYSQLI_ASSOC)) {
                         echo "<br>Βαθμολογία φοιτητή: ";
@@ -274,6 +282,8 @@ include 'config.php';
                         $student_answer=$row2["student_answer"];
                         echo " Απάντήση φοιτητή:";
                         echo "$student_answer";
+                        echo "<br>Υπολειπόμενος φοιτητή: ";
+                        echo "<b>".$row2['time_answer']."</b>";
                         $i=1;
                     }
                     if($i==0){

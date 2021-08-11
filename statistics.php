@@ -141,7 +141,7 @@ include 'config.php';
         ]);
 
         var options = {
-            title:'Επιδώσεις φοιτητών',
+            title:'Επιδόσεις φοιτητών',
             is3D:true
         };
 
