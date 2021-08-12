@@ -54,7 +54,7 @@ include 'config.php';
         </div>
 
         <div class="nav-links">
-            <a  href="profilef.php"> <?php echo "$username"; ?></a>
+            <a  href="profilek.php"> <?php echo "$username"; ?></a>
             <a href="logout.php">Αποσύνδεση</a>
         </div>
     </div>

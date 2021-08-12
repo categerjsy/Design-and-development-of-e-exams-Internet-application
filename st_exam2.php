@@ -17,18 +17,18 @@ $exam=$_POST["id_exam"];
 			$date_end = new DateTime($end_time);
 			$now = new DateTime();
 
-			//if($now>$date_start) {
+			if(($now>=$date_start)&&($now<=$date_end)) {
                 $_SESSION["id_exam"]=$exam;
 				$location="/Ptuxiaki/examination.php";
 				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
-			//}
-//			if($now<$date_start){
-//                $msg="Η εξέταση σας ξεκινάει στις $start_time";
-//                function_alert($msg);
-//                echo '<script type="text/JavaScript">
-//                     history.back()
-//                     </script>';
-//			}
+			}
+			else{
+                $msg="Η εξέταση σας ξεκινάει στις $start_time";
+                function_alert($msg);
+                echo '<script type="text/JavaScript">
+                     history.back()
+                     </script>';
+			}
 		}
 	
 		//header('Location: ' . $_SERVER['HTTP_REFERER']);
