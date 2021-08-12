@@ -180,22 +180,38 @@ include 'config.php';
                         $i=1;
                     }
                     if($i==0){
+
+                        $query4=mysqli_query($conn,"SELECT * FROM has WHERE id_question='$id_question'");
+                        while ($row4 = mysqli_fetch_array($query4, MYSQLI_ASSOC)) {
+                            $id_pa = $row4["id_possibleAnswer"];
+                            echo "<form>";
+                            $query5 = mysqli_query($conn, "SELECT * FROM possible_answer WHERE id_possibleAnswer='$id_pa'");
+                            while ($row5 = mysqli_fetch_array($query5, MYSQLI_ASSOC)) {
+                                $pa = $row5["text"];
+
+                                echo "<h1 style='margin-left:30%;'><label class='containerr' for='$pa'> $pa
+									<input type='radio'  id='$pa' name='pa' value='$pa' disabled>
+									<span class='checkmarkr'></span>
+								  	</label></h1>";
+                            }
+                        }
+                        echo "</form>";
                         echo "<br><b>Ο φοιτητής δεν έδωσε απάντηση </b>";
-                    }
+                    }else {
                     $query4=mysqli_query($conn,"SELECT * FROM has WHERE id_question='$id_question'");
                     while ($row4 = mysqli_fetch_array($query4, MYSQLI_ASSOC)) {
                         $id_pa = $row4["id_possibleAnswer"];
                         echo "<form>";
                         $query5 = mysqli_query($conn, "SELECT * FROM possible_answer WHERE id_possibleAnswer='$id_pa'");
                         while ($row5 = mysqli_fetch_array($query5, MYSQLI_ASSOC)) {
-                            $pa=$row5["text"];
-                            if($id_pa!=$st_a) {
+                            $pa = $row5["text"];
+                            if ($id_pa != $st_a) {
                                 echo "<h1 style='margin-left:30%;'><label class='containerr' for='$pa'> $pa
 									<input type='radio'  id='$pa' name='pa' value='$pa' disabled>
 									<span class='checkmarkr'></span>
 								  	</label></h1>";
                             }
-                            if($id_pa==$st_a) {
+                            if ($id_pa == $st_a) {
                                 echo "<h1 style='margin-left:30%;'><label class='containerr' for='$pa'> $pa
 									<input type='radio'  id='$pa' name='pa' value='$pa' checked disabled>
 									<span class='checkmarkr'></span>
@@ -204,14 +220,16 @@ include 'config.php';
 
                         }
                         echo "</form>";
-
                     }
+
+
                     echo "<br>Υπολειπόμενος φοιτητή: ";
                     echo "<b>$t</b>";
                     $query3=mysqli_query($conn,"SELECT * FROM correction WHERE id_question='$id_question' AND id_exam='$id_exam' AND id_student='$id_st'");
                     while ($row3 = mysqli_fetch_array($query3, MYSQLI_ASSOC)) {
                         echo "<br>Βαθμολογία φοιτητή: ";
                         echo $row3['st_grade'];
+                    }
                     }
                     echo "<hr>";
                 }
@@ -230,24 +248,38 @@ include 'config.php';
                         $i=1;
                     }
                     if($i==0){
-                        echo "<br><b>Ο φοιτητής δεν έδωσε απάντηση </b>";
-                    }
-                    $query4=mysqli_query($conn,"SELECT * FROM has WHERE id_question='$id_question'");
-                    while ($row4 = mysqli_fetch_array($query4, MYSQLI_ASSOC)) {
-                        $id_pa = $row4["id_possibleAnswer"];
-                        echo "<form>";
-                        $query5 = mysqli_query($conn, "SELECT * FROM possible_answer WHERE id_possibleAnswer='$id_pa'");
-                        while ($row5 = mysqli_fetch_array($query5, MYSQLI_ASSOC)) {
-                            $pa=$row5["text"];
 
-                            if (in_array( $id_pa, $st_a))
-                            {
-                                    echo "<h1 style='margin-left:30%;'><label class='container' for='$pa'>$pa
+                        $query4 = mysqli_query($conn, "SELECT * FROM has WHERE id_question='$id_question'");
+                        while ($row4 = mysqli_fetch_array($query4, MYSQLI_ASSOC)) {
+                            $id_pa = $row4["id_possibleAnswer"];
+                            echo "<form>";
+                            $query5 = mysqli_query($conn, "SELECT * FROM possible_answer WHERE id_possibleAnswer='$id_pa'");
+                            while ($row5 = mysqli_fetch_array($query5, MYSQLI_ASSOC)) {
+                                $pa = $row5["text"];
+                                echo "<h1 style='margin-left:30%;'><label class='container' for='$pa'>$pa
                                         <input type='checkbox' id='$pa' name='pa[]' value='$pa' disabled>
                                         <span class='checkmark'></span>
                                         </label></h1>";
                             }
-                            else {
+                        }
+                            echo "</form>";
+                        echo "<br><b>Ο φοιτητής δεν έδωσε απάντηση </b>";
+                    }
+                    else {
+                        $query4 = mysqli_query($conn, "SELECT * FROM has WHERE id_question='$id_question'");
+                        while ($row4 = mysqli_fetch_array($query4, MYSQLI_ASSOC)) {
+                            $id_pa = $row4["id_possibleAnswer"];
+                            echo "<form>";
+                            $query5 = mysqli_query($conn, "SELECT * FROM possible_answer WHERE id_possibleAnswer='$id_pa'");
+                            while ($row5 = mysqli_fetch_array($query5, MYSQLI_ASSOC)) {
+                                $pa = $row5["text"];
+
+                                if (in_array($id_pa, $st_a)) {
+                                    echo "<h1 style='margin-left:30%;'><label class='container' for='$pa'>$pa
+                                        <input type='checkbox' id='$pa' name='pa[]' value='$pa' disabled>
+                                        <span class='checkmark'></span>
+                                        </label></h1>";
+                                } else {
                                     echo "<h1 style='margin-left:30%;'><label class='container' for='$pa'>$pa
                                      <input type='checkbox' id='$pa' name='pa[]' value='$pa' checked disabled>
 									 <span class='checkmark'></span>
@@ -255,16 +287,17 @@ include 'config.php';
                                 }
 
 
-                        }
+                            }
 
-                        echo "</form>";
-                    }
-                    echo "<br>Υπολειπόμενος φοιτητή: ";
-                    echo "<b>$t</b>";
-                    $query3=mysqli_query($conn,"SELECT * FROM correction WHERE id_question='$id_question' AND id_exam='$id_exam' AND id_student='$id_st'");
-                    while ($row3 = mysqli_fetch_array($query3, MYSQLI_ASSOC)) {
-                        echo "<br>Βαθμολογία φοιτητή: ";
-                        echo $row3['st_grade'];
+                            echo "</form>";
+                        }
+                        echo "<br>Υπολειπόμενος φοιτητή: ";
+                        echo "<b>$t</b>";
+                        $query3 = mysqli_query($conn, "SELECT * FROM correction WHERE id_question='$id_question' AND id_exam='$id_exam' AND id_student='$id_st'");
+                        while ($row3 = mysqli_fetch_array($query3, MYSQLI_ASSOC)) {
+                            echo "<br>Βαθμολογία φοιτητή: ";
+                            echo $row3['st_grade'];
+                        }
                     }
                     echo "<hr>";
                 }

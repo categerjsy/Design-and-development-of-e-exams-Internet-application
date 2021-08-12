@@ -25,30 +25,34 @@ while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
                 $is_correct = $row3["is_correct"];
             }
         }
+        $tf=0;
         //This is for answer
         $query5=mysqli_query($conn,"SELECT * FROM answer WHERE id_question='$id_question' AND id_exam='$id_exam' AND id_student='$id_st'");
         while ($row5 = mysqli_fetch_array($query5, MYSQLI_ASSOC)) {
             $student_answer=$row5["student_answer"];
+            $tf=1;
         }
-        if($student_answer=="True"){
-            if($is_correct==0){
-                mysqli_query($conn, "INSERT INTO correction (id_exam,id_student,id_question,st_grade)
+        if($tf==1) {
+            if ($student_answer == "True") {
+                if ($is_correct == 0) {
+                    mysqli_query($conn, "INSERT INTO correction (id_exam,id_student,id_question,st_grade)
 			                VALUES ('$id_exam','$id_st', '$id_question','-$neg_grade')");
-            }
-            if($is_correct==1){
-                mysqli_query($conn, "INSERT INTO correction  (id_exam,id_student,id_question,st_grade)
+                }
+                if ($is_correct == 1) {
+                    mysqli_query($conn, "INSERT INTO correction  (id_exam,id_student,id_question,st_grade)
 			                VALUES ('$id_exam','$id_st', '$id_question','$grade')");
+                }
             }
-        }
-        if($student_answer=="False"){
-            if($is_correct==0){
-                mysqli_query($conn, "INSERT INTO correction  (id_exam,id_student,id_question,st_grade)
+            if ($student_answer == "False") {
+                if ($is_correct == 0) {
+                    mysqli_query($conn, "INSERT INTO correction  (id_exam,id_student,id_question,st_grade)
 			                VALUES ('$id_exam','$id_st', '$id_question','$grade')");
-            }
-            if($is_correct==1){
+                }
+                if ($is_correct == 1) {
 
-                mysqli_query($conn, "INSERT INTO correction (id_exam,id_student,id_question,st_grade)
+                    mysqli_query($conn, "INSERT INTO correction (id_exam,id_student,id_question,st_grade)
 			                VALUES ('$id_exam','$id_st', '$id_question','-$neg_grade')");
+                }
             }
         }
     }

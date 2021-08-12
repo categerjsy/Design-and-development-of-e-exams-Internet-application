@@ -102,16 +102,17 @@ include 'config.php';
 							while ($row = mysqli_fetch_array($queryf, MYSQLI_ASSOC)) {
 							$start_time=$row["date_time"];
 							$end_time=$row["time"];
-							$date = new DateTime($end_time);
+							$date_end = new DateTime($end_time);
+							$date_start= new DateTime($start_time);
 							$now = new DateTime();
-								if($date > $now) {
-								echo "<form action='st_exam2.php'  method='post' >";
-								echo "<button type = 'submit' name='id_exam' class='wbtn' value='$id_exam'>";
-								echo "Συμμετοχή στην εξέταση";
-								echo "</button>";
-								echo "</form>";
-								echo " Έναρξη:  $start_time Λήξη:  $end_time";
-								echo "<hr>";
+								if($date_end > $now) {
+                                        echo "<form action='st_exam2.php'  method='post' >";
+                                        echo "<button type = 'submit' name='id_exam' class='wbtn' value='$id_exam'>";
+                                        echo "Συμμετοχή στην εξέταση";
+                                        echo "</button>";
+                                        echo "</form>";
+                                        echo " Έναρξη:  $start_time Λήξη:  $end_time";
+                                        echo "<hr>";
 								}
 							}
 							
