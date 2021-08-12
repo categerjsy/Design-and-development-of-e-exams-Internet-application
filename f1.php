@@ -201,13 +201,13 @@ include 'config.php';
                                         $row = mysqli_num_rows($result); 
                                         if ($row) { 
                                         echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
-                                        echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
+                                        echo "<button type ='submit' name='remove_question' class='wbtn' value='$id_question'>";
                                         echo "Αφαίρεση ερώτησης";
                                         echo "</button>";
                                         }
                                         else{
                                         echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
-                                        echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
+                                        echo "<button type = 'submit' name='add_question' class='wbtn' value='$id_question'>";
                                         echo "Προσθήκη ερώτησης";
                                         echo "</button>";
                                         }
@@ -231,13 +231,13 @@ include 'config.php';
                                             $row = mysqli_num_rows($result); 
                                             if ($row) { 
                                                 echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
-                                            echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
+                                            echo "<button type ='submit' name='remove_question' class='wbtn' value='$id_question'>";
                                             echo "Αφαίρεση ερώτησης";
                                             echo "</button>";
                                             }
                                             else{
                                                 echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
-                                            echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
+                                            echo "<button type = 'submit' name='add_question' class='wbtn' value='$id_question'>";
                                             echo "Προσθήκη ερώτησης";
                                             echo "</button>";
                                             }
@@ -261,13 +261,13 @@ include 'config.php';
                                                 $row = mysqli_num_rows($result); 
                                                 if ($row) { 
                                                     echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
-                                                echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
+                                                echo "<button type ='submit' name='remove_question' class='wbtn' value='$id_question'>";
                                                 echo "Αφαίρεση ερώτησης";
                                                 echo "</button>";
                                                 }
                                                 else{
                                                     echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
-                                                echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
+                                                echo "<button type = 'submit' name='add_question' class='wbtn' value='$id_question'>";
                                                 echo "Προσθήκη ερώτησης";
                                                 echo "</button>";
                                                 }
@@ -291,13 +291,13 @@ include 'config.php';
                                                 $row = mysqli_num_rows($result); 
                                                 if ($row) { 
                                                     echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
-                                                echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
+                                                echo "<button type ='submit' name='remove_question' class='wbtn' value='$id_question'>";
                                                 echo "Αφαίρεση ερώτησης";
                                                 echo "</button>";
                                                 }
                                                 else{
                                                     echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
-                                                echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
+                                                echo "<button type = 'submit' name='add_question' class='wbtn' value='$id_question'>";
                                                 echo "Προσθήκη ερώτησης";
                                                 echo "</button>";
                                                 }
@@ -320,13 +320,13 @@ include 'config.php';
                                                 $row = mysqli_num_rows($result); 
                                                 if ($row) { 
                                                 echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
-                                                echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
+                                                echo "<button type ='submit' name='remove_question' class='wbtn' value='$id_question'>";
                                                 echo "Αφαίρεση ερώτησης";
                                                 echo "</button>";
                                                 }
                                                 else{
                                                 echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
-                                                echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
+                                                echo "<button type = 'submit' name='add_question' class='wbtn' value='$id_question'>";
                                                 echo "Προσθήκη ερώτησης";
                                                 echo "</button>";
                                                 }
@@ -366,13 +366,13 @@ include 'config.php';
                                     $row = mysqli_num_rows($result1); 
                                         if ($row) { 
                                         echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
-                                        echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
+                                        echo "<button type ='submit' name='remove_question' class='wbtn' value='$id_question'>";
                                         echo "Αφαίρεση ερώτησης";
                                         echo "</button>";
                                         }
                                         else{
                                         echo "<form method='post' action='contains.php#form-anchor' id='form-anchor'>";
-                                        echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
+                                        echo "<button type = 'submit' name='add_question' class='wbtn' value='$id_question'>";
                                         echo "Προσθήκη ερώτησης";
                                         echo "</button>";
                                         }
@@ -400,13 +400,13 @@ include 'config.php';
                                         $row = mysqli_num_rows($result1); 
                                             if ($row) { 
                                             echo "<form method='post' action='contains.php'>";
-                                            echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
+                                            echo "<button type ='submit' name='remove_question' class='wbtn' value='$id_question'>";
                                             echo "Αφαίρεση ερώτησης";
                                             echo "</button>";
                                             }
                                             else{
                                             echo "<form method='post' action='contains.php'>";
-                                            echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
+                                            echo "<button type = 'submit' name='add_question' class='wbtn' value='$id_question'>";
                                             echo "Προσθήκη ερώτησης";
                                             echo "</button>";
                                             }
@@ -434,13 +434,13 @@ include 'config.php';
                                         $row = mysqli_num_rows($result1); 
                                             if ($row) { 
                                             echo "<form method='post' action='contains.php'>";
-                                            echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
+                                            echo "<button type ='submit' name='remove_question' class='wbtn' value='$id_question'>";
                                             echo "Αφαίρεση ερώτησης";
                                             echo "</button>";
                                             }
                                             else{
                                             echo "<form method='post' action='contains.php'>";
-                                            echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
+                                            echo "<button type = 'submit' name='add_question' class='wbtn' value='$id_question'>";
                                             echo "Προσθήκη ερώτησης";
                                             echo "</button>";
                                             }
@@ -468,13 +468,13 @@ include 'config.php';
                                             $row = mysqli_num_rows($result1); 
                                                 if ($row) { 
                                                 echo "<form method='post' action='contains.php'>";
-                                                echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
+                                                echo "<button type ='submit' name='remove_question' class='wbtn' value='$id_question'>";
                                                 echo "Αφαίρεση ερώτησης";
                                                 echo "</button>";
                                                 }
                                                 else{
                                                 echo "<form method='post' action='contains.php'>";
-                                                echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
+                                                echo "<button type = 'submit' name='add_question' class='wbtn' value='$id_question'>";
                                                 echo "Προσθήκη ερώτησης";
                                                 echo "</button>";
                                                 }
@@ -502,13 +502,13 @@ include 'config.php';
                                                 $row = mysqli_num_rows($result1); 
                                                     if ($row) { 
                                                     echo "<form method='post' action='contains.php'>";
-                                                    echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
+                                                    echo "<button type ='submit' name='remove_question' class='wbtn' value='$id_question'>";
                                                     echo "Αφαίρεση ερώτησης";
                                                     echo "</button>";
                                                     }
                                                     else{
                                                     echo "<form method='post' action='contains.php'>";
-                                                    echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
+                                                    echo "<button type = 'submit' name='add_question' class='wbtn' value='$id_question'>";
                                                     echo "Προσθήκη ερώτησης";
                                                     echo "</button>";
                                                     }
@@ -549,13 +549,13 @@ include 'config.php';
                                         $row = mysqli_num_rows($result2); 
                                         if ($row) { 
                                             echo "<form method='post' action='contains.php'>";
-                                            echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
+                                            echo "<button type ='submit' name='remove_question' class='wbtn' value='$id_question'>";
                                             echo "Αφαίρεση ερώτησης";
                                             echo "</button>";
                                             }
                                             else{
                                             echo "<form method='post' action='contains.php'>";
-                                            echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
+                                            echo "<button type = 'submit' name='add_question' class='wbtn' value='$id_question'>";
                                             echo "Προσθήκη ερώτησης";
                                             echo "</button>";
                                             }
@@ -593,13 +593,13 @@ include 'config.php';
                                             $row = mysqli_num_rows($result2); 
                                             if ($row) { 
                                                 echo "<form method='post' action='contains.php'>";
-                                                echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
+                                                echo "<button type ='submit' name='remove_question' class='wbtn' value='$id_question'>";
                                                 echo "Αφαίρεση ερώτησης";
                                                 echo "</button>";
                                                 }
                                                 else{
                                                 echo "<form method='post' action='contains.php'>";
-                                                echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
+                                                echo "<button type = 'submit' name='add_question' class='wbtn' value='$id_question'>";
                                                 echo "Προσθήκη ερώτησης";
                                                 echo "</button>";
                                                 }
@@ -636,13 +636,13 @@ include 'config.php';
                                             $row = mysqli_num_rows($result2); 
                                             if ($row) { 
                                                 echo "<form method='post' action='contains.php'>";
-                                                echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
+                                                echo "<button type ='submit' name='remove_question' class='wbtn' value='$id_question'>";
                                                 echo "Αφαίρεση ερώτησης";
                                                 echo "</button>";
                                                 }
                                                 else{
                                                 echo "<form method='post' action='contains.php'>";
-                                                echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
+                                                echo "<button type = 'submit' name='add_question' class='wbtn' value='$id_question'>";
                                                 echo "Προσθήκη ερώτησης";
                                                 echo "</button>";
                                                 }
@@ -679,13 +679,13 @@ include 'config.php';
                                             $row = mysqli_num_rows($result2); 
                                             if ($row) { 
                                                 echo "<form method='post' action='contains.php'>";
-                                                echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
+                                                echo "<button type ='submit' name='remove_question' class='wbtn' value='$id_question'>";
                                                 echo "Αφαίρεση ερώτησης";
                                                 echo "</button>";
                                                 }
                                                 else{
                                                 echo "<form method='post' action='contains.php'>";
-                                                echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
+                                                echo "<button type = 'submit' name='add_question' class='wbtn' value='$id_question'>";
                                                 echo "Προσθήκη ερώτησης";
                                                 echo "</button>";
                                                 }
@@ -722,13 +722,13 @@ include 'config.php';
                                             $row = mysqli_num_rows($result2); 
                                             if ($row) { 
                                                 echo "<form method='post' action='contains.php'>";
-                                                echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
+                                                echo "<button type ='submit' name='remove_question' class='wbtn' value='$id_question'>";
                                                 echo "Αφαίρεση ερώτησης";
                                                 echo "</button>";
                                                 }
                                                 else{
                                                 echo "<form method='post' action='contains.php'>";
-                                                echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
+                                                echo "<button type = 'submit' name='add_question' class='wbtn' value='$id_question'>";
                                                 echo "Προσθήκη ερώτησης";
                                                 echo "</button>";
                                                 }
@@ -778,13 +778,13 @@ include 'config.php';
                                         $row = mysqli_num_rows($result3); 
                                         if ($row) { 
                                             echo "<form method='post' action='contains.php'>";
-                                            echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
+                                            echo "<button type ='submit' name='remove_question' class='wbtn' value='$id_question'>";
                                             echo "Αφαίρεση ερώτησης";
                                             echo "</button>";
                                             }
                                             else{
                                             echo "<form method='post' action='contains.php'>";
-                                            echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
+                                            echo "<button type = 'submit' name='add_question' class='wbtn' value='$id_question'>";
                                             echo "Προσθήκη ερώτησης";
                                             echo "</button>";
                                             }
@@ -820,13 +820,13 @@ include 'config.php';
                                             $row = mysqli_num_rows($result3); 
                                             if ($row) { 
                                                 echo "<form method='post' action='contains.php'>";
-                                                echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
+                                                echo "<button type ='submit' name='remove_question' class='wbtn' value='$id_question'>";
                                                 echo "Αφαίρεση ερώτησης";
                                                 echo "</button>";
                                                 }
                                                 else{
                                                 echo "<form method='post' action='contains.php'>";
-                                                echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
+                                                echo "<button type = 'submit' name='add_question' class='wbtn' value='$id_question'>";
                                                 echo "Προσθήκη ερώτησης";
                                                 echo "</button>";
                                                 }
@@ -862,13 +862,13 @@ include 'config.php';
                                             $row = mysqli_num_rows($result3); 
                                             if ($row) { 
                                                 echo "<form method='post' action='contains.php'>";
-                                                echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
+                                                echo "<button type ='submit' name='remove_question' class='wbtn' value='$id_question'>";
                                                 echo "Αφαίρεση ερώτησης";
                                                 echo "</button>";
                                                 }
                                                 else{
                                                 echo "<form method='post' action='contains.php'>";
-                                                echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
+                                                echo "<button type = 'submit' name='add_question' class='wbtn' value='$id_question'>";
                                                 echo "Προσθήκη ερώτησης";
                                                 echo "</button>";
                                                 }
@@ -904,13 +904,13 @@ include 'config.php';
                                             $row = mysqli_num_rows($result3); 
                                             if ($row) { 
                                                 echo "<form method='post' action='contains.php'>";
-                                                echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
+                                                echo "<button type ='submit' name='remove_question' class='wbtn' value='$id_question'>";
                                                 echo "Αφαίρεση ερώτησης";
                                                 echo "</button>";
                                                 }
                                                 else{
                                                     echo "<form method='post' action='contains.php'>";
-                                                echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
+                                                echo "<button type = 'submit' name='add_question' class='wbtn' value='$id_question'>";
                                                 echo "Προσθήκη ερώτησης";
                                                 echo "</button>";
                                                 }
@@ -946,13 +946,13 @@ include 'config.php';
                                             $row = mysqli_num_rows($result3); 
                                             if ($row) { 
                                                 echo "<form method='post' action='contains.php'>";
-                                                echo "<button type ='submit' name='remove_enemy' class='wbtn' value='$id_question'>";
+                                                echo "<button type ='submit' name='remove_question' class='wbtn' value='$id_question'>";
                                                 echo "Αφαίρεση ερώτησης";
                                                 echo "</button>";
                                                 }
                                                 else{
                                                 echo "<form method='post' action='contains.php'>";
-                                                echo "<button type = 'submit' name='add_enemy' class='wbtn' value='$id_question'>";
+                                                echo "<button type = 'submit' name='add_question' class='wbtn' value='$id_question'>";
                                                 echo "Προσθήκη ερώτησης";
                                                 echo "</button>";
                                                 }
@@ -980,13 +980,9 @@ include 'config.php';
                      }
 					
 				 ?>
-				<?php
-                if(!$_SESSION["all_categ"]){
 
-                }
-                ?>	
 				
-    			<a href="show_exam.php?msg=exam"><button class="but" type="button">Ολοκλήρωση</button></a>
+    			<a href="s_exam.php"><button class="but" type="button">Ολοκλήρωση</button></a>
 					
 				<button class="cancelbtn" type="reset"><a href="profilek.php">Έξοδος</a></button>
             
