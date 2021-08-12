@@ -38,7 +38,37 @@ include 'config.php';
 		
 		    if ($conn->query($sql) === TRUE) {
              echo "Record updated successfully";
-             
+                $query=mysqli_query($conn,"SELECT * FROM exam WHERE id_exam='$id_exam'");
+                while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+                    $exam_datetime = $row["date_time"];
+                }
+                $query=mysqli_query($conn,"SELECT * FROM contains WHERE id_exam='$id_exam'");
+                $var1 = "00:00:00";
+                $date = new DateTime($var1);
+
+                while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+                    $id_question=$row["id_question"];
+                    $question=mysqli_query($conn,"select * from question where id_question='$id_question'");
+                    while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
+
+                        $var2=$row["time"];
+                        list($hours, $minutes, $seconds) = explode(":", $var2);
+                        $interval = new DateInterval("PT" . $hours . "H" . $minutes . "M" . $seconds . "S");
+                        $date->add($interval);
+
+                    }
+                }
+
+                $time= new DateTime($exam_datetime);
+                $d=$date->format("H:i:s");
+                list($h, $m, $s) = explode(":", $d);
+                $inter = new DateInterval("PT" . $h . "H" . $m . "M" . $s . "S");
+                $time->add($inter);
+
+                $time_for_database = $time->format('Y-m-d H:i:s');
+
+                $sql = "UPDATE exam SET time='$time_for_database' WHERE id_exam='$id_exam'";
+                $conn->query($sql);
                 $location="/Ptuxiaki/create_exam2.php";
                 header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
               } else {
