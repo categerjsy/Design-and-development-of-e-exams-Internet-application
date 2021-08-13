@@ -1,7 +1,7 @@
 <?php
 include 'config.php';
 session_start ();
-
+date_default_timezone_set('Europe/Athens') ;
  
 ?>
 
@@ -110,11 +110,12 @@ session_start ();
 					$location="/Ptuxiaki/profilef.php";
 					header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);		
 				}
-				// $end_time=$_SESSION["end_exam"];
-				// if($now>$end_time){
-				// 	$location="/Ptuxiaki/profilef.php";
-				// 	header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);		
-				// }
+                 $now = new Datetime();
+				 $end_time=$_SESSION["end_exam"];
+//				 if($now>=$end_time){
+//				 	$location="/Ptuxiaki/profilef.php";
+//				 	header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+//				 }
 
 				   $qu=$exam_array[$i];
 				   $_SESSION["qu"]=$qu;
