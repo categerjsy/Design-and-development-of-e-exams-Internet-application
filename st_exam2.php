@@ -24,8 +24,22 @@ $exam=$_POST["id_exam"];
 
             if($now >= $bt && $now <= $et){
                     $_SESSION["id_exam"]=$exam;
-                    $location="/Ptuxiaki/examination.php";
+                    $st=$_SESSION["id_student"];
+                    $f=0;
+                $querys=mysqli_query($conn,"SELECT * FROM gives WHERE id_exam='$exam' and id_student='$st'");
+
+                while ($rows = mysqli_fetch_array($querys, MYSQLI_ASSOC)) {
+                    $f=1;
+                    $msg="Δεν γίνεται να συμμετάσχετε δεύτερη φορά.";
+                    function_alert($msg);
+                    echo '<script type="text/JavaScript">
+                     history.back()
+                     </script>';
+                }
+                if($f==0) {
+                    $location = "/Ptuxiaki/examination.php";
                     header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+                }
             }
             else{
                     $msg="Η εξέταση σας ξεκινάει στις $begintime";

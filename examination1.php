@@ -112,10 +112,11 @@ date_default_timezone_set('Europe/Athens') ;
 				}
                  $now = new Datetime();
 				 $end_time=$_SESSION["end_exam"];
-//				 if($now>=$end_time){
-//				 	$location="/Ptuxiaki/profilef.php";
-//				 	header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
-//				 }
+				 $et = new Datetime($end_time);
+				 if($now>=$et){
+				 	$location="/Ptuxiaki/profilef.php";
+				 	header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+				 }
 
 				   $qu=$exam_array[$i];
 				   $_SESSION["qu"]=$qu;
