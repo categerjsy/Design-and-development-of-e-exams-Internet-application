@@ -82,7 +82,7 @@ include 'config.php';
 			<h2>Επεξεργασία Διαγωνίσματος</h2>
 			
 	
-			  <form action="edit_exam2.php" method="post">
+			  <form action="e_e.php" method="post">
 			  <label for="course">Παρακαλώ επιλέξτε διαγώνισμα για επεξεργασία</label> <br>
 			  <?php
 			   	$idp=$_SESSION["id_professor"];

@@ -113,10 +113,10 @@ date_default_timezone_set('Europe/Athens') ;
                  $now = new Datetime();
 				 $end_time=$_SESSION["end_exam"];
 				 $et = new Datetime($end_time);
-				 if($now>=$et){
-				 	$location="/Ptuxiaki/profilef.php";
-				 	header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
-				 }
+//				 if($now>=$et){
+//				 	$location="/Ptuxiaki/profilef.php";
+//				 	header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+//				 }
 
 				   $qu=$exam_array[$i];
 				   $_SESSION["qu"]=$qu;
@@ -278,14 +278,19 @@ date_default_timezone_set('Europe/Athens') ;
 		}
 
 
-		/*
-		start countdown
-		enter number and format
-		days, hours, minutes or seconds
-		*/
 		var total = '<?=$total?>';
-		
+        //var g1 = new Date();
+        //
+        //var g2 = new Date( <?//=$end_time ?>//);
+        //if (g1.getTime() < g2.getTime()) {
+        // window.location.href = "profilef.php";
+        //}
 		countDownClock(total,'seconds');
+
+
+
+
+
 		</script>
 		<script src="assets/js/aside.js"></script>
 	</body>
