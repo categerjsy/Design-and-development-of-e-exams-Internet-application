@@ -70,7 +70,6 @@ date_default_timezone_set('Europe/Athens') ;
 			<a href="change_password.php">Αλλαγή κωδικού</a>
 			<a href="enroll.php">Εγγραφή σε μάθημα</a>
 			<a href="st_exam.php">Εξετάσεις μαθημάτων</a>
-                <a href="correction.php">Διόρθωση διαγωνισμάτων</a>
             </div>
 	
 		</aside>
@@ -261,7 +260,12 @@ date_default_timezone_set('Europe/Athens') ;
 				window.location.href = "examination2.php";
 				return;
 			};
-
+                var g1 = new Date();
+                const g='<?=$end_time?>';
+                var g2 = new Date(g);
+                if (g1.getTime() >= g2.getTime()) {
+                    window.location.href = "profilef.php";
+                }
 			displayTimeLeft(secondsLeft);
 
 			},1000);
@@ -279,12 +283,7 @@ date_default_timezone_set('Europe/Athens') ;
 
 
 		var total = '<?=$total?>';
-        //var g1 = new Date();
-        //
-        //var g2 = new Date( <?//=$end_time ?>//);
-        //if (g1.getTime() < g2.getTime()) {
-        // window.location.href = "profilef.php";
-        //}
+
 		countDownClock(total,'seconds');
 
 
