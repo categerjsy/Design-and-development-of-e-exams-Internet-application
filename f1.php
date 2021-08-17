@@ -191,6 +191,9 @@ include 'config.php';
                                 $question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='Ελευθέρου κειμένου'");
                                 while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
                                     $qtext=$row["text"];
+                                    $dif=$row["difficulty_level"];
+                                    $grade=$row["grade"];
+                                    $ngrade=$row["negative_grade"];
                                     $q = "select * from contains where id_question='$id_question' and id_exam='$exam'"; 
                                         
                                         // Execute the query and store the result set 
@@ -213,7 +216,19 @@ include 'config.php';
                                         }
                                     }
                                     echo "</form>";
-                                    echo " $qtext<br> <br>";
+                                    if($dif=="easy") {
+                                        echo "<b style='color:green'> $qtext</b><br> <br>";
+                                    }
+                                    if($dif=="medium") {
+                                        echo "<b style='color:orange'> $qtext</b><br> <br>";
+                                    }
+                                    if($dif=="difficult") {
+                                        echo "<b style='color:red'> $qtext</b><br> <br>";
+                                    }
+                                    echo "Βαθμολογία: ";
+                                    echo $grade;
+                                    echo "<br> <br>Αρνητική Βαθμολογία: ";
+                                    echo $ngrade;;
                                     echo "<hr>";
                                 }
                             }else{
@@ -221,6 +236,9 @@ include 'config.php';
                                     $question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='Ελευθέρου κειμένου'");
                                     while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
                                         $qtext=$row["text"];
+                                        $dif=$row["difficulty_level"];
+                                        $grade=$row["grade"];
+                                        $ngrade=$row["negative_grade"];
                                         $q = "select * from contains where id_question='$id_question' and id_exam='$exam'"; 
                                             
                                             // Execute the query and store the result set 
@@ -242,7 +260,19 @@ include 'config.php';
                                             echo "</button>";
                                             }
                                         }
-                                        echo " $qtext<br> <br>";
+                                        if($dif=="easy") {
+                                            echo "<b style='color:green'> $qtext</b><br> <br>";
+                                        }
+                                        if($dif=="medium") {
+                                            echo "<b style='color:orange'> $qtext</b><br> <br>";
+                                        }
+                                        if($dif=="difficult") {
+                                            echo "<b style='color:red'> $qtext</b><br> <br>";
+                                        }
+                                        echo "Βαθμολογία: ";
+                                        echo $grade;
+                                        echo "<br> <br>Αρνητική Βαθμολογία: ";
+                                        echo $ngrade;;
                                         echo "<hr>";
                                     }
                                  }
@@ -251,6 +281,8 @@ include 'config.php';
                                         $question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='Ελευθέρου κειμένου' and difficulty_level='easy'");
                                         while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
                                             $qtext=$row["text"];
+                                            $grade=$row["grade"];
+                                            $ngrade=$row["negative_grade"];
                                             $q = "select * from contains where id_question='$id_question' and id_exam='$exam'"; 
                                                 
                                                 // Execute the query and store the result set 
@@ -273,7 +305,11 @@ include 'config.php';
                                                 }
                                             }
                                             echo "</form>";
-                                            echo " $qtext<br> <br>";
+                                            echo "<b style='color:green'> $qtext</b><br> <br>";
+                                            echo "Βαθμολογία: ";
+                                            echo $grade;
+                                            echo "<br> <br>Αρνητική Βαθμολογία: ";
+                                            echo $ngrade;;
                                             echo "<hr>";
                                         }
                                     }
@@ -281,6 +317,8 @@ include 'config.php';
                                         $question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='Ελευθέρου κειμένου' and difficulty_level='medium'");
                                         while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
                                             $qtext=$row["text"];
+                                            $grade=$row["grade"];
+                                            $ngrade=$row["negative_grade"];
                                             $q = "select * from contains where id_question='$id_question' and id_exam='$exam'"; 
                                                 
                                                 // Execute the query and store the result set 
@@ -302,7 +340,11 @@ include 'config.php';
                                                 echo "</button>";
                                                 }
                                             }
-                                            echo " $qtext<br> <br>";
+                                            echo "<b style='color:orange'> $qtext</b><br> <br>";
+                                            echo "Βαθμολογία: ";
+                                            echo $grade;
+                                            echo "<br> <br>Αρνητική Βαθμολογία: ";
+                                            echo $ngrade;;
                                             echo "<hr>";
                                         }
                                     }
@@ -310,6 +352,8 @@ include 'config.php';
                                         $question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='Ελευθέρου κειμένου' and difficulty_level='difficult'");
                                         while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
                                             $qtext=$row["text"];
+                                            $grade=$row["grade"];
+                                            $ngrade=$row["negative_grade"];
                                             $q = "select * from contains where id_question='$id_question' and id_exam='$exam'"; 
                                                 
                                                 // Execute the query and store the result set 
@@ -332,7 +376,11 @@ include 'config.php';
                                                 }
                                             }
                                             echo "</form>";
-                                            echo " $qtext<br> <br>";
+                                            echo "<b style='color:red'> $qtext</b><br> <br>";
+                                            echo "Βαθμολογία: ";
+                                            echo $grade;
+                                            echo "<br> <br>Αρνητική Βαθμολογία: ";
+                                            echo $ngrade;;
                                             echo "<hr>";
                                         }
                                     }
@@ -356,6 +404,9 @@ include 'config.php';
                                 $question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='True-False'");
                                 while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
                                     $qtext=$row["text"];
+                                    $dif=$row["difficulty_level"];
+                                    $grade=$row["grade"];
+                                    $ngrade=$row["negative_grade"];
                                     $q = "select * from contains where id_question='$id_question' and id_exam='$exam'"; 
                                         
                                         // Execute the query and store the result set 
@@ -378,11 +429,23 @@ include 'config.php';
                                         }
                                     }
                                     echo "</form>";
-                                    echo "$qtext<br><br>";
+                                    if($dif=="easy") {
+                                        echo "<b style='color:green'> $qtext</b><br> <br>";
+                                    }
+                                    if($dif=="medium") {
+                                        echo "<b style='color:orange'> $qtext</b><br> <br>";
+                                    }
+                                    if($dif=="difficult") {
+                                        echo "<b style='color:red'> $qtext</b><br> <br>";
+                                    }
                                     echo " <select id='answer' name='answer' disabled>
                                     <option value='T'>True</option>
                                     <option value='F'>False</option>
                                     </select>";
+                                    echo "Βαθμολογία: ";
+                                    echo $grade;
+                                    echo "<br> <br>Αρνητική Βαθμολογία: ";
+                                    echo $ngrade;;
                                     echo "<hr>";
                                 }
                             }else{
@@ -390,6 +453,9 @@ include 'config.php';
                                     $question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='True-False'");
                                     while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
                                         $qtext=$row["text"];
+                                        $grade=$row["grade"];
+                                        $ngrade=$row["negative_grade"];
+                                        $dif=$row["difficulty_level"];
                                         $q = "select * from contains where id_question='$id_question' and id_exam='$exam'"; 
                                             
                                             // Execute the query and store the result set 
@@ -412,11 +478,23 @@ include 'config.php';
                                             }
                                         }
                                         echo "</form>";
-                                        echo "$qtext<br><br>";
+                                        if($dif=="easy") {
+                                            echo "<b style='color:green'> $qtext</b><br> <br>";
+                                        }
+                                        if($dif=="medium") {
+                                            echo "<b style='color:orange'> $qtext</b><br> <br>";
+                                        }
+                                        if($dif=="difficult") {
+                                            echo "<b style='color:red'> $qtext</b><br> <br>";
+                                        }
                                         echo " <select id='answer' name='answer' disabled>
                                         <option value='T'>True</option>
                                         <option value='F'>False</option>
                                         </select>";
+                                        echo "Βαθμολογία: ";
+                                        echo $grade;
+                                        echo "<br> <br>Αρνητική Βαθμολογία: ";
+                                        echo $ngrade;;
                                         echo "<hr>";
                                     }
                                  }
@@ -424,6 +502,8 @@ include 'config.php';
                                     $question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='True-False'and difficulty_level='easy'");
                                     while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
                                         $qtext=$row["text"];
+                                        $grade=$row["grade"];
+                                        $ngrade=$row["negative_grade"];
                                         $q = "select * from contains where id_question='$id_question' and id_exam='$exam'"; 
                                             
                                             // Execute the query and store the result set 
@@ -446,11 +526,15 @@ include 'config.php';
                                             }
                                         }
                                         echo "</form>";
-                                        echo "$qtext<br><br>";
+                                        echo "<b style='color:green'> $qtext</b><br> <br>";
                                         echo " <select id='answer' name='answer' disabled>
                                         <option value='T'>True</option>
                                         <option value='F'>False</option>
                                         </select>";
+                                        echo "Βαθμολογία: ";
+                                        echo $grade;
+                                        echo "<br> <br>Αρνητική Βαθμολογία: ";
+                                        echo $ngrade;;
                                         echo "<hr>";
                                     }
                                 }
@@ -458,6 +542,8 @@ include 'config.php';
                                         $question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='True-False'and difficulty_level='medium'");
                                         while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
                                             $qtext=$row["text"];
+                                            $grade=$row["grade"];
+                                            $ngrade=$row["negative_grade"];
                                             $q = "select * from contains where id_question='$id_question' and id_exam='$exam'"; 
                                                 
                                                 // Execute the query and store the result set 
@@ -480,11 +566,15 @@ include 'config.php';
                                                 }
                                             }
                                             echo "</form>";
-                                            echo "$qtext<br><br>";
+                                            echo "<b style='color:orange'> $qtext</b><br> <br>";
                                             echo " <select id='answer' name='answer' disabled>
                                             <option value='T'>True</option>
                                             <option value='F'>False</option>
                                             </select>";
+                                            echo "Βαθμολογία: ";
+                                            echo $grade;
+                                            echo "<br> <br>Αρνητική Βαθμολογία: ";
+                                            echo $ngrade;;
                                             echo "<hr>";
                                         }
                                     }
@@ -492,6 +582,8 @@ include 'config.php';
                                             $question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='True-False'and difficulty_level='difficult'");
                                             while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
                                                 $qtext=$row["text"];
+                                                $grade=$row["grade"];
+                                                $ngrade=$row["negative_grade"];
                                                 $q = "select * from contains where id_question='$id_question' and id_exam='$exam'"; 
                                                     
                                                     // Execute the query and store the result set 
@@ -514,11 +606,15 @@ include 'config.php';
                                                     }
                                                 }
                                                 echo "</form>";
-                                                echo "$qtext<br><br>";
+                                                echo "<b style='color:red'> $qtext</b><br> <br>";
                                                 echo " <select id='answer' name='answer' disabled>
                                                 <option value='T'>True</option>
                                                 <option value='F'>False</option>
                                                 </select>";
+                                                echo "Βαθμολογία: ";
+                                                echo $grade;
+                                                echo "<br> <br>Αρνητική Βαθμολογία: ";
+                                                echo $ngrade;;
                                                 echo "<hr>";
                                             }
                                 }
@@ -539,6 +635,9 @@ include 'config.php';
                                 $question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='Multiple Choice'");
                                 while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
                                     $qtext=$row["text"];
+                                    $dif=$row["difficulty_level"];
+                                    $grade=$row["grade"];
+                                    $ngrade=$row["negative_grade"];
                                     $q = "select * from contains where id_question='$id_question' and id_exam='$exam'"; 
                                         
                                         // Execute the query and store the result set 
@@ -561,7 +660,15 @@ include 'config.php';
                                             }
                                     }
                                     echo "</form>";
-                                    echo " $qtext <br>";
+                                    if($dif=="easy") {
+                                        echo "<b style='color:green'> $qtext</b><br> <br>";
+                                    }
+                                    if($dif=="medium") {
+                                        echo "<b style='color:orange'> $qtext</b><br> <br>";
+                                    }
+                                    if($dif=="difficult") {
+                                        echo "<b style='color:red'> $qtext</b><br> <br>";
+                                    }
                                     $findidpa=mysqli_query($conn,"select * from has where  id_question='$id_question'");
                                     while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
                                         $id_pa=$row["id_possibleAnswer"];
@@ -574,8 +681,12 @@ include 'config.php';
                                             <span class='checkmarkr'></span>
                                             </label><p>";
                                         }
-                                    }	
-                                        echo "<hr>";		
+                                    }
+                                    echo "Βαθμολογία: ";
+                                    echo $grade;
+                                    echo "<br> <br>Αρνητική Βαθμολογία: ";
+                                    echo $ngrade;;
+                                    echo "<hr>";
                                 }
                             }
                             else{
@@ -583,6 +694,9 @@ include 'config.php';
                                     $question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='Multiple Choice'");
                                     while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
                                         $qtext=$row["text"];
+                                        $dif=$row["difficulty_level"];
+                                        $grade=$row["grade"];
+                                        $ngrade=$row["negative_grade"];
                                         $q = "select * from contains where id_question='$id_question' and id_exam='$exam'"; 
                                             
                                             // Execute the query and store the result set 
@@ -605,7 +719,15 @@ include 'config.php';
                                                 }
                                         }
                                         echo "</form>";
-                                        echo " $qtext <br>";
+                                        if($dif=="easy") {
+                                            echo "<b style='color:green'> $qtext</b><br> <br>";
+                                        }
+                                        if($dif=="medium") {
+                                            echo "<b style='color:orange'> $qtext</b><br> <br>";
+                                        }
+                                        if($dif=="difficult") {
+                                            echo "<b style='color:red'> $qtext</b><br> <br>";
+                                        }
                                         $findidpa=mysqli_query($conn,"select * from has where  id_question='$id_question'");
                                         while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
                                             $id_pa=$row["id_possibleAnswer"];
@@ -618,14 +740,20 @@ include 'config.php';
                                                 <span class='checkmarkr'></span>
                                                 </label><p>";
                                             }
-                                        }	
-                                            echo "<hr>";		
+                                        }
+                                        echo "Βαθμολογία: ";
+                                        echo $grade;
+                                        echo "<br> <br>Αρνητική Βαθμολογία: ";
+                                        echo $ngrade;;
+                                        echo "<hr>";
                                     }
                                  }
                                 if($_SESSION["easy"]){
                                     $question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='Multiple Choice' and difficulty_level='easy'");
                                     while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
                                         $qtext=$row["text"];
+                                        $grade=$row["grade"];
+                                        $ngrade=$row["negative_grade"];
                                         $q = "select * from contains where id_question='$id_question' and id_exam='$exam'"; 
                                             
                                             // Execute the query and store the result set 
@@ -648,7 +776,7 @@ include 'config.php';
                                                 }
                                         }
                                         echo "</form>";
-                                        echo " $qtext <br>";
+                                        echo "<b style='color:green'> $qtext</b><br> <br>";
                                         $findidpa=mysqli_query($conn,"select * from has where  id_question='$id_question'");
                                         while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
                                             $id_pa=$row["id_possibleAnswer"];
@@ -661,14 +789,20 @@ include 'config.php';
                                                 <span class='checkmarkr'></span>
                                                 </label><p>";
                                             }
-                                        }	
-                                            echo "<hr>";		
+                                        }
+                                        echo "Βαθμολογία: ";
+                                        echo $grade;
+                                        echo "<br> <br>Αρνητική Βαθμολογία: ";
+                                        echo $ngrade;;
+                                        echo "<hr>";
                                     }
                                 }
                                 if($_SESSION["medium"]){
                                     $question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='Multiple Choice' and difficulty_level='medium'");
                                     while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
                                         $qtext=$row["text"];
+                                        $grade=$row["grade"];
+                                        $ngrade=$row["negative_grade"];
                                         $q = "select * from contains where id_question='$id_question' and id_exam='$exam'"; 
                                             
                                             // Execute the query and store the result set 
@@ -691,7 +825,7 @@ include 'config.php';
                                                 }
                                         }
                                         echo "</form>";
-                                        echo " $qtext <br>";
+                                        echo "<b style='color:orange'> $qtext</b><br> <br>";
                                         $findidpa=mysqli_query($conn,"select * from has where  id_question='$id_question'");
                                         while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
                                             $id_pa=$row["id_possibleAnswer"];
@@ -704,14 +838,20 @@ include 'config.php';
                                                 <span class='checkmarkr'></span>
                                                 </label><p>";
                                             }
-                                        }	
-                                            echo "<hr>";		
+                                        }
+                                        echo "Βαθμολογία: ";
+                                        echo $grade;
+                                        echo "<br> <br>Αρνητική Βαθμολογία: ";
+                                        echo $ngrade;;
+                                        echo "<hr>";
                                     }
                                 }
                                 if($_SESSION["difficult"]){
                                     $question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='Multiple Choice' and difficulty_level='difficult'");
                                     while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
                                         $qtext=$row["text"];
+                                        $grade=$row["grade"];
+                                        $ngrade=$row["negative_grade"];
                                         $q = "select * from contains where id_question='$id_question' and id_exam='$exam'"; 
                                             
                                             // Execute the query and store the result set 
@@ -734,7 +874,7 @@ include 'config.php';
                                                 }
                                         }
                                         echo "</form>";
-                                        echo " $qtext <br>";
+                                        echo "<b style='color:red'> $qtext</b><br> <br>";
                                         $findidpa=mysqli_query($conn,"select * from has where  id_question='$id_question'");
                                         while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
                                             $id_pa=$row["id_possibleAnswer"];
@@ -747,8 +887,12 @@ include 'config.php';
                                                 <span class='checkmarkr'></span>
                                                 </label><p>";
                                             }
-                                        }	
-                                            echo "<hr>";		
+                                        }
+                                        echo "Βαθμολογία: ";
+                                        echo $grade;
+                                        echo "<br> <br>Αρνητική Βαθμολογία: ";
+                                        echo $ngrade;;
+                                        echo "<hr>";
                                     }
                                 }
                             }
@@ -768,6 +912,9 @@ include 'config.php';
                                 $question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='Multiple Choice More'");
                                 while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
                                     $qtext=$row["text"];
+                                    $dif=$row["difficulty_level"];
+                                    $grade=$row["grade"];
+                                    $ngrade=$row["negative_grade"];
                                     $q = "select * from contains where id_question='$id_question' and id_exam='$exam'"; 
                                         
                                         // Execute the query and store the result set 
@@ -790,7 +937,15 @@ include 'config.php';
                                             }
                                     }
                                     echo "</form>";
-                                    echo " $qtext<br> ";
+                                    if($dif=="easy") {
+                                        echo "<b style='color:green'> $qtext</b><br> <br>";
+                                    }
+                                    if($dif=="medium") {
+                                        echo "<b style='color:orange'> $qtext</b><br> <br>";
+                                    }
+                                    if($dif=="difficult") {
+                                        echo "<b style='color:red'> $qtext</b><br> <br>";
+                                    }
                                     $findidpa=mysqli_query($conn,"select * from has where  id_question='$id_question'");
                                     while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
                                         $id_pa=$row["id_possibleAnswer"];
@@ -803,6 +958,10 @@ include 'config.php';
                                         </label><p>";
                                         }
                                     }
+                                    echo "Βαθμολογία: ";
+                                    echo $grade;
+                                    echo "<br> <br>Αρνητική Βαθμολογία: ";
+                                    echo $ngrade;;
                                     echo "<hr>";
                                 }
                             } else {
@@ -810,6 +969,9 @@ include 'config.php';
                                     $question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='Multiple Choice More'");
                                     while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
                                         $qtext=$row["text"];
+                                        $dif=$row["difficulty_level"];
+                                        $grade=$row["grade"];
+                                        $ngrade=$row["negative_grade"];
                                         $q = "select * from contains where id_question='$id_question' and id_exam='$exam'"; 
                                             
                                             // Execute the query and store the result set 
@@ -832,7 +994,15 @@ include 'config.php';
                                                 }
                                         }
                                         echo "</form>";
-                                        echo " $qtext<br> ";
+                                        if($dif=="easy") {
+                                            echo "<b style='color:green'> $qtext</b><br> <br>";
+                                        }
+                                        if($dif=="medium") {
+                                            echo "<b style='color:orange'> $qtext</b><br> <br>";
+                                        }
+                                        if($dif=="difficult") {
+                                            echo "<b style='color:red'> $qtext</b><br> <br>";
+                                        }
                                         $findidpa=mysqli_query($conn,"select * from has where  id_question='$id_question'");
                                         while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
                                             $id_pa=$row["id_possibleAnswer"];
@@ -845,6 +1015,10 @@ include 'config.php';
                                             </label><p>";
                                             }
                                         }
+                                        echo "Βαθμολογία: ";
+                                        echo $grade;
+                                        echo "<br> <br>Αρνητική Βαθμολογία: ";
+                                        echo $ngrade;;
                                         echo "<hr>";
                                     }
                                  }
@@ -852,6 +1026,8 @@ include 'config.php';
                                     $question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='Multiple Choice More' and difficulty_level='easy'");
                                     while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
                                         $qtext=$row["text"];
+                                        $grade=$row["grade"];
+                                        $ngrade=$row["negative_grade"];
                                         $q = "select * from contains where id_question='$id_question' and id_exam='$exam'"; 
                                             
                                             // Execute the query and store the result set 
@@ -874,7 +1050,7 @@ include 'config.php';
                                                 }
                                         }
                                         echo "</form>";
-                                        echo " $qtext<br> ";
+                                        echo "<b style='color:green'> $qtext</b><br> <br>";
                                         $findidpa=mysqli_query($conn,"select * from has where  id_question='$id_question'");
                                         while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
                                             $id_pa=$row["id_possibleAnswer"];
@@ -887,6 +1063,10 @@ include 'config.php';
                                             </label><p>";
                                             }
                                         }
+                                        echo "Βαθμολογία: ";
+                                        echo $grade;
+                                        echo "<br> <br>Αρνητική Βαθμολογία: ";
+                                        echo $ngrade;;
                                         echo "<hr>";
                                     }
                                 }
@@ -894,6 +1074,8 @@ include 'config.php';
                                     $question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='Multiple Choice More' and difficulty_level='medium'");
                                     while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
                                         $qtext=$row["text"];
+                                        $grade=$row["grade"];
+                                        $ngrade=$row["negative_grade"];
                                         $q = "select * from contains where id_question='$id_question' and id_exam='$exam'"; 
                                             
                                             // Execute the query and store the result set 
@@ -916,7 +1098,7 @@ include 'config.php';
                                                 }
                                         }
                                         echo "</form>";
-                                        echo " $qtext<br> ";
+                                        echo "<b style='color:orange'> $qtext</b><br> <br>";
                                         $findidpa=mysqli_query($conn,"select * from has where  id_question='$id_question'");
                                         while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
                                             $id_pa=$row["id_possibleAnswer"];
@@ -929,6 +1111,10 @@ include 'config.php';
                                             </label><p>";
                                             }
                                         }
+                                        echo "Βαθμολογία: ";
+                                        echo $grade;
+                                        echo "<br> <br>Αρνητική Βαθμολογία: ";
+                                        echo $ngrade;;
                                         echo "<hr>";
                                     }
                                 }
@@ -936,6 +1122,8 @@ include 'config.php';
                                     $question=mysqli_query($conn,"select * from question where id_question='$id_question' and type='Multiple Choice More' and difficulty_level='difficult'");
                                     while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
                                         $qtext=$row["text"];
+                                        $grade=$row["grade"];
+                                        $ngrade=$row["negative_grade"];
                                         $q = "select * from contains where id_question='$id_question' and id_exam='$exam'"; 
                                             
                                             // Execute the query and store the result set 
@@ -958,7 +1146,7 @@ include 'config.php';
                                                 }
                                         }
                                         echo "</form>";
-                                        echo " $qtext<br> ";
+                                        echo "<b style='color:red'> $qtext</b><br> <br>";
                                         $findidpa=mysqli_query($conn,"select * from has where  id_question='$id_question'");
                                         while ($row = mysqli_fetch_array($findidpa, MYSQLI_ASSOC)) {
                                             $id_pa=$row["id_possibleAnswer"];
@@ -971,6 +1159,10 @@ include 'config.php';
                                             </label><p>";
                                             }
                                         }
+                                        echo "Βαθμολογία: ";
+                                        echo $grade;
+                                        echo "<br> <br>Αρνητική Βαθμολογία: ";
+                                        echo $ngrade;;
                                         echo "<hr>";
                                     }
                                 }
