@@ -162,7 +162,7 @@ $id_question=$_POST['id_question'];
 				<button type="submit" class="cleanbtn" style="color:white">Αλλαγή</button>
 				<button type="submit" class="cancelbtn" formaction="delete_question.php">Διαγραφή</button>
 				<br><br>
-				<button type="button" class="cancelbtn"><a href="select_lesson.php">Έξοδος</a></button>
+
 			</form>
 		</div>
 		</main>

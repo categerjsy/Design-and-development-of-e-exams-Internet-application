@@ -73,19 +73,21 @@ while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
                 }
             }
         }
-
+        $mcm=0;
         $query9=mysqli_query($conn,"SELECT * FROM answer WHERE id_question='$id_question' AND id_exam='$id_exam' AND id_student='$id_st'");
         while ($row9 = mysqli_fetch_array($query9, MYSQLI_ASSOC)) {
             $student_answer=$row9["student_answer"];
+            $mcm=1;
         }
-        if($student_answer==$correct){
-            mysqli_query($conn, "INSERT INTO correction  (id_exam,id_student,id_question,st_grade)
+        if($mcm=0) {
+            if ($student_answer == $correct) {
+                mysqli_query($conn, "INSERT INTO correction  (id_exam,id_student,id_question,st_grade)
 			                VALUES ('$id_exam','$id_st', '$id_question','$grade')");
-        }
-        else {
-            mysqli_query($conn, "INSERT INTO correction (id_exam,id_student,id_question,st_grade)
+            } else {
+                mysqli_query($conn, "INSERT INTO correction (id_exam,id_student,id_question,st_grade)
 			                VALUES ('$id_exam','$id_st', '$id_question','-$neg_grade')");
 
+            }
         }
 
     }
