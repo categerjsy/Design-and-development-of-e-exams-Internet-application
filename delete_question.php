@@ -56,15 +56,17 @@ while ($row = mysqli_fetch_array($s, MYSQLI_ASSOC)) {
 		$answer=$row["id_possibleAnswer"];
 		$sql5 = "DELETE FROM possible_answer WHERE id_possibleAnswer=$answer";
 		$qry5 = mysqli_query($conn, $sql5);
+        if($qry5){
+            $_SESSION["username"]=$username;
+            echo "Question deleted!!";
+            // Redirecting To Other Page
+            $location="/Ptuxiaki/select_lesson.php";
+            header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+        }
 	}
+
 }
-if($qry5){
-		$_SESSION["username"]=$username;
-		echo "Question deleted!!";
-		// Redirecting To Other Page
-		$location="/Ptuxiaki/select_lesson.php";
-		header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
-}
+
 $sql6 = "DELETE FROM has WHERE id_question=$id_question";
 $qry6 = mysqli_query($conn, $sql6);
 
