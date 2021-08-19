@@ -30,6 +30,7 @@ include 'config.php';
     <link rel="stylesheet" href="assets/css/asidenav.css">
     <link rel="stylesheet" href="assets/css/lf.css">
     <link rel="stylesheet" href="assets/css/button.css">
+    <link rel="stylesheet" href="assets/css/table.css">
     <link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>
 
 </head>
@@ -87,7 +88,13 @@ include 'config.php';
         <?php
         $id_exam=$_SESSION["correction_id_exam"];
         $query=mysqli_query($conn,"SELECT * FROM gives WHERE id_exam='$id_exam'");
-        $statistics=0;
+        echo "<table id='c'>
+                          <tr>
+                            <th>Φοιτητής/Φοιτήτρια</th>
+                            <th>e-mail</th>
+                            <th>Βαθμολογία</th>
+                            <th>Κατάσταση</th>
+                          </tr>";
         while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
             $id_student=$row["id_student"];
 
@@ -96,6 +103,7 @@ include 'config.php';
             while ($rows = mysqli_fetch_array($querys, MYSQLI_ASSOC)) {
                 $name=$rows["name"];
                 $surname=$rows["surname"];
+                $email=$rows["email"];
                 $query1=mysqli_query($conn,"SELECT * FROM get WHERE id_student='$id_student' ");
                 $flag=0;
                 while ($row1 = mysqli_fetch_array($query1, MYSQLI_ASSOC)) {
@@ -103,27 +111,22 @@ include 'config.php';
                     $query2=mysqli_query($conn,"SELECT * FROM results WHERE id_results='$id_result' and exam='$id_exam'");
 
                     while ($row2 = mysqli_fetch_array($query2, MYSQLI_ASSOC)) {
-                        echo "<form action='cal_resultp.php'  method='post' >";
-                        echo "<button type = 'submit' name='id_student' class='wbtn' value='$id_student'>";
-                        echo "Αναλυτική βαθμολογία εξέτασης";
-                        echo "</button>";
-                        echo "</form>";
-                        echo "$name $surname";
-                        echo "<hr>";
-                        $flag=1;
+                        $gr=$row2['final_grade'];
+                        echo "<tr> <td>$name $surname</td>";
+                        echo "<td>$email</td>";
+                        echo "<td>$gr</td>";
+                        if($gr>=5){
+                            echo "<td>Επιτυχής</td> </tr>";
+                        }
+                        else{
+                            echo "<td>Ανεπιτυχής</td> </tr>";
+                        }
+
+
                     }
 
                 }
-                            if($flag==0) {
-                                $statistics=1;
-                                echo "<form action='correction3.php'  method='post' >";
-                                echo "<button type = 'submit' name='id_student' class='wbtn' value='$id_student'>";
-                                echo "Διόρθωση εξέτασης φοιτητή";
-                                echo "</button>";
-                                echo "</form>";
-                                echo "$name $surname";
-                                echo "<hr>";
-                            }
+
 
             }
 
@@ -132,17 +135,10 @@ include 'config.php';
 
         }
 
-        if($statistics==0){
-            echo "<button type='button' class='cleanbtn'><a href='statistics.php'>Προβολή στατιστικών</a></button>";
-            echo "<button type='button' class='cleanbtn'><a href='analitiki.php'>Αναλυτική βαθμολογία</a></button>";
-        }
-
-
-
-
 
         ?>
 
+        </table>
     </div>
 
 </main>

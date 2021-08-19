@@ -331,7 +331,7 @@ include 'config.php';
                 }
             }
             ?>
-
+        <a href="correction2.php"><button class="but" type="button">Συνέχεια διορθώσεων</button></a>
     </div>
 
 </main>

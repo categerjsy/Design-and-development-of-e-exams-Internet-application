@@ -464,8 +464,8 @@ include 'config.php';
 					
 				
     			<a href="s_exam.php"><button class="but" type="button">Ολοκλήρωση</button></a>
-					
-				<button class="cancelbtn" type="reset"><a href="profilek.php">Έξοδος</a></button>
+
+                <a href="profilek.php"><button class="cancelbtn" type="reset">Έξοδος</button></a>
             
     	        <button type="reset" class="cleanbtn">Καθαρισμός</button>
                 <br>
