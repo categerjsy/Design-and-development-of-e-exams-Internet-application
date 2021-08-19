@@ -84,9 +84,9 @@ session_start();
     			  <div class="w3-container">
     			    <a href="r2.php"><button class="but" type="reset">Εντελώς τυχαίο διαγώνισμα</button></a>
                 	<br>
-    	        	<a href="r3.php"><button class="but" type="reset">Τυχαιο διαγώνισμα με βάση την δυσκολία </button></a>
+    	        	<a href="r3.php"><button class="but" type="reset">Τυχαίο διαγώνισμα με βάση την δυσκολία </button></a>
                 	<br>
-                    <a href="r4.php"><button class="but" type="reset">Τυχαιο διαγώνισμα με βάση την κατηγορία </button></a>
+                    <a href="r4.php"><button class="but" type="reset">Τυχαίο διαγώνισμα με βάση την κατηγορία </button></a>
                 	<br>
             </div>
 	    </div>
