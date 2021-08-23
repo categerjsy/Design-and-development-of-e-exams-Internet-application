@@ -240,9 +240,10 @@ include 'config.php';
                     echo $row1["text"];
                     $st_a = array();
                     $i=0;
+                    echo "<br>Απάντηση φοιτητή: ";
                     $query2=mysqli_query($conn,"SELECT * FROM answer WHERE id_question='$id_question' AND id_exam='$id_exam' AND id_student='$id_st'");
                     while ($row2 = mysqli_fetch_array($query2, MYSQLI_ASSOC)) {
-                        echo "<br>Απάντηση φοιτητή: ";
+
                         array_push( $st_a,$row2['student_answer']);
                         $t=$row2['time_answer'];
                         $i=1;

@@ -2,7 +2,7 @@
 include 'config.php';
 session_start ();
 
-
+$flag=0;
 $_SESSION["cor_id_student"]=$_POST["id_student"];
 $id_st=$_SESSION["cor_id_student"];
 $id_exam=$_SESSION["correction_id_exam"];
@@ -136,9 +136,20 @@ while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 
 
     }
-}
-$location="/Ptuxiaki/correction4.php";
-header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+    //ftext
+    $query14=mysqli_query($conn,"SELECT * FROM question WHERE id_question='$id_question' and type='Ελευθέρου κειμένου'");
+    while ($row14 = mysqli_fetch_array($query10, MYSQLI_ASSOC)) {
+        $flag=1;
+    }
 
+}
+if($flag==0){
+    $location = "/Ptuxiaki/cal_result.php";
+    header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+}else {
+
+    $location = "/Ptuxiaki/correction4.php";
+    header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+}
 
 ?>
