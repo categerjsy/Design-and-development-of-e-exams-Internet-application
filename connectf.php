@@ -58,8 +58,7 @@ else{
 				$location="/Ptuxiaki/sign_in.php?msg=okay";
 			header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
 			}
-			
-				
+
 			}
 		
     }else{
