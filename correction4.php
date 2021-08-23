@@ -100,8 +100,9 @@ include 'config.php';
         $id_exam=$_SESSION["correction_id_exam"];
 
         $query=mysqli_query($conn,"SELECT * FROM contains WHERE id_exam='$id_exam'");
-
+        $flag=0;
         while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+            $flag=1;
             $id_question=$row["id_question"];
             //ftext
             $query1=mysqli_query($conn,"SELECT * FROM question WHERE id_question='$id_question' and type='Ελευθέρου κειμένου'");
@@ -126,6 +127,10 @@ include 'config.php';
 
 
 
+        }
+        if($flag==0){
+            $location = "/Ptuxiaki/cal_result.php";
+            header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
         }
         ?>
             <input type="submit" value="Εισαγωγή βαθμολογιών">

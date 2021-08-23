@@ -88,12 +88,14 @@ include 'config.php';
         $id_exam=$_SESSION["correction_id_exam"];
         $query=mysqli_query($conn,"SELECT * FROM gives WHERE id_exam='$id_exam'");
         $statistics=0;
+        $student=0;
         while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
             $id_student=$row["id_student"];
 
             $querys=mysqli_query($conn,"SELECT * FROM user_student WHERE id_student='$id_student' ");
 
             while ($rows = mysqli_fetch_array($querys, MYSQLI_ASSOC)) {
+                $student=1;
                 $name=$rows["name"];
                 $surname=$rows["surname"];
                 $query1=mysqli_query($conn,"SELECT * FROM get WHERE id_student='$id_student' ");
@@ -133,8 +135,13 @@ include 'config.php';
         }
 
         if($statistics==0){
-            echo "<button type='button' class='cleanbtn'><a href='statistics.php'>Προβολή στατιστικών</a></button>";
-            echo "<button type='button' class='cleanbtn'><a href='analitiki.php'>Αναλυτική βαθμολογία</a></button>";
+            if($student==1) {
+                echo "<button type='button' class='cleanbtn'><a href='statistics.php'>Προβολή στατιστικών</a></button>";
+                echo "<button type='button' class='cleanbtn'><a href='analitiki.php'>Αναλυτική βαθμολογία</a></button>";
+            }
+            else{
+                echo "<p>Δυστυχώς δεν υπήρξε καμία συμμετοχή σε αυτό το διαγώνισμα!</p>";
+            }
         }
 
 
