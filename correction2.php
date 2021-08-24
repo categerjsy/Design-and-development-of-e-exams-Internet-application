@@ -106,7 +106,7 @@ include 'config.php';
 
                     while ($row2 = mysqli_fetch_array($query2, MYSQLI_ASSOC)) {
                         echo "<form action='cal_resultp.php'  method='post' >";
-                        echo "<button type = 'submit' name='id_student' class='wbtn' value='$id_student'>";
+                        echo "<button type = 'submit' name='id_student' class='wbtn' value='$id_result'>";
                         echo "Αναλυτική βαθμολογία εξέτασης";
                         echo "</button>";
                         echo "</form>";

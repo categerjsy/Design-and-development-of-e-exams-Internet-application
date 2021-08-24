@@ -93,12 +93,12 @@ include 'config.php';
 
 
             <?php
-            $id_st=$_SESSION["cor_id_student"];
+            $id_re=$_SESSION["cor_id_result"];
             $id_exam=$_SESSION["correction_id_exam"];
-            $query=mysqli_query($conn,"SELECT * FROM get WHERE id_student='$id_st'");
+            $query=mysqli_query($conn,"SELECT * FROM get WHERE id_results='$id_re'");
 
             while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
-                $id_re=$row["id_results"];
+                $id_st=$row["id_student"];
             }
 
             $query=mysqli_query($conn,"SELECT * FROM results WHERE exam='$id_exam' and id_results='$id_re'");
