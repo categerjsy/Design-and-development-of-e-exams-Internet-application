@@ -143,7 +143,7 @@ while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
     }
 
 }
-if($flag==0){
+if($flag==1){
     $location = "/Ptuxiaki/cal_result.php";
     header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
 }else {
