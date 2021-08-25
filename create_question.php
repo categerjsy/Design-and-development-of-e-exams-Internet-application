@@ -14,6 +14,9 @@ session_start();
 			$location="/Ptuxiaki/index.php";
 			header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);			
 						
+        }else if(isset($_SESSION["id_student"])!=NULL){
+            $location="/Ptuxiaki/profilef.php";
+            header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
         }
         else{
 		  $username=$_SESSION["username"];
@@ -53,7 +56,10 @@ session_start();
 				  </div>
 				  
 				  <div class="nav-links">
-					<a  href="profilek.php"> <?php echo "$username"; ?></a>
+					<a  href="profilek.php"> <?php  if (isset($_SESSION["id_professor"])){
+					                            echo "$username";
+                                             }?></a>
+
 					<a href="logout.php">Αποσύνδεση</a>
 				  </div>
 			</div>
