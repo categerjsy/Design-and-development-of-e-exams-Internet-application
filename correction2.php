@@ -10,17 +10,18 @@ include 'config.php';
 
 <html>
 <head>
-
     <?php
     if (isset($_SESSION["id_professor"])==NULL) {
-
         $location="/Ptuxiaki/index.php";
         header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
 
+    }else if(isset($_SESSION["id_student"])!=NULL){
+        $location="/Ptuxiaki/profilef.php";
+        header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
     }
     else{
         $username=$_SESSION["username"];
-        echo "<title>$username</title>";
+        echo "<title>Εισαγωγή  ερώτησης</title>";
     }
     ?>
     <meta charset="utf-8" />
@@ -53,7 +54,9 @@ include 'config.php';
         </div>
 
         <div class="nav-links">
-            <a  href="profilef.php"> <?php echo "$username"; ?></a>
+            <a  href="profilef.php"> <?php  if (isset($_SESSION["id_professor"])){
+                    echo "$username";
+                }?></a>
             <a href="logout.php">Αποσύνδεση</a>
         </div>
     </div>

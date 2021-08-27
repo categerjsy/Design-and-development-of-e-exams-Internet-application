@@ -8,17 +8,21 @@ $id_question=$_POST['id_question'];
 
 <html>
 	<head>
-	
-		<?php 
+
+        <?php
         if (isset($_SESSION["id_professor"])==NULL) {
-			$location="/Ptuxiaki/index.php";
-			header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);			
-						
+            $location="/Ptuxiaki/index.php";
+            header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+
+        }else if(isset($_SESSION["id_student"])!=NULL){
+            $location="/Ptuxiaki/profilef.php";
+            header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
         }
         else{
-		  echo "<title>$username</title>";
+            $username=$_SESSION["username"];
+            echo "<title>Εισαγωγή  ερώτησης</title>";
         }
-		?>
+        ?>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/responsiveness.css">
@@ -53,7 +57,9 @@ $id_question=$_POST['id_question'];
 				  </div>
 				  
 				  <div class="nav-links">
-					<a  href="profilek.php"> <?php echo "$username"; ?></a>
+					<a  href="profilek.php"> <?php  if (isset($_SESSION["id_professor"])){
+                            echo "$username";
+                        }?></a>
 					<a href="logout.php">Αποσύνδεση</a>
 				  </div>
 			</div>

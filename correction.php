@@ -2,6 +2,7 @@
 <?php
 session_start();
 include 'config.php';
+date_default_timezone_set('Europe/Athens') ;
 ?>
 
 
@@ -13,14 +14,16 @@ include 'config.php';
 
     <?php
     if (isset($_SESSION["id_professor"])==NULL) {
-
         $location="/Ptuxiaki/index.php";
         header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
 
+    }else if(isset($_SESSION["id_student"])!=NULL){
+        $location="/Ptuxiaki/profilef.php";
+        header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
     }
     else{
         $username=$_SESSION["username"];
-        echo "<title>$username</title>";
+        echo "<title>Εισαγωγή  ερώτησης</title>";
     }
     ?>
     <meta charset="utf-8" />
@@ -53,7 +56,9 @@ include 'config.php';
         </div>
 
         <div class="nav-links">
-            <a  href="profilef.php"> <?php echo "$username"; ?></a>
+            <a  href="profilef.php"> <?php  if (isset($_SESSION["id_professor"])){
+                    echo "$username";
+                }?></a>
             <a href="logout.php">Αποσύνδεση</a>
         </div>
     </div>
@@ -107,7 +112,7 @@ include 'config.php';
                         $date = new DateTime($end_time);
                         $now = new DateTime();
 
-                        //if($date < $now) {
+                        if($date < $now) {
                             echo "<form action='correction1.php'  method='post' >";
                             echo "<button type = 'submit' name='id_exam' class='wbtn' value='$id_exam'>";
                             echo "Διόρθωση εξέτασης";
@@ -115,7 +120,7 @@ include 'config.php';
                             echo "</form>";
                             echo "$lesson Έναρξη:  $start_time Λήξη:  $end_time";
                             echo "<hr>";
-                        //}
+                        }
                     }
 
 
