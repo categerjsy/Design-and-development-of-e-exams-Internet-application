@@ -56,13 +56,15 @@ if (isset($_POST['tf'])){
 }
 
 if (isset($_POST['mc'])){
-    $paf=$_POST['paf'];
-   // echo $paf;
-    $sql = "INSERT INTO answer (id_exam,id_student,id_question,student_answer,time_answer)
-			VALUES ('$exam','$st', ".$_POST["mc"].",".$_POST['paf'].",'$time')";
+    if (isset($_POST['paf'])) {
+        $paf = $_POST['paf'];
+
+        $sql = "INSERT INTO answer (id_exam,id_student,id_question,student_answer,time_answer)
+			VALUES ('$exam','$st', " . $_POST["mc"] . "," . $_POST['paf'] . ",'$time')";
 
 
-    mysqli_query($conn,$sql);
+        mysqli_query($conn, $sql);
+    }
     $location="/Ptuxiaki/examination2.php";
     header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
 }
@@ -70,17 +72,18 @@ if (isset($_POST['mc'])){
 
 
 if (isset($_POST['mcm'])){
-    $pa=$_POST['pa'];
+    if (isset($_POST['pa'])) {
+        $pa = $_POST['pa'];
 
-    if(!empty($_POST['pa'])) {
+        if (!empty($_POST['pa'])) {
 
-        foreach($_POST['pa'] as $value){
-           // echo "$value";
-            mysqli_query($conn, "INSERT INTO answer (id_exam,id_student,id_question,student_answer,time_answer)
-			VALUES ('$exam','$st', ".$_POST["mcm"].",'".$value. "','$time')");
+            foreach ($_POST['pa'] as $value) {
+                // echo "$value";
+                mysqli_query($conn, "INSERT INTO answer (id_exam,id_student,id_question,student_answer,time_answer)
+			VALUES ('$exam','$st', " . $_POST["mcm"] . ",'" . $value . "','$time')");
+            }
         }
     }
-
 
 
     $location="/Ptuxiaki/examination2.php";
