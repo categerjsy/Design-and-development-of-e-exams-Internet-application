@@ -21,7 +21,7 @@ $id_lesson=$_SESSION["idl"];
         }
         else{
             $username=$_SESSION["username"];
-            echo "<title>Εισαγωγή  ερώτησης</title>";
+            echo "<title>$username</title>";
         }
         ?>
 		<meta charset="utf-8" />

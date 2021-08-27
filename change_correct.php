@@ -30,7 +30,7 @@ while ($row = mysqli_fetch_array($s, MYSQLI_ASSOC)) {
         }
         else{
             $username=$_SESSION["username"];
-            echo "<title>Εισαγωγή  ερώτησης</title>";
+            echo "<title>$username</title>";
         }
         ?>
 		<meta charset="utf-8" />
