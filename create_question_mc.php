@@ -45,7 +45,8 @@ table tr td:last-child{
 		<link rel="stylesheet" href="assets/css/asidenav.css">
 		<link rel="stylesheet" href="assets/css/lf.css">
 		<link rel="stylesheet" href="assets/css/button.css">
-			<link rel="stylesheet" href="assets/css/checkbox.css">
+        <link rel="stylesheet" href="assets/css/checkbox.css">
+        <link rel="stylesheet" href="assets/css/footer.css">
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 
@@ -174,9 +175,7 @@ table tr td:last-child{
 			</div>
                      
 		</main>
-		<footer>
-		</footer>
-		
+        <footer>Copyright Gerakianaki Vlachou © 2021</footer>
         <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js" ></script>
         <script src="assets\js\bootstrap-number-input.js" ></script>
         <script src="assets\js\bootstrapSwitch.js" ></script>

@@ -30,7 +30,7 @@ session_start();
 		<link rel="stylesheet" href="assets/css/asidenav.css">
 	    <link rel="stylesheet" href="assets/css/lf.css">
 		<link rel="stylesheet" href="assets/css/button.css">
-
+        <link rel="stylesheet" href="assets/css/footer.css">
 		
 
 		<link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>		
@@ -107,9 +107,8 @@ session_start();
 
 
 		</main>
-        
-		<footer>
-		</footer>
+
+        <footer>Copyright Gerakianaki Vlachou © 2021</footer>
 		<script src="assets/js/aside.js"></script>
 	</body>
 </html>

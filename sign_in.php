@@ -9,6 +9,7 @@
 	 <link rel="stylesheet" href="assets/css/nav.css">
      <link rel="stylesheet" href="assets/css/st.css">
      <link rel="stylesheet" href="assets/css/pass.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
      <link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>
     <div class="nav">
 				  <input type="checkbox" id="nav-check">
@@ -85,6 +86,8 @@ function toggler(e) {
   }
 }
 </script>
+  <footer>Copyright Gerakianaki Vlachou © 2021</footer>
 <script src="assets/js/index.js"></script>
 </body>
+
 </html>

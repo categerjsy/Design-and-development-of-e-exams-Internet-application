@@ -28,9 +28,10 @@ include 'config.php';
 		<link rel="stylesheet" href="assets/css/nav.css">
 		<link rel="stylesheet" href="assets/css/asidenav.css">
 		<link rel="stylesheet" href="assets/css/lf.css">
-    <link rel="stylesheet" href="assets/css/st.css">
+        <link rel="stylesheet" href="assets/css/st.css">
 		<link rel="stylesheet" href="assets/css/button.css">
-    <link rel="stylesheet" href="assets/css/pass.css">
+        <link rel="stylesheet" href="assets/css/pass.css">
+        <link rel="stylesheet" href="assets/css/footer.css">
         <link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>
 	
 	
@@ -149,9 +150,8 @@ include 'config.php';
 			</div>
                      
 		</main>
-		<footer>
-		</footer>
-		<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js" ></script>
+        <footer>Copyright Gerakianaki Vlachou © 2021</footer>
+        <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js" ></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets\js\bootstrap-number-input.js" ></script>
     <script src="assets\js\bootstrapSwitch.js" ></script>

@@ -42,6 +42,7 @@ table tr td:last-child{
 		<link rel="stylesheet" href="assets/css/asidenav.css">
 		<link rel="stylesheet" href="assets/css/lf.css">
 		<link rel="stylesheet" href="assets/css/button.css">
+        <link rel="stylesheet" href="assets/css/footer.css">
 		<link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>		
 	
 	</head>
@@ -199,8 +200,7 @@ table tr td:last-child{
 		</main>
                      
 		</main>
-		<footer>
-		</footer>
+        <footer>Copyright Gerakianaki Vlachou © 2021</footer>
 		<script ></script>
 		<script src="assets/js/aside.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 

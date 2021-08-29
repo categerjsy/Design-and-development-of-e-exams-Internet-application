@@ -34,6 +34,7 @@ include 'config.php';
 		<link rel="stylesheet" href="assets/css/checkbox.css">
 		<link rel="stylesheet" href="assets/css/radiobutton.css">
 		<link rel="stylesheet" href="assets/css/filter.css">
+        <link rel="stylesheet" href="assets/css/footer.css">
         <link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>
 	
 	</head>
@@ -479,8 +480,7 @@ include 'config.php';
 			</div>
                      
 		</main>
-		<footer>
-		</footer>
+        <footer>Copyright Gerakianaki Vlachou © 2021</footer>
 		<script src="assets/js/hide.js"></script>
         <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js" ></script>
         <script src="assets\js\bootstrap-number-input.js" ></script>

@@ -14,7 +14,7 @@ session_start();
 	  <link rel="stylesheet" href="assets/css/nav.css">
     <link rel="stylesheet" href="assets/css/st.css">
      <link rel="stylesheet" href="assets/css/pass.css">
-  
+    <link rel="stylesheet" href="assets/css/footer.css">
      
      <link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>
     <div class="nav">
@@ -112,8 +112,7 @@ session_start();
    
 
   </form>
-
-<!--Do you have an account ?-->
+<footer>Copyright Gerakianaki Vlachou © 2021</footer>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 

@@ -33,6 +33,7 @@ $id_question=$_POST['id_question'];
 		<link rel="stylesheet" href="assets/css/button.css">
 		<link rel="stylesheet" href="assets/css/checkbox.css">
 		<link rel="stylesheet" href="assets/css/radiobutton.css">
+        <link rel="stylesheet" href="assets/css/footer.css">
 		<link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>		
 	
 	</head>
@@ -174,8 +175,7 @@ $id_question=$_POST['id_question'];
 		</main>
                      
 		</main>
-		<footer>
-		</footer>
+    <footer>Copyright Gerakianaki Vlachou © 2021</footer>
 		<script ></script>
 		<script src="assets/js/aside.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
