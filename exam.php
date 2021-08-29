@@ -30,17 +30,16 @@ include 'config.php';
 		    header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
 		}
 		elseif($date_for_database> $now) {
-		//question
+		//exam
 		mysqli_query($conn, "INSERT INTO exam (date_time,final_grade)
 				VALUES ('$date_for_database',10)");
 		$id_exam = mysqli_insert_id($conn);
 
-		//question
+
 		mysqli_query($conn, "INSERT INTO belongs_to (id_lesson,id_exam)
 				VALUES (' $my_lesson','$id_exam')");
 
-		//create_exam
-		//question
+
 		mysqli_query($conn, "INSERT INTO create_exam (id_professor,id_exam)
 				VALUES ('$id_p','$id_exam')");
 			echo "Make in database final!!!";

@@ -122,10 +122,10 @@ include 'config.php';
 				?>
                   <br>
                   <br>Ημερομηνία εξέτασης<br>
-                  <input type="date" name="tdate" min="<?php $date?>">
+                  <input type="date" name="tdate" min="<?php $date?>"  required>
                   <br>
                   <br>Ώρα εξέτασης<br>
-                  <input type="time" id="ttime" name="ttime">
+                  <input type="time" id="ttime" name="ttime" required>
 
 
                   <br><?php

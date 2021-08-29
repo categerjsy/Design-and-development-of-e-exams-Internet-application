@@ -1,27 +1,25 @@
 <?php
 
-session_start();	
+session_start();
+date_default_timezone_set('Europe/Athens') ;
 
 	
 include 'config.php';
 
 	$id_p=$_SESSION["id_professor"];
     $id_exam=$_SESSION["id_exam"];
-	$month=$_POST['month'];
-	$dt=$_POST['dt'];
-	$year=$_POST['year'];
 
-    $hours=$_POST['hours'];
-	$minutes=$_POST['minutes'];
-    $seconds=$_POST['seconds'];
-  
-	$lesson=$_SESSION["lesson"];
+$date=$_POST["tdate"];
+$time=$_POST["ttime"];
+
+
+$lesson=$_SESSION["lesson"];
 	$s = mysqli_query($conn,"select * from lesson where name='$lesson'");
 		 while ($row = mysqli_fetch_array($s, MYSQLI_ASSOC)) {
 			 $my_lesson=$row["id_lesson"];
 		  }
 
-    $date_old="$year-$month-$dt $hours:$minutes:$seconds";
+$date_old="$date $time:00";
   
     
 	$date_for_database = date ('Y-m-d H:i:s', strtotime($date_old));
