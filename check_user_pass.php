@@ -7,9 +7,7 @@ session_start();// start session
 	$password=$_POST['password'];
 	
 	if($username && $password){
-		echo "$username<br>";
-		echo "$password<br>";
-		echo "$user<br>";
+
 		
 		$username = stripslashes($username);
 		$password = stripslashes($password);
@@ -60,6 +58,6 @@ session_start();// start session
         
 		
  
-echo "Please enter both username and password";
+
 
  ?>

@@ -115,15 +115,15 @@ include 'config.php';
 						echo "<option value='$my_l'>$my_l</option>";  
 					   }
 				  }
-				  echo "</select>";	 
-		
-	
-				
+				  echo "</select>";
+
+                $date = date('Y-m-d');
+
 				?>
-                <br> 
-				
-				
-				Ημερομηνία εξέτασης <br>
+                <br>Ημερομηνία εξέτασης <br>
+                  <input type="date" name="tdate" min="<?php $date?>">
+                  <input type="time" id="ttime" name="ttime">
+			<!--	Ημερομηνία εξέτασης <br>
 				<table border="0" cellspacing="0" >
 
 				<tr><td  align=left  >   
@@ -182,7 +182,6 @@ include 'config.php';
 				<option value='31'>31</option>
 				</select>
 
-
 				</td><td  align=left  >   
 				Χρονιά<input type=text  name=year size=4 value=2021>
 				</table>
@@ -193,8 +192,9 @@ include 'config.php';
 				:
 				<input type=text id="small" name=minutes size=2 value=00 >
 				:
-				<input type=text id="small" name=seconds size=2 value=00 >
-				<br><?php
+				<input type=text id="small" name=seconds size=2 value=00 > -->
+
+                  <br><?php
 					if (isset($_GET["msg"]) && $_GET["msg"] == 'done') {
 						print "<p style='color:red'>O χρόνος δεν έχει σωστή μορφή, παρακαλώ εισάγεται μορφή χρονου 24-ώρου.</p>";
 					}
