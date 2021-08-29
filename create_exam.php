@@ -120,79 +120,13 @@ include 'config.php';
                 $date = date('Y-m-d');
 
 				?>
-                <br>Ημερομηνία εξέτασης <br>
+                  <br>
+                  <br>Ημερομηνία εξέτασης<br>
                   <input type="date" name="tdate" min="<?php $date?>">
+                  <br>
+                  <br>Ώρα εξέτασης<br>
                   <input type="time" id="ttime" name="ttime">
-			<!--	Ημερομηνία εξέτασης <br>
-				<table border="0" cellspacing="0" >
 
-				<tr><td  align=left  >   
-				Μήνας
-				<select name=month value=''>Select Month</option>
-				<option value='01'>Ιανουάριος</option>
-				<option value='02'>Φεβρουάριος</option>
-				<option value='03'>Μάρτιος</option>
-				<option value='04'>Απρίλιος</option>
-				<option value='05'>Μάιος</option>
-				<option value='06'>Ιούνιος</option>
-				<option value='07'>Ιούλιος</option>
-				<option value='08'>Αύγουστος</option>
-				<option value='09'>Σεπτέμβριος</option>
-				<option value='10'>Οκτώβριος</option>
-				<option value='11'>Νοέμβριος</option>
-				<option value='12'>Δεκέμβριος</option>
-				</select>
-
-
-
-				</td><td  align=left  >   
-
-				Ημερομηνία<select name=dt >
-
-				<option value='01'>01</option>
-				<option value='02'>02</option>
-				<option value='03'>03</option>
-				<option value='04'>04</option>
-				<option value='05'>05</option>
-				<option value='06'>06</option>
-				<option value='07'>07</option>
-				<option value='08'>08</option>
-				<option value='09'>09</option>
-				<option value='10'>10</option>
-				<option value='11'>11</option>
-				<option value='12'>12</option>
-				<option value='13'>13</option>
-				<option value='14'>14</option>
-				<option value='15'>15</option>
-				<option value='16'>16</option>
-				<option value='17'>17</option>
-				<option value='18'>18</option>
-				<option value='19'>19</option>
-				<option value='20'>20</option>
-				<option value='21'>21</option>
-				<option value='22'>22</option>
-				<option value='23'>23</option>
-				<option value='24'>24</option>
-				<option value='25'>25</option>
-				<option value='26'>26</option>
-				<option value='27'>27</option>
-				<option value='28'>28</option>
-				<option value='29'>29</option>
-				<option value='30'>30</option>
-				<option value='31'>31</option>
-				</select>
-
-				</td><td  align=left  >   
-				Χρονιά<input type=text  name=year size=4 value=2021>
-				</table>
-
-				<br>
-				Ώρα Εξέτασης &nbsp;&nbsp;&nbsp;&nbsp;
-				<input type=text id="small" name=hours size=2 value=00  >
-				:
-				<input type=text id="small" name=minutes size=2 value=00 >
-				:
-				<input type=text id="small" name=seconds size=2 value=00 > -->
 
                   <br><?php
 					if (isset($_GET["msg"]) && $_GET["msg"] == 'done') {

@@ -9,14 +9,7 @@ include 'config.php';
 
 	$date=$_POST["tdate"];
 	$time=$_POST["ttime"];
-//
-//	$month=$_POST['month'];
-//	$dt=$_POST['dt'];
-//	$year=$_POST['year'];
-//
-//    $hours=$_POST['hours'];
-//	$minutes=$_POST['minutes'];
-//    $seconds=$_POST['seconds'];
+
   
 	$lesson=$_POST['course'];
 	$s = mysqli_query($conn,"select * from lesson where name='$lesson'");
@@ -24,7 +17,7 @@ include 'config.php';
 			 $my_lesson=$row["id_lesson"];
 		  }
 
-//    $date_old="$year-$month-$dt $hours:$minutes:$seconds";
+
 
     $date_old="$date $time:00";
 
