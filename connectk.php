@@ -10,7 +10,7 @@ $pass=$_POST['password'];
 $cpass=$_POST['confirm_password'];
 
      
-////////////////////////
+
 $username = stripslashes($username);
 $email = stripslashes($email);
 $query = mysqli_query($conn,"select * from user_professor where username='$username'");
@@ -21,7 +21,7 @@ $query = mysqli_query($conn,"select * from user_student where username='$usernam
 $rus = mysqli_num_rows($query);
 $query = mysqli_query($conn,"select * from user_student where email='$email'");
 $res = mysqli_num_rows($query);
-////////////////////////////////////    
+
 if((strlen($pass)<7)||(strlen($pass)>16)){
 	$location="/Ptuxiaki/sign_upk.php?msg=plen";
 	header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
@@ -66,6 +66,5 @@ else{
 		}
 	
 	}
-///////////////////////////
-//mysqli_close($conn);
+
 ?>

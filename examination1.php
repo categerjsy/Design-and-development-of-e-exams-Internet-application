@@ -35,7 +35,15 @@ date_default_timezone_set('Europe/Athens') ;
 		<link rel="stylesheet" href="assets/css/checkbox.css">
 		<link rel="stylesheet" href="assets/css/radiobutton.css">
 		<link rel='shortcut icon' type='image/x-icon' href="photos/uop_logo4_navigation.gif"/><meta name="description" content="UOP Logo"/>		
-	
+	<style>
+        textarea {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+
+            width: 100%;
+        }
+    </style>
 	</head>
 	
 	
@@ -90,12 +98,12 @@ date_default_timezone_set('Europe/Athens') ;
 						<div class="hours"></div>
 						<div class="hours-label"></div>
 					</div>
-					
+
 					<div class="minutes-container">
 						<div class="minutes"></div>
 						<div class="minutes-label"></div>
 					</div>
-					
+
 					<div class="seconds-container">
 						<div class="seconds"></div>
 						<div class="seconds-label"></div>
