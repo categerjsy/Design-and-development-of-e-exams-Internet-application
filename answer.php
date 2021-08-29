@@ -21,7 +21,7 @@ $time=$h.":".$m.":".$s;
 
 
 
-//mysqli_close($conn);
+
 if (isset($_POST['ek'])){
 
     $textarea=htmlspecialchars($_POST['text']);

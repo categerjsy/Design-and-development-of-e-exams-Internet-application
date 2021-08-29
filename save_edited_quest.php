@@ -104,6 +104,5 @@ else if(($qtype=="Multiple Choice")||($qtype=="Multiple Choice More")){
 }
 	
 
-///////////////////////////
-//mysqli_close($conn);
+
 ?>

@@ -83,22 +83,22 @@ include 'config.php';
 				<?php
 					$ids=$_SESSION["id_student"];
 					$query=mysqli_query($conn,"SELECT * FROM enroll_on WHERE id_student='$ids' ");
-					
+
 					while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 						$id_lesson=$row["id_lesson"];
 						$querys=mysqli_query($conn,"SELECT * FROM lesson WHERE id_lesson='$id_lesson' ");
-						
+
 						while ($rows = mysqli_fetch_array($querys, MYSQLI_ASSOC)) {
 							$lesson=$rows["name"];
 							echo " <h3>$lesson</h3>";
 						}
-						
+
 						$queryt=mysqli_query($conn,"SELECT * FROM belongs_to WHERE id_lesson='$id_lesson' ");
-						
+
 						while ($row = mysqli_fetch_array($queryt, MYSQLI_ASSOC)) {
 							$id_exam=$row["id_exam"];
 							$queryf=mysqli_query($conn,"SELECT * FROM exam WHERE id_exam='$id_exam' ");
-						
+
 							while ($row = mysqli_fetch_array($queryf, MYSQLI_ASSOC)) {
 							$start_time=$row["date_time"];
 							$end_time=$row["time"];
@@ -115,18 +115,14 @@ include 'config.php';
                                         echo "<hr>";
 								}
 							}
-							
+
 
 						}
-						
-						
+
+
 					}
-			
-			
-							
-							
-					
-					
+
+
 
 				?>
 			 
