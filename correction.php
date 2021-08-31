@@ -91,7 +91,9 @@ date_default_timezone_set('Europe/Athens') ;
 
 
         <?php
-        $idf=$_SESSION["id_professor"];
+        if (isset($_SESSION["id_professor"])) {
+            $idf = $_SESSION["id_professor"];
+
         $query=mysqli_query($conn,"SELECT * FROM create_lesson WHERE id_professor='$idf' ");
 
         while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
@@ -134,7 +136,7 @@ date_default_timezone_set('Europe/Athens') ;
         }
 
 
-
+        }
 
 
 

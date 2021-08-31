@@ -56,6 +56,7 @@ while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
             }
         }
     }
+
     //This is for answer ΜC
     $query6=mysqli_query($conn,"SELECT * FROM question WHERE id_question='$id_question' and type='Multiple Choice'");
     while ($row6 = mysqli_fetch_array($query6, MYSQLI_ASSOC)) {
@@ -79,7 +80,7 @@ while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
             $student_answer=$row9["student_answer"];
             $mcm=1;
         }
-        if($mcm=0) {
+        if(isset($student_answer)) {
             if ($student_answer == $correct) {
                 mysqli_query($conn, "INSERT INTO correction  (id_exam,id_student,id_question,st_grade)
 			                VALUES ('$id_exam','$id_st', '$id_question','$grade')");
@@ -91,6 +92,9 @@ while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
         }
 
     }
+
+
+
 
     //This is for answer ΜCM
     $query10=mysqli_query($conn,"SELECT * FROM question WHERE id_question='$id_question' and type='Multiple Choice More'");
