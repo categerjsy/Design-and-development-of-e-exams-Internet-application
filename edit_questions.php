@@ -225,10 +225,11 @@ $id_lesson=$_SESSION["idl"];
 		<button type="button" class="cancelbtn" onclick="goBack()">Πίσω</button>
         <br>
         <br>
+            <footer>Copyright Gerakianaki Vlachou © 2021</footer>
 		</div>
                      
 		</main>
-        <footer>Copyright Gerakianaki Vlachou © 2021</footer>
+
 		
         <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js" ></script>
         <script src="assets\js\bootstrap-number-input.js" ></script>
@@ -242,4 +243,5 @@ $id_lesson=$_SESSION["idl"];
 
 
 	</body>
+
 </html>
