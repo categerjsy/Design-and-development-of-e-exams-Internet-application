@@ -84,7 +84,7 @@ date_default_timezone_set('Europe/Athens') ;
 <main>
     <button class="openbtn" onclick="openNav()">☰ Βασικές επιλογές</button>
 
-    <div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">
+    <div id="myform" style="margin-left:25%;padding:10px 50px;">
         <h3>Διόρθωση εξέτασης</h3>
 
 
@@ -147,9 +147,11 @@ date_default_timezone_set('Europe/Athens') ;
 
 </main>
 
-</main>
-<footer>Copyright Gerakianaki Vlachou © 2021</footer>
+
+
 <script ></script>
 <script src="assets/js/aside.js"></script>
 </body>
+
+<footer>Copyright Gerakianaki Vlachou © 2021</footer>
 </html>
