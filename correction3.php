@@ -99,60 +99,57 @@ while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 
     $query10=mysqli_query($conn,"SELECT * FROM question WHERE id_question='$id_question' and type='Multiple Choice More'");
     while ($row10 = mysqli_fetch_array($query10, MYSQLI_ASSOC)) {
-        $arr_correct = array();
-        $arr_false = array();
-        $mcm=0;
-        $f=0;
         $grade=$row10["grade"];
         $neg_grade=$row10["negative_grade"];
-        //Τhis is for correction !! epilegmeno - 1
-        $nump_idpa=0;
-        $num_idpa=0;
+        $cor= array();
+        $all= array();
+        $nump=0;
+        $c=0;
+        $n=0;
         $query11=mysqli_query($conn,"SELECT * FROM has WHERE id_question='$id_question'");
         while ($row11 = mysqli_fetch_array($query11, MYSQLI_ASSOC)) {
             $id_pa = $row11["id_possibleAnswer"];
-
 
             $query12 = mysqli_query($conn, "SELECT * FROM possible_answer WHERE id_possibleAnswer='$id_pa'");
             while ($row12 = mysqli_fetch_array($query12, MYSQLI_ASSOC)) {
                 $is_correct = $row12["is_correct"];
                 if($is_correct==1){
-                    $nump_idpa++;
-                    array_push($arr_correct,$id_pa);
-                } else {
-                    $num_idpa++;
-                    array_push($arr_false,$id_pa);
+                    array_push($cor,$id_pa);
+                    $c++;
+                }else {
+                    $n++;
                 }
+                $nump++;
+                array_push($all,$id_pa);//edw!
             }
-            $sg=$grade/$nump_idpa;
-            if($num_idpa!=0) {
-                $sng = $neg_grade/$num_idpa;
-            } else {
-                $sng=0;
-            }
+
         }
 
-
-
-
+        if($neg_grade>0){
+            $gc=bcdiv($grade,$nump,3);
+            $gn=$gc;
+        }else{
+            $gc=bcdiv($grade,$c,3);
+            $gn=bcdiv($neg_grade,$n,3);
+        }
+        $sum=0;
         $query13=mysqli_query($conn,"SELECT * FROM answer WHERE id_question='$id_question' AND id_exam='$id_exam' AND id_student='$id_st'");
         while ($row13 = mysqli_fetch_array($query13, MYSQLI_ASSOC)) {
             $student_answer=$row13["student_answer"];
-            if (in_array( $student_answer, $arr_correct,true))
-            {
-                $mcm=$mcm+$sg;
+            foreach ($cor as &$value) {
+                if($student_answer==$value){
+                $sum+=$gc;
+                }else{
+                $sum-=$gn;
+                }
             }
-            if (in_array( $student_answer, $arr_false,true))
-            {
-                $mcm=$mcm-$sng;
-            }
-        $f=1;
+
         }
 
-        if($f==1){
-                mysqli_query($conn, "INSERT INTO correction  (id_exam,id_student,id_question,st_grade)
-                                    VALUES ('$id_exam','$id_st', '$id_question','$mcm')");
-        }
+
+        mysqli_query($conn, "INSERT INTO correction  (id_exam,id_student,id_question,st_grade)
+                                    VALUES ('$id_exam','$id_st', '$id_question','$sum')");
+
 
     }
 
@@ -167,7 +164,8 @@ while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 if($flag==1){
     $location = "/Ptuxiaki/correction4.php";
     header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
-}else {
+}
+if($flag==0){
     $location = "/Ptuxiaki/cal_result.php";
     header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
 }
