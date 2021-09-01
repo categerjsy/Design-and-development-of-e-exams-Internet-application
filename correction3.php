@@ -74,11 +74,10 @@ while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
                 }
             }
         }
-        $mcm=0;
+
         $query9=mysqli_query($conn,"SELECT * FROM answer WHERE id_question='$id_question' AND id_exam='$id_exam' AND id_student='$id_st'");
         while ($row9 = mysqli_fetch_array($query9, MYSQLI_ASSOC)) {
             $student_answer=$row9["student_answer"];
-            $mcm=1;
         }
         if(isset($student_answer)) {
             if ($student_answer == $correct) {
@@ -97,6 +96,7 @@ while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 
 
     //This is for answer ΜCM
+    $arr_correct = array();
     $query10=mysqli_query($conn,"SELECT * FROM question WHERE id_question='$id_question' and type='Multiple Choice More'");
     while ($row10 = mysqli_fetch_array($query10, MYSQLI_ASSOC)) {
         $grade=$row10["grade"];
@@ -107,7 +107,7 @@ while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
         while ($row11 = mysqli_fetch_array($query11, MYSQLI_ASSOC)) {
             $id_pa = $row11["id_possibleAnswer"];
             $nump_idpa++;
-            $arr_correct = array();
+
             $query12 = mysqli_query($conn, "SELECT * FROM possible_answer WHERE id_possibleAnswer='$id_pa'");
             while ($row12 = mysqli_fetch_array($query12, MYSQLI_ASSOC)) {
                 $is_correct = $row12["is_correct"];
