@@ -126,45 +126,50 @@ while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 
 
         if($neg_grade!=0) {
-            $grcor=bcdiv($grade, sizeof($all), 3);
+            $grcor=(float)$grade/(sizeof($all)+1);
             $grfa = 0;
         }else{
-            $grcor=bcdiv($grade, sizeof($cor), 3);
-            $grfa = bcdiv($grade, sizeof($fa), 3);
+            $grcor=(float)$grade/(sizeof($cor)+1);
+            $grfa = (float)$neg_grade/(sizeof($fa)+1);
         }
 
         $st= array();
         $query13=mysqli_query($conn,"SELECT * FROM answer WHERE id_question='$id_question' AND id_exam='$id_exam' AND id_student='$id_st'");
         while ($row13 = mysqli_fetch_array($query13, MYSQLI_ASSOC)) {
             $student_answer=(int)$row13["student_answer"];
-            var_dump($student_answer);
             array_push($st,$student_answer);
         }
+
+        $s=0;
         $sum=0;
 
-
           foreach ($all as &$as){
-              var_dump($as);
+
               if (in_array($as, $st, TRUE)) {
                   if (in_array($as, $cor, TRUE)) {
-                      $sum = bcadd($sum, $grcor, 3);
-                 } else {
-                      $sum = bcsub($sum, $grfa, 3);
+                      $sum =  bcadd($sum, $grcor, 3);
+
                   }
-              }else{
-                  if (in_array($as, $cor, TRUE)) {
-                      $sum = bcsub($sum, $grfa, 3);
+                  if (in_array($as, $fa, TRUE)) {
+                      $sum = -(bcsub($sum, $grfa, 3));
+
                   }
-//                  else {
-//                      $sum = bcadd($sum, $grcor, 3);
-//
-//                  }
               }
+              else{
+                  if (in_array($as, $cor, TRUE)) {
+                      $sum = -(bcsub($sum, $grfa, 3));
+
+                  }
+                  if (in_array($as, $fa, TRUE)) {
+                      $sum = bcadd($sum, $grcor, 3);
+                  }
+              }
+              $s+=$sum;
           }
 
-            var_dump($sum);
+
             mysqli_query($conn, "INSERT INTO correction  (id_exam,id_student,id_question,st_grade)
-                                    VALUES ('$id_exam','$id_st', '$id_question','$sum')");
+                                    VALUES ('$id_exam','$id_st', '$id_question','$s')");
 
 
 
