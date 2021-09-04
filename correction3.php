@@ -99,77 +99,74 @@ while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 
     $query10=mysqli_query($conn,"SELECT * FROM question WHERE id_question='$id_question' and type='Multiple Choice More'");
     while ($row10 = mysqli_fetch_array($query10, MYSQLI_ASSOC)) {
-        $grade=$row10["grade"];
-        $neg_grade=$row10["negative_grade"];
-        $cor= array();
-        $fa= array();
-        $all= array();
+        $grade = $row10["grade"];
+        $neg_grade = $row10["negative_grade"];
 
-        $query11=mysqli_query($conn,"SELECT * FROM has WHERE id_question='$id_question'");
+        $correct = array();
+        $all = array();
+        $stud = array();
+        $query11 = mysqli_query($conn, "SELECT * FROM has WHERE id_question='$id_question'");
         while ($row11 = mysqli_fetch_array($query11, MYSQLI_ASSOC)) {
             $id_pa = $row11["id_possibleAnswer"];
 
             $query12 = mysqli_query($conn, "SELECT * FROM possible_answer WHERE id_possibleAnswer='$id_pa'");
             while ($row12 = mysqli_fetch_array($query12, MYSQLI_ASSOC)) {
                 $is_correct = $row12["is_correct"];
-                if($is_correct==1){
-                    array_push($cor,$id_pa);
-                } else {
-                    array_push($fa,$id_pa);
+                if ($is_correct == 1) {
+                    array_push($correct, $id_pa);
                 }
-                array_push($all,$id_pa);
+                array_push($all, $id_pa);
             }
 
         }
 
 
-
-
-        if($neg_grade!=0) {
-            $grcor=(float)$grade/(sizeof($all)+1);
-            $grfa = 0;
-        }else{
-            $grcor=(float)$grade/(sizeof($cor)+1);
-            $grfa = (float)$neg_grade/(sizeof($fa)+1);
-        }
-
-        $st= array();
-        $query13=mysqli_query($conn,"SELECT * FROM answer WHERE id_question='$id_question' AND id_exam='$id_exam' AND id_student='$id_st'");
+        $query13 = mysqli_query($conn, "SELECT * FROM answer WHERE id_question='$id_question' AND id_exam='$id_exam' AND id_student='$id_st'");
         while ($row13 = mysqli_fetch_array($query13, MYSQLI_ASSOC)) {
-            $student_answer=(int)$row13["student_answer"];
-            array_push($st,$student_answer);
+            $student_answer = $row13["student_answer"];
+            array_push($stud, $student_answer);
         }
 
-        $s=0;
-        $sum=0;
+        $pgrade = round(bcdiv($grade, sizeof($correct), 5),2);
+        if ($neg_grade == 0) {
+            $ngrade = -$pgrade;
+        } else {
+            $ngrade = -$pgrade - round(bcdiv($neg_grade, (sizeof($all) - sizeof($correct)), 5),2);
+        }
 
-          foreach ($all as &$as){
+        $grade_array = array();
 
-              if (in_array($as, $st, TRUE)) {
-                  if (in_array($as, $cor, TRUE)) {
-                      $sum =  bcadd($sum, $grcor, 3);
+        foreach ($stud as &$st) {
+                if (in_array($st, $correct)) {
+                    echo "Add ".$pgrade;
+                    array_push($grade_array, $pgrade);
+                } else {
+                    echo "Minus ".$ngrade;
+                    array_push($grade_array,$ngrade);
+                }
 
-                  }
-                  if (in_array($as, $fa, TRUE)) {
-                      $sum = -(bcsub($sum, $grfa, 3));
+        }
 
-                  }
-              }
-              else{
-                  if (in_array($as, $cor, TRUE)) {
-                      $sum = -(bcsub($sum, $grfa, 3));
-
-                  }
-                  if (in_array($as, $fa, TRUE)) {
-                      $sum = bcadd($sum, $grcor, 3);
-                  }
-              }
-              $s+=$sum;
-          }
+//        foreach ($correct as &$c) {
+//                if (in_array($c, $stud)) {
+//                    array_push($grade_array, $pgrade);
+//                } else {
+//                    array_push($grade_array, $ngrade);
+//                }
+//        }
 
 
-            mysqli_query($conn, "INSERT INTO correction  (id_exam,id_student,id_question,st_grade)
-                                    VALUES ('$id_exam','$id_st', '$id_question','$s')");
+       $fgrade= array_sum($grade_array);
+       if($stud===$correct){
+           $fgrade=$grade;
+       }
+
+//       else{
+//
+//       }
+        mysqli_query($conn, "INSERT INTO correction  (id_exam,id_student,id_question,st_grade)
+                                    VALUES ('$id_exam','$id_st', '$id_question','$fgrade')");
+
 
 
 

@@ -287,12 +287,12 @@ include 'config.php';
 
                                     if (in_array($id_pa, $st_a)) {
                                         echo "<h1 style='margin-left:30%;'><label class='container' for='$pa'>$pa
-                                        <input type='checkbox' id='$pa' name='pa[]' value='$pa' disabled>
+                                        <input type='checkbox' id='$pa' name='pa[]' value='$pa' checked disabled>
                                         <span class='checkmark'></span>
                                         </label></h1>";
                                     } else {
                                         echo "<h1 style='margin-left:30%;'><label class='container' for='$pa'>$pa
-                                     <input type='checkbox' id='$pa' name='pa[]' value='$pa' checked disabled>
+                                     <input type='checkbox' id='$pa' name='pa[]' value='$pa'  disabled>
 									 <span class='checkmark'></span>
 								  	</label></h1>";
                                     }
