@@ -103,15 +103,17 @@ include 'config.php';
 
         $id_st=$_SESSION["cor_id_student"];
         $id_exam=$_SESSION["correction_id_exam"];
-
+        $flag=0;
         $query=mysqli_query($conn,"SELECT * FROM contains WHERE id_exam='$id_exam'");
 
         while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 
             $id_question=$row["id_question"];
             //ftext
+
             $query1=mysqli_query($conn,"SELECT * FROM question WHERE id_question='$id_question' and type='Ελευθέρου κειμένου'");
             while ($row1 = mysqli_fetch_array($query1, MYSQLI_ASSOC)) {
+                $flag=1;
             $text=$row1["text"];
             $grade=$row1["grade"];
             $neq_grade=$row1["negative_grade"];
@@ -132,6 +134,10 @@ include 'config.php';
 
 
 
+        }
+        if($flag==0){
+            $location = "/Ptuxiaki/cal_result.php";
+            header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
         }
 
         ?>

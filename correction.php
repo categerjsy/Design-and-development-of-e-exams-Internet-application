@@ -115,7 +115,7 @@ date_default_timezone_set('Europe/Athens') ;
                         $date = new DateTime($end_time);
                         $now = new DateTime();
 
-//                        if($date < $now) {
+                       if($date < $now) {
                             echo "<form action='correction1.php'  method='post' >";
                             echo "<button type = 'submit' name='id_exam' class='wbtn' value='$id_exam'>";
                             echo "Διόρθωση εξέτασης";
@@ -123,7 +123,7 @@ date_default_timezone_set('Europe/Athens') ;
                             echo "</form>";
                             echo "$lesson Έναρξη:  $start_time Λήξη:  $end_time";
                             echo "<hr>";
-//                        }
+                       }
                     }
 
 

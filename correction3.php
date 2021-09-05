@@ -147,13 +147,6 @@ while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 
         }
 
-//        foreach ($correct as &$c) {
-//                if (in_array($c, $stud)) {
-//                    array_push($grade_array, $pgrade);
-//                } else {
-//                    array_push($grade_array, $ngrade);
-//                }
-//        }
 
 
        $fgrade= array_sum($grade_array);
@@ -174,22 +167,12 @@ while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 
     }
 
-    //ftext
-    $flag=0;
-    $query14=mysqli_query($conn,"SELECT * FROM question WHERE id_question='$id_question' and type='Ελευθέρου κειμένου'");
-    while ($row14 = mysqli_fetch_array($query10, MYSQLI_ASSOC)) {
-        $flag=1;
-    }
+        $location = "/Ptuxiaki/correction4.php";
+        header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+
 
 }
 
-if($flag==1){
-    $location = "/Ptuxiaki/cal_result.php";
-    header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
-}
-else{
-    $location = "/Ptuxiaki/correction4.php";
-    header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
-}
+
 
 ?>
