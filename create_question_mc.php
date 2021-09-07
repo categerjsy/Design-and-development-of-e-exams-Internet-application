@@ -101,7 +101,7 @@ table tr td:last-child{
 		</aside>
 		<main>  
 			<button class="openbtn" onclick="openNav()">☰ Βασικές επιλογές</button>     
-        <div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">
+        <div id="myform" style="margin-left:25%;padding:10px 50px;">
 			<h3>Εκχώρηση Multiple Choice ερώτησης</h3>
 			
 	
