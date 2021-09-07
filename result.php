@@ -28,15 +28,15 @@ if(isset($_POST['gradeID'])&&isset($_POST['ofgrades'])&&isset($_POST['grade'])) 
                                 VALUES ('$id_exam','$id_st', '" . $gradeID[$i] . "','" . $grade[$i] . "')");
         }
 
-        $location = "/Ptuxiaki/cal_result.php";
-        header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+
+        header("Location: cal_result.php");
     } else if ($flag == 1) {
-        $location = "/Ptuxiaki/correction4.php?msg=w";
-        header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+
+        header("Location:correction4.php?msg=w");
     }
 }
 else{
-    $location = "/Ptuxiaki/cal_result.php";
-    header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+
+    header("Location:cal_result.php");
 }
 ?>

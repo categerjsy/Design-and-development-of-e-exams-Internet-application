@@ -50,8 +50,7 @@ session_start();// start session
 				$error = "Username or Password is invalid";
 				echo "$error";
 				// Redirecting To this Page
-				$location="/Ptuxiaki/sign_in.php?msg=failed";
-				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+				header("Location: sign_in.php?msg=failed");
 			
 			}
       }

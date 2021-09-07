@@ -65,7 +65,6 @@ include 'config.php';
 		$_SESSION["id_pa"]=$id_pa;
 			echo "Make in database final!!!";
 			// Redirecting To Other Page
-			$location="/Ptuxiaki/create_question_mc_2.php";
-		    header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+		    header("Location: create_question_mc_2.php");
 		
 ?>

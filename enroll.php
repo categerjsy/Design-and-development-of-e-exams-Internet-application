@@ -12,12 +12,12 @@ include 'config.php';
 	<head>
         <?php
         if (isset($_SESSION["id_student"])==NULL) {
-            $location="/Ptuxiaki/index.php";
-            header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+
+            header("Location: index.php");
 
         }else if(isset($_SESSION["id_professor"])!=NULL){
-            $location="/Ptuxiaki/profilek.php";
-            header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+
+            header("Location: profilek.php");
         }
         else{
             $username=$_SESSION["username"];

@@ -37,8 +37,7 @@ $exam=$_POST["id_exam"];
                      </script>';
                 }
                 if($f==0) {
-                    $location = "/Ptuxiaki/examination.php";
-                    header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+                    header("Location: examination.php");
                 }
             }
             else{

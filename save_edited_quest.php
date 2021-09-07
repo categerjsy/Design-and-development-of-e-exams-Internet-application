@@ -26,14 +26,13 @@ if($question!=$oldquestion){
 	if($qry){
 		$_SESSION["username"]=$username;
 		echo "Question changed!!";
-		// Redirecting To Other Page
-		$location="/Ptuxiaki/edit_questions.php?msg=ch";
-		header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+
+		header("Location: edit_questions.php?msg=ch");
 				
 	}
 }else{
-	$location="/Ptuxiaki/edit_questions.php?msg=samequestion";
-		header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+
+		header("Location: edit_questions.php?msg=samequestion");
 }
 
 if($qtype=="True-False"){
@@ -62,16 +61,16 @@ if($qtype=="True-False"){
 			$_SESSION["username"]=$username;
 			echo "Question changed!!";
 			// Redirecting To Other Page
-			$location="/Ptuxiaki/edit_questions.php?msg=ch";
-			header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+
+			header("Location: edit_questions.php?msg=ch");
 					
 		}
 	}
 	else{
 		$_SESSION["username"]=$username;
 		// Redirecting To Other Page
-		$location="/Ptuxiaki/edit_questions.php?msg=ch";
-		header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+
+		header("Location: edit_questions.php?msg=ch");
 	}
 }
 else if(($qtype=="Multiple Choice")||($qtype=="Multiple Choice More")){
@@ -97,8 +96,8 @@ else if(($qtype=="Multiple Choice")||($qtype=="Multiple Choice More")){
 					$_SESSION["id_question"]=$id_question;
 					echo "Question changed!!";
 					// Redirecting To Other Page
-					$location="/Ptuxiaki/change_correct.php";
-					header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+
+					header("Location: change_correct.php");
 			}
 		}
 }

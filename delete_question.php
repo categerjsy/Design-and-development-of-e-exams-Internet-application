@@ -14,8 +14,7 @@ if($qry1){
 		$_SESSION["username"]=$username;
 		echo "Question deleted!!";
 		// Redirecting To Other Page
-		$location="/Ptuxiaki/select_lesson.php";
-		header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+		header("Location:select_lesson.php");
 }
 	
 $sql2 = "DELETE FROM contains WHERE id_question=$id_question";
@@ -24,8 +23,7 @@ if($qry2){
 		$_SESSION["username"]=$username;
 		echo "Question deleted!!";
 		// Redirecting To Other Page
-		$location="/Ptuxiaki/select_lesson.php";
-		header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+		header("Location:select_lesson.php");
 }
 
 $sql3 = "DELETE FROM includes WHERE id_question=$id_question";
@@ -33,9 +31,8 @@ $qry3 = mysqli_query($conn, $sql3);
 if($qry3){
 		$_SESSION["username"]=$username;
 		echo "Question deleted!!";
-		// Redirecting To Other Page
-		$location="/Ptuxiaki/select_lesson.php";
-		header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+
+		header("Location: select_lesson.php");
 }
 	
 $sql4 = "DELETE FROM make WHERE id_question=$id_question";
@@ -45,8 +42,8 @@ if($qry4){
 		$_SESSION["username"]=$username;
 		echo "Question deleted!!";
 		// Redirecting To Other Page
-		$location="/Ptuxiaki/select_lesson.php";
-		header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+
+		header("Location: select_lesson.php");
 }
 $s = mysqli_query($conn,"select * from has");
 while ($row = mysqli_fetch_array($s, MYSQLI_ASSOC)) {
@@ -59,9 +56,8 @@ while ($row = mysqli_fetch_array($s, MYSQLI_ASSOC)) {
         if($qry5){
             $_SESSION["username"]=$username;
             echo "Question deleted!!";
-            // Redirecting To Other Page
-            $location="/Ptuxiaki/select_lesson.php";
-            header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+
+            header("Location: select_lesson.php");
         }
 	}
 
@@ -74,8 +70,8 @@ $qry6 = mysqli_query($conn, $sql6);
 		$_SESSION["username"]=$username;
 		echo "Question deleted!!";
 		// Redirecting To Other Page
-		$location="/Ptuxiaki/select_lesson.php";
-		header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+
+		header("Location: select_lesson.php");
 				
 	}	
 

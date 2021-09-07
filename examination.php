@@ -25,8 +25,8 @@ $st=$_SESSION["id_student"];
 
       $_SESSION["ex_array"]=$exam_array;
       $_SESSION["number"]=0;
-      $location="/Ptuxiaki/examination1.php";
-      header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+
+      header("Location: examination1.php");
 
  
 ?>

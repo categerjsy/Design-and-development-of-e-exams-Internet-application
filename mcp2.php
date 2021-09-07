@@ -20,7 +20,7 @@ include 'config.php';
 echo "Record is inserted";  
  
 			// Redirecting To Other Page
-			$location="/Ptuxiaki/create_question.php?msg=done";
-		    header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+
+		    header("Location: create_question.php?msg=done");
 		
 ?>

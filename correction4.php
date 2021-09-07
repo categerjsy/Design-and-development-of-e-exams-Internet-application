@@ -13,12 +13,12 @@ include 'config.php';
 
     <?php
     if (isset($_SESSION["id_professor"])==NULL) {
-        $location="/Ptuxiaki/index.php";
-        header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+
+        header("Location: index.php");
 
     }else if(isset($_SESSION["id_student"])!=NULL){
-        $location="/Ptuxiaki/profilef.php";
-        header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+
+        header("Location: profilef.php");
     }
     else{
         $username=$_SESSION["username"];
@@ -136,8 +136,7 @@ include 'config.php';
 
         }
         if($flag==0){
-            $location = "/Ptuxiaki/cal_result.php";
-            header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+            header("Location:cal_result.php");
         }
 
         ?>

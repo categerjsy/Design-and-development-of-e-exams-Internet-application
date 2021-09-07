@@ -17,10 +17,8 @@ $_SESSION["DIFF"]=(!$_SESSION["easy"]&&!$_SESSION["medium"]&&!$_SESSION["Multipl
 
 if(($_SESSION["all_diff"])&&($_SESSION["all_categ"])){
     // Redirecting To Other Page
-			$location="/Ptuxiaki/create_exam2.php";
-		    header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+		    header("Location: create_exam2.php");
 }
     // Redirecting To Other Page
-    $location="/Ptuxiaki/f1.php";
-	header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+	header("Location:f1.php");
 ?>

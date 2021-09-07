@@ -45,7 +45,7 @@ include 'config.php';
 		VALUES ('$id_q','$id_pa')");
 			echo "Make in database final!!!";
 			// Redirecting To Other Page
-			$location="/Ptuxiaki/create_question.php?msg=done";
-		    header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+
+		    header("Location: create_question.php?msg=done");
 		
 ?>

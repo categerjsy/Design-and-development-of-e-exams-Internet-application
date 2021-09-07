@@ -6,7 +6,7 @@ include 'config.php';
 $_SESSION["cor_id_result"]=$_POST["id_student"];
 $id_exam=$_SESSION["correction_id_exam"];
 
-$location="/Ptuxiaki/cal_result1.php";
-header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+
+header("Location: cal_result1.php" );
 
 ?>

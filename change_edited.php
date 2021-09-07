@@ -18,12 +18,10 @@ if (isset($_SESSION["id_student"])!=NULL){
 			
 			if($oldemail!=$email){
 				// Redirecting To this Page
-			$location="/Ptuxiaki/edit_prof.php?msg=failed_mail";
-			header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+			header("Location: edit_prof.php?msg=failed_mail");
 			}
 			else{
-			$location="/Ptuxiaki/edit_prof.php";
-			header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+			header("Location: edit_prof.php");
 			}
 		}
 		else{
@@ -34,8 +32,7 @@ if (isset($_SESSION["id_student"])!=NULL){
 				$qry = mysqli_query($conn, $sql);
 				if($qry){
 					$_SESSION["username"]=$oldusername;
-					$location="/Ptuxiaki/edit_prof.php";
-					header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+					header("Location: edit_prof.php");
 					
 				}
 		}
@@ -56,9 +53,7 @@ if (isset($_SESSION["id_student"])!=NULL){
 					$_SESSION["username"]=$oldusername;
 					echo "Profile changed!!";
 					// Redirecting To Other Page
-				
-					$location="/Ptuxiaki/edit_prof.php";
-					header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+					header("Location: edit_prof.php");
 						
 				}
 		
@@ -77,12 +72,10 @@ if (isset($_SESSION["id_student"])!=NULL){
 			echo "$error";
 			
 			if($oldusername!=$username){
-			$location="/Ptuxiaki/edit_prof.php?msg=failed_username";
-			header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+			header("Location: edit_prof.php?msg=failed_username");
 			}
 			else{
-			$location="/Ptuxiaki/edit_prof.php";
-			header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+			header("Location: edit_prof.php");
 			}
 		}
 		else{
@@ -93,8 +86,7 @@ if (isset($_SESSION["id_student"])!=NULL){
 				$qry = mysqli_query($conn, $sql);
 				if($qry){
 					$_SESSION["username"]=$username;
-					$location="/Ptuxiaki/edit_prof.php";
-					header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+					header("Location: edit_prof.php");
 					
 				}
 		}
@@ -115,12 +107,10 @@ else if (isset($_SESSION["id_professor"])!=NULL){
 			echo "$error";
 			
 			if($oldemail!=$email){
-			$location="/Ptuxiaki/edit_prof.php?msg=failed_mail";
-			header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+			header("Location: edit_prof.php?msg=failed_mail");
 			}
 			else{
-			$location="/Ptuxiaki/edit_prof.php";
-			header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+			header("Location: edit_prof.php");
 			}
 		}
 		else{
@@ -131,9 +121,8 @@ else if (isset($_SESSION["id_professor"])!=NULL){
 				$qry = mysqli_query($conn, $sql);
 				if($qry){
 					$_SESSION["username"]=$oldusername;
-				
-					$location="/Ptuxiaki/edit_prof.php";
-					header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+
+					header("Location: edit_prof.php");
 					
 					
 				}
@@ -155,9 +144,7 @@ else if (isset($_SESSION["id_professor"])!=NULL){
 					$_SESSION["username"]=$oldusername;
 					echo "Profile changed!!";
 					// Redirecting To Other Page
-				
-					$location="/Ptuxiaki/edit_prof.php";
-					header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+					header("Location: edit_prof.php");
 						
 				}
 		
@@ -176,12 +163,10 @@ else if (isset($_SESSION["id_professor"])!=NULL){
 			echo "$error";
 			if($oldusername!=$username){
 			// Redirecting To this Page
-			$location="/Ptuxiaki/edit_prof.php?msg=failed_username";
-			header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+			header("Location: edit_prof.php?msg=failed_username");
 			}
 			else{
-				$location="/Ptuxiaki/edit_prof.php";
-			header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+			header("Location: edit_prof.php" );
 			}
 		}
 		else{
@@ -192,8 +177,7 @@ else if (isset($_SESSION["id_professor"])!=NULL){
 				$qry = mysqli_query($conn, $sql);
 				if($qry){
 					$_SESSION["username"]=$username;
-					$location="/Ptuxiaki/edit_prof.php";
-					header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+					header("Location: edit_prof.php");
 				}
 		}
 	}					

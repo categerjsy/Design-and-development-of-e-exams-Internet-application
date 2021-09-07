@@ -21,9 +21,8 @@ $us = mysqli_query($conn,"select * from user_student where email='$email'");
                                 mail("$email",'Change Password',"Dear user,
                     Your new password is:$randomString
                     Examination System Team ",'From: examinationsystemuop@gmail.com');
-                  
-                    $location="/Ptuxiaki/index.php";
-                    header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+
+                    header("Location: index.php");
                 }
 
 $up = mysqli_query($conn,"select * from user_professor where email='$email'");
@@ -38,13 +37,12 @@ $up = mysqli_query($conn,"select * from user_professor where email='$email'");
                     Your new password is:$randomString
                     Examination System Team ",'From: examinationsystemuop@gmail.com');
                   
-                    $location="/Ptuxiaki/index.php";
-                    header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+
+                    header("Location:index.php");
                 }
                 
 			if($t==0){
-                $location="/Ptuxiaki/forgot_password.php?msg=nu";
-                header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);	
+                header("Location: forgot_password.php?msg=nu");
             }
                		
 ?>

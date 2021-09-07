@@ -23,7 +23,7 @@ $id_prof=$_SESSION["id_professor"];
 mysqli_query($conn, "INSERT INTO wants  (id_professor,id_results)
 			                VALUES ('$id_prof','$id_result')");
 
-$location="/Ptuxiaki/cal_result1.php";
-header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+
+header("Location: cal_result1.php");
 
 ?>

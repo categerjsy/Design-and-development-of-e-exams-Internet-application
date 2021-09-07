@@ -26,9 +26,8 @@ $date_old="$date $time:00";
 	$now =  date ('Y-m-d H:i:s');
 	
 		if($date_for_database< $now) {
-			
-			$location="/Ptuxiaki/edit_exam2.php?msg=past";
-		    header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+
+		    header("Location:edit_exam2.php?msg=past");
 		}
 		elseif($date_for_database> $now) {
 		//question
@@ -67,8 +66,8 @@ $date_old="$date $time:00";
 
                 $sql = "UPDATE exam SET time='$time_for_database' WHERE id_exam='$id_exam'";
                 $conn->query($sql);
-                $location="/Ptuxiaki/create_exam2.php";
-                header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+
+                header("Location: create_exam2.php");
               } else {
              echo "Error updating record: " . $conn->error;
               }

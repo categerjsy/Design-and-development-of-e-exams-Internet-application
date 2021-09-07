@@ -25,8 +25,8 @@ table tr td:last-child{
 	
 		<?php 
         if ((isset($_SESSION["id_student"])==NULL)&&(isset($_SESSION["id_professor"])==NULL)) {
-			$location="/Ptuxiaki/index.php";
-			header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);			
+
+			header("Location:index.php");
 						
         }
         else{

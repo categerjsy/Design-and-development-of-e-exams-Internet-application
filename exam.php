@@ -26,8 +26,7 @@ include 'config.php';
 
 		if($date_for_database< $now) {
 
-			$location="/Ptuxiaki/create_exam.php?msg=past";
-		    header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+		    header("Location: create_exam.php?msg=past");
 		}
 		elseif($date_for_database> $now) {
 		//exam
@@ -46,7 +45,6 @@ include 'config.php';
 			// Redirecting To Other Page
 			$_SESSION["id_exam"]=$id_exam;
 
-			$location="/Ptuxiaki/create_exam2.php";
-		    header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+		    header("Location: create_exam2.php");
 		}
 ?>

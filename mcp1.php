@@ -62,7 +62,6 @@ include 'config.php';
         }
 			echo "Make in database final!!!";
 			// Redirecting To Other Page
-			$location="/Ptuxiaki/create_question_mcp_2.php";
-		    header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+		    header("Location: create_question_mcp_2.php");
 		
 ?>

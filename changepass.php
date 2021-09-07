@@ -63,14 +63,12 @@ if($new==$conf){
 				$error = "Password is invalid";
 				echo "$error";
 				// Redirecting To this Page
-				$location="/Ptuxiaki/change_password.php?msg=failed";
-				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+				header("Location: change_password.php?msg=failed");
 			
 			}
  
 }else {
-	$location="/Ptuxiaki/change_password.php?msg=cp";
-	header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+	header("Location: change_password.php?msg=cp");
 }	
 
 ?>

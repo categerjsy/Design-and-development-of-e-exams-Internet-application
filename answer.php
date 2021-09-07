@@ -31,8 +31,7 @@ if (isset($_POST['ek'])){
     mysqli_query($conn,$sql);
 
 
-    $location="/Ptuxiaki/examination2.php";
-    header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+    header("Location:examination2.php");
 
 }
 
@@ -50,8 +49,8 @@ if (isset($_POST['tf'])){
     }
 
     mysqli_query($conn,$sql);
-    $location="/Ptuxiaki/examination2.php";
-    header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+
+    header("Location: examination2.php");
 
 }
 
@@ -65,8 +64,8 @@ if (isset($_POST['mc'])){
 
         mysqli_query($conn, $sql);
     }
-    $location="/Ptuxiaki/examination2.php";
-    header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+
+    header("Location: examination2.php");
 }
 
 
@@ -85,9 +84,7 @@ if (isset($_POST['mcm'])){
         }
     }
 
-
-    $location="/Ptuxiaki/examination2.php";
-    header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+    header("Location: examination2.php");
 
 }
 

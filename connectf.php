@@ -26,9 +26,7 @@ $query = mysqli_query($conn,"select * from user_professor where email='$email'")
 $rep = mysqli_num_rows($query);
 ////////////////////////////////////  
 if((strlen($pass)<7)||(strlen($pass)>16)){
-	$location="/Ptuxiaki/sign_upf.php?msg=plen";
-	header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
-
+	header("Location: sign_upf.php?msg=plen");
 }  
 else{
     if($pass==$cpass) {
@@ -36,15 +34,13 @@ else{
 				$error = "Username taken";
 				echo "$error";
 				// Redirecting To this Page
-				$location="/Ptuxiaki/sign_upf.php?msg=failed_username";
-				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+				header("Location: sign_upf.php?msg=failed_username");
 			}
             else if($re==1||$rep==1){
 				$error = "E-mail taken";
 				echo "$error";
 				// Redirecting To this Page
-				$location="/Ptuxiaki/sign_upf.php?msg=failed_mail";
-				header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+				header("Location: sign_upf.php?msg=failed_mail");
 			}
 			else{
 					$sql = "INSERT INTO user_student (name, surname, email, phone_number, AM, username,password)
@@ -55,15 +51,13 @@ else{
 			if($qry){
 				echo "Profile in database!!!";
 				// Redirecting To Other Page
-				$location="/Ptuxiaki/sign_in.php?msg=okay";
-			header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+			header("Location: sign_in.php?msg=okay");
 			}
 
 			}
 		
     }else{
-		$location="/Ptuxiaki/sign_upf.php?msg=cp";
-		header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+		header("Location:sign_upf.php?msg=cp");
 	
 		
 	}

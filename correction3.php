@@ -167,8 +167,8 @@ while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 
     }
 
-        $location = "/Ptuxiaki/correction4.php";
-        header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+
+        header("Location:correction4.php");
 
 
 }

@@ -17,7 +17,6 @@ include 'config.php';
 		
 			echo "Make in database final!!!";
 			// Redirecting To Other Page
-			$location="/Ptuxiaki/edit_questions.php?msg=ch";
-			header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+			header("Location: edit_questions.php?msg=ch");
 		
 ?>
