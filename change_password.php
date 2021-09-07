@@ -96,7 +96,7 @@ include 'config.php';
 	</aside>
 	<main>  
 		<button class="openbtn" onclick="openNav()">☰ Βασικές επιλογές</button>     
-        <div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">
+        <div id="myform" style="margin-left:25%;padding:10px 50px;">
         <?php
         if (isset($_GET["msg"]) && $_GET["msg"] == 'plen') {
           print "<p style='color:red'> Ο κωδικός σας πρέπει να έχει μέγεθος 7 έως 15 χαρακτήρων. Παρακαλώ προσπαθήστε ξανά.</p>";

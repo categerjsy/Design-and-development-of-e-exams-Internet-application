@@ -82,7 +82,7 @@ include 'config.php';
 	</aside>
 	<main>  
 		<button class="openbtn" onclick="openNav()">☰ Βασικές επιλογές</button>     
-        <div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">
+        <div id="myform" style="margin-left:25%;padding:10px 50px;">
 			<h3>Εκχώρηση αριθμόυ ερωτήσεων που θέλετε στο διαγώνισμα</h3>
 			<form action="random_test2.php" method="post">
 			<?php 

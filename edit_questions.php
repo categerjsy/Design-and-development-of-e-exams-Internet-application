@@ -82,7 +82,7 @@ $id_lesson=$_SESSION["idl"];
 		
 	</aside>
 	<main>
-        <div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">
+        <div id="myform" style="margin-left:25%;padding:10px 50px;">
 		<?php
 			if (isset($_GET["msg"]) && $_GET["msg"] == 'ch') {
 				print "<p style='color:green'>Η ερώτηση σας άλλαξε.<p>";

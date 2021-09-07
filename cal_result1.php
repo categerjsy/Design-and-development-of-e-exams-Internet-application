@@ -100,6 +100,7 @@ include 'config.php';
         <div class="float-child2">
 
             <div id="myform" >
+                <div id="myHIDE" >
                 <?php
                 $id_re=$_SESSION["cor_id_result"];
                 $id_exam=$_SESSION["correction_id_exam"];
@@ -345,7 +346,7 @@ include 'config.php';
 
                 <br>
             </div>
-
+            </div>
         </div>
 
     </div>

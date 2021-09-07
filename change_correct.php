@@ -60,7 +60,7 @@ while ($row = mysqli_fetch_array($s, MYSQLI_ASSOC)) {
 					</div>
 	
 				  </div>
-				  <div class="nav-btn">
+				  <div class="nav-btn" onclick="myHide()">
 					<label for="nav-check">
 					  <span></span>
 					  <span></span>
@@ -94,7 +94,8 @@ while ($row = mysqli_fetch_array($s, MYSQLI_ASSOC)) {
 		</aside>
 		<main>  
 			<button class="openbtn" onclick="openNav()">☰ Βασικές επιλογές</button>     
-        <div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">
+        <div id="myform" style="margin-left:25%;padding:10px 50px;">
+            <div id="myHIDE">
 		<h3>Εκχώρηση σωστής απάντησης</h3>
 		<?php
 			if($qtype=="Multiple Choice"){
@@ -150,6 +151,7 @@ while ($row = mysqli_fetch_array($s, MYSQLI_ASSOC)) {
 
 
 			  </form>
+            </div>
 			</div>
                      
 		</main>
@@ -162,5 +164,7 @@ while ($row = mysqli_fetch_array($s, MYSQLI_ASSOC)) {
 		<script src="assets/js/grade.js"></script>
 		<script src="assets/js/ngrade.js"></script>
 		<script src="assets/js/inserttime.js"></script>
-	</body>
+        <script src="assets/js/hide.js"></script>
+
+    </body>
 </html>

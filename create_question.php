@@ -83,7 +83,7 @@ session_start();
 		</aside>
 		<main>  
 			<button class="openbtn" onclick="openNav()">☰ Βασικές επιλογές</button>     
-           <div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">
+           <div id="myform" style="margin-left:25%;padding:10px 50px;">
 				<?php
 					if (isset($_GET["msg"]) && $_GET["msg"] == 'done') {
 						print "<p style='color:green'>Η ερώτηση σας, δημιουργήθηκε.</p>";

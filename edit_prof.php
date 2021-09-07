@@ -119,7 +119,7 @@ table tr td:last-child{
 					print "<h4>Παρακαλώ προσπαθήστε ξανά, το email που επιλέξατε χρησιμοποιείται από άλλο χρήστη.</h4>";
 				}
 			?>
-		<div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">
+		<div id="myform" style="margin-left:25%;padding:10px 50px;">
 			<h3>Επεξεργασία προφίλ</h3>
 			
 			<h4>Γειά σας <?php echo "$username"; ?>!</h4>

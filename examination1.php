@@ -89,7 +89,7 @@ date_default_timezone_set('Europe/Athens') ;
 		<main>  
 			<button class="openbtn" onclick="openNav()">☰ Βασικές επιλογές</button>   
                        
-		<div id="myform" style="margin-left:15%;padding:10px 50px;height:1000px;">
+		<div id="myform" style="margin-left:15%;padding:10px 50px;">
 			<h3>Εξέταση</h3>
 			
 	        <h4>Χρόνος που απομένει:</h4>

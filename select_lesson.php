@@ -80,7 +80,7 @@ include 'config.php';
 		</aside>
 		<main>  
 			<button class="openbtn" onclick="openNav()">☰ Βασικές επιλογές</button>     
-        <div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">
+        <div id="myform" style="margin-left:25%;padding:10px 50px;">
 			<h2>Επεξεργασία ερωτήσεων</h2>
 			
 	

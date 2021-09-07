@@ -47,7 +47,7 @@ $id_question=$_POST['id_question'];
 					</div>
 	
 				  </div>
-				  <div class="nav-btn">
+				  <div class="nav-btn" onclick="myHide()">
 					<label for="nav-check">
 					  <span></span>
 					  <span></span>
@@ -84,6 +84,7 @@ $id_question=$_POST['id_question'];
 			<button class="openbtn" onclick="openNav()">☰ Βασικές επιλογές</button>   
                        
 		<div id="myform" style="margin-left:25%;padding:10px 50px;height:1000px;">
+            <div id="myHIDE">
 			<h3>Επεξεργασία ερωτήσεων</h3>
 			<?php
 				if (isset($_SESSION["id_professor"])!=NULL){
@@ -169,7 +170,7 @@ $id_question=$_POST['id_question'];
 				<br><br>
 
 			</form>
-		</div>
+		</div></div>
 		</main>
                      
 		</main>
@@ -181,5 +182,6 @@ $id_question=$_POST['id_question'];
 		<script src="assets/js/emailcheck.js"></script>
 		<script src="assets/js/passwordcheck.js"></script>
 		<script src="assets/js/index.js"></script>
+    <script src="assets/js/hide.js"></script>
 	</body>
 </html>

@@ -156,6 +156,7 @@ include 'config.php';
 		}
 		?>
         <div id="myform" >
+            <div id="myHIDE" >
 		<?php
 		$exam=$_SESSION["id_exam"];
 		$query=mysqli_query($conn,"SELECT * FROM exam WHERE id_exam='$exam'");
@@ -473,7 +474,7 @@ include 'config.php';
             
     	        <button type="reset" class="cleanbtn">Καθαρισμός</button>
                 <br>
-				</div>
+				</div></div>
 	
 	</div>
 			 
