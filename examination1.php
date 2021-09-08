@@ -91,8 +91,39 @@ date_default_timezone_set('Europe/Athens') ;
                        
 		<div id="myform" style="margin-left:15%;padding:10px 50px;">
 			<h3>Εξέταση</h3>
-			
-	        <h4>Χρόνος που απομένει:</h4>
+            <h4>Χρόνος που απομένει για την εξέταση:</h4>
+            <?php
+
+            //if you leave this it takes your current timezone
+            $userTimezone = "Europe/Athens";
+            $timezone = new DateTimeZone( $userTimezone );
+
+            $crrentSysDate = new DateTime(date('m/d/y h:i:s a'),$timezone);
+            $userDefineDate = $crrentSysDate->format('m/d/y h:i:s a');
+            $end_time=$_SESSION["end_exam"];
+            $start =new Datetime();// date_create($userDefineDate,$timezone);
+            $end = date_create(date('m/d/y h:i:s a', strtotime($end_time)),$timezone);
+
+            $diff=date_diff($start,$end);
+//            $minutes = ($diff->days * 24 * 60) + ($diff->h * 60) + $diff->i;
+//
+//            $s=$diff->s;
+
+            ?>
+
+            <div class="container">
+                <div id="countdown">
+                    <ul>
+                        <li><span id="days"></span>days</li>
+                        <li><span id="hours"></span>Hours</li>
+                        <li><span id="minutes"></span>Minutes</li>
+                        <li><span id="seconds"></span>Seconds</li>
+                    </ul>
+                </div>
+            </div>
+
+
+	        <h4>Χρόνος που απομένει για την ερώτηση:</h4>
 			<div class="countdown-container" style="width:55%;">
 					
 					<div class="hours-container">
@@ -236,7 +267,7 @@ date_default_timezone_set('Europe/Athens') ;
                      
 		</main>
         <footer>Copyright Gerakianaki Vlachou © 2021</footer>
-	
+
 		<script>
 		const countDownClock = (number = 100, format = 'seconds') => {
 		
@@ -304,6 +335,42 @@ date_default_timezone_set('Europe/Athens') ;
 
 
 		</script>
+
+        <script>
+            (function () {
+                const second = 1000,
+                    minute = second * 60,
+                    hour = minute * 60,
+                    day = hour * 24;
+
+                let birthday = '<?=$end_time?>',
+                    countDown = new Date(birthday).getTime(),
+                    x = setInterval(function() {
+
+                        let now = new Date().getTime(),
+                            distance = countDown - now;
+
+                        document.getElementById("days").innerText = Math.floor(distance / (day)),
+                            document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+                            document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+                            document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+
+                        //do something later when date is reached
+                        if (distance < 0) {
+                            let headline = document.getElementById("headline"),
+                                countdown = document.getElementById("countdown"),
+                                content = document.getElementById("content");
+
+                            headline.innerText = "It's my birthday!";
+                            countdown.style.display = "none";
+                            content.style.display = "block";
+
+                            clearInterval(x);
+                        }
+                        //seconds
+                    }, 0)
+            }());
+        </script>
 		<script src="assets/js/aside.js"></script>
 	</body>
 </html>
