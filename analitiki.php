@@ -81,7 +81,7 @@ include 'config.php';
     <button class="openbtn" onclick="openNav()">☰ Βασικές επιλογές</button>
 
     <div id="myform" style="margin-left:25%;padding:10px 50px;">
-        <h3>Αναλυτική βαθμολογία φοιτητών3</h3>
+        <h3>Αναλυτική βαθμολογία φοιτητών</h3>
 
 
 
