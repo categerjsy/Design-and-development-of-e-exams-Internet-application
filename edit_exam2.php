@@ -146,7 +146,7 @@ include 'config.php';
 				
 				
 			    <input type="submit" value="Επεξεργασία των Ερωτήσεων">
-				<button class="cancelbtn" type="reset"><a href="create_question.php">Έξοδος</a></button>
+				<button class="cancelbtn" type="reset"><a href="edit_exam.php">Έξοδος</a></button>
             
     	        <button type="reset" class="cleanbtn">Καθαρισμός</button>
                 <br>
