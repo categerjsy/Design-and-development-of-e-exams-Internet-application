@@ -472,7 +472,7 @@ include 'config.php';
 
                 <a href="profilek.php"><button class="cancelbtn" type="reset">Έξοδος</button></a>
             
-    	        <button type="reset" class="cleanbtn">Καθαρισμός</button>
+
                 <br>
 				</div></div>
 	

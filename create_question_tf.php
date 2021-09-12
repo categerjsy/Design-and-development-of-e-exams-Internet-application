@@ -148,7 +148,7 @@ include 'config.php';
 				<input type="submit" value="Εισαγωγή True-False ερώτησης">
 				<br> <br>
     	        <button type="reset" class="cleanbtn">Καθαρισμός</button>
-                <br> <br>
+
 				<button class="cancelbtn" type="reset"><a href="create_question.php">Έξοδος</a></button>
                 <br> <br>
 
