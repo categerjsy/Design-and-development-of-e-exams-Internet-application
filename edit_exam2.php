@@ -131,16 +131,15 @@ include 'config.php';
                        $arr=explode(" ", $date_time);
                        $arrdate=explode("-",$arr[0]);
                        $arrtime=explode(":",$arr[1]);
-                    
 				  }
 			    ?>
 
                   <br>
                   <br>Ημερομηνία εξέτασης<br>
-                  <input type="date" name="tdate" min="<?php $date?>" required>
+                  <input type="date" name="tdate" value="<?php  echo date('Y-m-d',strtotime($arr[0])); ?>" required>
                   <br>
                   <br>Ώρα εξέτασης<br>
-                  <input type="time" id="ttime" name="ttime" required>
+                  <input type="time" id="ttime" name="ttime" value="<?php  echo  $arrtime[0].":".$arrtime[1]; ?>" required>
 
                   <br>
 				
