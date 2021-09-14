@@ -156,6 +156,8 @@ date_default_timezone_set('Europe/Athens') ;
                             echo "<button type ='submit' name='ek' class='clbtn' value='$qu'>";
                             echo "Ορισμός απάντησης";
                             echo "</button>";
+                            echo "<a href='examination2.php'><button class='cancelbtn' >Επόμενη ερώτηση</button></a>
+                                        <button type='reset' class='cleanbtn'>Καθαρισμός</button>";
                             echo "</form>";
                             echo "<br>";
                         }
@@ -169,6 +171,8 @@ date_default_timezone_set('Europe/Athens') ;
                             echo "<button type ='submit' name='tf' class='clbtn' value='$qu'>";
                             echo "Ορισμός απάντησης";
                             echo "</button>";
+                            echo "<a href='examination2.php'><button class='cancelbtn' >Επόμενη ερώτηση</button></a>
+                                        <button type='reset' class='cleanbtn'>Καθαρισμός</button>";
                             echo "</form>";
                             echo "<br>";
                         }
@@ -194,6 +198,8 @@ date_default_timezone_set('Europe/Athens') ;
                                 echo "<button type ='submit' name='mc' class='clbtn' value='$qu'>";
                                 echo "Ορισμός απάντησης";
                                 echo "</button>";
+                                echo "<a href='examination2.php'><button class='cancelbtn' >Επόμενη ερώτηση</button></a>
+                                        <button type='reset' class='cleanbtn'>Καθαρισμός</button>";
                                 echo "</form>";
                                 $try = 1;
                             }
@@ -219,6 +225,8 @@ date_default_timezone_set('Europe/Athens') ;
                                 echo "<button type ='submit' name='mcm' class='clbtn' value='$qu'>";
                                 echo "Ορισμός απάντησης";
                                 echo "</button>";
+                                echo "<a href='examination2.php'><button class='cancelbtn' >Επόμενη ερώτηση</button></a>
+                                        <button type='reset' class='cleanbtn'>Καθαρισμός</button>";
                                 echo "</form>";
                                 $try = 1;
                             }
@@ -232,13 +240,10 @@ date_default_timezone_set('Europe/Athens') ;
                 }
 				?>
 				
-				<a href="examination2.php"><button class="cancelbtn" type="reset">Επόμενη ερώτηση</button></a>
-    	        <button type="reset" class="cleanbtn">Καθαρισμός</button>
+
                 <br>
 
 
-			  </form>
-				
 			<hr>
 			</div>
                      
