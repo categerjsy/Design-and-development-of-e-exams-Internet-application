@@ -1182,7 +1182,7 @@ include 'config.php';
 					
 				<button class="cancelbtn" type="reset"><a href="profilek.php">Έξοδος</a></button>
             
-    	        <button type="reset" class="cleanbtn">Καθαρισμός</button>
+
                 <br>
 				</div>
 	
