@@ -14,7 +14,7 @@ if($qry1){
 		$_SESSION["username"]=$username;
 		echo "Question deleted!!";
 		// Redirecting To Other Page
-		header("Location:select_lesson.php");
+		header("Location: select_lesson.php");
 }
 	
 $sql2 = "DELETE FROM contains WHERE id_question=$id_question";
@@ -23,7 +23,7 @@ if($qry2){
 		$_SESSION["username"]=$username;
 		echo "Question deleted!!";
 		// Redirecting To Other Page
-		header("Location:select_lesson.php");
+		header("Location: select_lesson.php");
 }
 
 $sql3 = "DELETE FROM includes WHERE id_question=$id_question";
@@ -32,7 +32,7 @@ if($qry3){
 		$_SESSION["username"]=$username;
 		echo "Question deleted!!";
 
-		header("Location: select_lesson.php");
+
 }
 	
 $sql4 = "DELETE FROM make WHERE id_question=$id_question";
@@ -57,7 +57,7 @@ while ($row = mysqli_fetch_array($s, MYSQLI_ASSOC)) {
             $_SESSION["username"]=$username;
             echo "Question deleted!!";
 
-            header("Location: select_lesson.php");
+
         }
 	}
 
@@ -73,7 +73,7 @@ $qry6 = mysqli_query($conn, $sql6);
 
 		header("Location: select_lesson.php");
 				
-	}	
+	    }
 
-//mysqli_close($conn);
+
 ?>
