@@ -157,7 +157,7 @@ table tr td:last-child{
 				<label for="email"><b>E-mail σχολής</b></label> <br>
 				<table class="table table-bordered" id="e-mail">
 				<tr>
-					<td><input type="email" value="<?php echo "$my_m"; ?>" id="email" name="email" onblur="validateEmail(this);"  pattern="[a-zA-z0-9]*@uop.gr|[a-zA-z0-9]*@go.uop.gr" class="form-control name_list" /></td>
+					<td><input type="email" value="<?php echo "$my_m"; ?>" id="email" name="email" onblur="validateEmail(this);"  pattern="[a-zA-z0-9]*@uop.gr|[a-zA-z0-9]*@go.uop.gr" class="form-control name_list" required/></td>
 					<td>&nbsp;<button type = 'submit' name='e-mail' class="cleanbtn">Αλλαγή e-mail</button></td>
 				</tr>
 				</table>
@@ -169,7 +169,7 @@ table tr td:last-child{
 				<label for="telephone"><b>Αριθμός τηλεφώνου</b></label> 
 				<table class="table table-bordered" id="telephone">
 				<tr>
-					<td><input type="tel" value="<?php echo "$tel"; ?>" name="tel" pattern="[0-9]{10}"  class="form-control name_list" /></td>
+					<td><input type="tel" value="<?php echo "$tel"; ?>" name="tel" pattern="[0-9]{10}"  class="form-control name_list" required/></td>
 					<td>&nbsp;<button type = 'submit' name="telephone" class="cleanbtn">Αλλαγή τηλεφώνου</button></td>
 				</tr>
 				</table>
@@ -181,7 +181,7 @@ table tr td:last-child{
 				<label for="usname"><b>Όνομα Χρήστη</b></label> 
 				<table class="table table-bordered" id="uname">
 				<tr>
-					<td><input type="text" value="<?php echo "$username"; ?>" name="uname"  class="form-control name_list" /></td>
+					<td><input type="text" value="<?php echo "$username"; ?>" name="uname"  class="form-control name_list"required/></td>
 					<td>&nbsp;<button type = 'submit' name='usename' class="cleanbtn">Αλλαγή ονόματος </button></td>
 				</tr>
 				</table>
