@@ -53,7 +53,7 @@ include 'config.php';
 				  </div>
 				  
 				  <div class="nav-links">
-					<a  href="profilef.php"> <?php  if(isset($_SESSION["id_professor"])){ echo "$username";} ?></a>
+					<a  href="profilef.php"> <?php  if(isset($_SESSION["id_student"])){ echo "$username";} ?></a>
 					<a href="logout.php">Αποσύνδεση</a>
 				  </div>
 			</div>
