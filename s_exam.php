@@ -30,7 +30,7 @@ $lesson=$_SESSION["lesson"];
     }
     if($final_grade<$gradefornow){
         echo '<script type="text/javascript">'; 
-        echo 'alert("To άρθοισμα των εισαγθέντων ερωτήσεων είναι μεγαλύτερο της τελικής βαθμολογίας, οι επιπλέον μονάδες αυτοματοποιούνται ως bonus βαθμολογία.");'; 
+        echo 'alert("To άρθοισμα των εισαχθέντων ερωτήσεων είναι μεγαλύτερο της τελικής βαθμολογίας, οι επιπλέον μονάδες αυτοματοποιούνται ως bonus βαθμολογία.");';
         echo 'window.location.href = "show_exam.php?msg=exam";';
         echo '</script>';
         $sql = "UPDATE exam
