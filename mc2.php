@@ -22,7 +22,7 @@ if(isset($_POST['pa'])) {
 
 }
 echo "<script LANGUAGE='JavaScript'>
-    window.alert('Πρέπει να εισάγετε τις σωστή απάντηση.');
+    window.alert('Πρέπει να εισάγετε τη σωστή απάντηση.');
     window.location.href='create_question_mc_2.php';
     </script>";
 ?>
