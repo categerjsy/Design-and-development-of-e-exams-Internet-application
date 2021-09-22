@@ -39,7 +39,7 @@ while ($row = mysqli_fetch_array($s, MYSQLI_ASSOC)) {
 $sql6 = "DELETE FROM has WHERE id_question=$id_question";
 $qry6 = mysqli_query($conn, $sql6);
 
-		if($qry1&&$qry3&&$qry4&&$qry5&&$qry6){
+		if($qry1&&$qry3&&$qry4&&$qry6){
 		$_SESSION["username"]=$username;
 		echo "Question deleted!!";
 		header("Location: select_lesson.php");

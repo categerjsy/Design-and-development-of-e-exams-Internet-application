@@ -92,7 +92,7 @@ include 'config.php';
 
     <div class="float-container">
 
-        <div class="float-child"  id="myHIDE">
+        <div class="float-child"  >
             <a href="correction2.php"><button class="wbtn" style="width:100%">Συνέχεια διορθώσεων</button></a>
             <br>
         </div>
@@ -140,7 +140,7 @@ include 'config.php';
                     echo "<p>Εξεταζόμενος φοιτητής/φοιτήτρια : ".$row['name']." ". $row['surname']."</p>";
                 }
                 echo "<p>Βαθμολογία : ". $final_grade."/$exam_final</p>";
-                if($final_grade>5){
+                if($final_grade>=5){
                     echo "<b style='color:green;'>Επιτυχής</b><br><br>";
                 }else{
                     echo "<b style='color:red;'>Αποτυχής</b><br><br>";
@@ -345,6 +345,7 @@ include 'config.php';
 
 
                 <br>
+
             </div>
             </div>
         </div>
