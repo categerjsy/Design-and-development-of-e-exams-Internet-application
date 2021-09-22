@@ -92,8 +92,9 @@ date_default_timezone_set('Europe/Athens') ;
 		<div id="myform" style="margin-left:15%;padding:10px 50px;">
 			<h3>Εξέταση</h3>
             <h4>Χρόνος που απομένει για την εξέταση:</h4>
-            <div class="container">
-                <div id="countdown">
+            <div id="myHIDE" >
+            <div class="container" >
+                <div id="countdown" >
 
                     <p hidden><span id="days"></span></p>
                     <span id="hours"></span>:<span id="minutes"></span>:<span id="seconds"></span>
@@ -103,7 +104,7 @@ date_default_timezone_set('Europe/Athens') ;
 
 
 	        <h4>Χρόνος που απομένει για την ερώτηση:</h4>
-			<div class="countdown-container" style="width:55%;">
+			<div class="countdown-container" style="width:55%;" >
 					
 					<div class="hours-container">
 						<div class="hours"></div>
@@ -121,7 +122,7 @@ date_default_timezone_set('Europe/Athens') ;
 					</div>
 					
 			</div>
-            <div id="myHIDE" >
+
 				<?php
 				$exam_array= $_SESSION["ex_array"];
 				$max_question=sizeof($exam_array)-1;
