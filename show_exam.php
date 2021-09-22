@@ -104,7 +104,7 @@ include 'config.php';
 		?>    
 
 <div id="myform" >
-
+    <div  id="myHIDE">
 <?php
 
 $exam=$_SESSION["id_exam"];
@@ -284,6 +284,7 @@ $lesson=$_SESSION["lesson"];
 				<button class="wbtn" style="width: 38%;" ><a href="create_exam2.php">Επεξεργασία διαγωνίσματος</a></button>    	        
                 <br><br>
 				</div>
+</div>
 </div>
                      
 		</main>
