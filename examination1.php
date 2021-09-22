@@ -57,7 +57,7 @@ date_default_timezone_set('Europe/Athens') ;
 					 <img src="photos/uop_logo4_navigation.gif" width="60" height="40"/> 
 					</div>
 				  </div>
-				  <div class="nav-btn">
+                <div class="nav-btn" onclick="myHide()">
 					<label for="nav-check">
 					  <span></span>
 					  <span></span>
@@ -121,7 +121,7 @@ date_default_timezone_set('Europe/Athens') ;
 					</div>
 					
 			</div>
-			
+            <div id="myHIDE" >
 				<?php
 				$exam_array= $_SESSION["ex_array"];
 				$max_question=sizeof($exam_array)-1;
@@ -242,8 +242,8 @@ date_default_timezone_set('Europe/Athens') ;
                     header("Location: profilef.php");
                 }
 				?>
-				
 
+            </div>
                 <br>
 
 
@@ -345,6 +345,7 @@ date_default_timezone_set('Europe/Athens') ;
                     }, 0)
             }());
         </script>
+        <script src="assets/js/hide.js"></script>
 		<script src="assets/js/aside.js"></script>
 	</body>
 </html>
