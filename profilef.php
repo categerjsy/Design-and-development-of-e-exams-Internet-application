@@ -79,8 +79,12 @@ session_start();
 	
 		</aside>
 		<main>  
-			<button class="openbtn" onclick="openNav()">☰ Βασικές επιλογές</button>   
-           
+			<button class="openbtn" onclick="openNav()">☰ Βασικές επιλογές</button>
+            <?php
+            if (isset($_GET["msg"]) && $_GET["msg"] == 'end') {
+                print "<p>Η εξέταση σας τελείωσε.</p>";
+            }
+            ?>
 		
                      
 		</main>

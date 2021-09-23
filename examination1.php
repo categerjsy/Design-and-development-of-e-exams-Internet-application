@@ -130,6 +130,25 @@ date_default_timezone_set('Europe/Athens') ;
 
 				$i=$_SESSION["number"];
 				$que=$i+1;
+				///
+                $var1 = "00:00:00";
+                $date = new DateTime($var1);
+
+                for($in=$i;$in<=$max_question;$in++) {
+                    $question = mysqli_query($conn, "select * from question where id_question='$exam_array[$in]'");
+                    while ($row = mysqli_fetch_array($question, MYSQLI_ASSOC)) {
+                        $var2 = $row["time"];
+                        list($hours, $minutes, $seconds) = explode(":", $var2);
+                        $interval = new DateInterval("PT" . $hours . "H" . $minutes . "M" . $seconds . "S");
+                        $date->add($interval);
+                    }
+                }
+
+
+                $d=$date->format("H:i:s");
+                echo "calc";
+                echo $date->format("H:i:s");
+                ///
                 $all=sizeof($exam_array);
 				echo "<h4>Βρίσκεστε στην $que απο τις $all ερωτήσεις.</h4>";
 
@@ -240,7 +259,7 @@ date_default_timezone_set('Europe/Athens') ;
                 }
                 else {
                     $total=0;
-                    header("Location: profilef.php");
+                    header("Location: profilef.php?msg=end");
                 }
 				?>
 
