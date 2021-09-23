@@ -304,8 +304,8 @@ date_default_timezone_set('Europe/Athens') ;
 		}
 
 		function displayTimeLeft(seconds) {
-			hoursElement.textContent = Math.floor((seconds % 86400) / 3600);
-			minutesElement.textContent = Math.floor((seconds % 86400) % 3600 / 60);
+			hoursElement.textContent = Math.floor((seconds % 86400) / 3600)< 10 ? `0${Math.floor((seconds % 86400) / 3600)}` :Math.floor((seconds % 86400) / 3600);
+			minutesElement.textContent = Math.floor((seconds % 86400) % 3600 / 60)< 10 ? `0${Math.floor((seconds % 86400) % 3600 / 60)}` :Math.floor((seconds % 86400) % 3600 / 60);
 			secondsElement.textContent = seconds % 60 < 10 ? `0${seconds % 60}` : seconds % 60;
 			document.cookie='hours='+hoursElement.textContent;
 			document.cookie='minutes='+minutesElement.textContent;
@@ -339,9 +339,10 @@ date_default_timezone_set('Europe/Athens') ;
                             distance = countDown - now;
 
                             document.getElementById("days").innerText = Math.floor(distance / (day)),
-                            document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
-                            document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
-                            document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+                            document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour))< 10 ? `0${Math.floor((distance % (day)) / (hour))}` :Math.floor((distance % (day)) / (hour)),
+                            document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute))< 10 ? `0${Math.floor((distance % (hour)) / (minute))}` :Math.floor((distance % (hour)) / (minute)),
+                            document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second) < 10 ? `0${Math.floor((distance % (minute)) / second)}` :Math.floor((distance % (minute)) / second);
+
 
                     }, 0)
             }());
