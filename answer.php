@@ -19,8 +19,9 @@ if($s<10){
 }
 $time=$h.":".$m.":".$s;
 
+$seconds=($h*3600)+($m*60)+$s;
 
-
+$_SESSION["end_exam"]=date("Y-m-d H:i:s", (strtotime(date($_SESSION["end_exam"])) - $seconds));
 
 if (isset($_POST['ek'])){
 
