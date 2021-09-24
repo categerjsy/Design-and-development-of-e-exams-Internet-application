@@ -338,12 +338,12 @@ date_default_timezone_set('Europe/Athens') ;
 
                         let now = new Date().getTime(),
                             distance = countDown - now;
-
-                            document.getElementById("days").innerText = Math.floor(distance / (day)),
-                            document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour))< 10 ? `0${Math.floor((distance % (day)) / (hour))}` :Math.floor((distance % (day)) / (hour)),
-                            document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute))< 10 ? `0${Math.floor((distance % (hour)) / (minute))}` :Math.floor((distance % (hour)) / (minute)),
-                            document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second) < 10 ? `0${Math.floor((distance % (minute)) / second)}` :Math.floor((distance % (minute)) / second);
-
+                            if(distance>0) {
+                                document.getElementById("days").innerText = Math.floor(distance / (day)),
+                                    document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)) < 10 ? `0${Math.floor((distance % (day)) / (hour))}` : Math.floor((distance % (day)) / (hour)),
+                                    document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)) < 10 ? `0${Math.floor((distance % (hour)) / (minute))}` : Math.floor((distance % (hour)) / (minute)),
+                                    document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second) < 10 ? `0${Math.floor((distance % (minute)) / second)}` : Math.floor((distance % (minute)) / second);
+                            }
 
                     }, 0)
             }());
