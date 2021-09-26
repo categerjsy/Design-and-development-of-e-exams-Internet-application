@@ -18,7 +18,7 @@ $exam=$_POST["id_exam"];
 
 
 
-            $now = new Datetime();
+            $now = new DateTime( );
 			$bt = new Datetime($begintime);
 			$et = new Datetime($endtime);
 

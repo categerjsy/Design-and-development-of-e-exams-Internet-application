@@ -82,6 +82,7 @@ date_default_timezone_set('Europe/Athens') ;
 			  
 			
 				<?php
+
                 if(isset($_SESSION["id_student"])) {
                     $ids = $_SESSION["id_student"];
                     $query = mysqli_query($conn, "SELECT * FROM enroll_on WHERE id_student='$ids' ");
@@ -106,7 +107,8 @@ date_default_timezone_set('Europe/Athens') ;
                                 $end_time = $row["time"];
                                 $date_end = new DateTime($end_time);
                                 $date_start = new DateTime($start_time);
-                                $now = new DateTime();
+                                $now = new DateTime("now", new DateTimeZone('Europe/Athens') );
+
                                 if ($date_end > $now) {
                                     echo "<form action='st_exam2.php'  method='post' >";
                                     echo "<button type = 'submit' name='id_exam' class='wbtn' value='$id_exam'>";
