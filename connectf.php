@@ -1,67 +1,68 @@
 <?php
-session_start();
 include 'config.php';
-
 
 $firstname=$_POST['name'];
 $lastname=$_POST['surname'];
 $email=$_POST['email'];
 $username=$_POST['uname'];
-$am=$_POST['ΑΜ'];
 $telephone=$_POST['telephone'];
 $pass=$_POST['password'];
 $cpass=$_POST['confirm_password'];
+$am=$_POST['ΑΜ'];
 
-     
-////////////////////////
+
 $username = stripslashes($username);
 $email = stripslashes($email);
-$query = mysqli_query($conn,"select * from user_student where username='$username'");
-$ru = mysqli_num_rows($query);
-$query = mysqli_query($conn,"select * from user_student where email='$email'");
-$re = mysqli_num_rows($query);
 $query = mysqli_query($conn,"select * from user_professor where username='$username'");
-$rup = mysqli_num_rows($query);
+$ru = mysqli_num_rows($query);
 $query = mysqli_query($conn,"select * from user_professor where email='$email'");
-$rep = mysqli_num_rows($query);
-////////////////////////////////////  
+$re = mysqli_num_rows($query);
+$query = mysqli_query($conn,"select * from user_student where username='$username'");
+$rus = mysqli_num_rows($query);
+$query = mysqli_query($conn,"select * from user_student where email='$email'");
+$res = mysqli_num_rows($query);
+
 if((strlen($pass)<7)||(strlen($pass)>16)){
-	header("Location: sign_upf.php?msg=plen");
-}  
+
+    header("Location: sign_upk.php?msg=plen");
+
+}
 else{
     if($pass==$cpass) {
-		  if($ru==1||$rup==1){
-				$error = "Username taken";
-				echo "$error";
-				// Redirecting To this Page
-				header("Location: sign_upf.php?msg=failed_username");
-			}
-            else if($re==1||$rep==1){
-				$error = "E-mail taken";
-				echo "$error";
-				// Redirecting To this Page
-				header("Location: sign_upf.php?msg=failed_mail");
-			}
-			else{
-					$sql = "INSERT INTO user_student (name, surname, email, phone_number, AM, username,password)
-				VALUES ('$firstname','$lastname', '$email', '$telephone','$am','$username', '$pass')";
+        if($ru==1||$rus==1){
+            $error = "Username taken";
+            echo "$error";
+            // Redirecting To this Page
+            header("Location: sign_upf.php?msg=failed_username");
+        }
+        else if($re==1||$res==1){
+            $error = "E-mail taken";
+            echo "$error";
+            // Redirecting To this Page
+            header("Location:sign_upf.php?msg=failed_mail");
+        }
+        else{
+            $sql = "INSERT INTO user_student (name, surname, email, phone_number, username,password,AM)
+				VALUES ('$firstname','$lastname', '$email', '$telephone','$username', '$pass','$am')";
 
-			$qry = mysqli_query($conn, $sql);
+            $qry = mysqli_query($conn, $sql);
 
-			if($qry){
-				echo "Profile in database!!!";
-				// Redirecting To Other Page
-			header("Location: sign_in.php?msg=okay");
-			}
+            if($qry){
+                // Redirecting To Other Page
+                header("Location: sign_in.php?msg=okay");
+            }
 
-			}
-		
+
+        }
+
     }else{
-		header("Location:sign_upf.php?msg=cp");
-	
-		
-	}
+
+        header("Location: sign_upf.php?msg=cp");
+
+
+    }
 
 }
 
 ?>
+
