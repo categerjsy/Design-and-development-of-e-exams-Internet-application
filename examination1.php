@@ -137,7 +137,7 @@ date_default_timezone_set('Europe/Athens') ;
                  $now = new Datetime();
 				 $end_time=$_SESSION["end_exam"];
 				 $et = new Datetime($end_time);
-                echo $end_time;
+                //echo $end_time;
                 if(isset($exam_array[$i])) {
                     $qu = $exam_array[$i];
                     $_SESSION["qu"] = $qu;
@@ -158,10 +158,10 @@ date_default_timezone_set('Europe/Athens') ;
                             echo "<button type ='submit' name='ek' class='clbtn' value='$qu'>";
                             echo "Ορισμός απάντησης";
                             echo "</button>";
-                            echo "</form>";
-                            echo "<a href='examination2.php'><button class='cancelbtn' >Επόμενη ερώτηση</button></a>
-                                        <button type='reset' class='cleanbtn'>Καθαρισμός</button>";
+                            echo "<a href='examination2.php'><button class='cancelbtn' >Επόμενη ερώτηση</button></a>";
+                            echo "<button type='reset' class='cleanbtn' style='color:white' >Καθαρισμός</button>";
                             echo "<br>";
+                            echo "</form>";
                         }
                         if (strcmp($row["type"], "True-False") == 0) {
                             echo "<form  action='answer.php'  method='post'>";
@@ -173,11 +173,10 @@ date_default_timezone_set('Europe/Athens') ;
                             echo "<button type ='submit' name='tf' class='clbtn' value='$qu'>";
                             echo "Ορισμός απάντησης";
                             echo "</button>";
-
-                            echo "</form>";
                             echo "<a href='examination2.php'><button class='cancelbtn' >Επόμενη ερώτηση</button></a>
                                         <button type='reset' class='cleanbtn'>Καθαρισμός</button>";
                             echo "<br>";
+                            echo "</form>";
                         }
                         $try = 0;
                         if ($try == 0) {
@@ -201,11 +200,10 @@ date_default_timezone_set('Europe/Athens') ;
                                 echo "<button type ='submit' name='mc' class='clbtn' value='$qu'>";
                                 echo "Ορισμός απάντησης";
                                 echo "</button>";
-
-                                echo "</form>";
                                 echo "<a href='examination2.php'><button class='cancelbtn' >Επόμενη ερώτηση</button></a>
                                         <button type='reset' class='cleanbtn'>Καθαρισμός</button>";
                                 $try = 1;
+                                echo "</form>";
                             }
                         }
                         if ($try == 0) {
@@ -229,11 +227,10 @@ date_default_timezone_set('Europe/Athens') ;
                                 echo "<button type ='submit' name='mcm' class='clbtn' value='$qu'>";
                                 echo "Ορισμός απάντησης";
                                 echo "</button>";
-
-                                echo "</form>";
                                 echo "<a href='examination2.php'><button class='cancelbtn' >Επόμενη ερώτηση</button></a>
                                         <button type='reset' class='cleanbtn'>Καθαρισμός</button>";
                                 $try = 1;
+                                echo "</form>";
                             }
                         }
 
