@@ -4,17 +4,16 @@ session_start ();
 $st=$_SESSION["id_student"];
 $exam=$_SESSION["id_exam"];
 
+
+
 $h = $_COOKIE["hours"];
 $m = $_COOKIE["minutes"];
 $s = $_COOKIE["seconds"];
 
-$seconds=($h*3600)+($m*60)+$s;
-
+echo $h.":".$m.":".$s;
 $time=$h.":".$m.":".$s;
 
 
-
-$_SESSION["end_exam"]=date("Y-m-d H:i:s", (strtotime(date($_SESSION["end_exam"])) - $seconds));
 
 if (isset($_POST['ek'])){
 

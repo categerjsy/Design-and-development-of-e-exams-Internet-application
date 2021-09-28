@@ -137,7 +137,7 @@ date_default_timezone_set('Europe/Athens') ;
                  $now = new Datetime();
 				 $end_time=$_SESSION["end_exam"];
 				 $et = new Datetime($end_time);
-
+                echo $end_time;
                 if(isset($exam_array[$i])) {
                     $qu = $exam_array[$i];
                     $_SESSION["qu"] = $qu;
