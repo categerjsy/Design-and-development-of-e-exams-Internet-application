@@ -82,13 +82,13 @@ $number_questionsd=$_POST['number_questionsd'];
         }
         if($final_grade>$gradefornow){
          echo '<script type="text/javascript">'; 
-         echo 'alert("To άρθοισμα των εισαγθέντων ερωτήσεων δεν φτάνει την ορισμένη τελική βαθμολογία.Παρακαλούμε προσθέστε και άλλες ερωτήσεις");'; 
+         echo 'alert("To άρθοισμα των εισαχθεισών ερωτήσεων δεν φτάνει την ορισμένη τελική βαθμολογία.Παρακαλούμε προσθέστε και άλλες ερωτήσεις");';
          echo 'window.location.href = "create_exam2.php";';
          echo '</script>';
          }
          if($final_grade<$gradefornow){
              echo '<script type="text/javascript">'; 
-             echo 'alert("To άρθοισμα των εισαγθέντων ερωτήσεων είναι μεγαλύτερο της τελικής βαθμολογίας, οι επιπλέον μονάδες αυτοματοποιούνται ως bonus βαθμολογία.");'; 
+             echo 'alert("To άρθοισμα των εισαχθεισών ερωτήσεων είναι μεγαλύτερο της τελικής βαθμολογίας, οι επιπλέον μονάδες αυτοματοποιούνται ως bonus βαθμολογία.");';
              echo 'window.location.href = "show_exam.php?msg=rtest";';
              echo '</script>';
              $sql = "UPDATE exam
