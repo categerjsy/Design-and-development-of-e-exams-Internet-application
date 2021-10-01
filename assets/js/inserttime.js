@@ -1,6 +1,5 @@
 function validateTime(timeField){
-    var reg = /[0-9]{1}.[0-9]{2}/;
-
+    var reg = /[0]{2}:[0-6]{1}[0-9]{1}:[0-5]{1}[0-9]{1}$/;
     if (reg.test(timeField.value) == false) 
     {
         document.getElementById('messageTime').style.color = 'red';

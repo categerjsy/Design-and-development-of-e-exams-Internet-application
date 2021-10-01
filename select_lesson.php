@@ -79,7 +79,13 @@ include 'config.php';
 	
 		</aside>
 		<main>  
-			<button class="openbtn" onclick="openNav()">☰ Βασικές επιλογές</button>     
+			<button class="openbtn" onclick="openNav()">☰ Βασικές επιλογές</button> 
+
+			<?php
+            if (isset($_GET["msg"]) && $_GET["msg"] == 'deleted') {
+                print "<p style='color: green;'>Η ερώτηση έχει διαγραφεί.</p>";
+            }
+            ?>
         <div id="myform" style="margin-left:25%;padding:10px 50px;">
 			<h2>Επεξεργασία ερωτήσεων</h2>
 			

@@ -1,5 +1,5 @@
 function validateGrade(gradeField){
-    var reg = /[0-9]{1}.[0-9]{2}/;
+    var reg = /[0-9]{1}.[0-9]{2}$/;
 
     if (reg.test(gradeField.value) == false) 
     {

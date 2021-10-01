@@ -42,8 +42,7 @@ $qry6 = mysqli_query($conn, $sql6);
 		if($qry1&&$qry3&&$qry4&&$qry6){
 		$_SESSION["username"]=$username;
 		echo "Question deleted!!";
-		header("Location: select_lesson.php");
-				
+		header("Location: select_lesson.php?msg=deleted");
 	    }
 
 
